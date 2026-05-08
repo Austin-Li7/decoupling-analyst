@@ -24,6 +24,19 @@ runs/
 outputs/
 .cache/
 
+# Build / packaging
+build/
+dist/
+
+# Claude Code worktree internals
+.claude/
+
+# Validation runs (Phase 3 artifacts; regenerable)
+validation_runs/
+
+# Teixeira primary corpus (Phase 1.5; copyrighted, gitignored)
+data/teixeira_corpus/
+
 # Private inputs and course materials
 inputs/private/
 inputs/**/private/
