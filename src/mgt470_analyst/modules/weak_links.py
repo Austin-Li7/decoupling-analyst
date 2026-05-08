@@ -17,6 +17,7 @@ def score_weak_links(
     store: EvidenceStore,
     perspective: CasePerspective | None = None,
     client: LLMClient | None = None,
+    methodology_context: str = "",
 ) -> WeakLinkAnalysis:
     client = client or get_default_client()
     evidence_items = [item.model_dump(mode="json") for item in store.items.values()]
@@ -45,6 +46,7 @@ def score_weak_links(
         " activity_id MUST match an input id."
     )
     user = f"""\
+{methodology_context}
 {directive}
 Customer segment: {cvc.customer_segment}
 

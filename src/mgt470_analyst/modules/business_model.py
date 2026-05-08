@@ -17,6 +17,7 @@ def analyze_business_model(
     store: EvidenceStore,
     perspective: CasePerspective | None = None,
     client: LLMClient | None = None,
+    methodology_context: str = "",
 ) -> BusinessModelAnalysis:
     client = client or get_default_client()
     evidence_items = [item.model_dump(mode="json") for item in store.items.values()]
@@ -36,6 +37,7 @@ def analyze_business_model(
         " concerns. Cite evidence_ids."
     )
     user = f"""\
+{methodology_context}
 {directive}
 Company: {profile.company.name}
 Industry: {profile.company.industry}

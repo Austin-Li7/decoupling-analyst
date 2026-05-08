@@ -25,6 +25,7 @@ def make_final_judgment(
     store: EvidenceStore,
     perspective: CasePerspective | None = None,
     client: LLMClient | None = None,
+    methodology_context: str = "",
 ) -> FinalJudgment:
     client = client or get_default_client()
     evidence_items = [item.model_dump(mode="json") for item in store.items.values()]
@@ -57,6 +58,7 @@ def make_final_judgment(
     top = weak_links.ranked_weak_links[0]
     primary = decoupling.primary_decoupling
     user = f"""\
+{methodology_context}
 {directive}
 Company: {profile.company.name}
 Public/private: {profile.company.public_or_private}, ticker: {profile.company.ticker or "n/a"}

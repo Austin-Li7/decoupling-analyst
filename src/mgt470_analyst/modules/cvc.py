@@ -15,6 +15,7 @@ def map_customer_value_chain(
     store: EvidenceStore,
     perspective: CasePerspective | None = None,
     client: LLMClient | None = None,
+    methodology_context: str = "",
 ) -> CustomerValueChain:
     client = client or get_default_client()
     evidence_items = [item.model_dump(mode="json") for item in store.items.values()]
@@ -40,6 +41,7 @@ def map_customer_value_chain(
         " customer behavior the CVC implies. Empty list if none."
     )
     user = f"""\
+{methodology_context}
 {directive}
 Target company: {profile.company.name}
 Stated value proposition: {profile.business_model.value_proposition}

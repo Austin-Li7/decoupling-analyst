@@ -17,6 +17,7 @@ def design_decoupling_strategy(
     store: EvidenceStore,
     perspective: CasePerspective | None = None,
     client: LLMClient | None = None,
+    methodology_context: str = "",
 ) -> DecouplingStrategy:
     client = client or get_default_client()
     evidence_items = [item.model_dump(mode="json") for item in store.items.values()]
@@ -49,6 +50,7 @@ def design_decoupling_strategy(
         "\n\nCite evidence_ids."
     )
     user = f"""\
+{methodology_context}
 {directive}
 CVC:
 {cvc_block}
