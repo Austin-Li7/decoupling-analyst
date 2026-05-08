@@ -17,6 +17,7 @@ def assess_competitive_response(
     store: EvidenceStore,
     perspective: CasePerspective | None = None,
     client: LLMClient | None = None,
+    methodology_context: str = "",
 ) -> CompetitiveResponse:
     client = client or get_default_client()
     evidence_items = [item.model_dump(mode="json") for item in store.items.values()]
@@ -42,6 +43,7 @@ def assess_competitive_response(
         " high / medium / low. Provide concrete defenses. Cite evidence_ids."
     )
     user = f"""\
+{methodology_context}
 {directive}
 Company: {profile.company.name}
 Known incumbents: {incumbents}

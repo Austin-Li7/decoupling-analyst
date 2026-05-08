@@ -47,6 +47,13 @@ def analyze(
             help="Accepted for compatibility; full verification is deferred in MVP.",
         ),
     ] = False,
+    no_rag: Annotated[
+        bool,
+        typer.Option(
+            "--no-rag",
+            help="Disable RAG injection of MGT470 course notes (ablation / debugging).",
+        ),
+    ] = False,
 ) -> None:
     urls = url or []
     raw_input = RawInput(
@@ -59,12 +66,50 @@ def analyze(
         user_question=question,
         include_financial_verification=include_financial_verification,
     )
-    result = run_analysis(raw_input, runs_dir=runs_dir)
+    result = run_analysis(raw_input, runs_dir=runs_dir, use_rag=not no_rag)
     if output:
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(result.report_path.read_text(encoding="utf-8"), encoding="utf-8")
     typer.echo(f"Run complete: {result.run_dir}")
     typer.echo(f"Report: {result.report_path}")
+
+
+@app.command()
+def reindex(
+    notes_dir: Annotated[
+        Path | None,
+        typer.Option(
+            "--notes-dir",
+            help=(
+                "Source directory of MGT470 markdown notes. Defaults to "
+                "$MGT470_NOTES_DIR or ./MGT470."
+            ),
+        ),
+    ] = None,
+    persist_dir: Annotated[
+        Path | None,
+        typer.Option(
+            "--persist-dir",
+            help="Override the ChromaDB persistence directory.",
+        ),
+    ] = None,
+) -> None:
+    """Rebuild the local notes vector index used by the RAG retriever.
+
+    Idempotent: skips files whose mtime hasn't changed since the last run.
+    Requires OPENAI_API_KEY (used for the embedding model). The default
+    persistence directory is ~/.cache/mgt470-analyst/notes_index/.
+    """
+    from mgt470_analyst.rag.indexer import build_index
+
+    summary = build_index(notes_dir=notes_dir, persist_dir=persist_dir)
+    typer.echo(
+        f"Indexed {summary['files_indexed']} files "
+        f"({summary['chunks_added']} chunks added, "
+        f"{summary['stale_removed']} stale removed) "
+        f"from {summary['notes_dir']}"
+    )
+    typer.echo(f"Persisted to: {summary['persist_dir']}")
 
 
 def _map_mode(mode: str) -> str:

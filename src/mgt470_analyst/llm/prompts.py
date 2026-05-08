@@ -82,6 +82,26 @@ Output discipline:
 """
 
 
+def render_methodology_context(chunks: list) -> str:
+    """Format retrieved MGT470 note chunks as a 'Course context' prompt block.
+
+    Returns ``""`` when ``chunks`` is empty so callers can prepend the result
+    unconditionally — the offline / no-RAG path produces no extra block.
+    Each chunk is labeled with its source path + heading trail so the LLM
+    can cite Austin's notes by file and section in downstream prose.
+    """
+    if not chunks:
+        return ""
+    lines: list[str] = ["=== COURSE CONTEXT (Austin's MGT470 notes) ==="]
+    for index, chunk in enumerate(chunks, start=1):
+        trail = " > ".join(chunk.heading_trail) if chunk.heading_trail else "(no heading)"
+        lines.append(f"[{index}] source: {chunk.source_path} :: {trail}")
+        lines.append(chunk.text.strip())
+        lines.append("")
+    lines.append("=== END COURSE CONTEXT ===")
+    return "\n".join(lines)
+
+
 def render_evidence_for_prompt(evidence_items: list[dict], limit: int = 60) -> str:
     """Format the evidence store entries for inclusion in a user prompt."""
     lines = []

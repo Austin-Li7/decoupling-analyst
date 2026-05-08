@@ -1,3 +1,4 @@
+import os
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -11,6 +12,7 @@ from mgt470_analyst.evidence.validator import validate_and_repair_evidence
 from mgt470_analyst.hashing import stable_hash
 from mgt470_analyst.io.json_artifacts import write_json_artifact
 from mgt470_analyst.llm.client import LLMClient, get_default_client
+from mgt470_analyst.llm.prompts import render_methodology_context
 from mgt470_analyst.modules.business_model import analyze_business_model
 from mgt470_analyst.modules.case_perspective import classify_case_perspective
 from mgt470_analyst.modules.company_profile import build_company_profile
@@ -71,10 +73,24 @@ def run_analysis(
     raw_input: RawInput,
     runs_dir: Path | str,
     client: LLMClient | None = None,
+    *,
+    use_rag: bool = True,
 ) -> AnalysisResult:
     runs_path = Path(runs_dir)
     run_id, run_dir = ensure_run_dir(runs_path, raw_input.company_name)
     client = client or get_default_client()
+
+    retriever = _build_retriever_or_none(use_rag=use_rag, client=client)
+
+    def methodology_for(module_name: str, perspective: str | None = None) -> str:
+        if retriever is None:
+            return ""
+        chunks = retriever.retrieve_for_module(
+            module_name=module_name,
+            company_name=raw_input.company_name,
+            perspective=perspective,
+        )
+        return render_methodology_context(chunks)
     manifest = RunManifest(
         run_id=run_id,
         created_at=datetime.now().astimezone().isoformat(timespec="seconds"),
@@ -200,7 +216,11 @@ def run_analysis(
         "cvc",
         "cvc.json",
         lambda: map_customer_value_chain(
-            company_profile, store, perspective=case_perspective, client=client
+            company_profile,
+            store,
+            perspective=case_perspective,
+            client=client,
+            methodology_context=methodology_for("cvc", case_perspective.perspective),
         ),
         CustomerValueChain,
         {"profile": company_profile, "perspective": case_perspective},
@@ -218,7 +238,12 @@ def run_analysis(
         "weak_links",
         "weak_link_analysis.json",
         lambda: score_weak_links(
-            cvc, values, store, perspective=case_perspective, client=client
+            cvc,
+            values,
+            store,
+            perspective=case_perspective,
+            client=client,
+            methodology_context=methodology_for("weak_links", case_perspective.perspective),
         ),
         WeakLinkAnalysis,
         {"cvc": cvc, "values": values, "perspective": case_perspective},
@@ -228,7 +253,12 @@ def run_analysis(
         "decoupling",
         "decoupling_strategy.json",
         lambda: design_decoupling_strategy(
-            cvc, weak_links, store, perspective=case_perspective, client=client
+            cvc,
+            weak_links,
+            store,
+            perspective=case_perspective,
+            client=client,
+            methodology_context=methodology_for("decoupling", case_perspective.perspective),
         ),
         DecouplingStrategy,
         {"cvc": cvc, "weak_links": weak_links, "perspective": case_perspective},
@@ -238,7 +268,12 @@ def run_analysis(
         "business_model",
         "business_model_analysis.json",
         lambda: analyze_business_model(
-            company_profile, decoupling, store, perspective=case_perspective, client=client
+            company_profile,
+            decoupling,
+            store,
+            perspective=case_perspective,
+            client=client,
+            methodology_context=methodology_for("business_model", case_perspective.perspective),
         ),
         BusinessModelAnalysis,
         {"profile": company_profile, "decoupling": decoupling, "perspective": case_perspective},
@@ -248,7 +283,14 @@ def run_analysis(
         "competitive_response",
         "competitive_response.json",
         lambda: assess_competitive_response(
-            company_profile, decoupling, store, perspective=case_perspective, client=client
+            company_profile,
+            decoupling,
+            store,
+            perspective=case_perspective,
+            client=client,
+            methodology_context=methodology_for(
+                "competitive_response", case_perspective.perspective
+            ),
         ),
         CompetitiveResponse,
         {"profile": company_profile, "decoupling": decoupling, "perspective": case_perspective},
@@ -267,6 +309,7 @@ def run_analysis(
             store,
             perspective=case_perspective,
             client=client,
+            methodology_context=methodology_for("final_judgment", case_perspective.perspective),
         ),
         FinalJudgment,
         {
@@ -326,6 +369,29 @@ def run_analysis(
     )
 
     return AnalysisResult(run_dir=run_dir, report_path=report_path, run_manifest=manifest)
+
+
+def _build_retriever_or_none(*, use_rag: bool, client: LLMClient):
+    """Construct a MethodologyRetriever when RAG is enabled and the client
+    has a real API key. Returns ``None`` otherwise so module calls receive
+    an empty methodology context and behave identically to pre-RAG runs.
+
+    RAG is gated on ``MGT470_RAG=1`` so the default behavior is unchanged
+    until the user opts in via env var or by running ``mgt470 reindex``.
+    Tests force offline mode, which trips the ``client.offline`` check.
+    """
+    if not use_rag:
+        return None
+    if os.environ.get("MGT470_RAG") != "1":
+        return None
+    if getattr(client, "offline", False):
+        return None
+    try:
+        from mgt470_analyst.rag.retriever import MethodologyRetriever
+
+        return MethodologyRetriever()
+    except Exception:
+        return None
 
 
 def _weak_link_summary(weak_links: WeakLinkAnalysis, cvc: CustomerValueChain) -> str:
