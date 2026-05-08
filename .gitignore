@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Runtime artifacts
+runs/
+outputs/
+.cache/
+
+# Private inputs and course materials
+inputs/private/
+inputs/**/private/
+MGT470-course material/
+*.pdf
+*.docx
+*.xlsx
+*.xls
+*.pptx
+
+# Local Obsidian/export copies
+.obsidian/
+
+# Local course/Obsidian notes
+MGT470/
