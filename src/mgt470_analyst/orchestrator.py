@@ -6,6 +6,8 @@ from typing import Any, TypeVar
 
 from pydantic import BaseModel
 
+from mgt470_analyst.adapters.research.base import ResearchAdapter
+from mgt470_analyst.adapters.research.gpt_researcher_adapter import GPTResearcherAdapter
 from mgt470_analyst.adapters.research.openai_research import OpenAIResearchAdapter
 from mgt470_analyst.evidence.store import EvidenceStore
 from mgt470_analyst.evidence.validator import validate_and_repair_evidence
@@ -67,6 +69,31 @@ class AnalysisResult:
     run_dir: Path
     report_path: Path
     run_manifest: RunManifest
+
+
+def _truthy_env(value: str | None) -> bool:
+    return (value or "").strip().lower() in {"1", "true", "yes", "on"}
+
+
+def _select_research_adapter(client: LLMClient) -> ResearchAdapter:
+    backend = os.getenv("MGT470_RESEARCH_BACKEND", "").strip().lower()
+    offline = _truthy_env(os.getenv("MGT470_OFFLINE"))
+
+    if offline or backend == "stub":
+        return OpenAIResearchAdapter(client=client)
+
+    if backend in {"gpt_researcher", "gpt-researcher"}:
+        return GPTResearcherAdapter()
+
+    if backend:
+        raise ValueError(
+            "Unsupported MGT470_RESEARCH_BACKEND. Use 'gpt_researcher' or 'stub'."
+        )
+
+    if os.getenv("OPENAI_API_KEY"):
+        return GPTResearcherAdapter()
+
+    return OpenAIResearchAdapter(client=client)
 
 
 def run_analysis(
@@ -168,7 +195,7 @@ def run_analysis(
         write_json_artifact(run_dir / path, deck_artifact)
         record("deck_extractor", path, raw_input.files)
 
-    research = OpenAIResearchAdapter(client=client).research(raw_input)
+    research = _select_research_adapter(client=client).research(raw_input)
     write_json_artifact(run_dir / "research_brief.json", research)
     record("research", "research_brief.json", raw_input)
 

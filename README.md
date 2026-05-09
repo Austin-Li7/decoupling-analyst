@@ -30,6 +30,22 @@ source .venv/bin/activate
 pip install -e .
 ```
 
+### Install gpt-researcher
+
+Phase 2 uses Austin's pinned GPT Researcher fork for live cited web research:
+
+```bash
+pip install \
+  "gpt-researcher @ git+https://github.com/Austin-Li7/gpt-researcher.git@92bfc0388c5f7a03b6cb34eaf6ae14298a4b458e"
+```
+
+DuckDuckGo is the default search backend. Tavily is optional:
+
+```bash
+pip install "mgt470-analyst[research-tavily]"
+export TAVILY_API_KEY=tvly-...
+```
+
 ### Configure your OpenAI API key
 
 Copy `.env.example` to `.env` and fill in `OPENAI_API_KEY`:
@@ -50,6 +66,10 @@ export OPENAI_API_KEY=sk-...
 If no key is found, the pipeline falls back to **offline mode** (deterministic
 fakes) so tests and dry runs still work — but the output will not contain real
 analysis. Set `MGT470_OFFLINE=1` to force offline even with a key.
+
+Research defaults to `MGT470_RESEARCH_BACKEND=gpt_researcher` when
+`OPENAI_API_KEY` is set. Set `MGT470_RESEARCH_BACKEND=stub` to force the
+pre-Phase-2 knowledge-only research adapter.
 
 ### Model routing
 
