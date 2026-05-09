@@ -50,9 +50,10 @@ def test_gpt_researcher_query_asks_for_broad_public_sources() -> None:
     assert "Do not add site: restrictions" in query
 
 
-def test_gpt_researcher_normalize_prefers_report_reference_urls() -> None:
+def test_gpt_researcher_normalize_prefers_report_reference_urls(monkeypatch) -> None:
     from mgt470_analyst.schemas.raw_input import RawInput
 
+    monkeypatch.setenv("MGT470_URL_LIVENESS", "0")
     report = (
         "Finding one. References: "
         "https://www.notion.so/pricing "
@@ -72,7 +73,10 @@ def test_gpt_researcher_normalize_prefers_report_reference_urls() -> None:
     ]
 
 
-def test_gpt_researcher_normalize_ignores_sparse_scrape_urls_when_report_has_enough() -> None:
+def test_gpt_researcher_normalize_ignores_sparse_scrape_urls_when_report_has_enough(
+    monkeypatch,
+) -> None:
+    monkeypatch.setenv("MGT470_URL_LIVENESS", "0")
     report = " ".join(f"https://example.com/source-{index}" for index in range(10))
     brief = GPTResearcherAdapter()._normalize(
         report=report,

@@ -4,12 +4,17 @@ from __future__ import annotations
 
 import asyncio
 import inspect
+import logging
 import os
 import re
 from collections.abc import Iterable
+from concurrent.futures import ThreadPoolExecutor
+from dataclasses import dataclass
 from datetime import date
 from typing import Any
 from urllib.parse import urlparse
+
+import httpx
 
 from mgt470_analyst.adapters.research.base import ResearchAdapter
 from mgt470_analyst.schemas.raw_input import RawInput
@@ -17,7 +22,30 @@ from mgt470_analyst.schemas.research import ResearchBrief, ResearchSource
 
 DEFAULT_MAX_ITERATIONS = 2
 DEFAULT_MAX_SUBTOPICS = 3
+URL_LIVENESS_USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/124.0.0.0 Safari/537.36"
+)
+URL_LIVENESS_TIMEOUT_SECONDS = 10.0
+URL_LIVENESS_MAX_WORKERS = 8
+_HEAD_FALLBACK_STATUS_CODES = {405, 501}
+_HEAD_FALLBACK_STATUS_LABELS = {str(status) for status in _HEAD_FALLBACK_STATUS_CODES}
+_HEAD_FALLBACK_ERROR_LABELS = {
+    "timeout",
+    "connection error",
+    "ssl error",
+    "request error",
+}
 _URL_RE = re.compile(r"https?://[^\s\])>\"']+")
+LOGGER = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class _URLLivenessResult:
+    url: str
+    live: bool
+    status: str
 
 
 class GPTResearcherAdapter(ResearchAdapter):
@@ -79,6 +107,7 @@ class GPTResearcherAdapter(ResearchAdapter):
             for source_url in _extract_source_urls(sources):
                 if source_url not in urls:
                     urls.append(source_url)
+        urls = _filter_live_urls(urls)
 
         sentences = _extract_sentences(report)
         key_claims = sentences[: max(len(urls), 1)]
@@ -131,6 +160,106 @@ def _load_gpt_researcher() -> Any:
             "git+https://github.com/Austin-Li7/gpt-researcher.git'"
         ) from exc
     return GPTResearcher
+
+
+def _filter_live_urls(urls: list[str]) -> list[str]:
+    if not urls:
+        return []
+    if os.getenv("MGT470_URL_LIVENESS", "1") == "0":
+        LOGGER.info("URL liveness gate disabled by MGT470_URL_LIVENESS=0")
+        return urls
+
+    worker_count = min(URL_LIVENESS_MAX_WORKERS, len(urls))
+    with ThreadPoolExecutor(max_workers=worker_count) as executor:
+        results = list(executor.map(_check_url_liveness, urls))
+
+    kept = [result.url for result in results if result.live]
+    dropped = [result for result in results if not result.live]
+    dropped_summary = ", ".join(
+        f"{result.url} -> {result.status}" for result in dropped[:5]
+    )
+    if len(dropped) > 5:
+        dropped_summary = f"{dropped_summary}, ... (+{len(dropped) - 5} more)"
+    LOGGER.info(
+        "URL liveness gate: kept %s/%s (dropped: %s)",
+        len(kept),
+        len(urls),
+        dropped_summary or "none",
+    )
+    if len(kept) < 3:
+        LOGGER.warning(
+            "URL liveness gate: fewer than 3 live source URLs survived (%s/%s). "
+            "Letting thin brief through.",
+            len(kept),
+            len(urls),
+        )
+    return kept
+
+
+def _check_url_liveness(url: str) -> _URLLivenessResult:
+    headers = {
+        "User-Agent": URL_LIVENESS_USER_AGENT,
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    }
+    try:
+        with httpx.Client(
+            follow_redirects=True,
+            timeout=URL_LIVENESS_TIMEOUT_SECONDS,
+            headers=headers,
+        ) as client:
+            head_status = _try_head(client, url)
+            fallback_labels = _HEAD_FALLBACK_STATUS_LABELS | _HEAD_FALLBACK_ERROR_LABELS
+            if head_status.live or head_status.status not in fallback_labels:
+                return head_status
+            return _try_get_without_body(client, url)
+    except httpx.TimeoutException:
+        return _URLLivenessResult(url=url, live=False, status="timeout")
+    except httpx.ConnectError:
+        return _URLLivenessResult(url=url, live=False, status="connection error")
+    except httpx.TransportError as exc:
+        status = "ssl error" if "ssl" in str(exc).lower() else "request error"
+        return _URLLivenessResult(url=url, live=False, status=status)
+    except httpx.HTTPError:
+        return _URLLivenessResult(url=url, live=False, status="request error")
+
+
+def _try_head(client: httpx.Client, url: str) -> _URLLivenessResult:
+    try:
+        response = client.head(url)
+        response.close()
+    except httpx.TimeoutException:
+        return _URLLivenessResult(url=url, live=False, status="timeout")
+    except httpx.ConnectError:
+        return _URLLivenessResult(url=url, live=False, status="connection error")
+    except httpx.TransportError as exc:
+        status = "ssl error" if "ssl" in str(exc).lower() else "request error"
+        return _URLLivenessResult(url=url, live=False, status=status)
+    except httpx.HTTPError:
+        return _URLLivenessResult(url=url, live=False, status="request error")
+    return _result_from_status(url, response.status_code)
+
+
+def _try_get_without_body(client: httpx.Client, url: str) -> _URLLivenessResult:
+    try:
+        with client.stream("GET", url, headers={"Range": "bytes=0-0"}) as response:
+            return _result_from_status(url, response.status_code)
+    except httpx.TimeoutException:
+        return _URLLivenessResult(url=url, live=False, status="timeout")
+    except httpx.ConnectError:
+        return _URLLivenessResult(url=url, live=False, status="connection error")
+    except httpx.TransportError as exc:
+        status = "ssl error" if "ssl" in str(exc).lower() else "request error"
+        return _URLLivenessResult(url=url, live=False, status=status)
+    except httpx.HTTPError:
+        return _URLLivenessResult(url=url, live=False, status="request error")
+
+
+def _result_from_status(url: str, status_code: int) -> _URLLivenessResult:
+    return _URLLivenessResult(
+        url=url,
+        live=200 <= status_code < 300,
+        status=str(status_code),
+    )
 
 
 async def _maybe_await(value: Any) -> Any:
