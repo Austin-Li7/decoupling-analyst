@@ -22,6 +22,7 @@ EXPECTED_ARTIFACTS = {
     "final_judgment.json",
     "critic_review.json",
     "final_report.md",
+    "final_report_zh.md",
 }
 
 
@@ -57,13 +58,19 @@ def test_orchestrator_offline_happy_path_produces_all_artifacts(tmp_path: Path) 
         (result.run_dir / "evidence_store.json").read_text(encoding="utf-8")
     )
     manifest = json.loads((result.run_dir / "run.json").read_text(encoding="utf-8"))
+    cost_summary = json.loads(
+        (result.run_dir / "cost_summary.json").read_text(encoding="utf-8")
+    )
     evidence_ids = set(evidence_store)
     assert manifest["artifacts"]["research_brief"] == "research_brief.json"
+    assert manifest["artifacts"]["final_report_zh"] == "final_report_zh.md"
+    assert "final_report_zh" in cost_summary["by_module"]
     json_artifacts = EXPECTED_ARTIFACTS - {
         "run.json",
         "cost_summary.json",
         "evidence_store.json",
         "final_report.md",
+        "final_report_zh.md",
     }
     for artifact_name in json_artifacts:
         artifact = json.loads((result.run_dir / artifact_name).read_text(encoding="utf-8"))

@@ -24,7 +24,15 @@ STAGE_STYLE = {
 }
 
 
-def render_cvc_flowchart(cvc_activities: list[dict[str, Any]], values: list[dict[str, Any]]) -> str:
+WEAK_LINK_STYLE = "fill:#ffedd5,stroke:#c2410c,stroke-width:4px,color:#431407"
+
+
+def render_cvc_flowchart(
+    cvc_activities: list[dict[str, Any]],
+    values: list[dict[str, Any]],
+    *,
+    highlight_activity_id: str | None = None,
+) -> str:
     """Left-to-right CVC flowchart, color-coded by value type."""
     if not cvc_activities:
         return ""
@@ -44,6 +52,8 @@ def render_cvc_flowchart(cvc_activities: list[dict[str, Any]], values: list[dict
         vt = value_by_id.get(activity.get("id"), "").lower()
         if vt in VALUE_TYPE_STYLE:
             style_lines.append(f"    style {node_id} {VALUE_TYPE_STYLE[vt]}")
+        if highlight_activity_id and activity.get("id") == highlight_activity_id:
+            style_lines.append(f"    style {node_id} {WEAK_LINK_STYLE}")
 
     # Sequential edges step → step+1
     sorted_acts = sorted(cvc_activities, key=lambda a: a.get("step", 0))

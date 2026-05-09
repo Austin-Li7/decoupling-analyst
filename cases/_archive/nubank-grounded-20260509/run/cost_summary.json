@@ -1,9 +1,9 @@
 {
   "run_id": "nubank-20260509-010625",
   "company_name": "Nubank",
-  "total_input_tokens": 47033,
-  "total_output_tokens": 20652,
-  "total_cost_usd": 0.294023,
+  "total_input_tokens": 48015,
+  "total_output_tokens": 21607,
+  "total_cost_usd": 0.3048,
   "by_module": {
     "business_model": {
       "input_tokens": 4525,
@@ -82,10 +82,17 @@
       "output_tokens": 3794,
       "cost_usd": 0.046538,
       "model": "gpt-5.2"
+    },
+    "final_report_zh": {
+      "input_tokens": 982,
+      "output_tokens": 955,
+      "cost_usd": 0.010777,
+      "model": "gpt-5.2"
     }
   },
   "notes": [
     "Costs computed from per-call usage objects. GPT Researcher internal cost is read from researcher.research_costs after run.",
-    "Embedding/RAG costs outside LLMClient are not captured in this artifact."
+    "Embedding/RAG costs outside LLMClient are not captured in this artifact.",
+    "final_report_zh cost added by scripts/rerender_report.py."
   ]
 }

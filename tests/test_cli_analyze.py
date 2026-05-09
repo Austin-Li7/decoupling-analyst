@@ -29,3 +29,4 @@ def test_cli_analyze_runs_workflow(tmp_path: Path) -> None:
     run_dirs = list(tmp_path.iterdir())
     assert len(run_dirs) == 1
     assert (run_dirs[0] / "final_report.md").exists()
+    assert (run_dirs[0] / "final_report_zh.md").exists()

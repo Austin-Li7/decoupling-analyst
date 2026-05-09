@@ -1,9 +1,9 @@
 {
   "run_id": "liquid-death-20260509-005918",
   "company_name": "Liquid Death",
-  "total_input_tokens": 43189,
-  "total_output_tokens": 18366,
-  "total_cost_usd": 0.263212,
+  "total_input_tokens": 44110,
+  "total_output_tokens": 19274,
+  "total_cost_usd": 0.273443,
   "by_module": {
     "business_model": {
       "input_tokens": 4475,
@@ -82,10 +82,17 @@
       "output_tokens": 2843,
       "cost_usd": 0.035114,
       "model": "gpt-5.2"
+    },
+    "final_report_zh": {
+      "input_tokens": 921,
+      "output_tokens": 908,
+      "cost_usd": 0.010231,
+      "model": "gpt-5.2"
     }
   },
   "notes": [
     "Costs computed from per-call usage objects. GPT Researcher internal cost is read from researcher.research_costs after run.",
-    "Embedding/RAG costs outside LLMClient are not captured in this artifact."
+    "Embedding/RAG costs outside LLMClient are not captured in this artifact.",
+    "final_report_zh cost added by scripts/rerender_report.py."
   ]
 }
