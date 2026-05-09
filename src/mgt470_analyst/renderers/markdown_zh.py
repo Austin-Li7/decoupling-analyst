@@ -2,233 +2,197 @@ from __future__ import annotations
 
 import json
 import logging
-from typing import Any
+import re
+from dataclasses import dataclass
 
 from pydantic import BaseModel, Field
 
 from mgt470_analyst.llm.client import LLMClient, get_default_client
-from mgt470_analyst.renderers.mermaid import render_cvc_flowchart
 
 LOGGER = logging.getLogger(__name__)
 
-SHORT_TRANSLATIONS = {
-    "business_model": "商业模式",
-    "capture": "价值捕获",
-    "create": "价值创造",
-    "decoupling": "解构",
-    "disruptor": "颠覆者",
-    "erode": "价值侵蚀",
-    "full_decoupling": "完整解构",
-    "high": "高",
-    "incumbent": "在位者",
-    "low": "低",
-    "low_end": "低端切入",
-    "medium": "中等",
-    "new_market": "新市场",
-    "strategic_memo": "战略备忘录",
-    "study_more": "继续研究",
-    "tech_substitution": "技术替代",
-    "transitioning": "转型中",
-    "unclear": "不明确",
-}
+FENCED_BLOCK_RE = re.compile(r"```[\s\S]*?```")
+NODE_LABEL_RE = re.compile(r'(\w+\[")([^"]+)("\])')
 
 
-class TranslationBatch(BaseModel):
-    translations: dict[str, str] = Field(default_factory=dict)
+class MarkdownTranslation(BaseModel):
+    markdown: str
 
 
-def render_report_zh(context: dict[str, Any], client: LLMClient | None = None) -> str:
-    company = str(context.get("company_name") or "Unknown Company")
-    final = _as_dict(context.get("final_judgment"))
-    lens = _as_dict(context.get("lens_fit"))
-    perspective = _as_dict(context.get("case_perspective"))
-    decoupling = _as_dict(context.get("decoupling_strategy"))
-    primary = _as_dict(decoupling.get("primary_decoupling"))
-    critic = _as_dict(context.get("critic_review"))
-    cvc = [_as_dict(item) for item in context.get("cvc", [])]
-    values = [_as_dict(item) for item in context.get("values", [])]
-    weak_link = _top_weak_link(context)
-    weak_activity = _activity_for_id(cvc, weak_link.get("activity_id"))
-
-    fields = _translation_fields(final, primary, critic, weak_link, cvc)
-    translations = _translate_fields(fields, client=client)
-    zh_cvc = []
-    for activity in cvc:
-        translated_activity = translations.get(
-            f"activity_{activity.get('id')}",
-            activity.get("activity", ""),
-        )
-        zh_cvc.append(
-            {**activity, "activity": _clip(translated_activity, 24), "current_provider": ""}
-        )
-    diagram = render_cvc_flowchart(
-        zh_cvc,
-        values,
-        highlight_activity_id=weak_link.get("activity_id"),
-    )
-    high_issues = _high_issues(critic)
-    while len(high_issues) < 3:
-        high_issues.append("（暂无更多高严重度缺口）")
-
-    lens_name = _short(lens.get("primary_type"))
-    lens_confidence = _short(lens.get("confidence"))
-    perspective_name = _short(perspective.get("perspective"))
-    perspective_confidence = _short(perspective.get("confidence"))
-    fit_score = lens.get("decoupling_fit_score", "?")
-    weak_step = weak_activity.get("step", "?")
-    weak_activity_zh = translations.get(
-        f"activity_{weak_activity.get('id')}",
-        weak_activity.get("activity", "未知活动"),
-    )
-    weak_activity_zh = _clip(weak_activity_zh, 28)
-    falsifiable = translations.get("falsifiable_claim") or "（无明确可证伪主张）"
-    weak_rationale = translations.get("weak_link_rationale") or weak_link.get("rationale", "")
-    wedge_rationale = translations.get("wedge_rationale") or primary.get(
-        "why_customer_switches",
-        "",
-    )
-
-    return f"""---
-company: {company}
-language: zh
----
-
-# {company} 数字解构分析摘要
-
-> [!important] 一句话结论
-> {_clip(translations.get("recommended_action") or final.get("one_sentence_thesis", ""), 120)}
-
-## 镜头判断
-- **主透镜**：{lens_name} （置信度：{lens_confidence}，契合度：{fit_score}）
-- **案例视角**：{perspective_name} （置信度：{perspective_confidence}）
-
-## 客户价值链与弱链
-
-{diagram}
-
-**弱链定位**：第 {weak_step} 步「{weak_activity_zh}」—— {_clip(weak_rationale, 110)}
-
-## 推荐切入点（The Wedge）
-
-- **切什么**：{translations.get("activity_to_decouple") or primary.get("activity_to_decouple", "")}
-- **为什么**：{_clip(wedge_rationale, 150)}
-- **最大风险**：{_clip(translations.get("biggest_risk") or final.get("biggest_risk", ""), 110)}
-
-## 信心 & 关键缺口
-
-- **整体置信度**：{lens_confidence}；最终判断为「{_short(final.get("judgment"))}」。
-- **关键缺口**：
-  1. {_clip(translations.get("critic_1") or high_issues[0], 90)}
-  2. {_clip(translations.get("critic_2") or high_issues[1], 90)}
-  3. {_clip(translations.get("critic_3") or high_issues[2], 90)}
-
-## 6 个月后可回看的具体主张
-
-{falsifiable}
-
----
-完整英文报告见 [`final_report.md`](final_report.md)
-"""
+class MermaidLabelTranslation(BaseModel):
+    labels: list[str] = Field(default_factory=list)
 
 
-def _translation_fields(
-    final: dict[str, Any],
-    primary: dict[str, Any],
-    critic: dict[str, Any],
-    weak_link: dict[str, Any],
-    cvc: list[dict[str, Any]],
-) -> dict[str, str]:
-    issues = _high_issues(critic)
-    fields = {
-        "recommended_action": final.get("recommended_action")
-        or final.get("one_sentence_thesis", ""),
-        "weak_link_rationale": weak_link.get("rationale", ""),
-        "activity_to_decouple": primary.get("activity_to_decouple", ""),
-        "wedge_rationale": primary.get("why_customer_switches")
-        or primary.get("new_offering", ""),
-        "biggest_risk": final.get("biggest_risk", ""),
-        "falsifiable_claim": _falsifiable_claim(final),
-    }
-    for index, issue in enumerate(issues[:3], start=1):
-        fields[f"critic_{index}"] = issue
-    for activity in cvc:
-        activity_id = activity.get("id")
-        if activity_id:
-            fields[f"activity_{activity_id}"] = activity.get("activity", "")
-    return {key: str(value) for key, value in fields.items() if value}
+@dataclass(frozen=True)
+class ProtectedBlock:
+    placeholder: str
+    content: str
 
 
-def _translate_fields(fields: dict[str, str], client: LLMClient | None = None) -> dict[str, str]:
-    if not fields:
-        return {}
+def render_report_zh(english_markdown: str, client: LLMClient | None = None) -> str:
     client = client or get_default_client()
+    try:
+        protected_markdown, blocks = _protect_fenced_blocks(english_markdown, client)
+        translated = _translate_markdown_body(protected_markdown, client)
+        restored = _restore_blocks(translated, blocks)
+        return _set_frontmatter_language(restored).replace("…", "")
+    except Exception as exc:
+        LOGGER.warning("Chinese report translation failed; using English fallback: %s", exc)
+        return _fallback_report(english_markdown)
+
+
+def _protect_fenced_blocks(markdown: str, client: LLMClient) -> tuple[str, list[ProtectedBlock]]:
+    blocks: list[ProtectedBlock] = []
+
+    def replace(match: re.Match[str]) -> str:
+        index = len(blocks)
+        content = match.group(0)
+        if content.startswith("```mermaid"):
+            content = _translate_mermaid_labels(content, client)
+        placeholder = f"<<<MERMAID_BLOCK_{index}>>>"
+        if not content.startswith("```mermaid"):
+            placeholder = f"<<<CODE_BLOCK_{index}>>>"
+        blocks.append(ProtectedBlock(placeholder=placeholder, content=content))
+        return placeholder
+
+    return FENCED_BLOCK_RE.sub(replace, markdown), blocks
+
+
+def _translate_markdown_body(markdown: str, client: LLMClient) -> str:
     prompt = (
-        "Translate this JSON object from English to concise business Chinese. "
-        "Keep the same keys. Return JSON as {\"translations\": {...}}. "
-        "Do not add explanation.\n\n"
-        + json.dumps(fields, ensure_ascii=False)
+        "You are translating a strategic analysis report from English to Simplified "
+        "Chinese.\n"
+        "Hard rules:\n"
+        "1. Preserve ALL markdown structure verbatim: # / ## / ### levels, > callout "
+        "markers, | table delimiters, <details> / <summary> tags, code fences (```), "
+        "[!important] [!note] tags.\n"
+        "2. DO NOT translate placeholder tokens like <<<MERMAID_BLOCK_0>>> or "
+        "<<<CODE_BLOCK_0>>>.\n"
+        "3. DO NOT translate URLs, file paths, evidence IDs (E1, E2, S0, S1, F1, F2), "
+        "or technical identifiers; translate adjacent prose but keep identifiers in "
+        "English in parentheses when helpful.\n"
+        "4. Translate every prose sentence completely. Do not abbreviate, summarize, "
+        "or use ellipsis (... or …). The output must be the same length-class as input.\n"
+        "5. Keep numbers, percentages, and currency amounts as-is.\n"
+        "6. Section heading translations should be natural Chinese, e.g. Executive "
+        "Summary -> 执行摘要, Weak Link -> 薄弱环节, Decoupling Strategy -> 解构策略, "
+        "Recoupling Risk -> 再耦合风险, Critic Review -> 批判性复审.\n"
+        "Output the full translated markdown, nothing else: no preamble, no commentary.\n\n"
+        "MARKDOWN:\n"
+        f"{markdown}"
+    )
+    text_method = getattr(client, "text", None)
+    if callable(text_method):
+        translated = text_method(
+            role="smart",
+            system="Translate markdown reports into complete Simplified Chinese.",
+            user=prompt,
+            reasoning_effort="low",
+            max_tokens=16000,
+        )
+        translated = _unwrap_markdown_payload(str(translated))
+        if not translated.strip():
+            raise RuntimeError("translation returned empty markdown")
+        return translated
+    result = client.structured(
+        role="smart",
+        system="Translate markdown reports into complete Simplified Chinese.",
+        user=prompt,
+        schema=MarkdownTranslation,
+        reasoning_effort="low",
+        max_tokens=16000,
+        max_retries=0,
+    )
+    if not result.markdown.strip():
+        raise RuntimeError("translation returned empty markdown")
+    return result.markdown
+
+
+def _translate_mermaid_labels(block: str, client: LLMClient) -> str:
+    labels = [match.group(2) for match in NODE_LABEL_RE.finditer(block)]
+    if not labels:
+        return block
+    prompt = (
+        "Translate these Mermaid diagram node labels to concise Simplified Chinese. "
+        "Preserve embedded HTML tags such as <b>, </b>, <br/>, and <i>. "
+        "Do not translate node IDs, because they are not included here. "
+        "Return JSON as {\"labels\": [ ... ]} with the same order and length.\n\n"
+        + json.dumps(labels, ensure_ascii=False)
     )
     try:
-        batch = client.structured(
+        result = client.structured(
             role="smart",
-            system="You translate executive strategy prose into concise Simplified Chinese.",
+            system="Translate Mermaid node labels while preserving label markup.",
             user=prompt,
-            schema=TranslationBatch,
-            max_tokens=1500,
+            schema=MermaidLabelTranslation,
+            max_tokens=2500,
             max_retries=0,
         )
-        return batch.translations
     except Exception as exc:
-        LOGGER.warning("Chinese digest translation failed; using English fallback: %s", exc)
-        return {}
+        LOGGER.warning("Mermaid label translation failed; keeping English labels: %s", exc)
+        return block
+    if len(result.labels) != len(labels):
+        LOGGER.warning(
+            "Mermaid label translation count mismatch; keeping English labels: %s != %s",
+            len(result.labels),
+            len(labels),
+        )
+        return block
+    translated_iter = iter(result.labels)
+    return NODE_LABEL_RE.sub(
+        lambda match: f'{match.group(1)}{next(translated_iter)}{match.group(3)}',
+        block,
+    )
 
 
-def _short(value: Any) -> str:
-    text = str(value or "")
-    return SHORT_TRANSLATIONS.get(text, text or "未知")
+def _restore_blocks(markdown: str, blocks: list[ProtectedBlock]) -> str:
+    for block in blocks:
+        markdown = markdown.replace(block.placeholder, block.content)
+    return markdown
 
 
-def _as_dict(value: Any) -> dict[str, Any]:
-    if value is None:
-        return {}
-    if isinstance(value, BaseModel):
-        return value.model_dump(mode="json")
-    if isinstance(value, dict):
-        return value
-    return {}
-
-
-def _top_weak_link(context: dict[str, Any]) -> dict[str, Any]:
-    weak_links = _as_dict(context.get("weak_links"))
-    ranked = weak_links.get("ranked_weak_links")
-    if isinstance(ranked, list) and ranked:
-        return _as_dict(ranked[0])
-    return {"rationale": str(context.get("weak_link") or "")}
-
-
-def _activity_for_id(cvc: list[dict[str, Any]], activity_id: str | None) -> dict[str, Any]:
-    if not activity_id:
-        return {}
-    return next((item for item in cvc if item.get("id") == activity_id), {})
-
-
-def _high_issues(critic: dict[str, Any]) -> list[str]:
-    return [
-        str(issue.get("issue", ""))
-        for issue in critic.get("citation_issues", [])
-        if issue.get("severity") == "high" and issue.get("issue")
-    ]
-
-
-def _falsifiable_claim(final: dict[str, Any]) -> str:
-    actions = final.get("staged_actions") or []
-    if actions:
-        return f"到 2026-11-09，{actions[0]}"
-    return "（无明确可证伪主张）"
-
-
-def _clip(text: str, limit: int) -> str:
-    text = " ".join(str(text or "").split())
-    if len(text) <= limit:
+def _unwrap_markdown_payload(text: str) -> str:
+    stripped = text.strip()
+    if not stripped.startswith("{"):
         return text
-    return text[: limit - 1].rstrip() + "…"
+    try:
+        payload = json.loads(stripped)
+    except json.JSONDecodeError:
+        return text
+    if isinstance(payload, dict) and isinstance(payload.get("markdown"), str):
+        return payload["markdown"]
+    return text
+
+
+def _set_frontmatter_language(markdown: str) -> str:
+    if not markdown.startswith("---\n"):
+        return f"---\nlanguage: zh\n---\n\n{markdown}"
+    end = markdown.find("\n---", 4)
+    if end == -1:
+        return f"---\nlanguage: zh\n---\n\n{markdown}"
+    frontmatter = markdown[4:end].splitlines()
+    body = markdown[end + 4 :]
+    replaced = False
+    next_frontmatter: list[str] = []
+    for line in frontmatter:
+        if line.startswith("language:"):
+            next_frontmatter.append("language: zh")
+            replaced = True
+        else:
+            next_frontmatter.append(line)
+    if not replaced:
+        next_frontmatter.append("language: zh")
+    return "---\n" + "\n".join(next_frontmatter).rstrip() + "\n---" + body
+
+
+def _fallback_report(english_markdown: str) -> str:
+    banner = (
+        "> ⚠️ 自动翻译失败，以下为英文原文 "
+        "(translation failed; English fallback)\n\n"
+    )
+    markdown = _set_frontmatter_language(english_markdown)
+    if markdown.startswith("---\n"):
+        end = markdown.find("\n---", 4)
+        if end != -1:
+            return markdown[: end + 4] + "\n\n" + banner + markdown[end + 4 :].lstrip()
+    return banner + markdown

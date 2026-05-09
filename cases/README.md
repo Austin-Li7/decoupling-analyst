@@ -6,9 +6,9 @@ Cases completed toward 10-case target: 3 / 10
 
 | Company | Sector | Run date | Sources kept | Most surprising finding (1 line) | Confidence (1-5) | Total cost (USD) | Link to folder |
 |---|---|---:|---:|---|---:|---:|---|
-| Notion | US B2B/prosumer SaaS | 2026-05-09 | 11/13 | Grounded baseline kept 11 Tavily-retrieved sources; human review still pending. | _ | $0.35 | [_archive/notion-grounded-20260509/](_archive/notion-grounded-20260509/) |
-| Liquid Death | US consumer brand | 2026-05-09 | 13/14 | Grounded baseline kept 13 retrieved sources for a consumer-brand case; human review still pending. | _ | $0.27 | [_archive/liquid-death-grounded-20260509/](_archive/liquid-death-grounded-20260509/) |
-| Nubank | Brazilian fintech | 2026-05-09 | 9/11 | Grounded baseline kept 9 retrieved sources in a non-US fintech case; human review still pending. | _ | $0.30 | [_archive/nubank-grounded-20260509/](_archive/nubank-grounded-20260509/) |
+| Notion | US B2B/prosumer SaaS | 2026-05-09 | 11/13 | Grounded baseline kept 11 Tavily-retrieved sources; human review still pending. | _ | $0.46 | [_archive/notion-grounded-20260509/](_archive/notion-grounded-20260509/) |
+| Liquid Death | US consumer brand | 2026-05-09 | 13/14 | Grounded baseline kept 13 retrieved sources for a consumer-brand case; human review still pending. | _ | $0.38 | [_archive/liquid-death-grounded-20260509/](_archive/liquid-death-grounded-20260509/) |
+| Nubank | Brazilian fintech | 2026-05-09 | 9/11 | Grounded baseline kept 9 retrieved sources in a non-US fintech case; human review still pending. | _ | $0.42 | [_archive/nubank-grounded-20260509/](_archive/nubank-grounded-20260509/) |
 
 ## v0 — ungrounded baselines (do not count toward path-C 10-case target)
 
