@@ -1,0 +1,83 @@
+{
+  "company_name": "Trov",
+  "run_id": "trov-20260509-033633",
+  "searched_urls_count": 0,
+  "report_cited_urls_count": 8,
+  "union_pre_liveness_count": 13,
+  "report_urls_in_search_results": 0,
+  "report_urls_only_in_report": 8,
+  "report_only_url_ratio": 1.0,
+  "searched_urls": [],
+  "research_sources_urls": [
+    "https://praxie.com/decouple-the-value-chain-to-drive-digital-disruption/",
+    "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "https://www.inc.com/soren-kaplan/want-digital-disruption-decouple-customer-experience.html",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X",
+    "https://books.google.com/books/about/Unlocking_the_Customer_Value_Chain.html?id=xSdcDwAAQBAJ",
+    "https://content.martechday.com/state-of-martech-2026.pdf",
+    "https://som.yale.edu/sites/default/files/2025-05/SCOTT-MORTON_Digital_Platform_Regulation_pages.pdf",
+    "https://www.samenacouncil.org/samena_trends/files/SAMENA_Trends_July_2018.pdf",
+    "https://intuitionlabs.ai/articles/chatgpt-atlas-openai-browser",
+    "https://www.omniaretail.com/blog",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/B07MWBS4WS",
+    "https://www.youtube.com/watch?v=ea-XaLHfpS4",
+    "https://www.hks.harvard.edu/centers/mrcbg/programs/growthpolicy/unlocking-customer-value-chain-how-decoupling-drives-consumer"
+  ],
+  "visited_urls_from_retriever": [],
+  "prefetched_url_count": 13,
+  "report_cited_urls": [
+    {
+      "url": "https://www.hbs.edu/faculty/Pages/item.aspx?num=55549",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.trov.com",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.lemonade.com",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.covergenius.com",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.zego.com",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.slice.is",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.allianz.com",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.axa.com",
+      "provenance": "only_in_report"
+    }
+  ],
+  "post_liveness_kept_urls": [
+    "https://praxie.com/decouple-the-value-chain-to-drive-digital-disruption/",
+    "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X",
+    "https://books.google.com/books/about/Unlocking_the_Customer_Value_Chain.html?id=xSdcDwAAQBAJ",
+    "https://content.martechday.com/state-of-martech-2026.pdf",
+    "https://som.yale.edu/sites/default/files/2025-05/SCOTT-MORTON_Digital_Platform_Regulation_pages.pdf",
+    "https://www.samenacouncil.org/samena_trends/files/SAMENA_Trends_July_2018.pdf",
+    "https://intuitionlabs.ai/articles/chatgpt-atlas-openai-browser",
+    "https://www.omniaretail.com/blog",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/B07MWBS4WS",
+    "https://www.youtube.com/watch?v=ea-XaLHfpS4",
+    "https://www.hks.harvard.edu/centers/mrcbg/programs/growthpolicy/unlocking-customer-value-chain-how-decoupling-drives-consumer"
+  ],
+  "post_liveness_dropped_urls": [
+    {
+      "url": "https://www.inc.com/soren-kaplan/want-digital-disruption-decouple-customer-experience.html",
+      "status": "403",
+      "was_in_search_results": true
+    }
+  ]
+}

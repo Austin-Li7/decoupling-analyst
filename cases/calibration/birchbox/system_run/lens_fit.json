@@ -1,0 +1,28 @@
+{
+  "primary_type": "decoupling",
+  "secondary_types": [
+    "new_market"
+  ],
+  "confidence": "high",
+  "reasoning": "The evidence explicitly frames Birchbox as a textbook example of Teixeira-style decoupling: it separated discovery and evaluation (sampling) from the incumbent brick-and-mortar retail bundle (E3, E12). The core customer-value-chain mapping provided shows the traditional stages (discovery, evaluation, purchase, usage, repurchase) (E6–E11) and documents how Birchbox replaced in-store discovery/evaluation with curated monthly sample delivery (E2, E12). That pattern—serving one weak-link activity (evaluation/discovery) better and independently of the incumbent bundle—is the defining signature of decoupling under the MGT470 framework (E3). Secondary new-market characteristics are supported because the subscription-sampling model created a new recurring delivery channel and habit for discovery that was not prominent in pre-existing retail formats (E2, E12).",
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12"
+  ],
+  "decoupling_fit_score": 0.95,
+  "recommended_report_mode": "full_decoupling",
+  "caveats": [
+    "Evidence supplied is medium quality and largely descriptive; there is limited hard data here on unit economics, CAC/CLV, or post-entry competitive dynamics (e.g., recoupling via incumbents). Mark these areas as research priorities.",
+    "Public/private status is unknown (E1); financial-first analysis cannot be robustly performed without financials.",
+    "AI/digital leverage and current threat of recoupling (incumbent responses, acquisitions, native retail sampling) are not covered in the evidence and should be investigated before tactical recommendations.",
+    "The characterization relies on secondary synthesis (E2–E5); corroborating primary sources (founder statements, investor decks, customer metrics) would raise confidence further."
+  ]
+}

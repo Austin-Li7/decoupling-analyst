@@ -1,0 +1,58 @@
+{
+  "primary_decoupling": {
+    "activity_to_decouple": "A2: Research and compare insurance options (coverage, price, terms, provider trust)",
+    "from_incumbent_bundle": "Traditional insurers and broker/distributor flows that bundle education/comparison with the sales/activation step, plus fragmented customer self-research across multiple provider sites and documents (E8).",
+    "customer_pain": "Researching and comparing policies requires customers to interpret complex coverage/terms, reconcile options across providers, and build trust before purchase—work that is time-consuming and cognitively heavy in the insurance CVC (E8).",
+    "new_offering": "Launch an embedded “Coverage Explainer + Comparator” SDK/API that partners can drop into their app checkout: users answer a few questions, then receive plain-language coverage summaries and side-by-side comparisons across available embedded options, with contextual recommendations powered by automation/AI. This is a focused decoupling wedge consistent with Teixeira’s notion of “peeling away a portion of the customer’s value chain” (books/unlocking-the-customer-value-chain-chapter-1.md) while improving a single weak-link activity (E10, E11).",
+    "why_customer_switches": "From the customer POV: “I can understand what I’m buying and pick the right protection inside the app I’m already using—without hunting across multiple insurer pages or deciphering policy language—and I still complete purchase in the same partner flow” (E7, E8, E11).",
+    "cheaper_faster_easier": [
+      "faster",
+      "easier"
+    ],
+    "evidence_ids": [
+      "E8",
+      "E10",
+      "E11",
+      "E7",
+      "E6"
+    ]
+  },
+  "do_not_decouple": [
+    {
+      "activity": "A6: File a claim and track resolution; then renew/continue or exit coverage",
+      "reason": "Avoid making claims handling the decoupling wedge: it is operationally heavy and deeply tied to carrier processes; pushing into this too early increases delivery risk and can distract from Trov’s partner-integration pivot (E6, E7, E8).",
+      "evidence_ids": [
+        "E6",
+        "E7",
+        "E8"
+      ]
+    },
+    {
+      "activity": "A3: Purchase/activate coverage at the moment of need (on-demand or embedded)",
+      "reason": "Do not lead with unbundling/owning the full purchase/activation step end-to-end; Trov’s transition objective is to scale via embedded partner integrations, not to rebuild a standalone DTC checkout that competes with partner-native purchase flows (E6, E7, E9).",
+      "evidence_ids": [
+        "E6",
+        "E7",
+        "E9"
+      ]
+    },
+    {
+      "activity": "A4: Onboard and set up the policy (confirm identity/item details, receive policy issuance and documentation)",
+      "reason": "Avoid making onboarding/issuance the initial wedge because it is more integration-dependent with underlying insurer issuance workflows; it should be sequenced after discovery/comparison proves conversion lift within partner ecosystems (E7, E8, E11).",
+      "evidence_ids": [
+        "E7",
+        "E8",
+        "E11"
+      ]
+    },
+    {
+      "activity": "A5: Manage coverage over time (turn on/off, adjust coverage, monitor protection, handle premium payments where applicable)",
+      "reason": "Do not unbundle premium billing/payment ownership early; while Trov has strength in digital “Use & Management” from its original model, expanding immediately into payment rails and ongoing premium collection adds complexity that can dilute the focused decoupling wedge (E8, E12, E6).",
+      "evidence_ids": [
+        "E8",
+        "E12",
+        "E6"
+      ]
+    }
+  ]
+}

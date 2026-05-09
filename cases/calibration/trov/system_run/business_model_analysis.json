@@ -1,0 +1,38 @@
+{
+  "value_creation": "The proposed decoupling targets the “research/compare” step in the insurance Customer Value Chain—helping users understand coverage, compare options, and choose within the partner app checkout (E8). This is consistent with Teixeira’s idea of “decoupling”/“peeling away a portion of the customer’s value chain” (books/unlocking-the-customer-value-chain-chapter-1.md) by delivering a better experience on one weak activity without requiring users to change the rest of the workflow (E10, E11, E4). In Trov’s pivot context, embedding a Coverage Explainer + Comparator SDK can increase customer comprehension and reduce decision friction at the exact moment insurance is offered inside partner ecosystems (E6, E7, E9).",
+  "value_capture": "Value capture would primarily come from B2B2C partner monetization: (1) a recurring platform/SaaS fee for the SDK/API + support, (2) usage-based fees per quote/session/coverage explanation rendered, and/or (3) a revenue share/take-rate tied to policies bound through the embedded flow (aligned to Trov’s move toward partner integrations and embedded insurance arrangements) (E6, E7). The business becomes viable if partner-level CLV (gross profit per partner over contract life) is meaningfully larger than fully-loaded partner CAC (enterprise sales + solutions engineering + ongoing support). As an assumption to validate (not in evidence), target CLV_partner ≥ 3× CAC_partner because sales cycles and integrations are likely expensive in embedded insurance (E6, E7).",
+  "value_erosion_remaining": "Even if the comparator removes confusion at selection time, customers can still face major erosion later in the chain—onboarding, ongoing policy management, claims handling, and renewal/exit are separate friction points not solved by a compare/explain wedge (E8). Also, because Trov historically focused on purchase/use/management/claims via a digital experience, leaving post-purchase pain unaddressed may limit end-user satisfaction and partner renewal unless Trov can connect the explainer to downstream policy/claims experiences through its embedded tech stack (E7, E8, E12).",
+  "payer": "Primarily the partner platforms embedding insurance (B2B2C payer), with end consumers indirectly paying via premiums (and potentially paying directly in any remaining consumer on-demand flows) (E6, E7, E12, E13).",
+  "pricing_model": "Partner-negotiated embedded pricing, combining: subscription (per partner / per product line) + usage-based (per quote/explanation/session) and/or performance-based revenue share per bound policy (E6, E7, E13).",
+  "cac_risks": [
+    "Enterprise/B2B2C CAC risk: selling to and contracting with partner platforms can require long sales cycles and higher fully loaded acquisition cost (sales + legal + compliance), even if end-user distribution is “free” through the partner (E6, E7).",
+    "Integration-heavy CAC risk: each new partner may need bespoke implementation, QA, and ongoing maintenance; if integration cost is high, payback period lengthens and CLV_partner must be very large (E7).",
+    "Proof-of-value CAC risk: partners may demand evidence that the explainer/comparator improves conversion, reduces abandonment, or reduces complaints; if uplift is not clearly attributable, willingness to pay compresses (E7).",
+    "Channel concentration risk: if a small number of platforms drive most volume, Trov’s customer acquisition becomes dependent on a few negotiations, weakening bargaining power and increasing churn risk (E6, E7).",
+    "Recoupling/feature replication risk: incumbents/insurance carriers or larger embedded-insurance platforms can add similar “explain/compare” UX natively and pressure pricing, raising the bar for differentiation (E10, E11)."
+  ],
+  "ltv_drivers": [
+    "Partner volume scaling: higher transaction volume through embedded flows increases usage-based fees and revenue-share base, improving CLV_partner (E6, E7).",
+    "Multi-product expansion within the same partner: once embedded in the partner experience, Trov can extend from the awareness/purchase moments into more of the insurance CVC (e.g., purchase plus downstream management/claims interfaces), increasing account expansion and retention (E7, E8, E9).",
+    "Switching costs from technical embed: once the SDK/API and analytics are integrated, partner switching friction rises, supporting longer customer lifetime and higher CLV_partner (E7).",
+    "Data/learning loop (assumption to validate): better explanations and recommendations could improve over time as usage grows, raising conversion and partner ROI, which supports renewals and higher pricing power (E7, E11)."
+  ],
+  "unit_economics_concerns": [
+    "CLV vs CAC must flip from the original low-frequency consumer on-demand dynamic to partner-level economics; viability depends on whether embedded partnerships produce sufficiently high CLV_partner to cover enterprise CAC_partner and integration costs (E6, E7, E12, E13).",
+    "Gross margin sensitivity to service load: if the explainer/comparator requires significant human support (sales engineering, compliance reviews, partner-specific content maintenance), margins may be lower than typical software expectations (E7).",
+    "Variable cost per decision: if the solution relies on automation/AI to generate explanations and comparisons (as proposed), inference and monitoring costs must stay small relative to per-usage pricing; otherwise usage-based monetization can become margin-dilutive (assumption to validate; not quantified in evidence) (E11).",
+    "Value capture boundary: because Trov is embedding into partner experiences, it may not fully own the end-customer relationship; if partners control UX placement and data, Trov’s ability to raise prices or cross-sell may be constrained, lowering LTV (E7).",
+    "Recoupling pressure: if insurers/partners view “coverage explanation” as a commodity UX, pricing power may collapse toward cost-plus, forcing Trov to expand into higher-responsibility layers (e.g., transaction intermediation) before it is ready—creating execution risk (E10, E11)."
+  ],
+  "evidence_ids": [
+    "E4",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

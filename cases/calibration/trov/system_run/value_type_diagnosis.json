@@ -1,0 +1,86 @@
+{
+  "activities": [
+    {
+      "activity_id": "A1",
+      "value_type": "create",
+      "reasoning": "Recognizing a need for item- or experience-tied protection is value-creating because it surfaces exposure and motivates risk reduction; Trov’s move into embedded contexts increases this awareness inside partner flows (E6, E9, E8).",
+      "money_cost": 1,
+      "time_cost": 2,
+      "effort_cost": 2,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E6",
+        "E9",
+        "E8"
+      ]
+    },
+    {
+      "activity_id": "A2",
+      "value_type": "create",
+      "reasoning": "Research and comparison help customers determine coverage vs. cost and are therefore value-creating; embedded offers and traditional comparison channels both play this role as described in the evidence (E8, E9).",
+      "money_cost": 2,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 2,
+      "evidence_ids": [
+        "E8",
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "value_type": "capture",
+      "reasoning": "The purchase/activation step is where the insurer or embedded partner captures payment and contracts with the customer; Trov’s original on‑demand purchase flow and embedded integrations specifically targeted this transaction point (E5, E7, E12, E9).",
+      "money_cost": 4,
+      "time_cost": 2,
+      "effort_cost": 2,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E5",
+        "E7",
+        "E12",
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "value_type": "erode",
+      "reasoning": "Onboarding (identity/item confirmation and issuance) tends to introduce friction and potential delays, eroding customer value unless seamless; Trov and partner flows aim to streamline this but it remains a distinct workflow step (E8, E7).",
+      "money_cost": 2,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E8",
+        "E7"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "value_type": "create",
+      "reasoning": "Ongoing management (turning coverage on/off, adjusting limits, payments) creates value by aligning protection to usage and reducing unnecessary cost; Trov’s digital on‑demand and embedded management surfaces target this stage (E8, E12, E7).",
+      "money_cost": 3,
+      "time_cost": 2,
+      "effort_cost": 2,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E8",
+        "E12",
+        "E7"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "value_type": "erode",
+      "reasoning": "Filing a claim and awaiting resolution often imposes high time and effort costs and can reduce satisfaction; while Trov targeted claims in its model, claims remain a pain point affecting renewal decisions (E8, E12).",
+      "money_cost": 2,
+      "time_cost": 4,
+      "effort_cost": 4,
+      "satisfaction": 2,
+      "evidence_ids": [
+        "E8",
+        "E12"
+      ]
+    }
+  ]
+}

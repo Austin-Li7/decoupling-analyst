@@ -1,0 +1,132 @@
+{
+  "company_name": "OLX Brazil",
+  "research_summary": "# Teixeira-Style Digital Disruption Analysis of OLX Brazil ## Executive Summary This report provides a comprehensive Teixeira-style digital disruption analysis of OLX Brazil, the leading online classifieds platform in Brazil. Applying Thales Teixeira’s framework of unlocking the customer value chain (CVC) through decoupling, this analysis systematically maps OLX Brazil’s value chain, identifies decoupling opportunities and weak links, evaluates monetization strategies, profiles key competitors, highlights customer pain points, and summarizes recent strategic moves. The findings indicate that OLX Brazil has successfully disrupted traditional classifieds by decoupling key customer activities, but faces ongoing challenges from evolving customer expectations, regulatory shifts, and intensifying competition from specialized and full-stack digital platforms. ## OLX Brazil: Company Overview OLX Brazil, a joint venture between Prosus (formerly Naspers) and Adevinta, is the country’s largest online classifieds marketplace, facilitating peer-to-peer transactions in categories such as real estate, autos, jobs, and general goods.",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "summaries.com / unlocking-the-customer-value-chain",
+      "url_or_path": "https://summaries.com/blog/unlocking-the-customer-value-chain",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "# Teixeira-Style Digital Disruption Analysis of OLX Brazil ## Executive Summary This report provides a comprehensive Teixeira-style digital disruption analysis of OLX Brazil, the leading online classifieds platform in Brazil."
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "www.amazon.com / B07MWBS4WS",
+      "url_or_path": "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/B07MWBS4WS",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "Applying Thales Teixeira’s framework of unlocking the customer value chain (CVC) through decoupling, this analysis systematically maps OLX Brazil’s value chain, identifies decoupling opportunities and weak links, evaluates monetization strategies, profiles key competitors, highlights customer pain points, and summarizes recent strategic moves."
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "www.youtube.com / watch",
+      "url_or_path": "https://www.youtube.com/watch?v=m6uGXFN3E18",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "The findings indicate that OLX Brazil has successfully disrupted traditional classifieds by decoupling key customer activities, but faces ongoing challenges from evolving customer expectations, regulatory shifts, and intensifying competition from specialized and full-stack digital platforms."
+      ]
+    },
+    {
+      "id": "S4",
+      "title": "www.amazon.com / 152476308X",
+      "url_or_path": "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "## OLX Brazil: Company Overview OLX Brazil, a joint venture between Prosus (formerly Naspers) and Adevinta, is the country’s largest online classifieds marketplace, facilitating peer-to-peer transactions in categories such as real estate, autos, jobs, and general goods."
+      ]
+    },
+    {
+      "id": "S5",
+      "title": "4thoption.substack.com / 91thales-teixeira-decoupling-the-d08",
+      "url_or_path": "https://4thoption.substack.com/p/91thales-teixeira-decoupling-the-d08",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "As of 2025, OLX Brazil boasts over 60 million monthly active users and more than 7 million new listings per month, with a dominant presence in the C2C (consumer-to-consumer) and B2C (business-to-consumer) segments ([Prosus Annual Report, 2025](https://www.prosus.com/investors/reports/annual-reports/))."
+      ]
+    },
+    {
+      "id": "S6",
+      "title": "www.youtube.com / watch",
+      "url_or_path": "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "## Customer Value Chain (CVC) Mapping Applying Teixeira’s framework, the customer value chain for buying and selling used goods in Brazil traditionally involved the following steps: | Step | Traditional Activity (Pre-Digital) | OLX Brazil’s Digital Solution | |------|------------------------------------|------------------------------| | 1 | Awareness of need | Search and browse listings | | 2 | Search for products | Digital search/filter tools | | 3 | Product discovery | Algorithmic recommendations | | 4 | Seller identification | Verified profiles, ratings | | 5 | Price comparison | Transparent listing prices | | 6 | Negotiation | In-app messaging/chat | | 7 | Transaction/payment | Offline/online arrangements | | 8 | Delivery/pickup | User-coordinated logistics | | 9 | After-sales support | Limited (community forums) | **Value Creation:** Steps 1-6 (efficient matching, search, and negotiation)."
+      ]
+    },
+    {
+      "id": "S7",
+      "title": "www.hks.harvard.edu / unlocking-customer-value-chain-how-decoupling-drives-consumer",
+      "url_or_path": "https://www.hks.harvard.edu/centers/mrcbg/programs/growthpolicy/unlocking-customer-value-chain-how-decoupling-drives-consumer",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "**Value Charging:** Monetization at listing, premium placement, and transaction stages."
+      ]
+    },
+    {
+      "id": "S8",
+      "title": "www.eoschool.io / thales-teixeira-decoupling",
+      "url_or_path": "https://www.eoschool.io/thales-teixeira-decoupling",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "**Value Eroding:** Pain points in trust, payment security, and logistics."
+      ]
+    },
+    {
+      "id": "S9",
+      "title": "www.youtube.com / watch",
+      "url_or_path": "https://www.youtube.com/watch?v=ea-XaLHfpS4",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "## Decoupling and Digital Disruption ### Decoupling in the Customer Value Chain According to Teixeira, digital disruptors succeed by decoupling specific customer activities from the full-service value chain, offering superior, focused solutions."
+      ]
+    },
+    {
+      "id": "S10",
+      "title": "www.sorenkaplan.com / decouple-the-value-chain-to-drive-digital-disruption",
+      "url_or_path": "https://www.sorenkaplan.com/decouple-the-value-chain-to-drive-digital-disruption/",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "OLX Brazil’s disruption can be traced to its decoupling of the following activities: - **Search & Discovery:** OLX unbundled the search process from traditional newspaper classifieds and physical bulletin boards, offering a digital, searchable, and filterable platform."
+      ]
+    },
+    {
+      "id": "S11",
+      "title": "www.amazon.com / B07D6BD87K",
+      "url_or_path": "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling-ebook/dp/B07D6BD87K",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "**Matching & Negotiation:** By enabling direct messaging and negotiation, OLX decoupled the need for intermediaries or brokers."
+      ]
+    }
+  ],
+  "open_questions": [
+    "Validate the most strategically important claims against primary sources.",
+    "Check whether recent customer pain points reflect durable behavior change."
+  ],
+  "conflicts": []
+}

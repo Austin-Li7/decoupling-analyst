@@ -1,0 +1,84 @@
+{
+  "activities": [
+    {
+      "activity_id": "A1",
+      "value_type": "create",
+      "reasoning": "Recognizing a need is a customer-created step that initiates the chain and provides the intent signal for later discovery and trial (E6, E11). Birchbox and retailers do not 'charge' for need recognition; it mainly enables downstream actions (E12).",
+      "money_cost": 1,
+      "time_cost": 2,
+      "effort_cost": 2,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E6",
+        "E11"
+      ]
+    },
+    {
+      "activity_id": "A2",
+      "value_type": "create",
+      "reasoning": "Discovery is value-creating for customers by generating a short list of promising products without exhaustive search; Birchbox explicitly decoupled and improved discovery versus in-store discovery (E6, E12, E2, E11).",
+      "money_cost": 1,
+      "time_cost": 2,
+      "effort_cost": 2,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E6",
+        "E12",
+        "E2",
+        "E11"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "value_type": "create",
+      "reasoning": "Evaluation via samples reduces uncertainty and avoids wasting money on wrong full-size purchases; Birchbox's at-home sampling is a core decoupled value proposition that enhances evaluation vs. in-store testing (E7, E12, E2).",
+      "money_cost": 2,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E7",
+        "E12",
+        "E2"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "value_type": "capture",
+      "reasoning": "Purchasing full-size products is where retailers and brands extract payment and therefore capture value; traditional incumbents and online channels control this transaction stage (E8, E11).",
+      "money_cost": 4,
+      "time_cost": 2,
+      "effort_cost": 2,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E8",
+        "E11"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "value_type": "create",
+      "reasoning": "In-use assessment creates customer value by confirming efficacy and fit over time; this is primarily a self-managed activity that determines satisfaction and future repurchase (E9).",
+      "money_cost": 2,
+      "time_cost": 3,
+      "effort_cost": 2,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "value_type": "capture",
+      "reasoning": "Repurchase is a continued capture point where retailers and brands collect recurring revenue and where customers settle into routines that incumbents historically owned (E10, E11).",
+      "money_cost": 4,
+      "time_cost": 1,
+      "effort_cost": 1,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E10",
+        "E11"
+      ]
+    }
+  ]
+}

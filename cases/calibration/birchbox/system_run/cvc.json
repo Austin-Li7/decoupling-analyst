@@ -1,0 +1,77 @@
+{
+  "customer_segment": "Individual consumers who want to discover and evaluate beauty products (often before committing to full-size purchases) via samples and retail channels",
+  "end_activity": "Repurchase a preferred full-size product (or switch/exit and restart discovery for a new product need)",
+  "activities": [
+    {
+      "id": "A1",
+      "step": 1,
+      "activity": "Recognize a need or desire to try a new beauty product (e.g., skincare, makeup, haircare)",
+      "current_provider": "self",
+      "customer_goal": "Decide what category/problem to address and whether to look for something new",
+      "evidence_ids": [
+        "E6",
+        "E11"
+      ]
+    },
+    {
+      "id": "A2",
+      "step": 2,
+      "activity": "Discover candidate products and brands",
+      "current_provider": "Brick-and-mortar beauty retailers and major beauty brands (in-store displays/advertising/word-of-mouth) and Birchbox (curated monthly discovery)",
+      "customer_goal": "Generate a short list of promising products to consider without spending excessive time searching",
+      "evidence_ids": [
+        "E6",
+        "E11",
+        "E12",
+        "E2"
+      ]
+    },
+    {
+      "id": "A3",
+      "step": 3,
+      "activity": "Evaluate products by trying them before buying full-size",
+      "current_provider": "Beauty retailers (in-store testing) and Birchbox (at-home sample trial via delivered boxes)",
+      "customer_goal": "Reduce uncertainty about fit (shade, feel, results) and avoid wasting money on the wrong full-size product",
+      "evidence_ids": [
+        "E7",
+        "E12",
+        "E2"
+      ]
+    },
+    {
+      "id": "A4",
+      "step": 4,
+      "activity": "Purchase full-size product(s)",
+      "current_provider": "Beauty retailers and brands (in-store or online purchasing)",
+      "customer_goal": "Acquire the chosen product in the right size/variant at an acceptable price and convenience",
+      "evidence_ids": [
+        "E8",
+        "E11"
+      ]
+    },
+    {
+      "id": "A5",
+      "step": 5,
+      "activity": "Use the product at home and assess satisfaction over time",
+      "current_provider": "self",
+      "customer_goal": "Achieve the desired beauty outcome and confirm the product is worth continuing",
+      "evidence_ids": [
+        "E9"
+      ]
+    },
+    {
+      "id": "A6",
+      "step": 6,
+      "activity": "Repurchase favorites (and restart discovery/evaluation when needs change)",
+      "current_provider": "Beauty retailers and brands (store/online) and the customer’s own routine",
+      "customer_goal": "Maintain a reliable set of products while minimizing future search and trial effort",
+      "evidence_ids": [
+        "E10",
+        "E11"
+      ]
+    }
+  ],
+  "profile_vs_cvc_conflicts": [
+    "The company profile centers Birchbox as the solution for discovery/evaluation, but the customer value chain shows that full-size purchase and repurchase are typically completed through retailers/brands (not the subscription box itself), meaning Birchbox addresses only a subset of the end-to-end job-to-be-done (E8, E10, E11, E12)."
+  ]
+}

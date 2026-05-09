@@ -1,0 +1,155 @@
+{
+  "run_id": "birchbox-20260509-032906",
+  "created_at": "2026-05-09T03:29:06-07:00",
+  "input": {
+    "analysis_goal": "investment_judgment",
+    "company_name": "Birchbox",
+    "ticker": "",
+    "website": "",
+    "files": [],
+    "urls": [],
+    "user_question": "",
+    "output_style": "professional_obsidian_note",
+    "include_financial_verification": false
+  },
+  "artifacts": {
+    "research_brief": "research_brief.json",
+    "cost_summary": "cost_summary.json",
+    "evidence_store": "evidence_store.json",
+    "company_profile": "company_profile.json",
+    "lens_fit": "lens_fit.json",
+    "case_perspective": "case_perspective.json",
+    "cvc": "cvc.json",
+    "value_type_diagnosis": "value_type_diagnosis.json",
+    "weak_link_analysis": "weak_link_analysis.json",
+    "decoupling_strategy": "decoupling_strategy.json",
+    "business_model_analysis": "business_model_analysis.json",
+    "competitive_response": "competitive_response.json",
+    "final_judgment": "final_judgment.json",
+    "critic_review": "critic_review.json",
+    "final_report": "final_report.md",
+    "final_report_zh": "final_report_zh.md"
+  },
+  "modules": [
+    {
+      "module": "research",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:013df5b93be6520ad40d1e5812fa2a7c87a7984c7452a8c8fa6ba801e0f6bc29",
+      "output_path": "research_brief.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "evidence_store",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:20611aeab988a221a6643c1c5a9e85c0cfcc2a734d9d4ed5a81455ea292aadba",
+      "output_path": "evidence_store.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "company_profile",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:6eab65f20cf017e8aac6c7ffa580d4bfe208489313c6d0cb5110c26ff2a90af4",
+      "output_path": "company_profile.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "lens_fit",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:eb791b5373fc4989de9bbf9bfb3a9fceeecc9abb274dcc516fd881f33253d0ca",
+      "output_path": "lens_fit.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "case_perspective",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:f951a8874ee982d0f3c5af99bdf416e258b7eb1154d1a8629cb6ed14aa433fa4",
+      "output_path": "case_perspective.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "cvc",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:ac0632d1380e0aab51fbc6320a058f3ddad968385a2c441f7346ef2c5a86d477",
+      "output_path": "cvc.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "value_types",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:8bb7867a5ef2a5aa81aa5c5be0430b0cbacc80d0f60e86a3be93f2ffae10d052",
+      "output_path": "value_type_diagnosis.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "weak_links",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:3eb61bdd38d8a5663720cefc99877d3662f4a53c40b9bf5604c4a331dfebd4b2",
+      "output_path": "weak_link_analysis.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "decoupling",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:491668796373effeccc4174fbe65160a8039026a7701f83030c1d98bac602011",
+      "output_path": "decoupling_strategy.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "business_model",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:4bd05445d9dc1bf9c8dfc8480d24b3ae30a19ba9f63a861e55b2074f2db6eccd",
+      "output_path": "business_model_analysis.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "competitive_response",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:4bd05445d9dc1bf9c8dfc8480d24b3ae30a19ba9f63a861e55b2074f2db6eccd",
+      "output_path": "competitive_response.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "final_judgment",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:d4705c09f329c71f05ec2839e3e64b6df4d0fb16a73705c9248838a2e58e90aa",
+      "output_path": "final_judgment.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "critic",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:b2605529ddad2cfc83652e3964731615797d55cd185cbadf33141dfec642d263",
+      "output_path": "critic_review.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "markdown_renderer",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:cef362ae634ece73ce75ca8e1bc95d4a0634be66f9bd9844b1c2fac5d64646eb",
+      "output_path": "final_report.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "markdown_zh_renderer",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:4638297d5dafceb02fb92a37172691ce19df44d85675dd23e0a407c1329e819b",
+      "output_path": "final_report_zh.md",
+      "status": "ok",
+      "error": null
+    }
+  ]
+}

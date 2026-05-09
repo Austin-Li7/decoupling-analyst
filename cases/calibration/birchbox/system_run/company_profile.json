@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "Birchbox",
+    "website": "",
+    "ticker": "",
+    "public_or_private": "unknown",
+    "industry": "beauty subscription / retail",
+    "geography": [
+      "unknown"
+    ],
+    "stage": "unknown",
+    "description": "Birchbox is a pioneer in the beauty subscription box industry, founded in 2010, offering consumers curated samples of beauty products delivered to their homes (E2). The company is widely cited as a textbook example of digital disruption via decoupling of the discovery and evaluation stages of the beauty retail customer value chain (E3, E12). This profile summarizes the core offering and positioning synthesized from the provided brief (E4, E5)."
+  },
+  "customers": {
+    "primary_user": "individual consumers seeking curated beauty product discovery and samples (E2, E12)",
+    "buyer": "individual consumers purchasing subscription boxes for product discovery (E2, E12)",
+    "payer": "individual consumers who pay the monthly subscription fee (E12)",
+    "segments": [
+      "beauty product discoverers / sample seekers (E6, E12)",
+      "consumers who prefer curated monthly discovery vs. in-store testing (E6, E12)"
+    ]
+  },
+  "business_model": {
+    "value_proposition": "Curated monthly delivery of beauty product samples that decouples discovery and evaluation from traditional retail, enabling at-home trial and discovery (E12, E2)",
+    "revenue_model": "Subscription revenue (monthly box) plus monetization of downstream sales and related strategies referenced in the analysis (E12, E4)",
+    "pricing_model": "Monthly subscription fee for curated sample box (E12)",
+    "distribution_channels": [
+      "direct-to-consumer subscription delivered by mail (E12, E2)",
+      "online channels referenced in the disruption analysis (E4)"
+    ],
+    "cost_drivers": [
+      "unknown"
+    ]
+  },
+  "competition": {
+    "incumbents": [
+      "brick-and-mortar beauty retailers and major beauty brands that historically controlled discovery-to-repurchase (e.g., department stores, Sephora) (E6, E11)"
+    ],
+    "direct_competitors": [
+      "other beauty subscription services and curated box startups (E4)"
+    ],
+    "substitutes": [
+      "traditional in-store discovery, testing, and purchase of full-size beauty products (E6, E7, E8)"
+    ]
+  },
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12"
+  ]
+}

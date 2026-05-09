@@ -1,0 +1,31 @@
+{
+  "primary_type": "decoupling",
+  "secondary_types": [
+    "business_model",
+    "tech_substitution"
+  ],
+  "confidence": "medium",
+  "reasoning": "OLX Brazil fits the decoupling pattern: the firm unbundled key customer activities from legacy classifieds (search & discovery, matching/negotiation) and provided superior digital substitutes (E11, E12, E7). The evidence explicitly frames OLX’s disruption in Teixeira terms and maps a CVC where steps 1–6 are value-creating through OLX’s platform features (search, recommendations, messaging) while pain remains around trust, payments, and logistics (E3, E7, E9). OLX’s dominant market position and scale (described in the company overview and reported monthly usage) provide the supply and network density that typically enable a decoupling play to scale (E5, E6). Monetization appears focused on listing fees, premium placement, and transactional charges consistent with extracting value from a decoupled activity (E8). Given this evidence, decoupling is the primary strategic lens; business-model innovation (marketplace monetization and premium placement) and tech substitution (digital search/recommendation replacing paper classifieds) are relevant secondary lenses (E3, E11, E12). However, the evidence set is light on unit-economics, recoupling risk from incumbents or full-stack competitors, and specific AI/automation levers; therefore confidence is medium rather than high (E4).",
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12"
+  ],
+  "decoupling_fit_score": 0.85,
+  "recommended_report_mode": "full_decoupling",
+  "caveats": [
+    "Evidence lacks granular unit-economics (CAC, CLV, margins) for OLX Brazil; any strategic moves must validate these metrics before escalation (unit economics not provided in evidence).",
+    "Recoupling risk (incumbent or competitor re-bundling of decoupled activities via acquisitions, native features, or pricing) is noted as a challenge but not quantified in the evidence (E4); assess competitor roadmaps and M&A risk.",
+    "AI / automation levers are implied but under-evidenced; specific opportunities to use modern AI to strengthen a decoupled offering are not detailed in the evidence set.",
+    "Regulatory and local-market frictions in Brazil that could affect payments/logistics integration are mentioned broadly but not specified; further regulatory diligence required (E4, E9)."
+  ]
+}

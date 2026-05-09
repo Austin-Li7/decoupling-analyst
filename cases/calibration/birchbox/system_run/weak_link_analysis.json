@@ -1,0 +1,106 @@
+{
+  "ranked_weak_links": [
+    {
+      "activity_id": "A3",
+      "score": 512.0,
+      "pain_intensity": 4,
+      "frequency": 4,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 4,
+      "integration_dependency": 2,
+      "rationale": "Product evaluation via trial is a prime decoupling wedge because traditional evaluation is tied to in-store testing (E7), while Birchbox enables at-home sample trial delivered on a recurring basis (E2), effectively decoupling evaluation from the retail environment (E12). This fits Teixeira’s decoupling pattern of “peeling away a portion of the customer’s value chain” (books/unlocking-the-customer-value-chain-chapter-1.md > Page 6) (E3) and competing on making a “weak link activity” cheaper/faster/easier (talks/unlocking-the-customer-value-chain-at-decoupling-co.md) (E3). Switching friction can be relatively low because the customer can still purchase elsewhere (i.e., the disruptor and incumbent can ‘share’ the customer) (books/unlocking-the-customer-value-chain-chapter-1.md > Page 6) (E3). Value capture is plausible via the subscription model already tied to this activity (E2), without needing full-stack retail integration (integration dependency remains moderate, since samples and fulfillment are required but not full catalog commerce).",
+      "evidence_ids": [
+        "E2",
+        "E3",
+        "E7",
+        "E12"
+      ]
+    },
+    {
+      "activity_id": "A2",
+      "score": 192.0,
+      "pain_intensity": 3,
+      "frequency": 4,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 4,
+      "integration_dependency": 2,
+      "rationale": "Discovery is a strong decoupling opportunity because incumbents historically controlled discovery through in-store displays/brand marketing (E6, E11), while Birchbox provides a curated discovery feed via monthly delivery (E2, E12). This aligns with Teixeira’s view that disruption often targets a specific weak-link activity in the customer value chain rather than replacing the entire incumbent workflow (books/unlocking-the-customer-value-chain-chapter-1.md > Page 6) (E3). Digital leverage is high in principle because curation and recurring delivery are software- and data-amplified mechanisms (E2, E12), and willingness to switch can be high because customers can adopt a discovery layer without abandoning their current purchasing channel (E3). Integration dependency stays relatively low because discovery can be offered as a standalone layer independent of transaction/repurchase systems (E6, E8, E10).",
+      "evidence_ids": [
+        "E2",
+        "E3",
+        "E6",
+        "E11",
+        "E12"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "score": 135.0,
+      "pain_intensity": 3,
+      "frequency": 4,
+      "ai_or_digital_leverage": 3,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 5,
+      "integration_dependency": 4,
+      "rationale": "Repurchase is where value is captured in the traditional chain (repurchase stage) (E10) and offers high monetization potential if Birchbox can influence or intermediate replenishment. However, this stage is more tightly coupled to the incumbent retail/brand fulfillment experience (E10, E11), raising integration dependency (e.g., needing reliable commerce/availability across many SKUs). While Birchbox’s existing decoupled wedge (discovery/evaluation) can steer repurchase behavior (E12), moving deeper here increases risk of recoupling and operational complexity beyond the lighter discovery/evaluation layers highlighted by the current disruptive positioning (E3, E12). Frequency and switching are scored as moderate-high but are not quantified in the provided evidence; validation is required.",
+      "evidence_ids": [
+        "E3",
+        "E10",
+        "E11",
+        "E12"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "score": 101.25,
+      "pain_intensity": 3,
+      "frequency": 3,
+      "ai_or_digital_leverage": 3,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 5,
+      "integration_dependency": 4,
+      "rationale": "Full-size purchase is a major value-capture point in the chain (E8) with strong monetization potential, but it is also a higher-integration, heavier-responsibility layer (payments/commerce execution) compared to Birchbox’s demonstrated decoupling of discovery/evaluation (E12). Incumbents and brands already provide purchase pathways (E8, E11), so differentiation is less inherently tied to Birchbox’s proven wedge; willingness to switch is therefore moderate. Any push into purchase increases the risk that incumbents can neutralize the entrant via rebundling (copying features or leveraging their end-to-end control) consistent with Teixeira’s observation that losing even one CVC stage can be economically consequential and triggers defensive responses (books/unlocking-the-customer-value-chain-chapter-1.md > Page 10) (E3). Frequency assumptions are not quantified in evidence and should be validated.",
+      "evidence_ids": [
+        "E3",
+        "E8",
+        "E11",
+        "E12"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "score": 40.0,
+      "pain_intensity": 3,
+      "frequency": 5,
+      "ai_or_digital_leverage": 2,
+      "willingness_to_switch": 2,
+      "value_capture_potential": 2,
+      "integration_dependency": 3,
+      "rationale": "At-home usage and satisfaction assessment is primarily performed by the customer (E9) and is not clearly an incumbent-controlled weak link in the provided evidence (E6-E11). While it is frequent by nature of “usage” (E9), the evidence does not describe a distinct, monetizable pain point here relative to discovery/evaluation. Digital tools could support tracking and guidance, but this leverage is not explicitly evidenced in the materials provided; thus AI/digital leverage and value capture are scored conservatively and should be validated. Integration dependency is moderate because meaningful intervention would likely need linkage to prior discovery/evaluation data and downstream purchase/repurchase triggers (E8, E10, E12).",
+      "evidence_ids": [
+        "E8",
+        "E9",
+        "E10",
+        "E12"
+      ]
+    },
+    {
+      "activity_id": "A1",
+      "score": 12.0,
+      "pain_intensity": 1,
+      "frequency": 3,
+      "ai_or_digital_leverage": 2,
+      "willingness_to_switch": 1,
+      "value_capture_potential": 1,
+      "integration_dependency": 1,
+      "rationale": "Recognizing a need/desire is largely self-driven (current provider: self) and not depicted as a retailer-controlled bottleneck in the provided value-chain evidence (E6-E11). Because this stage is not clearly a weak link compared to the documented disruption in discovery/evaluation (E12), there is limited standalone value capture and low practical ‘switching’ (there is no incumbent bundle to unbundle at this step). Frequency and digital leverage could vary by consumer, but the evidence does not specify pain or frictions at this stage; therefore scores are conservative and should be validated if pursued.",
+      "evidence_ids": [
+        "E6",
+        "E11",
+        "E12"
+      ]
+    }
+  ]
+}

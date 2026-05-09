@@ -1,0 +1,97 @@
+{
+  "run_id": "trov-20260509-033633",
+  "company_name": "Trov",
+  "total_input_tokens": 61900,
+  "total_output_tokens": 31404,
+  "total_cost_usd": 0.413073,
+  "by_module": {
+    "business_model": {
+      "input_tokens": 6655,
+      "output_tokens": 2286,
+      "cost_usd": 0.031179,
+      "model": "gpt-5.2"
+    },
+    "case_perspective": {
+      "input_tokens": 2356,
+      "output_tokens": 397,
+      "cost_usd": 0.006915,
+      "model": "gpt-5.2"
+    },
+    "company_profile": {
+      "input_tokens": 2573,
+      "output_tokens": 1159,
+      "cost_usd": 0.002961,
+      "model": "gpt-5-mini"
+    },
+    "competitive_response": {
+      "input_tokens": 6604,
+      "output_tokens": 2465,
+      "cost_usd": 0.032905,
+      "model": "gpt-5.2"
+    },
+    "critic": {
+      "input_tokens": 4374,
+      "output_tokens": 3256,
+      "cost_usd": 0.038028,
+      "model": "gpt-5.2"
+    },
+    "cvc": {
+      "input_tokens": 4715,
+      "output_tokens": 1283,
+      "cost_usd": 0.018724,
+      "model": "gpt-5.2"
+    },
+    "decoupling": {
+      "input_tokens": 4593,
+      "output_tokens": 1953,
+      "cost_usd": 0.025271,
+      "model": "gpt-5.2"
+    },
+    "final_judgment": {
+      "input_tokens": 8184,
+      "output_tokens": 2259,
+      "cost_usd": 0.03282,
+      "model": "gpt-5.2"
+    },
+    "final_report_zh": {
+      "input_tokens": 10412,
+      "output_tokens": 11621,
+      "cost_usd": 0.129224,
+      "model": "gpt-5.2"
+    },
+    "gpt_researcher_internal": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.052485,
+      "note": "GPT Researcher's own LLM calls (sub-query gen, scrape summarization, report writing)",
+      "model": "gpt-researcher"
+    },
+    "lens_fit": {
+      "input_tokens": 2131,
+      "output_tokens": 602,
+      "cost_usd": 0.001737,
+      "model": "gpt-5-mini"
+    },
+    "research_brief": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0
+    },
+    "value_types": {
+      "input_tokens": 2554,
+      "output_tokens": 1185,
+      "cost_usd": 0.003008,
+      "model": "gpt-5-mini"
+    },
+    "weak_links": {
+      "input_tokens": 6749,
+      "output_tokens": 2938,
+      "cost_usd": 0.037816,
+      "model": "gpt-5.2"
+    }
+  },
+  "notes": [
+    "Costs computed from per-call usage objects. GPT Researcher internal cost is read from researcher.research_costs after run.",
+    "Embedding/RAG costs outside LLMClient are not captured in this artifact."
+  ]
+}

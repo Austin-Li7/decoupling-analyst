@@ -1,0 +1,101 @@
+{
+  "ranked_weak_links": [
+    {
+      "activity_id": "A5",
+      "score": 533.33,
+      "pain_intensity": 5,
+      "frequency": 4,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 5,
+      "integration_dependency": 3,
+      "rationale": "Trust/payment risk is explicitly identified as a key value-eroding pain point in OLX Brazil’s CVC (E9), and the current flow is largely handled off-platform via ad-hoc arrangements (E7), making it a prime decoupling target. AI/digital can materially improve identity confidence and fraud prevention (e.g., automated risk scoring/verification) while remaining an optional layer on top of existing listings and chat (E7). This also offers strong monetization via transaction-stage value charging (E8). Framing-wise, this is the kind of “weak link activity” Teixeira highlights as the best decoupling opportunity (talks/unlocking-the-customer-value-chain-at-decoupling-co.md).",
+      "evidence_ids": [
+        "E7",
+        "E8",
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A2",
+      "score": 288.0,
+      "pain_intensity": 3,
+      "frequency": 4,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 3,
+      "integration_dependency": 2,
+      "rationale": "Listing creation is a repeated, time/effort-heavy step for sellers and sits directly inside OLX’s digital solution layer (E7). Because OLX already monetizes at listing and premium placement stages (E8), improving listing quality/velocity with digital assistance can both reduce seller friction and expand existing monetization levers without requiring the user to change the rest of their workflow. OLX’s scale (millions of new listings per month) suggests this activity is operationally central and frequently executed (E6).",
+      "evidence_ids": [
+        "E6",
+        "E7",
+        "E8"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "score": 180.0,
+      "pain_intensity": 3,
+      "frequency": 5,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 2,
+      "integration_dependency": 2,
+      "rationale": "Negotiation and Q&A are core to classifieds and are explicitly part of the digital solution OLX provides through messaging/chat (E7), and OLX historically decoupled “matching & negotiation” from offline intermediaries (E12). This step is high-frequency within each sale attempt, and AI can reduce time/effort (e.g., assisted replies, summarizing buyer questions) while remaining tightly integrated with the existing marketplace. However, direct value capture is weaker than payments/trust because monetization is described as occurring more at listing/premium placement and transaction stages than at messaging itself (E8).",
+      "evidence_ids": [
+        "E7",
+        "E8",
+        "E12"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "score": 180.0,
+      "pain_intensity": 5,
+      "frequency": 4,
+      "ai_or_digital_leverage": 3,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 4,
+      "integration_dependency": 4,
+      "rationale": "Delivery/pickup coordination is explicitly flagged as a value-eroding pain point in the OLX CVC (E9) and is currently user-coordinated (E7), creating substantial time/effort friction. Digital tools can reduce coordination costs (routing/scheduling/location sharing), and monetization can occur at the transaction stage (E8). But this activity has higher integration dependency because fulfillment is inherently tied to offline execution and, if productized, tends to require deeper operational/partner integration than pure matching (E7).",
+      "evidence_ids": [
+        "E7",
+        "E8",
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "score": 133.33,
+      "pain_intensity": 2,
+      "frequency": 5,
+      "ai_or_digital_leverage": 5,
+      "willingness_to_switch": 2,
+      "value_capture_potential": 4,
+      "integration_dependency": 3,
+      "rationale": "Search/discovery is already a major value-creating part of OLX’s digital solution (E7) and was a core activity OLX historically decoupled from traditional classifieds via searchable/filterable listings (E11). AI/digital leverage is very high (ranking/recommendations), and value capture can be meaningful through premium placement/ads (E8). However, as an already-strong link in OLX’s offering, the incremental pain relief may be lower than for trust/payment/logistics (E7, E9), and the benefit is tightly coupled to the existing marketplace’s supply/demand ecosystem (higher integration dependency).",
+      "evidence_ids": [
+        "E7",
+        "E8",
+        "E9",
+        "E11"
+      ]
+    },
+    {
+      "activity_id": "A1",
+      "score": 24.0,
+      "pain_intensity": 2,
+      "frequency": 3,
+      "ai_or_digital_leverage": 2,
+      "willingness_to_switch": 2,
+      "value_capture_potential": 1,
+      "integration_dependency": 1,
+      "rationale": "Expectation-setting (whether/how to sell, target price/condition) is primarily handled by the seller rather than by OLX’s platform services (CVC step is not described as a core OLX-provided digital solution compared with search, negotiation, and transaction/fulfillment steps) (E7). While guidance tools could help, the evidence emphasizes the bigger, more value-eroding weaknesses are trust/payment security and logistics (E9), and monetization is described as happening mainly at listing/premium placement and transaction stages (E8), making this a lower-value decoupling opportunity.",
+      "evidence_ids": [
+        "E7",
+        "E8",
+        "E9"
+      ]
+    }
+  ]
+}

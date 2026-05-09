@@ -1,0 +1,38 @@
+{
+  "judgment": "study_more",
+  "one_sentence_thesis": "Trov should preserve its embedded-insurance integration capability while entering/expanding partners with a narrowly decoupled “Coverage Explainer + Comparator” SDK that fixes the research/compare weak link, then only later layer in higher-responsibility transaction/claims tooling once partner-level unit economics are proven (E6, E7, E8, E10, E11).",
+  "why_now": "Trov has already pivoted toward embedded insurance for digital platforms (E6, E7, E9), and the highest-friction step in that embedded funnel is often helping end-users understand and compare coverage at the moment of decision—an activity Trov can decouple and deliver inside partner experiences (E8, E10, E11).",
+  "strongest_argument": "Teixeira frames “decoupling” as an entry strategy—stealing one activity in the customer value chain and doing it better—before expanding across more activities (talks/contraminds-podcast-with-thales-teixeira.md); for Trov, decoupling the insurance “Research/Compare” step into an embeddable SDK aligns with its embedded-partnership direction (E6, E7, E9) and targets a defined CVC activity (E8, E10, E11).",
+  "biggest_risk": "High recoupling risk: carriers/platforms or large incumbents can copy coverage explanation/comparison UX and bundle it into their own embedded flows, compressing Trov’s ability to capture value unless it develops defensible data/insights and deep partner integration switching costs (E10, E11).",
+  "staged_actions": [
+    "PRESERVE the core growth engine: keep Trov’s partner-integration posture and embedded distribution focus (do not revert to a standalone consumer app as the primary GTM), and package existing integration learnings into a repeatable implementation playbook for partners (E6, E7, E9).",
+    "Layer (a) — low-risk “decisioning UX” wedge: ship a Coverage Explainer + Comparator SDK/API that lives inside partner checkout, focused strictly on the Research/Compare activity (plain-language summaries, side-by-side terms, provider trust cues) and instrument every interaction as first-party product telemetry owned by Trov (E8, E10, E11).",
+    "Prove partner unit economics before expanding scope: convert the SDK into a priced B2B product (platform fee and/or usage-based pricing) only after validating that partner CLV (gross profit over contract life) can exceed fully loaded partner CAC driven by sales + solutions engineering (assumption to validate; embedded model context in E6, E7).",
+    "Layer (b) — medium-responsibility intermediation: once the explainer shows measurable lift, add workflow components that reduce friction without taking balance-sheet risk (e.g., pre-fill applications, structured Q&A handoff to carrier quote/bind endpoints, audit trails for disclosures) to deepen switching costs (E7, E10, E11).",
+    "Layer (b→c boundary, only if earned) — selective claims enablement: expand into narrow post-purchase modules (e.g., guided FNOL/claims status routing inside partner apps) only where partners demand it and where Trov can remain a software layer rather than an underwriter; do not assume full-stack insurance responsibilities (Trov’s historical scope includes claims-stage exposure in its initial model, but evidence here is directional only) (E8, E12)."
+  ],
+  "do_not_do": [
+    "Do not jump to Layer (c) full-stack insurance (underwriting/risk-bearing or broad guarantees) to ‘own the whole value chain’; it creates balance-sheet exposure and operational complexity that is not supported by the current evidence base and increases downside if partner unit economics are not yet proven (E6, E7, E8).",
+    "Do not restart a broad B2C on-demand item-level insurance growth push as the primary strategy; it conflicts with the stated pivot toward embedded/B2B2C integration and would split focus from the integration-based model (E6, E12).",
+    "Do not overbuild a generalized marketplace-style comparison product across all insurance lines on day one; it dilutes the decoupling wedge and increases recoupling risk because incumbents can match generic UX—win first in a partner-specific embedded workflow where integration and data loops create switching costs (E10, E11).",
+    "Do not price primarily as a commoditized per-policy take-rate before proving differentiated lift; if the explainer/comparator is copied, take-rate capture will face pricing pressure—start with clearly attributable B2B value (platform/usage fees) tied to measurable funnel lift (assumption to validate; pivot context in E6, E7)."
+  ],
+  "next_research_steps": [
+    "Quantify the weak-link pain and ROI: in partner embedded flows, measure drop-off attributable to lack of coverage comprehension and estimate conversion lift from improved Research/Compare UX (ties to CVC stage map) (E8).",
+    "Validate unit economics assumptions: enterprise/partner CAC (sales cycle length, solutions engineering hours, ongoing support) vs partner CLV (contract duration, gross margin, attach-rate uplift-driven revenue) for the embedded model (E6, E7).",
+    "Competitive/recoupling scan: identify whether carriers, embedded-insurance platforms, or large incumbents already offer native coverage explanation/comparison modules and how quickly they can bundle it (E10, E11).",
+    "Data defensibility test: determine what proprietary interaction data the SDK can capture (and what partners will allow) that improves recommendations/UX over time and increases switching costs (E7, E11).",
+    "Scope boundary check with partners: confirm which ‘next’ activities partners want Trov to take on (e.g., disclosures, audit trails, claims routing) versus what they insist remains with carriers/TPAs to avoid mis-scoping into heavy-responsibility operations (E7, E8)."
+  ],
+  "evidence_ids": [
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

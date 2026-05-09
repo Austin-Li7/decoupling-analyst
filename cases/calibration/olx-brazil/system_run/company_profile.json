@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "OLX Brazil",
+    "website": "",
+    "ticker": "",
+    "public_or_private": "private",
+    "industry": "online classifieds / marketplace",
+    "geography": [
+      "Brazil"
+    ],
+    "stage": "unknown",
+    "description": "OLX Brazil is the country’s largest online classifieds marketplace, a joint venture between Prosus and Adevinta, facilitating peer-to-peer and B2C transactions across categories such as real estate, autos, jobs, and general goods (E5)."
+  },
+  "customers": {
+    "primary_user": "buyers and sellers (consumer-to-consumer and business-to-consumer) (E6, E7)",
+    "buyer": "sellers/listing customers (individuals and small businesses) who post listings and buy premium placement (E6, E8)",
+    "payer": "primarily sellers (for paid listings/premium placement); some transaction-level fees/use-cases possible (E8)",
+    "segments": [
+      "consumer-to-consumer (C2C) sellers and buyers (E6)",
+      "business-to-consumer (B2C) sellers (dealers, small businesses) (E6)",
+      "category-specific buyers (autos, real estate, jobs, general goods) (E5)"
+    ]
+  },
+  "business_model": {
+    "value_proposition": "A large, digital classifieds marketplace that improves search & discovery and matching/negotiation versus legacy classifieds by unbundling search, discovery, and direct messaging to enable efficient peer-to-peer and B2C transactions (E7, E11, E12).",
+    "revenue_model": "Monetization via paid listings, premium placement/features, and transaction-stage monetization options (E8).",
+    "pricing_model": "Freemium listing model with paid premium placements and paid listing features (E8).",
+    "distribution_channels": [
+      "online platform (web and mobile digital channels) — digital search and browsing is core (E7)"
+    ],
+    "cost_drivers": [
+      "unknown"
+    ]
+  },
+  "competition": {
+    "incumbents": [
+      "traditional offline classifieds and legacy media (decoupled by OLX) (E11)"
+    ],
+    "direct_competitors": [
+      "specialized and full-stack digital platforms competing across categories (E4)"
+    ],
+    "substitutes": [
+      "peer networks, social marketplaces, and offline broker/intermediary services (E7, E12)"
+    ]
+  },
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "judgment": "study_more",
+  "one_sentence_thesis": "Birchbox’s best path to extend its decoupled wedge is to deepen ownership of the at-home evaluation/testing moment and then selectively monetize the post-trial “next purchase” decision with low-friction intermediation—without prematurely taking on full commerce/logistics that could erode the subscription-led engine (books/unlocking-the-customer-value-chain-chapter-1.md > Page 7; E12, E3).",
+  "why_now": "Teixeira highlights that Birchbox initially “interfered with just one part of the consumer’s activities: testing,” making store visits less necessary as more consumers learn and trial at home (books/unlocking-the-customer-value-chain-chapter-1.md > Page 7; E3). Because evaluation sits immediately before purchase in the beauty customer value chain (E7, E8), Birchbox can capture more value right after the trial moment—if it does so in ways that don’t force customers to switch the rest of their workflow (E12, E3).",
+  "strongest_argument": "Birchbox is a textbook decoupler: customers can adopt it for evaluation/testing at home while continuing to buy full-size products elsewhere, meaning the wedge can scale without requiring full end-to-end replacement of beauty retail (books/unlocking-the-customer-value-chain-chapter-1.md > Page 7; E12, E7, E8, E3).",
+  "biggest_risk": "Recoupling: incumbents can re-bundle the evaluation step (e.g., by improving at-home sampling and digital discovery tied to their existing purchase channels), neutralizing Birchbox’s weak-link advantage; confidence is medium/low because the provided evidence documents the decoupling threat but not incumbent-specific countermeasures or Birchbox’s defensibility metrics (books/unlocking-the-customer-value-chain-chapter-1.md > Page 6-7; E3, E12).",
+  "staged_actions": [
+    "(Layer a — strengthen the wedge) Make the subscription box explicitly an ‘evaluation product’: instrument every sample with lightweight feedback loops so the core output is structured preference data that improves future curation (E12, E7).",
+    "(Layer a — extend into decision support) Add post-trial decision aids that reduce purchase friction without owning checkout: personalized ‘what to buy next’ recommendations and reminders keyed to the evaluation outcomes, keeping the customer’s broader purchase behavior intact (E7, E8, E12).",
+    "(Layer b — monetize without heavy ops) Introduce retailer/brand referral intermediation after a positive trial (e.g., tracked links/codes) so Birchbox captures value when evaluation converts to purchase, while avoiding inventory and fulfillment complexity until proven (E7, E8, E12).",
+    "(Layer b — trust/verification) Offer brand-facing reporting on trial-to-interest signals (aggregated), positioning Birchbox as a measurement layer for sampling effectiveness; gate this behind data-quality milestones from the prior steps (E12, E7).",
+    "(Conditional Layer b→c, only if unit economics clear) Pilot limited full-size selling only for the highest-converting SKUs/categories to test whether incremental gross margin exceeds added CAC, returns, and ops burden—do not scale until the referral path proves conversion and repeat behavior (E8, E10, E12)."
+  ],
+  "do_not_do": [
+    "Do not jump straight to a full-stack commerce + logistics buildout as the primary growth plan; it violates layered evolution and risks turning a focused decoupled wedge into a capital/ops-heavy business before monetization is proven (E3, E12).",
+    "Do not redesign the subscription in ways that reduce trial frequency/novelty (the core ‘evaluation’ job) just to push immediate product sales; that would weaken the very activity Birchbox decoupled and made valuable to customers (books/unlocking-the-customer-value-chain-chapter-1.md > Page 7; E12, E3).",
+    "Do not depend on a strategy that requires customers to abandon their existing full-size buying destinations; the power of decoupling is that Birchbox can ‘share customers’ with incumbents rather than forcing full migration (books/unlocking-the-customer-value-chain-chapter-1.md > Page 6; E3)."
+  ],
+  "next_research_steps": [
+    "Quantify the core growth engine economics: subscription retention/tenure (CLV driver), gross margin structure of sample fulfillment, and primary acquisition channels (CAC); without these, it’s impossible to know how much intermediation revenue is needed to be meaningful (E2, E12).",
+    "Measure the evaluation→purchase funnel: what fraction of sampled items generate intent, what fraction convert to full-size purchases, and how long conversion takes; this validates whether ‘purchase intermediation’ is the right adjacent activity to monetize (E7, E8, E12).",
+    "Map recoupling threats by incumbent: identify which retailers/brands can replicate at-home trial and which can’t, and what assets (stores, loyalty, data) they can deploy to re-bundle evaluation with purchase (books/unlocking-the-customer-value-chain-chapter-1.md > Page 6-7; E3).",
+    "Test switching friction: assess how willing users are to buy through Birchbox referrals vs. their default retailer, and what incentives (if any) are required—explicitly track incentive cost vs. incremental margin (E8, E10)."
+  ],
+  "evidence_ids": [
+    "E2",
+    "E3",
+    "E6",
+    "E7",
+    "E8",
+    "E10",
+    "E11",
+    "E12",
+    "E1"
+  ]
+}

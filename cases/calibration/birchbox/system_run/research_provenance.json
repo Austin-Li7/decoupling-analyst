@@ -1,0 +1,58 @@
+{
+  "company_name": "Birchbox",
+  "run_id": "birchbox-20260509-032906",
+  "searched_urls_count": 0,
+  "report_cited_urls_count": 4,
+  "union_pre_liveness_count": 11,
+  "report_urls_in_search_results": 3,
+  "report_urls_only_in_report": 1,
+  "report_only_url_ratio": 0.25,
+  "searched_urls": [],
+  "research_sources_urls": [
+    "https://praxie.com/decouple-the-value-chain-to-drive-digital-disruption/",
+    "https://www.customerbliss.com/podcasts/understand-your-customers-needs-unlock-the-value-chain/",
+    "https://books.google.com/books/about/Unlocking_the_Customer_Value_Chain.html?id=xSdcDwAAQBAJ",
+    "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/B07MWBS4WS",
+    "https://4thoption.substack.com/p/91thales-teixeira-decoupling-the-d08",
+    "https://www.youtube.com/watch?v=FQAmKKsQ0ZE",
+    "https://podcasts.apple.com/in/podcast/034-thales-teixeira-on-digital-disruption-through-decoupling/id1485202972?i=1000580174920",
+    "https://www.porchlightbooks.com/products/unlocking-the-customer-value-chain-thales-s-teixeira-9781524763084",
+    "https://www.amazon.de/-/en/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X"
+  ],
+  "visited_urls_from_retriever": [],
+  "prefetched_url_count": 11,
+  "report_cited_urls": [
+    {
+      "url": "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X",
+      "provenance": "in_search_results"
+    },
+    {
+      "url": "https://books.google.com/books/about/Unlocking_the_Customer_Value_Chain.html?id=xSdcDwAAQBAJ",
+      "provenance": "in_search_results"
+    },
+    {
+      "url": "https://www.porchlightbooks.com/products/unlocking-the-customer-value-chain-thales-s-teixeira-9781524763084",
+      "provenance": "in_search_results"
+    },
+    {
+      "url": "https://www.buzzsprout.com/2506263/fan_mail/new",
+      "provenance": "only_in_report"
+    }
+  ],
+  "post_liveness_kept_urls": [
+    "https://praxie.com/decouple-the-value-chain-to-drive-digital-disruption/",
+    "https://www.customerbliss.com/podcasts/understand-your-customers-needs-unlock-the-value-chain/",
+    "https://books.google.com/books/about/Unlocking_the_Customer_Value_Chain.html?id=xSdcDwAAQBAJ",
+    "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/B07MWBS4WS",
+    "https://4thoption.substack.com/p/91thales-teixeira-decoupling-the-d08",
+    "https://www.youtube.com/watch?v=FQAmKKsQ0ZE",
+    "https://podcasts.apple.com/in/podcast/034-thales-teixeira-on-digital-disruption-through-decoupling/id1485202972?i=1000580174920",
+    "https://www.porchlightbooks.com/products/unlocking-the-customer-value-chain-thales-s-teixeira-9781524763084",
+    "https://www.amazon.de/-/en/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X"
+  ],
+  "post_liveness_dropped_urls": []
+}

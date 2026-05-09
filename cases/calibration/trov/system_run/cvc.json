@@ -1,0 +1,80 @@
+{
+  "customer_segment": "End consumer who wants flexible, item-level or usage-based insurance (often encountered inside a partner app experience)",
+  "end_activity": "Receive claim resolution (if needed) and decide to renew/continue or exit coverage",
+  "activities": [
+    {
+      "id": "A1",
+      "step": 1,
+      "activity": "Recognize a need for protection tied to an item or a specific digital experience (e.g., mobility/gig/platform usage)",
+      "current_provider": "Self and/or the partner platform context that surfaces the risk moment",
+      "customer_goal": "Realize they are exposed to loss/damage/liability and that insurance could reduce that risk",
+      "evidence_ids": [
+        "E6",
+        "E9",
+        "E8"
+      ]
+    },
+    {
+      "id": "A2",
+      "step": 2,
+      "activity": "Research and compare insurance options (coverage, price, terms, provider trust)",
+      "current_provider": "Traditional insurers/agents, online search/comparison, and/or embedded offer details inside a partner experience",
+      "customer_goal": "Quickly understand what is covered, what it costs, and whether it is worth buying",
+      "evidence_ids": [
+        "E8",
+        "E9"
+      ]
+    },
+    {
+      "id": "A3",
+      "step": 3,
+      "activity": "Purchase/activate coverage at the moment of need (on-demand or embedded)",
+      "current_provider": "Trov mobile app for on-demand item coverage and/or partner platform embedding Trov’s insurance integration",
+      "customer_goal": "Get insured with minimal friction without committing to a traditional bundled/annual policy",
+      "evidence_ids": [
+        "E5",
+        "E7",
+        "E12",
+        "E9"
+      ]
+    },
+    {
+      "id": "A4",
+      "step": 4,
+      "activity": "Onboard and set up the policy (confirm identity/item details, receive policy issuance and documentation)",
+      "current_provider": "Insurance provider workflow (Trov-enabled flow and/or partner-integrated flow) and the underlying insurer issuing the policy",
+      "customer_goal": "Ensure coverage is active, accurate, and documented so claims will be honored",
+      "evidence_ids": [
+        "E8",
+        "E7"
+      ]
+    },
+    {
+      "id": "A5",
+      "step": 5,
+      "activity": "Manage coverage over time (turn on/off, adjust coverage, monitor protection, handle premium payments where applicable)",
+      "current_provider": "Trov’s digital on-demand experience and/or partner platform’s embedded insurance management surface",
+      "customer_goal": "Keep coverage aligned with current usage/ownership while minimizing time, effort, and unnecessary cost",
+      "evidence_ids": [
+        "E8",
+        "E12",
+        "E7"
+      ]
+    },
+    {
+      "id": "A6",
+      "step": 6,
+      "activity": "File a claim and track resolution; then renew/continue or exit coverage",
+      "current_provider": "Insurance claims process (Trov-targeted claims stage in its initial model and/or the insurer/partner-integrated claims workflow)",
+      "customer_goal": "Get a fast, fair claim outcome and then decide whether continued coverage is worth it",
+      "evidence_ids": [
+        "E8",
+        "E12"
+      ]
+    }
+  ],
+  "profile_vs_cvc_conflicts": [
+    "Company profile emphasizes end consumers buying via Trov’s mobile app, but the customer journey implied by the pivot includes insurance need discovery and purchase happening inside partner ecosystems (embedded) rather than via a standalone app-first workflow (E6, E9, E7).",
+    "The generic insurance CVC includes a renewal/exit stage, while Trov’s original on-demand, item-level positioning implies more episodic activation/management that may not map cleanly to traditional renewal behavior (E8, E12)."
+  ]
+}
