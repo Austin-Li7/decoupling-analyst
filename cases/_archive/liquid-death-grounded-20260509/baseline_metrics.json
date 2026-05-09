@@ -1,0 +1,19 @@
+{
+  "company_name": "Liquid Death",
+  "run_id": "liquid-death-20260509-005918",
+  "run_date": "2026-05-09",
+  "sources_total": 14,
+  "sources_kept_after_liveness": 13,
+  "liveness_pass_rate": 0.929,
+  "evidence_store_entries": 25,
+  "modules_completed": 14,
+  "modules_with_conflicts_flagged": 0,
+  "critic_review_severity_counts": {
+    "high": 3,
+    "medium": 4,
+    "low": 0
+  },
+  "research_backend": "gpt_researcher",
+  "rag_enabled": true,
+  "wall_clock_seconds": 371
+}

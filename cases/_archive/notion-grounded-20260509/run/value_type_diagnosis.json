@@ -1,0 +1,81 @@
+{
+  "activities": [
+    {
+      "activity_id": "A1",
+      "value_type": "create",
+      "reasoning": "Discovery helps the customer find a credible workspace that may fit their workflow, which is value-creating for users seeking a tool (E7, E6). Word-of-mouth, online content, and integrations drive this discovery channel and lower search friction (E7).",
+      "money_cost": 1,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E7",
+        "E6"
+      ]
+    },
+    {
+      "activity_id": "A2",
+      "value_type": "erode",
+      "reasoning": "Initial signup and onboarding can introduce friction and setup cost that reduce user value if it is slow or unclear; the evidence identifies onboarding as a distinct stage users must pass (E8). This step can therefore erode value when it delays productive use (E8).",
+      "money_cost": 1,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E8"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "value_type": "erode",
+      "reasoning": "Configuring the workspace architecture is effort- and time-intensive and is performed by the user, representing a pain point that erodes user value if difficult (E8, E10). The need to design templates, databases, tags and links imposes ongoing setup costs (E10).",
+      "money_cost": 1,
+      "time_cost": 4,
+      "effort_cost": 4,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E8",
+        "E10"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "value_type": "create",
+      "reasoning": "Creating and storing notes, databases, wikis and boards is the core value-creating activity where users capture knowledge and track work, central to the product offering (E9, E6). Successful execution of this activity directly produces the artifacts users rely on for future value (E9).",
+      "money_cost": 1,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 5,
+      "evidence_ids": [
+        "E9",
+        "E6"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "value_type": "create",
+      "reasoning": "Collaboration (sharing, commenting, task coordination) enables alignment and execution around a single source of truth, creating user value by reducing duplication and improving coordination (E11, E6). This activity is described as a core collaborative capability in the value chain (E11).",
+      "money_cost": 1,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E11",
+        "E6"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "value_type": "erode",
+      "reasoning": "Integrating with external apps and continuously iterating the system requires ongoing maintenance and connection work that can erode value if integrations or upkeep are costly in time/effort (E12, E13). The evidence lists integration and usage/iteration as separate stages that demand continuous user effort (E12, E13).",
+      "money_cost": 2,
+      "time_cost": 4,
+      "effort_cost": 4,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E12",
+        "E13"
+      ]
+    }
+  ]
+}

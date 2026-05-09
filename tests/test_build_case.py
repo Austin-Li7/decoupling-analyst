@@ -45,6 +45,33 @@ def test_build_case_creates_archive_layout_and_metrics(tmp_path: Path) -> None:
     )
     _write_json(run_dir / "evidence_store.json", {"E1": {}, "E2": {}, "E3": {}})
     _write_json(
+        run_dir / "research_provenance.json",
+        {
+            "research_sources_urls": [
+                "https://example.com/a",
+                "https://example.com/b",
+                "https://example.com/c",
+                "https://example.com/d",
+                "https://example.com/e",
+                "https://example.com/f",
+            ],
+            "post_liveness_kept_urls": [
+                "https://example.com/a",
+                "https://example.com/b",
+            ],
+        },
+    )
+    _write_json(
+        run_dir / "cost_summary.json",
+        {
+            "run_id": "acme-20260509-101112",
+            "company_name": "Acme",
+            "total_cost_usd": 0.123,
+            "by_module": {},
+            "notes": [],
+        },
+    )
+    _write_json(
         run_dir / "critic_review.json",
         {
             "citation_issues": [
@@ -84,6 +111,19 @@ def test_build_case_creates_archive_layout_and_metrics(tmp_path: Path) -> None:
     assert case_dir == cases_root / "_archive" / "acme-20260509"
     assert (case_dir / "run" / "run.json").exists()
     assert (case_dir / "run" / "final_report.md").read_text(encoding="utf-8") == "# Acme\n"
+    assert json.loads((case_dir / "cost_summary.json").read_text(encoding="utf-8"))[
+        "total_cost_usd"
+    ] == 0.123
+    assert json.loads((case_dir / "research_provenance.json").read_text(encoding="utf-8"))[
+        "research_sources_urls"
+    ] == [
+        "https://example.com/a",
+        "https://example.com/b",
+        "https://example.com/c",
+        "https://example.com/d",
+        "https://example.com/e",
+        "https://example.com/f",
+    ]
     review = (case_dir / "review.md").read_text(encoding="utf-8")
     assert "**Run ID:** acme-20260509-101112" in review
     assert "**Run date:** 2026-05-09" in review
@@ -95,9 +135,9 @@ def test_build_case_creates_archive_layout_and_metrics(tmp_path: Path) -> None:
         "company_name": "Acme",
         "run_id": "acme-20260509-101112",
         "run_date": "2026-05-09",
-        "sources_total": 5,
+        "sources_total": 6,
         "sources_kept_after_liveness": 2,
-        "liveness_pass_rate": 0.4,
+        "liveness_pass_rate": 0.333,
         "evidence_store_entries": 3,
         "modules_completed": 2,
         "modules_with_conflicts_flagged": 1,

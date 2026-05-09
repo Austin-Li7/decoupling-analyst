@@ -1,0 +1,15 @@
+{
+  "perspective": "disruptor",
+  "confidence": "medium",
+  "reasoning": "Nubank is described as a challenger that entered by decoupling weak-link activities in the traditional banking customer value chain—digital account opening/onboarding, no-fee real-time transactions, AI-enabled service, and transparent credit—specifically attacking the bundled, branch-based incumbent model of traditional banks (E6, E8, E9, E10, E11). Even though it has scaled into a very large digital bank across Latin America (E3), the case framing and stated value proposition remain centered on disruption via decoupling rather than defending an incumbent bundle or managing a mid-pivot restructuring (E4).",
+  "primary_question": "What is Nubank’s next decoupling move (i.e., which weak-link activity in the consumer financial-services value chain should it target next) to keep growing against traditional banks and other neobanks while preserving its digital-first advantage?",
+  "evidence_ids": [
+    "E3",
+    "E4",
+    "E6",
+    "E8",
+    "E9",
+    "E10",
+    "E11"
+  ]
+}

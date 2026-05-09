@@ -1,0 +1,36 @@
+{
+  "value_creation": "The “Financial Match + Pre-check” layer creates customer value by decoupling the high-friction “evaluate and choose” stage from the rest of banking—reducing time/effort and uncertainty in deciding which product/provider fits, and giving a fast eligibility-style pre-assessment with a one-tap handoff into Nubank onboarding when it is the match (E6, E8). This follows Teixeira’s idea that disruptors can build a business by “peeling away a portion of the customer’s value chain” (books/unlocking-the-customer-value-chain-chapter-1.md, p.9) rather than replacing the entire incumbent bundle (E7).",
+  "value_capture": "Most defensible value capture is indirect at first: use the tool to lower Nubank’s CAC by converting high-intent shoppers into Nubank accounts/credit products (capturing value downstream via Nubank’s existing financial products) (E8, E11). A secondary path (assumption; needs validation) is partner-funded lead-gen/CPA fees for non-Nubank shortlist options—though this introduces trust/conflict-of-interest risk and potential regulatory/UX complexity (E6).",
+  "value_erosion_remaining": "Even if evaluation/choice friction drops, major value erosion remains in (a) actual switching/migration (moving deposits/autopays, changing primary account habits), (b) underwriting outcomes and terms once a customer applies, (c) ongoing daily-transactions execution, and (d) customer service resolution—areas where incumbents and Nubank still must perform well across the rest of the CVC (E6, E9, E10, E11).",
+  "payer": "Primarily Nubank (as a CAC-reduction and conversion engine into Nubank products), with a potential second payer being partner providers paying for referred qualified applicants (assumption; not evidenced) (E8, E11).",
+  "pricing_model": "Free-to-user “discovery/pre-check” product (layer-a matching enhancement) with monetization via (1) improved Nubank conversion and (2) optional referral/CPA economics for non-Nubank offers (assumption). Avoid paid user subscription initially because the job-to-be-done is episodic and price sensitivity is likely high (unit-economics assumption) (E6, E7).",
+  "cac_risks": [
+    "Paid acquisition for comparison-intent queries (e.g., “best credit card/loan”) can be expensive; if this becomes the main channel, CAC may exceed the incremental gross profit from converted customers unless conversion rates are very high (unit-economics risk; numbers not in evidence) (E6).",
+    "Trust hurdle: recommending “Nubank + alternatives” may confuse positioning; if users suspect the tool is an ad, conversion and repeat usage fall, raising CAC via lower organic/referral growth (E4).",
+    "Cold-start data problem: high-quality matching/pre-check requires accurate user data and product/eligibility rules; if outputs are low-accuracy, retention and referrals drop, forcing more paid CAC (E6).",
+    "Competitive recoupling risk: incumbents and other digital banks can embed similar “advisor/pre-check” features inside their own apps, bidding up acquisition costs and compressing differentiation (E7)."
+  ],
+  "ltv_drivers": [
+    "Higher conversion of undecided shoppers into Nubank’s existing digital onboarding funnel (which Nubank already executes digitally) increasing downstream CLV vs. standard marketing leads (E8).",
+    "Expansion into more products per customer over time (credit/lending, etc.), increasing CLV if Nubank can cross-sell effectively after initial acquisition (E6, E11).",
+    "Increased engagement/retention if Nubank becomes the recurring “financial decision interface” (repeat usage), improving relationship ownership rather than relying on any one channel (E4, E6).",
+    "Data flywheel: learning from matching outcomes and user behavior can improve recommendations and conversion rates, raising CLV/CAC over time (assumption; needs validation) (E4)."
+  ],
+  "unit_economics_concerns": [
+    "Viability condition: incremental CLV (gross profit from additional Nubank customers attributable to the tool) must be materially greater than CAC to acquire a user of the match/pre-check experience; because the tool is top-of-funnel, the key ratio is (conversion_rate × incremental_CLV_per_converted_customer) > CAC_per_tool_user. If the conversion rate is low, even high-CLV banking relationships won’t save the model (E4, E6).",
+    "Gross margin is likely software-like for the matching layer, but variable costs may include data enrichment, model inference, customer support, and compliance overhead; if these scale with users, they can erode contribution margin and force monetization that hurts trust (assumption; not quantified in evidence) (E4, E6).",
+    "Adverse selection risk: if the tool attracts primarily “rate shoppers” or marginal-credit applicants, downstream approval rates and profitability can be worse than average, reducing realized CLV and breaking the CAC/CLV equation (ties to credit & lending stage) (E11).",
+    "Channel conflict/cannibalization risk: recommending alternatives may reduce immediate Nubank conversion; the business must prove that (a) trust/engagement gains and/or (b) partner CPA revenue outweigh any cannibalization (assumption) (E4).",
+    "Layering discipline risk: pushing too quickly from matching (layer a) into heavy intermediation or balance-sheet exposure (layer c) could damage the core digital-first growth engine and create new cost centers (fraud, disputes, credit losses). Sequencing should remain light-touch until unit economics are proven (E8, E9, E11)."
+  ],
+  "evidence_ids": [
+    "E1",
+    "E4",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11"
+  ]
+}

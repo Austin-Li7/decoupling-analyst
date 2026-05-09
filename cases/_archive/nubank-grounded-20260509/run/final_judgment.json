@@ -1,0 +1,38 @@
+{
+  "judgment": "invest_watchlist",
+  "one_sentence_thesis": "Nubank’s next decoupling wedge should be an AI-driven “Financial Match + Pre-check” that isolates the high-friction “evaluate and choose a provider/product” step—guiding customers to a transparent shortlist and instant eligibility-style pre-assessment with one-tap handoff into Nubank onboarding—so it grows by lowering CAC without taking on heavy balance-sheet or ops complexity (E6) (talks/unlocking-the-customer-value-chain-at-decoupling-co.md) (E14).",
+  "why_now": "As incumbents and neobanks converge on similar digital onboarding and day-to-day transaction experiences (E8, E9), the next scalable weak link is upstream decision-making—helping customers figure out what to pick and whether they’ll qualify—because that choice stage can be decoupled without forcing customers to migrate the rest of their banking workflow (E6) and aligns with Teixeira’s observation that disruptors often compete by “sharing customers” and intervening only in one part of the journey rather than replacing everything (E13).",
+  "strongest_argument": "This move preserves Nubank’s core growth engine—fast, branchless onboarding and customer-centric digital experience (E4, E8, E10)—by pulling higher-intent shoppers into Nubank’s existing product funnel (value captured downstream via accounts/credit rather than upfront fees) while using AI/automation to reduce customer time/uncertainty at the weakest-link stage (E6, E11).",
+  "biggest_risk": "High recoupling and trust/regulatory risk: banks and other neobanks can quickly copy “AI advisor/pre-check” features inside their own apps (neutralizing differentiation), and any monetization via partner-paid placement/lead fees can undermine customer trust and invite scrutiny if recommendations appear conflicted or opaque (E6, E7).",
+  "staged_actions": [
+    "Layer (a) — Launch “Nubank Match” as a free in-app (and web) guided discovery flow that translates user goals into plain-language product attributes (fees, credit access, use case) and outputs a transparent shortlist, with clear disclosure that it is guidance, not approval (E6, E4).",
+    "Layer (a) — Add “Pre-check” eligibility estimation using consented data (e.g., self-reported income and/or permitted data connections) to provide a probability/limit range and the specific next-best action; only if Nubank is a fit, provide one-tap handoff into Nubank’s existing digital onboarding/apply flow to preserve the proven conversion engine (E8, E11).",
+    "Layer (a) — Build a switching-friction reducer: automated checklist to move recurring payments/PIX keys and set up daily-transaction behaviors so customers can adopt Nubank without immediately closing their incumbent account (protects decoupling-by-sharing rather than forcing full migration) (E6, E13).",
+    "Layer (b) — Introduce lightweight trust primitives that improve match quality and reduce fraud/abandonment (e.g., verified identity badges, document capture, and explainable reasons for ineligibility), but keep decisions and underwriting within Nubank’s existing risk framework (E10, E11).",
+    "Layer (b) — Only after strong conversion + retention metrics, test a tightly governed “alternative options” marketplace where non-Nubank products appear only when Nubank is not the best fit, with strict ranking transparency and compliance review; monetize primarily via improved Nubank conversion/retention rather than paid placement (E4, E7)."
+  ],
+  "do_not_do": [
+    "Do not jump to Layer (c) by offering guarantees, underwriting-as-a-service, or balance-sheet-backed approvals for third-party products; it increases risk/ops complexity and violates the layered evolution path before the wedge proves CAC→CLV payback (E5, E11).",
+    "Do not monetize early via opaque paid placement/lead sales that could bias recommendations; it risks eroding Nubank’s customer-centric trust advantage and increases regulatory exposure, which would damage the relationship moat (E4, E10).",
+    "Do not attempt to “own the whole journey” with a big-bang rebuild of every financial activity (full brokerage + full payments/escrow + dispute operations) in one step; Teixeira’s logic is to decouple a single weak-link activity first, then expand only if earned (E13, E7).",
+    "Do not compete on broad, undifferentiated content/SEO comparison sites as the primary surface; the strategic asset is owning repeat behavior and first-party data inside Nubank’s relationship, not a commoditized channel (E4)."
+  ],
+  "next_research_steps": [
+    "Quantify where “evaluate & choose” sits as a drop-off point for Nubank prospects (share of abandoners, time-to-decision, top confusions) and estimate CAC reduction required for ROI given expected AI + compliance costs (E6, E5).",
+    "Run an A/B test: baseline onboarding funnel vs. Match+Pre-check → onboarding handoff; measure conversion lift, approval rate changes, early delinquency proxy signals, and customer support contact rate (E8, E10, E11).",
+    "Regulatory/compliance assessment: what constitutes advice vs. marketing vs. brokerage in Nubank’s key markets, and what disclosures are required for eligibility estimation and any partner listings (E6).",
+    "Recoupling scan: benchmark incumbent/neobank “AI advisor” features and speed-to-copy; identify defensible data/UX advantages Nubank can build (first-party behavioral data, explainability, switching kit) (E4, E7)."
+  ],
+  "evidence_ids": [
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

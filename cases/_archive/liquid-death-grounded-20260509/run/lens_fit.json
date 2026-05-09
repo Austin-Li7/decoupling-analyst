@@ -1,0 +1,30 @@
+{
+  "primary_type": "new_market",
+  "secondary_types": [
+    "business_model"
+  ],
+  "confidence": "medium",
+  "reasoning": "Liquid Death appears to compete primarily by creating a new emotional/brand-oriented segment within the bottled/canned water category rather than by decoupling a single weak link in the customer value chain. The supplied materials describe a bold, unconventional branding and marketing strategy that differentiates the product and redefines consumer engagement (E3, E4). The evidence maps the standard bottled-water customer value chain (need recognition → search → evaluation → purchase → consumption → post-purchase) and notes that incumbents have focused on production, distribution, and commodity branding (E6–E13, E14). Liquid Death’s play is best read as resegmenting demand and creating a distinct consumer niche (new-market creation) and experimenting with direct-to-consumer and branded merchandise monetization that looks like a business-model innovation (E3–E5). There is limited evidence that Liquid Death is decoupling a single weak link (e.g., disintermediating retail, changing logistics, or substituting a digital workflow) in the way Teixeira’s decoupling thesis requires, so decoupling is a secondary fit at best (E4, E5).",
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14"
+  ],
+  "decoupling_fit_score": 0.2,
+  "recommended_report_mode": "strategic_memo",
+  "caveats": [
+    "Evidence set is limited and largely descriptive; there are no cited unit-economics, sales channels breakdown, or customer cohorts in the supplied evidence—this limits confidence in strategic details (E1–E5).",
+    "No hard evidence that Liquid Death uses digital/AI capabilities to materially strengthen delivery of any single CVC activity; if such capabilities exist, decoupling fit could be higher (no E-id supports this).",
+    "Public/private status and financials are unknown in the evidence; any recommendation requiring CAC/CLV/gross-margin assumptions must be validated with company data."
+  ]
+}

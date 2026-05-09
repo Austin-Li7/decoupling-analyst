@@ -1,0 +1,91 @@
+{
+  "run_id": "liquid-death-20260509-005918",
+  "company_name": "Liquid Death",
+  "total_input_tokens": 43189,
+  "total_output_tokens": 18366,
+  "total_cost_usd": 0.263212,
+  "by_module": {
+    "business_model": {
+      "input_tokens": 4475,
+      "output_tokens": 2324,
+      "cost_usd": 0.028834,
+      "model": "gpt-5.2"
+    },
+    "case_perspective": {
+      "input_tokens": 2175,
+      "output_tokens": 301,
+      "cost_usd": 0.005729,
+      "model": "gpt-5.2"
+    },
+    "company_profile": {
+      "input_tokens": 2395,
+      "output_tokens": 1040,
+      "cost_usd": 0.002679,
+      "model": "gpt-5-mini"
+    },
+    "competitive_response": {
+      "input_tokens": 4361,
+      "output_tokens": 2410,
+      "cost_usd": 0.029551,
+      "model": "gpt-5.2"
+    },
+    "critic": {
+      "input_tokens": 4113,
+      "output_tokens": 2731,
+      "cost_usd": 0.032451,
+      "model": "gpt-5.2"
+    },
+    "cvc": {
+      "input_tokens": 4388,
+      "output_tokens": 1146,
+      "cost_usd": 0.016945,
+      "model": "gpt-5.2"
+    },
+    "decoupling": {
+      "input_tokens": 4695,
+      "output_tokens": 1831,
+      "cost_usd": 0.024179,
+      "model": "gpt-5.2"
+    },
+    "final_judgment": {
+      "input_tokens": 6997,
+      "output_tokens": 1951,
+      "cost_usd": 0.028256,
+      "model": "gpt-5.2"
+    },
+    "gpt_researcher_internal": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.054835,
+      "note": "GPT Researcher's own LLM calls (sub-query gen, scrape summarization, report writing)",
+      "model": "gpt-researcher"
+    },
+    "lens_fit": {
+      "input_tokens": 1931,
+      "output_tokens": 699,
+      "cost_usd": 0.001881,
+      "model": "gpt-5-mini"
+    },
+    "research_brief": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0
+    },
+    "value_types": {
+      "input_tokens": 2312,
+      "output_tokens": 1090,
+      "cost_usd": 0.002758,
+      "model": "gpt-5-mini"
+    },
+    "weak_links": {
+      "input_tokens": 5347,
+      "output_tokens": 2843,
+      "cost_usd": 0.035114,
+      "model": "gpt-5.2"
+    }
+  },
+  "notes": [
+    "Costs computed from per-call usage objects. GPT Researcher internal cost is read from researcher.research_costs after run.",
+    "Embedding/RAG costs outside LLMClient are not captured in this artifact."
+  ]
+}

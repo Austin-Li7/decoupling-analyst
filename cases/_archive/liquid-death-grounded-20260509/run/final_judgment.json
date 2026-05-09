@@ -1,0 +1,41 @@
+{
+  "judgment": "study_more",
+  "one_sentence_thesis": "Liquid Death’s next decoupling wedge could be a lightweight real-time “where can I buy it right now?” locator that reduces search friction without changing the rest of the purchase workflow, but the case evidence is too thin on (1) whether this is truly a weak link for Liquid Death buyers and (2) whether the unit economics work versus high recoupling risk (E6-E12, E15).",
+  "why_now": "Teixeira’s decoupling logic is that disruptors can “steal” a narrow stage of the customer value chain rather than replace the incumbent bundle (books/unlocking-the-customer-value-chain-chapter-1.md) (E15), and mobile + location data can plausibly reduce the time/effort cost embedded in the “product search” step of the bottled-water CVC (E9), but we do not yet have direct evidence that Liquid Death customers systematically fail at real-time availability discovery (E6-E13).",
+  "strongest_argument": "A “Liquid Death Now” locator directly targets the CVC step labeled Product Search (E9) by reducing uncertainty and effort between need recognition and purchase (E8, E11) while leaving downstream fulfillment to existing retailers—matching Teixeira’s pattern of decoupling a discrete activity instead of rebuilding production/distribution (E15).",
+  "biggest_risk": "Recoupling and commoditization: retailers, delivery apps, or incumbents can easily add “in-stock nearby” discovery for canned water, neutralizing the wedge, and without clear evidence of conversion lift and low CAC, the locator could become a brand-cost center that distracts from Liquid Death’s core growth engine (currently described only generally as brand/marketing differentiation) (E3, E14).",
+  "staged_actions": [
+    "Preserve the core growth engine (brand-led demand creation) by treating “Liquid Death Now” as an acquisition-to-purchase bridge, not a new business line: launch an ultra-light MVP (mobile web + QR + SMS) that answers only one job—nearest place to buy now—focused on the Product Search step (E3, E9, E11).",
+    "Instrument unit economics before scaling: measure incremental conversion proxies (store-locator click-to-navigation rate, repeat usage, and geo-level sales lift where available) to test whether incremental gross profit from added units plausibly exceeds all-in CAC/operating costs (assumption to validate; CVC steps in E6-E13).",
+    "Increase data quality with low-risk trust mechanisms (layer a): add venue-verified availability where partners cooperate plus user-reported “confirmed in stock” with recency ranking to reduce false positives and time waste in the search step (E9).",
+    "Only after demonstrating measurable lift, move to medium-responsibility intermediation (layer b): add retailer-specific offers/coupons or “reserve for pickup” referrals where the retailer remains merchant-of-record, keeping Liquid Death out of payments/disputes while improving search-to-purchase completion (E11).",
+    "If (and only if) the locator demonstrates repeat behavior and retailer demand, create a B2B insight product (heatmaps of demand/search) for distribution partners—explicitly as an add-on, not the primary value capture path (hypothesis; not evidenced)."
+  ],
+  "do_not_do": [
+    "Do not jump to heavy-responsibility layers like first-party delivery, owning payments, or logistics/dispute resolution for hydration purchases; it violates the layered evolution doctrine and would force Liquid Death to compete on operations rather than decouple a single CVC activity (E11, E15).",
+    "Do not broaden the locator into a generic beverage marketplace (covering competitors) to chase traffic; it would dilute the brand-led demand engine and undermine relationship ownership by turning Liquid Death into an interchangeable discovery layer (E3, E9).",
+    "Do not over-invest in paid acquisition to drive locator usage until conversion lift is proven; otherwise CAC can outrun incremental gross profit because the locator is not itself a high-margin paid product (unit economics assumption to validate; E8-E11).",
+    "Do not promise real-time inventory accuracy without verification; bad data would increase customer effort (value erosion) at the exact step the product aims to improve (E9)."
+  ],
+  "next_research_steps": [
+    "Validate the weak link: user interviews/diaries at the moment of need to quantify how often Liquid Death buyers fail to find it quickly (and what they do instead), specifically within the Product Search step (E9).",
+    "Quantify switching friction and alternatives: what fraction of “I want Liquid Death now” searches are already satisfied via existing retailer locators/delivery apps, and what unique gap remains (recoupling baseline).",
+    "Run a geo-based holdout test (or retailer partner test) to estimate incremental unit lift attributable to the locator (need recognition → search → purchase) (E8-E11).",
+    "Map the current core growth engine with evidence (channels, repeat behavior, distribution leverage) to ensure the decoupled product amplifies—rather than distracts from—what’s working (E3).",
+    "Assess recoupling risk: likelihood and speed of retailer/app copy or a data partner cutting off access, and what proprietary data/relationship Liquid Death could uniquely accumulate (E15)."
+  ],
+  "evidence_ids": [
+    "E2",
+    "E3",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E15"
+  ]
+}

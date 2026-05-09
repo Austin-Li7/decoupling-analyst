@@ -1,0 +1,82 @@
+{
+  "activities": [
+    {
+      "activity_id": "A1",
+      "value_type": "create",
+      "reasoning": "Awareness helps customers identify institutions and products that can solve money-management or credit needs; digital channels and brand presence (including Nubank) expand that set and therefore create customer value (E6, E3).",
+      "money_cost": 1,
+      "time_cost": 2,
+      "effort_cost": 2,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E6",
+        "E3"
+      ]
+    },
+    {
+      "activity_id": "A2",
+      "value_type": "erode",
+      "reasoning": "Evaluating and choosing providers can erode value because incumbents present opaque fees and bundled offerings that make comparison costly and time-consuming for customers (E6, E11).",
+      "money_cost": 2,
+      "time_cost": 4,
+      "effort_cost": 4,
+      "satisfaction": 2,
+      "evidence_ids": [
+        "E6",
+        "E11"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "value_type": "create",
+      "reasoning": "Fast, fully digital, branchless onboarding reduces paperwork, eliminates physical visits, and therefore creates clear customer value compared with legacy branch processes (E6, E8).",
+      "money_cost": 1,
+      "time_cost": 2,
+      "effort_cost": 2,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E6",
+        "E8"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "value_type": "create",
+      "reasoning": "No-fee, real-time digital transactions increase reliability and lower cost for daily money movement, representing a value-creating improvement over traditional high-fee, slow incumbents (E6, E9).",
+      "money_cost": 1,
+      "time_cost": 1,
+      "effort_cost": 1,
+      "satisfaction": 5,
+      "evidence_ids": [
+        "E6",
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "value_type": "create",
+      "reasoning": "Transparent, accessible credit products reduce opacity and bureaucracy, improving access and manageability of lending for customers compared with traditional banks (E6, E11).",
+      "money_cost": 3,
+      "time_cost": 2,
+      "effort_cost": 2,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E6",
+        "E11"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "value_type": "create",
+      "reasoning": "Rapid, 24/7 digital customer service and AI/chatbot support reduce wait times and branch dependence, turning customer service from a traditional pain point into a value-creating activity when implemented (E6, E10).",
+      "money_cost": 1,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E6",
+        "E10"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "customer_segment": "Individual knowledge workers and teams using productivity and knowledge-management tools to manage notes, projects, and shared knowledge (E6).",
+  "end_activity": "Regularly maintain and use a living workspace (personal or shared) that supports ongoing knowledge capture, organization, and team execution (E13).",
+  "activities": [
+    {
+      "id": "A1",
+      "step": 1,
+      "activity": "Discover and consider a workspace tool through word-of-mouth, online content, and/or by encountering it via other tools",
+      "current_provider": "Self + peers/communities + online content; Notion’s presence via integrations/mentions",
+      "customer_goal": "Find a credible tool that seems likely to fit the user’s note/knowledge/project workflow before investing setup effort",
+      "evidence_ids": [
+        "E7",
+        "E6"
+      ]
+    },
+    {
+      "id": "A2",
+      "step": 2,
+      "activity": "Sign up and complete initial onboarding to access the workspace",
+      "current_provider": "Notion",
+      "customer_goal": "Get into the product quickly and understand enough to start building without high setup friction",
+      "evidence_ids": [
+        "E8"
+      ]
+    },
+    {
+      "id": "A3",
+      "step": 3,
+      "activity": "Set up the workspace structure (e.g., templates/pages/databases/tags/links) to match the user’s way of working",
+      "current_provider": "Notion (with the user doing configuration work)",
+      "customer_goal": "Create an information architecture that will make future retrieval, reuse, and collaboration easier",
+      "evidence_ids": [
+        "E8",
+        "E10"
+      ]
+    },
+    {
+      "id": "A4",
+      "step": 4,
+      "activity": "Create and store work artifacts (notes, databases, wikis, project boards)",
+      "current_provider": "Notion",
+      "customer_goal": "Capture knowledge and track work in a format that is easy to edit and evolve",
+      "evidence_ids": [
+        "E9",
+        "E6"
+      ]
+    },
+    {
+      "id": "A5",
+      "step": 5,
+      "activity": "Collaborate by sharing, commenting, and coordinating tasks on shared pages",
+      "current_provider": "Notion",
+      "customer_goal": "Align teammates around the same source of truth and coordinate execution without duplication",
+      "evidence_ids": [
+        "E11",
+        "E6"
+      ]
+    },
+    {
+      "id": "A6",
+      "step": 6,
+      "activity": "Integrate the workspace with external apps and continuously iterate/update the system over time",
+      "current_provider": "Notion + connected external apps (e.g., Slack/Google Drive) + the user’s ongoing maintenance behaviors",
+      "customer_goal": "Keep the workspace current and connected to the rest of the toolchain so it remains useful as work changes",
+      "evidence_ids": [
+        "E12",
+        "E13"
+      ]
+    }
+  ],
+  "profile_vs_cvc_conflicts": [
+    "Notion is positioned as an “all-in-one workspace,” but the observed customer behavior includes connecting Notion to external apps as part of normal use, implying many customers operate a multi-tool workflow rather than fully replacing the bundle (E6, E12)."
+  ]
+}

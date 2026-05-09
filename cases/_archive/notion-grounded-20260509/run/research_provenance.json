@@ -1,0 +1,79 @@
+{
+  "company_name": "Notion",
+  "run_id": "notion-20260509-005121",
+  "searched_urls_count": 0,
+  "report_cited_urls_count": 6,
+  "union_pre_liveness_count": 13,
+  "report_urls_in_search_results": 4,
+  "report_urls_only_in_report": 2,
+  "report_only_url_ratio": 0.333,
+  "searched_urls": [],
+  "research_sources_urls": [
+    "https://www.linkedin.com/pulse/unlocking-customer-value-chain-thales-teixeira-wing-git-chan",
+    "https://blog.gembaacademy.com/2019/04/01/breaking-the-weak-link-in-the-value-chain/",
+    "https://4thoption.substack.com/p/91thales-teixeira-decoupling-the-d08",
+    "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "https://www.emerald.com/insight/content/doi/10.1108/sl-10-2019-0151/full/html",
+    "https://www.forbes.com/sites/chuckbrooks/2025/12/26/technological-disruption-strategic-inflection-points-from-20262036/",
+    "https://buildin.ai/blog/notion-alternatives-2026",
+    "https://businessmodelcanvastemplate.com/blogs/growth-strategy/notion-growth-strategy",
+    "https://www.linkedin.com/pulse/website-monetization-tools-market-2026-growth-forecast-wrwbe/",
+    "https://www.mdpi.com/2227-7390/13/23/3815",
+    "https://www.scalabl.com/literature/unlocking-the-customer-value-chain",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X/ref=sims_dp_d_dex_ai_rank_model_1_d_v1_d_sccl_1_3/146-2520158-8497444?pd_rd_w=8qHEv&content-id=amzn1.sym.bb4a0aac-c2b4-4b4b-a0c8-9aa89b28dce3&pf_rd_p=bb4a0aac-c2b4-4b4b-a0c8-9aa89b28dce3&pf_rd_r=CPN8M0JR7XQ3T7YY07W7&pd_rd_wg=Oxd3X&pd_rd_r=48fd2034-13da-4a9a-8672-1beb51568ad1&pd_rd_i=152476308X&psc=1",
+    "https://www.penguinrandomhouse.com/books/562858/unlocking-the-customer-value-chain-by-thales-s-teixeira-with-greg-piechota/"
+  ],
+  "visited_urls_from_retriever": [],
+  "prefetched_url_count": 13,
+  "report_cited_urls": [
+    {
+      "url": "https://www.notion.so",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.penguinrandomhouse.com/books/562858/unlocking-the-customer-value-chain-by-thales-s-teixeira-with-greg-piechota/",
+      "provenance": "in_search_results"
+    },
+    {
+      "url": "https://www.scalabl.com/literature/unlocking-the-customer-value-chain",
+      "provenance": "in_search_results"
+    },
+    {
+      "url": "https://4thoption.substack.com/p/91thales-teixeira-decoupling-the-d08",
+      "provenance": "in_search_results"
+    },
+    {
+      "url": "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X/",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+      "provenance": "in_search_results"
+    }
+  ],
+  "post_liveness_kept_urls": [
+    "https://www.linkedin.com/pulse/unlocking-customer-value-chain-thales-teixeira-wing-git-chan",
+    "https://blog.gembaacademy.com/2019/04/01/breaking-the-weak-link-in-the-value-chain/",
+    "https://4thoption.substack.com/p/91thales-teixeira-decoupling-the-d08",
+    "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "https://www.forbes.com/sites/chuckbrooks/2025/12/26/technological-disruption-strategic-inflection-points-from-20262036/",
+    "https://buildin.ai/blog/notion-alternatives-2026",
+    "https://businessmodelcanvastemplate.com/blogs/growth-strategy/notion-growth-strategy",
+    "https://www.linkedin.com/pulse/website-monetization-tools-market-2026-growth-forecast-wrwbe/",
+    "https://www.scalabl.com/literature/unlocking-the-customer-value-chain",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X/ref=sims_dp_d_dex_ai_rank_model_1_d_v1_d_sccl_1_3/146-2520158-8497444?pd_rd_w=8qHEv&content-id=amzn1.sym.bb4a0aac-c2b4-4b4b-a0c8-9aa89b28dce3&pf_rd_p=bb4a0aac-c2b4-4b4b-a0c8-9aa89b28dce3&pf_rd_r=CPN8M0JR7XQ3T7YY07W7&pd_rd_wg=Oxd3X&pd_rd_r=48fd2034-13da-4a9a-8672-1beb51568ad1&pd_rd_i=152476308X&psc=1",
+    "https://www.penguinrandomhouse.com/books/562858/unlocking-the-customer-value-chain-by-thales-s-teixeira-with-greg-piechota/"
+  ],
+  "post_liveness_dropped_urls": [
+    {
+      "url": "https://www.emerald.com/insight/content/doi/10.1108/sl-10-2019-0151/full/html",
+      "status": "403",
+      "was_in_search_results": true
+    },
+    {
+      "url": "https://www.mdpi.com/2227-7390/13/23/3815",
+      "status": "403",
+      "was_in_search_results": true
+    }
+  ]
+}

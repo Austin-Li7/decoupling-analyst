@@ -1,0 +1,67 @@
+{
+  "likely_responses": [
+    {
+      "response_type": "recouple",
+      "description": "Traditional banks re-bundle the decoupled “evaluate/choose + pre-check” step by embedding product comparison, fee transparency messaging, and instant eligibility pre-assessment directly inside their existing digital channels (mobile apps / internet banking) and branch-assisted onboarding flows—so customers can complete evaluation and application without ever leaving the incumbent’s bundle (E6).",
+      "severity": "high",
+      "defense": "Stay tool-first and cross-provider: make the “Financial Match + Pre-check” experience meaningfully better than a single-bank advisor by translating customer goals into a transparent shortlist that can include Nubank and alternatives, then one-tap handoff into Nubank’s already-low-friction digital onboarding (E6, E8). Build a data moat from repeated advisory interactions + outcomes (which incumbents won’t capture if they only recommend their own products) and continuously improve personalization/decisioning (E4).",
+      "evidence_ids": [
+        "E4",
+        "E6",
+        "E8"
+      ]
+    },
+    {
+      "response_type": "copy",
+      "description": "Incumbents launch copycat AI financial assistants/chatbots that mimic Nubank-style guidance, faster answers, and simplified product explanations, leveraging their large customer bases and existing service surfaces to reduce the perceived differentiation of Nubank’s pre-check layer (E10).",
+      "severity": "high",
+      "defense": "Differentiate on end-to-end conversion speed and clarity: connect the pre-check directly to real-time, app-native account opening and activation (E8), and to Nubank’s digital customer support experience for follow-up questions and edge cases (E10). Make the pre-check outputs auditable (clear reasons, transparent fee/term tradeoffs) to reinforce trust and reduce “AI-washing” by incumbents (E11).",
+      "evidence_ids": [
+        "E8",
+        "E10",
+        "E11"
+      ]
+    },
+    {
+      "response_type": "subsidize",
+      "description": "Banks use pricing pressure to neutralize the wedge—temporary fee waivers, teaser rates, and bundled discounts across accounts/credit products—to reduce customer motivation to shop around and to keep evaluation inside the incumbent bundle (E6).",
+      "severity": "medium",
+      "defense": "Avoid competing purely on price; compete on reduced friction + transparency. Emphasize no-hidden-fee and clear terms positioning in the pre-check decision flow (E11) and tie the “next best action” to immediate digital execution (E8). Use the pre-check to target segments where customer pain from incumbent friction/opacity is highest, improving conversion efficiency (E6).",
+      "evidence_ids": [
+        "E6",
+        "E8",
+        "E11"
+      ]
+    },
+    {
+      "response_type": "block",
+      "description": "Incumbents attempt to hinder third-party evaluation and switching by limiting data portability and slowing down verification/transfer processes (e.g., making it harder for customers to gather required documents, compare terms, or move accounts), pushing customers back into incumbent-controlled touchpoints (E6).",
+      "severity": "medium",
+      "defense": "Design the pre-check to work with minimal required inputs (progressive disclosure) and to reduce documentation burden through streamlined digital flows consistent with Nubank’s branchless onboarding model (E8). Where partnerships are feasible, use them to legitimize data access/verification and reduce friction points (E4).",
+      "evidence_ids": [
+        "E4",
+        "E6",
+        "E8"
+      ]
+    }
+  ],
+  "recoupling_vulnerability": {
+    "vulnerability": "high",
+    "rationale": "The targeted activity—helping customers evaluate/choose financial products and pre-assessing eligibility—sits upstream of account opening and lending. Because incumbents already bundle the end-to-end customer value chain and control many customer touchpoints, they can re-bundle (recouple) evaluation + pre-check into their existing digital acquisition funnels, reducing the need for customers to use an external matching layer (E6). The feature surface (AI-guided guidance / pre-check) is also relatively easy to imitate using digital service interfaces and chatbots (E10), making differentiation fragile unless Nubank compounds a data/learning advantage and ties the wedge tightly to its proven low-friction onboarding (E8).",
+    "incumbent_capability_to_recouple": "medium",
+    "incumbent_incentive_to_recouple": "high",
+    "defenses": [
+      "Exploit Nubank’s existing strength in fully digital account opening/onboarding: make the pre-check output immediately actionable with one-tap conversion into a seamless onboarding flow (E8).",
+      "Compound a proprietary interaction data advantage: treat the pre-check as a repeated-use advisory product (not a one-off acquisition widget) so personalization improves with each customer interaction (E4).",
+      "Differentiate on transparency and trust: present clear, comparable fee/term tradeoffs and avoid hidden-fee complexity that customers associate with incumbents, reinforcing why an independent match layer is valuable (E11).",
+      "Use digital customer service as a conversion backstop: route edge cases and uncertainty into fast, app-native support to reduce drop-off and increase perceived reliability vs. incumbent processes (E10)."
+    ],
+    "evidence_ids": [
+      "E4",
+      "E6",
+      "E8",
+      "E10",
+      "E11"
+    ]
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "E1": {
+    "id": "E1",
+    "claim": "Liquid Death was provided as the target company by the user.",
+    "source_id": "S0",
+    "locator": "CLI input",
+    "claim_type": "assumption",
+    "confidence": "high",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit"
+    ],
+    "conflicts_with": []
+  },
+  "E2": {
+    "id": "E2",
+    "claim": "Liquid Death website was supplied as https://liquiddeath.com.",
+    "source_id": "S1",
+    "locator": "CLI input --url",
+    "claim_type": "assumption",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "final_judgment"
+    ],
+    "conflicts_with": []
+  },
+  "E3": {
+    "id": "E3",
+    "claim": "# Teixeira-Style Digital Disruption Analysis of Liquid Death ## Introduction Liquid Death, a canned water brand founded in 2017, has rapidly disrupted the traditional bottled water and beverage industry through a combination of bold marketing, unique branding, and strategic value chain innovation.",
+    "source_id": "S1",
+    "locator": "article: https://www.instagram.com/p/DTwWnBAiAi8/",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E4": {
+    "id": "E4",
+    "claim": "Applying Thales Teixeira’s digital disruption framework—particularly the concepts of customer value chain decoupling—this report analyzes how Liquid Death has redefined consumer engagement, identified and exploited weak links in the incumbent value chain, and created a monetization strategy that challenges industry norms.",
+    "source_id": "S2",
+    "locator": "article: https://www.linkedin.com/posts/nileshmalani2009_brandstrategy-marketdisruption-scaleup-activity-7416168112552574977-cYRJ",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "lens_fit",
+      "case_perspective",
+      "business_model"
+    ],
+    "conflicts_with": []
+  },
+  "E5": {
+    "id": "E5",
+    "claim": "The analysis further examines Liquid Death’s competitive landscape, customer pain points, and recent strategic moves, providing a comprehensive and impartial assessment of its disruptive trajectory.",
+    "source_id": "S3",
+    "locator": "article: https://www.adexchanger.com/?p=455910",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "lens_fit",
+      "case_perspective"
+    ],
+    "conflicts_with": []
+  },
+  "E6": {
+    "id": "E6",
+    "claim": "## Customer Value Chain Mapping Teixeira’s framework begins with mapping the customer value chain: the sequence of steps a customer takes from need recognition to purchase and consumption.",
+    "source_id": "S4",
+    "locator": "article: https://fasterthannormal.co/businesses/liquid-death",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "lens_fit",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E7": {
+    "id": "E7",
+    "claim": "For the bottled water industry, the traditional value chain is as follows: | Step | Description | |------|-------------| | 1.",
+    "source_id": "S5",
+    "locator": "article: https://www.instagram.com/p/DXKLaOEiEcI/",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E8": {
+    "id": "E8",
+    "claim": "Need Recognition | Consumer feels thirsty or seeks hydration.",
+    "source_id": "S6",
+    "locator": "article: https://www.penguinrandomhouse.com/books/562858/unlocking-the-customer-value-chain-by-thales-s-teixeira-with-greg-piechota/",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E9": {
+    "id": "E9",
+    "claim": "Product Search | Consumer considers options: tap water, bottled water, other beverages.",
+    "source_id": "S7",
+    "locator": "article: https://www.hks.harvard.edu/centers/mrcbg/programs/growthpolicy/unlocking-customer-value-chain-how-decoupling-drives-consumer",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E10": {
+    "id": "E10",
+    "claim": "Evaluation | Consumer evaluates based on price, convenience, health, brand, and packaging.",
+    "source_id": "S8",
+    "locator": "article: https://www.3pillarglobal.com/insights/podcast/unlocking-the-customer-value-chain-digital-disruption-thales-teixeira/",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "lens_fit",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E11": {
+    "id": "E11",
+    "claim": "Purchase | Consumer buys product at retail (grocery, convenience, vending, or online).",
+    "source_id": "S9",
+    "locator": "article: https://www.goodreads.com/book/show/42934086-unlocking-the-customer-value-chain",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E12": {
+    "id": "E12",
+    "claim": "Consumption | Consumer drinks water, disposes of packaging.",
+    "source_id": "S10",
+    "locator": "article: https://www.porchlightbooks.com/products/unlocking-the-customer-value-chain-thales-s-teixeira-9781524763084",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "lens_fit",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E13": {
+    "id": "E13",
+    "claim": "Post-Purchase | Consumer considers environmental impact, brand loyalty, and repurchase.",
+    "source_id": "S11",
+    "locator": "article: https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E14": {
+    "id": "E14",
+    "claim": "| Traditional incumbents (e.g., Nestlé, Coca-Cola, PepsiCo) have focused on optimizing production, distribution, and branding, with little differentiation beyond source and packaging.",
+    "source_id": "S12",
+    "locator": "article: https://www.youtube.com/watch?v=ea-XaLHfpS4",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E15": {
+    "id": "E15",
+    "claim": "## Decoupling: Points of Disruption Teixeira’s concept of “decoupling” refers to startups peeling away specific steps in the value chain, rather than replicating the entire process.",
+    "source_id": "S13",
+    "locator": "article: https://praxie.com/decouple-the-value-chain-to-drive-digital-disruption/",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "case_perspective",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E16": {
+    "id": "E16",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "weak_links"
+    ],
+    "conflicts_with": []
+  },
+  "E17": {
+    "id": "E17",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "weak_links"
+    ],
+    "conflicts_with": []
+  },
+  "E18": {
+    "id": "E18",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "weak_links"
+    ],
+    "conflicts_with": []
+  },
+  "E19": {
+    "id": "E19",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "weak_links"
+    ],
+    "conflicts_with": []
+  },
+  "E20": {
+    "id": "E20",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "weak_links"
+    ],
+    "conflicts_with": []
+  },
+  "E21": {
+    "id": "E21",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "weak_links"
+    ],
+    "conflicts_with": []
+  },
+  "E22": {
+    "id": "E22",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "weak_links"
+    ],
+    "conflicts_with": []
+  },
+  "E23": {
+    "id": "E23",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "weak_links"
+    ],
+    "conflicts_with": []
+  },
+  "E24": {
+    "id": "E24",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "weak_links"
+    ],
+    "conflicts_with": []
+  },
+  "E25": {
+    "id": "E25",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "weak_links"
+    ],
+    "conflicts_with": []
+  }
+}

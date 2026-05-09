@@ -1,0 +1,60 @@
+{
+  "company": {
+    "name": "Nubank",
+    "website": "https://nubank.com.br",
+    "ticker": "",
+    "public_or_private": "unknown",
+    "industry": "digital banking / fintech",
+    "geography": [
+      "Latin America",
+      "United States",
+      "Asia"
+    ],
+    "stage": "unknown",
+    "description": "Nubank is a digital-first bank that grew from a challenger credit-card provider into a large digital bank serving consumers across Latin America (E3). The company emphasizes branchless, mobile onboarding and a customer-centric model that decouples activities in the traditional banking value chain (E4, E8). Nubank offers digital account opening, real-time no-fee transactions, AI-enabled customer service, and consumer credit products with simplified pricing and transparency (E8, E9, E10, E11)."
+  },
+  "customers": {
+    "primary_user": "retail consumers / individual account holders (digital-first customers)",
+    "buyer": "individual account holders",
+    "payer": "individual account holders",
+    "segments": [
+      "mass-market retail consumers in Latin America (digital-first)",
+      "customers seeking low-friction, mobile-first banking products"
+    ]
+  },
+  "business_model": {
+    "value_proposition": "Digital-first, customer-centric banking that simplifies onboarding, offers real-time no-fee transactions, transparent credit products, and 24/7 AI-enabled customer service by decoupling traditionally bundled banking activities (E4, E8, E9, E10, E11).",
+    "revenue_model": "unknown",
+    "pricing_model": "unknown",
+    "distribution_channels": [
+      "mobile app / digital onboarding (branchless) (E8)",
+      "website (E2)"
+    ],
+    "cost_drivers": [
+      "technology and platform infrastructure to support mobile onboarding and real-time transactions (E8, E9)",
+      "customer service delivery (noting AI/chatbot-enabled support) (E10)"
+    ]
+  },
+  "competition": {
+    "incumbents": [
+      "traditional banks (bundled branch-based incumbents with higher friction) (E6)"
+    ],
+    "direct_competitors": [
+      "other neobanks / fintech challengers (digital banks addressing similar pain points) (E4)"
+    ],
+    "substitutes": [
+      "unknown"
+    ]
+  },
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E6",
+    "E8",
+    "E9",
+    "E10",
+    "E11"
+  ]
+}
