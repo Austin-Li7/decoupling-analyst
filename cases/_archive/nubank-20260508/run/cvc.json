@@ -1,0 +1,76 @@
+{
+  "customer_segment": "Mass-market retail banking customers in Latin America (Brazil/Mexico/Colombia) seeking low-friction everyday banking and access to financial services",
+  "end_activity": "Successfully manage day-to-day money flows and financial needs (payments, savings, borrowing) with minimal fees and friction",
+  "activities": [
+    {
+      "id": "A1",
+      "step": 1,
+      "activity": "Recognize a need for a better banking relationship (lower fees, less friction, more convenience) and decide to switch or add an account",
+      "current_provider": "Self (customer), influenced by experiences with incumbent banks",
+      "customer_goal": "Identify that current banking experience is painful/expensive and that an alternative is worth trying",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "id": "A2",
+      "step": 2,
+      "activity": "Discover and evaluate banking options (digital vs incumbent), comparing trust, fees, and ease of use",
+      "current_provider": "Incumbent banks (as comparison baseline) and Nubank (as a digital-first alternative)",
+      "customer_goal": "Choose a provider that reduces the perceived hassle and fee burden while still meeting core banking needs",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "id": "A3",
+      "step": 3,
+      "activity": "Open an account and complete onboarding/verification to start the relationship",
+      "current_provider": "Nubank or incumbent banks",
+      "customer_goal": "Get an active account with minimal onboarding friction so banking can begin immediately",
+      "evidence_ids": [
+        "E2",
+        "E3"
+      ]
+    },
+    {
+      "id": "A4",
+      "step": 4,
+      "activity": "Move money in and use the account for everyday banking (receive funds, pay bills, make transfers, transact)",
+      "current_provider": "Nubank or incumbent banks; external counterparties (employers, billers, merchants) participate in the workflow",
+      "customer_goal": "Execute routine payments and money movement reliably with fewer fees and less effort than traditional banks",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "id": "A5",
+      "step": 5,
+      "activity": "Add additional financial services when needed (e.g., credit or other financial products) without redoing the whole banking setup",
+      "current_provider": "Nubank and/or incumbent banks",
+      "customer_goal": "Meet new financial needs (especially in a fee-heavy incumbent environment) using the same provider relationship if it is simpler/cheaper",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "id": "A6",
+      "step": 6,
+      "activity": "Get support, manage settings, and periodically reassess the relationship (stay, expand usage, or revert to incumbents)",
+      "current_provider": "Nubank or incumbent banks; self (customer) for reassessment",
+      "customer_goal": "Resolve issues quickly and ensure the ongoing banking experience remains low-friction and cost-effective",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    }
+  ],
+  "profile_vs_cvc_conflicts": [
+    "Company profile frames the user as a standalone retail banking customer, but the customer value chain necessarily includes external ecosystem participants (employers depositing wages, billers/merchants receiving payments) that shape switching friction and daily usage (E3, E4).",
+    "Profile states 'accounts and financial services' but provides no detail on which services; the CVC therefore includes a generic 'add services (e.g., credit)' step that may not match Nubank’s exact current product scope in each country (evidence gap) (E3)."
+  ]
+}

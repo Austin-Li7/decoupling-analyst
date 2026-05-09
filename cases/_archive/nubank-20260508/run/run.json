@@ -1,0 +1,147 @@
+{
+  "run_id": "nubank-20260508-210103",
+  "created_at": "2026-05-08T21:01:03-07:00",
+  "input": {
+    "analysis_goal": "investment_judgment",
+    "company_name": "Nubank",
+    "ticker": "",
+    "website": "https://nubank.com.br",
+    "files": [],
+    "urls": [
+      "https://nubank.com.br"
+    ],
+    "user_question": "",
+    "output_style": "professional_obsidian_note",
+    "include_financial_verification": false
+  },
+  "artifacts": {
+    "research_brief": "research_brief.json",
+    "evidence_store": "evidence_store.json",
+    "company_profile": "company_profile.json",
+    "lens_fit": "lens_fit.json",
+    "case_perspective": "case_perspective.json",
+    "cvc": "cvc.json",
+    "value_type_diagnosis": "value_type_diagnosis.json",
+    "weak_link_analysis": "weak_link_analysis.json",
+    "decoupling_strategy": "decoupling_strategy.json",
+    "business_model_analysis": "business_model_analysis.json",
+    "competitive_response": "competitive_response.json",
+    "final_judgment": "final_judgment.json",
+    "critic_review": "critic_review.json",
+    "final_report": "final_report.md"
+  },
+  "modules": [
+    {
+      "module": "research",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:49df5ba54cdf7b795987aadafbb1db6565dac65f6ae1796e5897a2b766b21055",
+      "output_path": "research_brief.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "evidence_store",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:4be5871e630040eb5c873a1337a9a9822d7a4f22be928e38a9c243053def55e3",
+      "output_path": "evidence_store.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "company_profile",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:05fa6f3f4a729d028d3f9712c133c5a23a9f5b16686ce408c5538ddf15a2c8b5",
+      "output_path": "company_profile.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "lens_fit",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:4854806f7789911a51942b4806684a6b8da66580c523f57457ce1d9d91524958",
+      "output_path": "lens_fit.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "case_perspective",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:818425ebb0a1cb799635368eb5066704a1520975f43e697c0875debd38c6f980",
+      "output_path": "case_perspective.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "cvc",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:7eeded872d8b6760c54fea48583f71b02dbbfee735a251b006f132e888b20602",
+      "output_path": "cvc.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "value_types",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:3929edd30643f13ea7af2f1d6b772dd159fbc13f63977b362012c2aa52df149d",
+      "output_path": "value_type_diagnosis.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "weak_links",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:33e23efc0712da18ee9a2d668cd6c3ee5e60d5404a67debd3905f67b67d328f9",
+      "output_path": "weak_link_analysis.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "decoupling",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:d768dd9427058571a4b41c471182a5fbe34fdf1acde4f094ac71488dd2a5bb67",
+      "output_path": "decoupling_strategy.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "business_model",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:36935406204aa2d72d0c6dbce66af3c4c36507f73a1343a3917d87ebb23f2b30",
+      "output_path": "business_model_analysis.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "competitive_response",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:36935406204aa2d72d0c6dbce66af3c4c36507f73a1343a3917d87ebb23f2b30",
+      "output_path": "competitive_response.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "final_judgment",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:ad955336493638047134e15eec13331b6b5061d0277fa8c244585889ba881527",
+      "output_path": "final_judgment.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "critic",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:7d5c069af9019fc40797bfb90c8280520028570418dc4ecb443250b434dfd80b",
+      "output_path": "critic_review.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "markdown_renderer",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:cfddf69f2c23f8e18b8076496eb0effc0001476b00a9d94f3fc92d1b7482d2ea",
+      "output_path": "final_report.md",
+      "status": "ok",
+      "error": null
+    }
+  ]
+}

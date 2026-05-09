@@ -1,0 +1,51 @@
+{
+  "company": {
+    "name": "Nubank",
+    "website": "https://nubank.com.br",
+    "ticker": "",
+    "public_or_private": "unknown",
+    "industry": "digital banking / fintech",
+    "geography": [
+      "Brazil",
+      "Mexico",
+      "Colombia"
+    ],
+    "stage": "unknown",
+    "description": "Nubank is a large digital banking platform founded in 2013 that has grown rapidly in Latin America and serves over 130 million customers; it is widely cited as a disruptive challenger to incumbent banks in the region (E3, E4)."
+  },
+  "customers": {
+    "primary_user": "retail banking customers / consumers (mass market) (E3)",
+    "buyer": "unknown",
+    "payer": "unknown",
+    "segments": [
+      "retail consumers (mass market) (E3)"
+    ]
+  },
+  "business_model": {
+    "value_proposition": "Digital-first banking platform that offers low-friction accounts and financial services to challenge traditional incumbents in Latin America (E3, E4).",
+    "revenue_model": "unknown",
+    "pricing_model": "unknown",
+    "distribution_channels": [
+      "digital platform (website) (E2, E3)",
+      "mobile/digital channels (implied by digital banking platform) (E3)"
+    ],
+    "cost_drivers": [
+      "unknown"
+    ]
+  },
+  "competition": {
+    "incumbents": [
+      "traditional incumbent banks in Latin America (E4)"
+    ],
+    "direct_competitors": [],
+    "substitutes": [
+      "traditional banks and legacy financial services (E4)"
+    ]
+  },
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+  ]
+}

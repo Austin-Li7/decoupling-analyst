@@ -1,0 +1,55 @@
+{
+  "primary_decoupling": {
+    "activity_to_decouple": "Discover and evaluate specific packaged-water brands (compare “commodity water” options vs. provocative/viral brands with sustainability narratives)",
+    "from_incumbent_bundle": "Traditional bottled-water incumbents (and the retail shelf/paid advertising system) that bundle discovery/evaluation into mass marketing + in-store placement alongside purchase",
+    "customer_pain": "Packaged water is effectively commoditized, so customers must spend extra time/attention to figure out what’s actually different (brand/persona fit, sustainability claims) before they can confidently choose—turning discovery into a high-effort, low-reward step.",
+    "new_offering": "Launch an AI-powered, social-native “Liquid Death Finder” that turns discovery into a 30-second quiz + short-form creator content stream, then outputs (1) the best-fit Liquid Death product/variant and (2) a “where to buy” path (nearby retailers + direct links) without requiring customers to change their normal shopping routine—i.e., “peeling away a portion of the customer’s value chain” (books/unlocking-the-customer-value-chain-chapter-1.md :: Page 10).",
+    "why_customer_switches": "They get to a confident choice faster with less mental effort in a category that otherwise feels interchangeable, while still buying wherever they already shop; the experience also reinforces the provocative brand identity and sustainability narrative that motivated the search in the first place (E3, E4, E6, E8).",
+    "cheaper_faster_easier": [
+      "faster",
+      "easier"
+    ],
+    "evidence_ids": [
+      "E3",
+      "E4",
+      "E6",
+      "E8"
+    ]
+  },
+  "do_not_decouple": [
+    {
+      "activity": "Purchase/obtain the chosen packaged-water product from a seller (online or offline)",
+      "reason": "Don’t make the wedge about rebuilding distribution/fulfillment or forcing a channel switch in a low-involvement category; that would shift Liquid Death from a brand-led decoupling into operationally heavy execution, risking the core growth engine (provocative branding + viral marketing) that is already working (E4) and competing head-on where incumbents are structurally advantaged (E3).",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "activity": "Dispose/recycle the packaging and decide whether to repurchase, switch, or recommend",
+      "reason": "Avoid taking responsibility for end-to-end recycling/logistics infrastructure as the primary wedge; it’s capability-intensive and slow-moving relative to the brand/discovery advantage, and could distract from the sustainability-led positioning without delivering a near-term, decouplable digital win (E4, E8).",
+      "evidence_ids": [
+        "E4",
+        "E8"
+      ]
+    },
+    {
+      "activity": "Notice a need for convenient, portable hydration",
+      "reason": "Don’t try to “create the need moment” as a standalone product (e.g., hardware reminders, medical hydration monitoring) because the core job-to-be-done already exists broadly and Liquid Death’s advantage is differentiating choice within packaged water, not owning the entire hydration-trigger stack (E9, E3, E4).",
+      "evidence_ids": [
+        "E9",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "activity": "Set selection criteria (e.g., health orientation, environmental concern, and brand/persona fit) and decide to use packaged water versus other hydration options",
+      "reason": "Don’t expand into generalized “health/hydration coaching” or other beverage-substitution decisioning as a wedge; it dilutes the sharp, brand-driven differentiation in packaged water and increases scope/CAC by competing across broader wellness criteria instead of winning the most decouplable weak link (brand discovery/evaluation) (E4, E6, E3).",
+      "evidence_ids": [
+        "E4",
+        "E6",
+        "E3"
+      ]
+    }
+  ]
+}

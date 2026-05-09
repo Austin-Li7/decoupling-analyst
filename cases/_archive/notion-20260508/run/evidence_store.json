@@ -1,0 +1,200 @@
+{
+  "E1": {
+    "id": "E1",
+    "claim": "Notion was provided as the target company by the user.",
+    "source_id": "S0",
+    "locator": "CLI input",
+    "claim_type": "assumption",
+    "confidence": "high",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "case_perspective",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E2": {
+    "id": "E2",
+    "claim": "Notion website was supplied as https://www.notion.so.",
+    "source_id": "S1",
+    "locator": "CLI input --url",
+    "claim_type": "assumption",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E3": {
+    "id": "E3",
+    "claim": "# Digital Disruption Analysis of Notion (2026): A Teixeira-Style MGT470 Report ## Introduction Notion, accessible at [https://www.notion.so](https://www.notion.so), has emerged as a leading all-in-one productivity platform, disrupting the digital workspace market through its modular approach to note-taking, knowledge management, project management, and collaboration.",
+    "source_id": "S1",
+    "locator": "article: https://www.notion.so",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E4": {
+    "id": "E4",
+    "claim": "This report conducts a Teixeira-style MGT470 digital disruption analysis, focusing on Notion’s impact on the customer value chain, monetization and unit economics, competition, decoupling signals, customer pain points, and recent strategic moves.",
+    "source_id": "S2",
+    "locator": "article: https://www.notion.so/pricing",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "business_model",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E5": {
+    "id": "E5",
+    "claim": "The analysis draws from official company sources, pricing and documentation pages, credible news, customer reviews, and competitor comparisons to provide an objective, comprehensive, and actionable assessment.",
+    "source_id": "S3",
+    "locator": "article: https://www.notion.so/product/ai",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E6": {
+    "id": "E6",
+    "claim": "## Customer Value Chain Analysis ### Customer Segments Notion targets a broad spectrum of users, including: - **Individuals and freelancers:** Solo users seeking personal productivity tools.",
+    "source_id": "S4",
+    "locator": "article: https://www.reddit.com/r/Notion/comments/10q6b5k/notion_performance_with_large_databases/",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E7": {
+    "id": "E7",
+    "claim": "**Small and medium-sized businesses (SMBs):** Teams requiring collaborative workspaces.",
+    "source_id": "S5",
+    "locator": "article: https://developers.notion.com/",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E8": {
+    "id": "E8",
+    "claim": "**Enterprise clients:** Large organizations with complex knowledge management and workflow needs.",
+    "source_id": "S6",
+    "locator": "article: https://vc.ru/u/1099651-vladimir-kuznetsov/708934-narushenie-notion-labs",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E9": {
+    "id": "E9",
+    "claim": "Notion’s pricing and feature set reflect this segmentation, with offerings ranging from a free personal tier to custom-priced enterprise solutions ([Notion Pricing](https://www.notion.so/pricing)).",
+    "source_id": "S7",
+    "locator": "article: https://www.notion.so/enterprise",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E10": {
+    "id": "E10",
+    "claim": "### Job-to-be-Done Notion’s core value proposition is to serve as an all-in-one workspace where users can: - Take notes and organize knowledge.",
+    "source_id": "S8",
+    "locator": "article: https://www.notion.so/templates",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "ranked_weak_links": [
+    {
+      "activity_id": "A2",
+      "score": 320.0,
+      "pain_intensity": 4,
+      "frequency": 2,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 5,
+      "value_capture_potential": 2,
+      "integration_dependency": 1,
+      "rationale": "Evaluating “all-in-one vs. multiple tools” is plausibly a high-friction step because the customer is comparing many alternatives and practices; a decoupled assistant (interactive needs diagnosis + guided evaluation) could reduce time/effort before any migration. This can be offered standalone (low integration dependency), matching Teixeira’s decoupling logic of improving a single step without forcing the rest of the workflow to move. Evidence supports that Notion competes as an all-in-one modular workspace in this category (E3) for individuals/teams/enterprise (E6,E7,E8), but direct evidence of the intensity/frequency of evaluation pain is limited, so this scoring is a hypothesis to validate (E5).",
+      "evidence_ids": [
+        "E3",
+        "E5",
+        "E6",
+        "E7",
+        "E8"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "score": 300.0,
+      "pain_intensity": 4,
+      "frequency": 4,
+      "ai_or_digital_leverage": 5,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 5,
+      "integration_dependency": 4,
+      "rationale": "Turning raw content into reusable structures (connected knowledge + project/workflow systemization) is a natural “weak link” candidate inside an all-in-one workspace: users may capture information successfully but struggle to consistently systematize it. AI has strong leverage here via auto-tagging, entity extraction, relationship/link suggestions, and converting messy notes into structured databases/workflows—high digital advantage relative to manual organization. This activity also plausibly supports premium/enterprise value capture (governed knowledge + scalable workflows) given Notion’s individual-to-enterprise customer span (E6,E7,E8) and core job-to-be-done around organizing knowledge (E10), but the specific pain magnitude is not directly evidenced in the provided materials and should be validated (E5).",
+      "evidence_ids": [
+        "E3",
+        "E5",
+        "E6",
+        "E7",
+        "E8",
+        "E10"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "score": 240.0,
+      "pain_intensity": 3,
+      "frequency": 5,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 4,
+      "integration_dependency": 3,
+      "rationale": "Content capture/maintenance is high-frequency in a workspace product and directly tied to Notion’s core “notes and organize knowledge” value proposition (E10) as an all-in-one productivity platform (E3). A decoupled improvement can focus on making capture faster and lower-effort (e.g., multi-modal capture + AI drafting/cleanup), which is digitally leveragable. Willingness to switch is moderate because capture flows are embedded in daily habits and adjacent tools, and integration dependency is moderate since captured content needs to land in the workspace to compound value (E3). Specific pain evidence is not directly provided, so subscores reflect reasoned assumptions consistent with the product category described (E5).",
+      "evidence_ids": [
+        "E3",
+        "E5",
+        "E10"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "score": 150.0,
+      "pain_intensity": 3,
+      "frequency": 5,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 2,
+      "value_capture_potential": 5,
+      "integration_dependency": 4,
+      "rationale": "Continuous collaboration is central for teams and enterprises (E7,E8) using an all-in-one workspace (E3). AI can help with summarization, change detection, action-item extraction, and keeping knowledge current, which is high leverage. However, willingness to switch is lower because collaboration systems are socially/network embedded and require coordinated team adoption; integration dependency is high because collaboration value depends on shared content structures and norms within the workspace (E3). Monetization potential is high because collaboration capabilities often map to team/enterprise willingness to pay (E7,E8), though direct pricing/upgrade drivers are not evidenced here (E9).",
+      "evidence_ids": [
+        "E3",
+        "E7",
+        "E8",
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "score": 72.0,
+      "pain_intensity": 3,
+      "frequency": 2,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 3,
+      "integration_dependency": 3,
+      "rationale": "Initial setup (workspace structure + inviting collaborators) is a common adoption hurdle for modular platforms (E3). AI/digital leverage is meaningful via guided setup, template recommendations, and auto-generation of initial databases/pages aligned to the job-to-be-done (E10). But frequency is low (primarily onboarding and major reorganizations), and it is moderately dependent on the rest of the Notion experience because setup choices affect downstream capture/organization/collaboration (E3). Value capture is moderate: better activation can support conversion, but direct evidence tying setup improvements to monetization is not provided (E9,E5).",
+      "evidence_ids": [
+        "E3",
+        "E5",
+        "E9",
+        "E10"
+      ]
+    },
+    {
+      "activity_id": "A1",
+      "score": 8.0,
+      "pain_intensity": 2,
+      "frequency": 1,
+      "ai_or_digital_leverage": 2,
+      "willingness_to_switch": 2,
+      "value_capture_potential": 1,
+      "integration_dependency": 1,
+      "rationale": "Recognizing the need to centralize work is upstream and infrequent; it is less clearly a decouplable product activity versus a marketing/education problem. While Notion’s positioning as an all-in-one workspace implies it benefits when users feel this need (E3,E10), the opportunity is limited for direct value capture at this stage and AI leverage is weaker without access to users’ existing fragmented tools/data (not evidenced). As such, this is a lower-priority weak link relative to in-workflow steps.",
+      "evidence_ids": [
+        "E3",
+        "E10"
+      ]
+    }
+  ]
+}

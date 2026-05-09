@@ -1,0 +1,36 @@
+{
+  "judgment": "study_more",
+  "one_sentence_thesis": "Liquid Death’s next decoupling wedge is to “steal” the customer’s brand/variant discovery-and-evaluation step with a social-native, AI-powered “Liquid Death Finder” that recommends the right product fast and routes to any existing purchase path—separating choosing from buying in the Teixeira sense (books/unlocking-the-customer-value-chain-chapter-1.md :: Page 9) (E3, E4, E6, E8).",
+  "why_now": "Because Liquid Death’s current growth engine is provocative branding and viral marketing (E3, E4), a lightweight, AI-assisted discovery layer can compound what already works by turning attention into intent data and clearer “where to buy” next steps without forcing customers to change their normal shopping routine (E3, E6)—but the incremental conversion lift and CAC impact must be validated before scaling.",
+  "strongest_argument": "This move preserves the core growth engine (brand + virality) by productizing it into a repeatable discovery workflow (quiz/recommendations + creator content + store/DTC routing) while staying narrowly focused on a single CVC activity—evaluation/choice—so customers can keep purchasing wherever they already do, matching Teixeira’s decoupling pattern of breaking the link between choosing and purchasing (books/unlocking-the-customer-value-chain-chapter-1.md :: Page 9) (E3, E4, E6).",
+  "biggest_risk": "High recoupling risk and weak provability: incumbents/retailers can copy “finders” and recommendations quickly, and without credible attribution the tool may not reduce CAC or raise CLV enough to justify ongoing content/AI costs (assumptions not evidenced), turning into a marketing gimmick rather than a defensible decoupled stage (E3, E4, E6).",
+  "staged_actions": [
+    "Stage 1 (layer a—matching/discovery): Launch an ultra-light “Liquid Death Finder” as a mobile-first landing experience optimized for TikTok/IG traffic: 30-second quiz that maps to 1–2 recommended variants plus a simple retailer locator and DTC deep-link; require opt-in to save results to begin building first-party preference data (E3, E4, E6, E9).",
+    "Stage 2 (layer a—proof via experiments): Run disciplined A/B tests on paid + organic traffic comparing baseline creative vs. Finder flows; success gate = measurable lift in click-to-buy and repeat visits while holding CAC constant or improving it (unit-econ requirement: incremental gross profit from conversion lift must exceed incremental build/content/serving costs; numbers to validate) (E3, E4).",
+    "Stage 3 (layer a—scale the wedge with content): Add a “creator feed” that dynamically shows short-form clips aligned to quiz outputs (e.g., fitness vs. nightlife vs. eco-motives) to make evaluation feel entertaining in a commodity category, reinforcing the provocative brand engine rather than replacing it (E3, E4, E6, E8).",
+    "Stage 4 (layer b—light intermediation/verification, only if Stage 2 clears): Partner with select retailers for better availability signals (e.g., ‘likely in stock’/‘aisle info’/‘store-specific pack sizes’) and add drop/availability alerts; success gate = higher conversion without subsidizing price or taking inventory risk (E3).",
+    "Stage 5 (layer b—repeat behavior, only if retention signal exists): Use Finder profiles to trigger replenishment nudges and limited subscription/auto-reorder offers for users who explicitly opt in; success gate = CLV uplift that exceeds incremental retention messaging costs and does not harm brand perception (E3, E4, E6, E9)."
+  ],
+  "do_not_do": [
+    "Do not jump to layer (c) moves like building a new end-to-end delivery/logistics or broad retail fulfillment program; it adds heavy operational complexity and balance-sheet exposure that can erode the brand-led growth engine before the discovery wedge proves unit economics (E3, E4).",
+    "Do not pivot the product/brand into a generic “health hydration optimizer” positioning to make the AI feel ‘serious’; that would dilute the provocative, viral differentiation that is currently working (E3, E4, E6).",
+    "Do not over-expand SKUs/variants just to give the Finder more options; it increases operational complexity and shelf/merchandising friction while weakening the clarity of choice the Finder is meant to improve (assumption; validate with retailer feedback) (E4, E6).",
+    "Do not depend on opaque retail media attribution as the primary value-capture mechanism before proving deterministic measurement (unique links/codes/geo tests); otherwise the Finder cannot be tied to CAC/CLV improvements and will be first on the chopping block (assumption; measurement not evidenced) (E3)."
+  ],
+  "next_research_steps": [
+    "Map the packaged-water CVC specifically for Liquid Death’s target segments (Millennials/Gen Z, eco-conscious) and identify the true weakest-link activity with quantified pain (time/effort/confusion) rather than assuming discovery is the bottleneck (E6, E8).",
+    "Establish baseline unit economics by channel (organic social, paid social, retail-driven): CAC proxies, contribution margin by purchase path, and repeat rates; define the exact lift required for the Finder to be ROI-positive (ratios/thresholds if absolute numbers unavailable) (E3, E4, E9).",
+    "Run a measurement plan for retailer impact: geo holdouts, unique QR codes, or offer codes to connect Finder use to in-store sales lift without requiring customers to switch purchasing venues (E3).",
+    "Assess recoupling threats: which incumbents/retailers already have recommendation quizzes/brand finders, and whether they can bundle placement advantages that neutralize Liquid Death’s discovery wedge (E3, E4).",
+    "Data/privacy check: confirm what first-party data can be collected compliantly from the Finder experience and how it can be used to drive repeat behavior without hurting trust (E3)."
+  ],
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E6",
+    "E8",
+    "E9"
+  ]
+}

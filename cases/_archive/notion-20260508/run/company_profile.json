@@ -1,0 +1,52 @@
+{
+  "company": {
+    "name": "Notion",
+    "website": "https://www.notion.so",
+    "ticker": "",
+    "public_or_private": "unknown",
+    "industry": "digital workspace / productivity software",
+    "geography": [
+      "unknown"
+    ],
+    "stage": "unknown",
+    "description": "All-in-one modular productivity and digital workspace platform combining note-taking, knowledge management, project management, and collaboration (E3, E10)."
+  },
+  "customers": {
+    "primary_user": "individuals and teams using a digital workspace for notes, knowledge, and project work (E6, E7, E8, E10)",
+    "buyer": "unknown",
+    "payer": "unknown",
+    "segments": [
+      "individuals and freelancers (E6)",
+      "small and medium-sized businesses (SMBs) (E7)",
+      "enterprise clients (E8)"
+    ]
+  },
+  "business_model": {
+    "value_proposition": "Provide a modular, all-in-one workspace for note-taking, knowledge organization, project/workflow management, and team collaboration (E3, E10).",
+    "revenue_model": "Subscription-based SaaS with tiered plans and enterprise contracts (E9).",
+    "pricing_model": "Free personal tier up to paid tiers and custom-priced enterprise solutions (E9).",
+    "distribution_channels": [
+      "web SaaS via notion.so (E2, E9)"
+    ],
+    "cost_drivers": [
+      "unknown"
+    ]
+  },
+  "competition": {
+    "incumbents": [],
+    "direct_competitors": [],
+    "substitutes": []
+  },
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10"
+  ]
+}

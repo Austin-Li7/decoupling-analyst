@@ -1,0 +1,78 @@
+{
+  "customer_segment": "Millennials and Gen Z consumers who want convenient portable hydration and are attracted to unconventional branding and sustainability narratives (E6, E4, E8, E9)",
+  "end_activity": "Consume portable hydration in the moment and feel the choice aligns with personal identity/values, then decide whether to repeat the purchase (E9, E4, E8, E3)",
+  "activities": [
+    {
+      "id": "A1",
+      "step": 1,
+      "activity": "Notice a need for convenient, portable hydration",
+      "current_provider": "self",
+      "customer_goal": "Quench thirst / stay hydrated with minimal effort while on-the-go or during daily routines",
+      "evidence_ids": [
+        "E9"
+      ]
+    },
+    {
+      "id": "A2",
+      "step": 2,
+      "activity": "Set selection criteria (e.g., health orientation, environmental concern, and brand/persona fit) and decide to use packaged water versus other hydration options",
+      "current_provider": "self (influenced by incumbents’ bottled-water options and alternative-to-plastic positioning)",
+      "customer_goal": "Choose a hydration approach that fits functional needs and personal preferences (including eco concerns and identity signaling)",
+      "evidence_ids": [
+        "E6",
+        "E8",
+        "E4",
+        "E9"
+      ]
+    },
+    {
+      "id": "A3",
+      "step": 3,
+      "activity": "Discover and evaluate specific packaged-water brands (compare “commodity water” options vs. provocative/viral brands with sustainability narratives)",
+      "current_provider": "Liquid Death brand/website plus other packaged-water brands’ marketing and brand touchpoints",
+      "customer_goal": "Reduce uncertainty and pick a brand that feels worth choosing despite category commoditization",
+      "evidence_ids": [
+        "E3",
+        "E4",
+        "E2",
+        "E8"
+      ]
+    },
+    {
+      "id": "A4",
+      "step": 4,
+      "activity": "Purchase/obtain the chosen packaged-water product from a seller (online or offline)",
+      "current_provider": "sellers of packaged beverages (channels not specified); Liquid Death is one selectable brand option",
+      "customer_goal": "Get the product conveniently at an acceptable total cost (price + time/effort)",
+      "evidence_ids": [
+        "E4",
+        "E2",
+        "E9"
+      ]
+    },
+    {
+      "id": "A5",
+      "step": 5,
+      "activity": "Consume the product and (optionally) express affiliation by sharing or talking about the brand",
+      "current_provider": "self (consumption); Liquid Death’s brand experience if selected",
+      "customer_goal": "Achieve hydration while also getting identity/entertainment value from the brand choice",
+      "evidence_ids": [
+        "E9",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "id": "A6",
+      "step": 6,
+      "activity": "Dispose/recycle the packaging and decide whether to repurchase, switch, or recommend",
+      "current_provider": "self + local waste/recycling systems; brand sustainability narrative influences decision",
+      "customer_goal": "Minimize guilt/friction from packaging waste and decide on repeat behavior",
+      "evidence_ids": [
+        "E8",
+        "E4"
+      ]
+    }
+  ],
+  "profile_vs_cvc_conflicts": []
+}

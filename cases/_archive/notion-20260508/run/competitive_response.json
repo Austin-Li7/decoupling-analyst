@@ -1,0 +1,65 @@
+{
+  "likely_responses": [
+    {
+      "response_type": "copy",
+      "description": "Suite/workspace incumbents ship a similar AI “fit assessment” on their websites and admin consoles (questionnaire + workflow interview + generated recommendation brief), positioning it as a faster way to choose their stack—neutralizing Notion’s decoupled wedge at the “search/evaluate options” stage (i.e., making the weak-link decision step no longer a differentiator).",
+      "severity": "high",
+      "defense": "Differentiate on outputs incumbents can’t credibly provide: a decision-ready brief plus a concrete, modular Notion workspace blueprint and phased adoption plan that leverages Notion’s broad, configurable surface area (notes/knowledge/project/collaboration) (E3,E10). Keep it frictionless (free entry / low-commitment) so customers can use it without migrating immediately, preserving the decoupling advantage (E9).",
+      "evidence_ids": [
+        "E3",
+        "E9",
+        "E10"
+      ]
+    },
+    {
+      "response_type": "recouple",
+      "description": "Incumbents attempt to re-bundle the decoupled ‘evaluation’ activity into their existing onboarding/migration flows—e.g., embedding the assessment inside setup wizards and then directly converting users into a full rollout (templates + provisioning + permissions), effectively recoupling discovery, decision, and deployment into one incumbent-controlled path.",
+      "severity": "high",
+      "defense": "Stay decoupled: make “Notion Workspace Fit” usable as a standalone diagnostic that produces value even if the customer remains on other tools, reinforcing Teixeira’s idea of “peeling away a portion of the customer’s value chain” (books/unlocking-the-customer-value-chain-chapter-1.md) without forcing full workflow migration (E3,E5). Concretely: exportable briefs, neutral comparisons, and a phased plan that starts with a small Notion pilot inside the broader tool stack (E3).",
+      "evidence_ids": [
+        "E3",
+        "E5"
+      ]
+    },
+    {
+      "response_type": "subsidize",
+      "description": "Incumbents use cross-subsidy to erase the entrant’s perceived advantage: offering free/discounted onboarding, free consulting-style assessments, or limited-time bundled pricing to make ‘decision + adoption planning’ feel zero-cost, thereby compressing willingness-to-pay for an advisor product.",
+      "severity": "medium",
+      "defense": "Avoid competing on “free consulting.” Instead, design the advisor to drive Notion’s existing monetization ladder (from free to paid/enterprise) by generating a high-confidence workspace blueprint that naturally maps to team/enterprise needs (collaboration, scale, governance), aligning value creation to Notion’s tiered pricing without promising heavy, manual services (E8,E9).",
+      "evidence_ids": [
+        "E8",
+        "E9",
+        "E3"
+      ]
+    },
+    {
+      "response_type": "acquire",
+      "description": "Incumbents acquire (or pre-emptively fund) third-party workflow consultants, comparison-content publishers, or AI “software selection” tools to quickly add credibility and distribution to their own ‘workspace fit’ capability—shortening the time-to-recouple versus building from scratch.",
+      "severity": "medium",
+      "defense": "Reduce single-point acquisition risk by (1) building a productized, scalable advisor experience tightly integrated with Notion’s modular workspace configuration (harder to replicate via a generic acquisition), and (2) developing a multi-party ecosystem motion (template/implementation partners) so the ‘fit’ experience is not dependent on one external advisor entity that can be bought (E3,E5).",
+      "evidence_ids": [
+        "E3",
+        "E5"
+      ]
+    }
+  ],
+  "recoupling_vulnerability": {
+    "vulnerability": "high",
+    "rationale": "The decoupled activity (helping customers decide what workspace stack to adopt) is inherently “front-end” and digitally deliverable, which typically makes it fast for incumbents to copy and then re-bundle into their onboarding flows. Because Notion’s proposed wedge explicitly targets the evaluation step before migration, incumbents can plausibly neutralize it by embedding similar AI assessments inside their existing adoption funnels. This directly matches Teixeira’s framing that startups ‘peel away a portion of the customer’s value chain’ and incumbents respond by trying to pull that portion back into the bundle (books/unlocking-the-customer-value-chain-chapter-1.md; talks/unlocking-the-customer-value-chain-at-decoupling-co.md). Evidence gap: the case materials provided do not specify which incumbents, their current AI/onboarding capabilities, or their willingness to price aggressively, so the rating is based on general recoupling logic rather than incumbent-specific proof (E3,E5).",
+    "incumbent_capability_to_recouple": "medium",
+    "incumbent_incentive_to_recouple": "high",
+    "defenses": [
+      "Make the advisor’s output uniquely actionable in Notion: a generated workspace blueprint that takes advantage of Notion’s “all-in-one modular workspace” flexibility across notes/knowledge/projects/collaboration (E3,E10).",
+      "Keep switching friction near-zero: exportable decision briefs + phased plans that don’t require immediate migration, preserving the decoupling benefit even if incumbents add similar wizards (E9,E3).",
+      "Own the relationship (not the surface/channel): ensure the advisor captures user workflow preferences and iterates recommendations over time inside Notion’s account context, improving personalization in ways that generic incumbent assessments can’t match without deep cross-tool visibility (E3).",
+      "Avoid heavy, human-intensive ‘consulting’ promises that are easy for incumbents to subsidize; stay product-led and tie upgrades to clear team/enterprise value moments reflected in Notion’s segmentation and tiers (E8,E9)."
+    ],
+    "evidence_ids": [
+      "E3",
+      "E5",
+      "E8",
+      "E9",
+      "E10"
+    ]
+  }
+}

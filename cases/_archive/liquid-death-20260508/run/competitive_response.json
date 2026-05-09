@@ -1,0 +1,64 @@
+{
+  "likely_responses": [
+    {
+      "response_type": "copy",
+      "description": "Traditional bottled-water incumbents (or their agencies) launch their own social-first “water finder”/quiz and short-form creator content to re-capture brand discovery and evaluation—attempting to neutralize Liquid Death’s decoupled wedge without changing consumers’ purchase routines. Confidence is medium-low because specific incumbents are not identified in the case materials (E3).",
+      "severity": "high",
+      "defense": "Defend on brand/voice + speed: keep the product recommendation logic tightly tied to Liquid Death’s provocative branding and viral content loop (the current growth engine) and iterate weekly based on engagement and quiz response data, so a generic copycat feels inauthentic and performs worse (E3, E4). Also push users to opt-in identity (email/SMS) so the relationship (not the surface) is owned by Liquid Death (E3).",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "response_type": "recouple",
+      "description": "Incumbents try to re-bundle discovery back into the incumbent-controlled purchase environment by leaning harder on retail media, endcap/shelf placement, and retailer app placements (e.g., sponsored search/category pages) so that “discovery/evaluation” happens inside the store/app right before purchase, reducing the incremental value of an external finder. Confidence is low due to lack of incumbent-specific detail (E3).",
+      "severity": "high",
+      "defense": "Make the decoupled experience portable across channels: ensure the Finder’s output is a frictionless “where to buy” path spanning nearby retailers plus direct links, so users can still start discovery outside the retailer app and finish wherever they already shop—preserving the decoupling benefit (E3). Reinforce differentiation via sustainability narrative and community cues that incumbents can’t easily replicate authentically (E4, E8).",
+      "evidence_ids": [
+        "E3",
+        "E4",
+        "E8"
+      ]
+    },
+    {
+      "response_type": "subsidize",
+      "description": "Incumbents use price promotions, bundled deals, and trade-spend to make switching back to mainstream water economically attractive, especially for consumers who view water as a commodity—reducing the payoff from improved discovery (E3). Confidence is low (no pricing evidence provided) (E3).",
+      "severity": "medium",
+      "defense": "Avoid competing on lowest price (would erode the core engine built on brand + viral marketing). Instead, use the Finder to segment and target the highest-fit audiences (Millennials/Gen Z, pop-culture enthusiasts, eco-conscious) with content-led conversion so CAC doesn’t balloon in a promo war (E3, E4, E6, E7, E8).",
+      "evidence_ids": [
+        "E3",
+        "E4",
+        "E6",
+        "E7",
+        "E8"
+      ]
+    },
+    {
+      "response_type": "partner",
+      "description": "Incumbents partner with major retailers/platforms (or creator networks) to secure preferential discovery surfaces (category sponsorships, in-app prompts, “recommended for you” placements), effectively ‘blocking’ attention and making it harder for Liquid Death’s off-platform discovery tool to reach users. Confidence is low because no retailer relationships are specified (E3).",
+      "severity": "medium",
+      "defense": "Counter-partner selectively while preserving independence: pursue lightweight integrations (affiliate-style outbound links, localized availability feeds) that improve the Finder’s utility without becoming dependent on any single retailer’s algorithm; keep building direct audience channels so distribution power is not the only path to demand (E3, E4).",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    }
+  ],
+  "recoupling_vulnerability": {
+    "vulnerability": "high",
+    "rationale": "The decoupled activity—brand discovery/evaluation via a quiz + short-form content—is digitally replicable and can be re-bundled into incumbent/retailer-controlled purchase moments (e.g., in-store/retailer-app discovery). This aligns with Teixeira’s framing that disruptors are dangerous when they are “peeling away a portion of the customer’s value chain” (books/unlocking-the-customer-value-chain-chapter-1.md :: Unlocking the Customer Value Chain Chapter 1 > Page 10). Because Liquid Death’s current edge is brand/viral marketing rather than exclusive access to data or distribution, the wedge can be neutralized if incumbents successfully copy and recouple discovery at scale (E3, E4). Confidence is medium-low given incumbents are not specified (E3).",
+    "incumbent_capability_to_recouple": "high",
+    "incumbent_incentive_to_recouple": "high",
+    "defenses": [
+      "Differentiate beyond the tool: make the Finder inseparable from Liquid Death’s distinctive brand voice and creator-content format so a copied quiz feels generic and converts worse (E3, E4).",
+      "Own the relationship: use the Finder to capture first-party opt-ins and preference signals so Liquid Death improves recommendations and re-engagement over time (E3).",
+      "Preserve the core growth engine: keep investment focused on provocative branding + viral marketing loops; avoid turning the Finder into a heavy operational play that dilutes what already works (E3, E4).",
+      "Channel-agnostic completion: always provide a “where to buy” path that fits existing shopping routines (nearby retail + direct links) so recoupling inside any one retailer app is less fatal (E3)."
+    ],
+    "evidence_ids": [
+      "E3",
+      "E4"
+    ]
+  }
+}

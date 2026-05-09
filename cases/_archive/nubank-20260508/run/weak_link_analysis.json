@@ -1,0 +1,94 @@
+{
+  "ranked_weak_links": [
+    {
+      "activity_id": "A4",
+      "score": 400.0,
+      "pain_intensity": 5,
+      "frequency": 5,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 4,
+      "integration_dependency": 4,
+      "rationale": "Everyday banking usage (paying bills, transferring, transacting) is where mass-market customers most repeatedly feel the pain of an oligopolistic, fee-heavy incumbent system (E4), making it the highest-frequency erosion point in the CVC. A focused decoupler can win by making this weak-link activity cheaper/faster/easier via digital UX and automation at scale (E3, E4), without requiring customers to fully abandon their incumbent accounts (higher willingness to adopt as an “add-on” behavior). AI/digital leverage is meaningful for routing, anomaly detection, proactive cashflow nudges, and reducing failed/late payments (assumption—needs validation beyond provided evidence). Integration dependency is high because success depends on rails, counterparties (billers/merchants/employers), and reliability expectations, which lowers the decoupling score despite high pain/frequency (assumption). PRIMARY SOURCE attribution requested by prompt (not included in provided E-evidence set): Teixeira describes disruption as “peeling away a portion of the customer’s value chain” (books/unlocking-the-customer-value-chain-chapter-1.md).",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "score": 180.0,
+      "pain_intensity": 4,
+      "frequency": 3,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 5,
+      "integration_dependency": 4,
+      "rationale": "Adding additional financial services (especially credit/adjacent products) is a major adoption-and-monetization lever once a customer has an account relationship; incumbents in the region have historically captured strong economics here, and a digital disruptor’s opportunity is to decouple product-by-product rather than asking customers to “redo” their whole banking setup (E4). Nubank’s scale (130M+ customers) suggests a large installed base to cross-sell into, raising value-capture potential if incremental CAC stays low relative to incremental CLV (E3). AI/digital leverage is potentially high for underwriting, personalization, and next-best-product timing, but this is an assumption that requires evidence on data access and loss rates. Integration dependency is high due to regulatory constraints, credit bureaus, collections, and balance-sheet/risk linkages (assumption), which dampens the score even though value capture is strong.",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "score": 128.0,
+      "pain_intensity": 4,
+      "frequency": 2,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 3,
+      "integration_dependency": 3,
+      "rationale": "Account opening/onboarding is a classic decoupling wedge because it is a discrete step customers can complete without migrating the rest of their financial life immediately (high willingness to try as a secondary account), and digital-first entrants can make it materially faster/lower-effort than incumbent branches/processes (E4). The main limitation is frequency (typically a one-time or infrequent event), which caps compounding advantage even if onboarding excellence is crucial to driving initial adoption at scale (E3). AI/digital leverage is strong for automated document/KYC workflows and reducing manual review (assumption—no direct evidence provided). Integration dependency is moderate because it must satisfy regulatory/KYC requirements and connect to identity/verification partners (assumption).",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "activity_id": "A2",
+      "score": 120.0,
+      "pain_intensity": 3,
+      "frequency": 1,
+      "ai_or_digital_leverage": 5,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 2,
+      "integration_dependency": 1,
+      "rationale": "Discovering/evaluating banking options can be decoupled via comparison, education, and decision-support that reduces confusion about fees and trust—especially in a market described as fee-heavy and dominated by entrenched incumbents (E4). AI/digital leverage can be very high for personalized explanations and fit-matching, and customers can adopt these tools with low switching friction because they do not require moving money (assumption). However, value capture is weaker because discovery tools often monetize indirectly (lead gen or downstream conversion) and can face commoditization; the primary benefit is lowering CAC and increasing conversion efficiency at scale (E3), which must be validated with funnel metrics.",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "score": 108.0,
+      "pain_intensity": 3,
+      "frequency": 3,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 2,
+      "integration_dependency": 2,
+      "rationale": "Support/settings management and periodic reassessment can be improved through digital self-service and AI-enabled support to reduce time/effort costs—important in markets where incumbents have historically delivered average experiences (E4). This can increase retention and product expansion across a very large user base (E3), but it is harder to “decouple” as a standalone wedge because customers typically experience support only after already choosing a provider, and it is often a competitive parity feature. Value capture is therefore more indirect (retention/deflection) than direct monetization, and incumbents can recouple by copying support automation relatively quickly (assumption).",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "activity_id": "A1",
+      "score": 18.0,
+      "pain_intensity": 2,
+      "frequency": 1,
+      "ai_or_digital_leverage": 3,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 1,
+      "integration_dependency": 1,
+      "rationale": "Recognizing the need for a better banking relationship is a diffuse, pre-product step driven by personal experience and social influence; while incumbents’ fee-heavy context can create latent dissatisfaction (E4), it is not a sharply definable activity to decouple into a product that captures meaningful value on its own. Digital/AI can help via targeted education and personalized “why switch” messaging (assumption), but this is primarily a marketing efficiency lever rather than a defensible standalone decoupling wedge. As a result, it scores lowest on frequency and value-capture potential despite low integration dependency.",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    }
+  ]
+}

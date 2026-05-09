@@ -1,0 +1,88 @@
+{
+  "activities": [
+    {
+      "activity_id": "A1",
+      "value_type": "create",
+      "reasoning": "Identifying that the incumbent relationship is painful is a value-creating activity because it surfaces the customer’s need to seek a lower-fee, lower-friction alternative; Nubank’s rise reflects that customers in the region recognize this pain and seek change (E3, E4, E1).",
+      "money_cost": 1,
+      "time_cost": 2,
+      "effort_cost": 3,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E3",
+        "E4",
+        "E1"
+      ]
+    },
+    {
+      "activity_id": "A2",
+      "value_type": "create",
+      "reasoning": "Discovering and evaluating options creates value by allowing customers to compare trust, fees, and usability; Nubank’s position as a digital alternative has shifted those comparisons in the market (E3, E4, E1).",
+      "money_cost": 3,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E3",
+        "E4",
+        "E1"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "value_type": "create",
+      "reasoning": "Opening an account and completing onboarding is value-creating because it activates the relationship and enables cheaper, digital-first banking — a core part of Nubank’s disruptive service offering in the region (E3, E2, E1).",
+      "money_cost": 1,
+      "time_cost": 2,
+      "effort_cost": 2,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E3",
+        "E2",
+        "E1"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "value_type": "erode",
+      "reasoning": "Day-to-day money movement can be value-eroding under incumbent providers because Latin American incumbents have traditionally imposed fees and frictions that customers seek to avoid — a central grievance that enabled digital challengers like Nubank to grow (E4, E3, E1).",
+      "money_cost": 4,
+      "time_cost": 3,
+      "effort_cost": 2,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E4",
+        "E3",
+        "E1"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "value_type": "create",
+      "reasoning": "Adding credit and other financial services through the same provider creates customer value by meeting new needs without redoing the relationship; this extensibility is a growth path for digital platforms like Nubank (E3, E4, E1).",
+      "money_cost": 3,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E3",
+        "E4",
+        "E1"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "value_type": "create",
+      "reasoning": "Support and periodic reassessment are value-creating when they keep the banking experience low-friction; Nubank’s disruptive positioning implies focus on ongoing customer experience as incumbent pain points persist (E3, E4, E1).",
+      "money_cost": 2,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E3",
+        "E4",
+        "E1"
+      ]
+    }
+  ]
+}
