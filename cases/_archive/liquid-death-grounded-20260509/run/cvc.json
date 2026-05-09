@@ -1,0 +1,72 @@
+{
+  "customer_segment": "End consumers seeking hydration who choose packaged beverages (often buying in retail or online channels)",
+  "end_activity": "Decide whether to repurchase the same packaged-water brand/channel or switch to another hydration option",
+  "activities": [
+    {
+      "id": "A1",
+      "step": 1,
+      "activity": "Recognize a hydration need",
+      "current_provider": "self (consumer); context (workout, commute, meal, etc.)",
+      "customer_goal": "Notice thirst / desire for hydration and decide to get water (or another beverage)",
+      "evidence_ids": [
+        "E8"
+      ]
+    },
+    {
+      "id": "A2",
+      "step": 2,
+      "activity": "Search for feasible hydration options available right now",
+      "current_provider": "self (memory/habit); nearby availability via retail/vending/online; alternatives include tap water and other beverages",
+      "customer_goal": "Identify what options are accessible given location, time, and constraints (tap vs packaged water vs other drinks)",
+      "evidence_ids": [
+        "E9",
+        "E11"
+      ]
+    },
+    {
+      "id": "A3",
+      "step": 3,
+      "activity": "Evaluate and compare options (brand, price, convenience, perceived health, packaging)",
+      "current_provider": "incumbent beverage brands and Liquid Death (branding/packaging cues); retailers (shelf placement, assortment, pricing)",
+      "customer_goal": "Choose the option that best fits preferences and tradeoffs (cost, convenience, brand appeal, packaging)",
+      "evidence_ids": [
+        "E10",
+        "E14",
+        "E3"
+      ]
+    },
+    {
+      "id": "A4",
+      "step": 4,
+      "activity": "Purchase the chosen product through an available channel",
+      "current_provider": "retailers (grocery, convenience), vending, or online; Liquid Death and incumbents supply product into these channels",
+      "customer_goal": "Complete the transaction quickly and obtain the product with minimal friction",
+      "evidence_ids": [
+        "E11"
+      ]
+    },
+    {
+      "id": "A5",
+      "step": 5,
+      "activity": "Consume the water and handle the packaging after use",
+      "current_provider": "self (drinks); local waste/recycling systems (disposal); product packaging format influences the experience",
+      "customer_goal": "Get hydration and then dispose/recycle the container with minimal hassle",
+      "evidence_ids": [
+        "E12"
+      ]
+    },
+    {
+      "id": "A6",
+      "step": 6,
+      "activity": "Reflect on experience (including environmental impact) and decide whether to repurchase",
+      "current_provider": "self (preference/loyalty formation); brand messaging and past experience influence recall and loyalty",
+      "customer_goal": "Decide to buy again, switch brands, switch channels, or revert to tap/other beverages based on satisfaction and concerns",
+      "evidence_ids": [
+        "E13"
+      ]
+    }
+  ],
+  "profile_vs_cvc_conflicts": [
+    "Company profile emphasizes end-consumer hydration choice and differentiation via bold marketing/packaging (E3, E8, E9, E11), but the customer value chain includes a distinct post-consumption step where consumers consider disposal and environmental impact as part of the overall job (E12, E13)."
+  ]
+}

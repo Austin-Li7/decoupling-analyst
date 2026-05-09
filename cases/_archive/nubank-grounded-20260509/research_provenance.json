@@ -1,0 +1,69 @@
+{
+  "company_name": "Nubank",
+  "run_id": "nubank-20260509-010625",
+  "searched_urls_count": 2,
+  "report_cited_urls_count": 3,
+  "union_pre_liveness_count": 11,
+  "report_urls_in_search_results": 0,
+  "report_urls_only_in_report": 3,
+  "report_only_url_ratio": 1.0,
+  "searched_urls": [
+    "https://www.youtube.com/watch?v=srIgbMlERew",
+    "https://www.pymnts.com/earnings/2026/nubank-profits-jump-as-customer-base-grows-15percent/"
+  ],
+  "research_sources_urls": [
+    "https://blog.gembaacademy.com/2019/04/01/breaking-the-weak-link-in-the-value-chain/",
+    "https://4thoption.substack.com/p/91thales-teixeira-decoupling-the-d08",
+    "https://www.sorenkaplan.com/decouple-the-value-chain-to-drive-digital-disruption/",
+    "https://www.inc.com/soren-kaplan/want-digital-disruption-decouple-customer-experience.html",
+    "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "https://www.linkedin.com/posts/thales-teixeira-391587_034-thales-teixeira-on-digital-disruption-activity-6978741300627951616-y19z?trk=public_profile_like_view",
+    "https://businessmodelcanvastemplate.com/blogs/competitors/nubank-competitive-landscape",
+    "https://international.nubank.com.br/company/nubank-customers-saved-29-million-in-one-year-via-strategic-partnerships/",
+    "https://fasterthannormal.co/businesses/nubank",
+    "https://www.youtube.com/watch?v=srIgbMlERew",
+    "https://www.pymnts.com/earnings/2026/nubank-profits-jump-as-customer-base-grows-15percent/"
+  ],
+  "visited_urls_from_retriever": [
+    "https://www.youtube.com/watch?v=srIgbMlERew",
+    "https://www.pymnts.com/earnings/2026/nubank-profits-jump-as-customer-base-grows-15percent/"
+  ],
+  "prefetched_url_count": 9,
+  "report_cited_urls": [
+    {
+      "url": "https://www.hbs.edu/faculty/Pages/item.aspx?num=55788",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.pymnts.com/news/digital-banking/2026/nubank-profits-jump-as-customer-base-grows-15/",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://nubank.com.br",
+      "provenance": "only_in_report"
+    }
+  ],
+  "post_liveness_kept_urls": [
+    "https://blog.gembaacademy.com/2019/04/01/breaking-the-weak-link-in-the-value-chain/",
+    "https://4thoption.substack.com/p/91thales-teixeira-decoupling-the-d08",
+    "https://www.sorenkaplan.com/decouple-the-value-chain-to-drive-digital-disruption/",
+    "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "https://www.linkedin.com/posts/thales-teixeira-391587_034-thales-teixeira-on-digital-disruption-activity-6978741300627951616-y19z?trk=public_profile_like_view",
+    "https://businessmodelcanvastemplate.com/blogs/competitors/nubank-competitive-landscape",
+    "https://international.nubank.com.br/company/nubank-customers-saved-29-million-in-one-year-via-strategic-partnerships/",
+    "https://fasterthannormal.co/businesses/nubank",
+    "https://www.youtube.com/watch?v=srIgbMlERew"
+  ],
+  "post_liveness_dropped_urls": [
+    {
+      "url": "https://www.inc.com/soren-kaplan/want-digital-disruption-decouple-customer-experience.html",
+      "status": "403",
+      "was_in_search_results": true
+    },
+    {
+      "url": "https://www.pymnts.com/earnings/2026/nubank-profits-jump-as-customer-base-grows-15percent/",
+      "status": "403",
+      "was_in_search_results": true
+    }
+  ]
+}

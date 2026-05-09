@@ -1,0 +1,62 @@
+{
+  "likely_responses": [
+    {
+      "response_type": "copy",
+      "description": "Incumbents launch (or pressure retailers/wholesalers to launch) “find-it-now” store locators and availability lookups for their water portfolios, replicating the same decoupled CVC activity (real-time nearby purchase discovery) so customers don’t need a Liquid Death-specific locator. This is a classic attempt to neutralize a decoupled wedge by offering the same single activity as a standalone tool (per Teixeira’s “peeling away a portion of the customer’s value chain” framing in books/unlocking-the-customer-value-chain-chapter-1.md Page 10).",
+      "severity": "medium",
+      "defense": "Win on data quality and recency: (1) venue-verified availability + user confirmations as a differentiated signal, (2) faster update loops (minutes/hours, not weeks), (3) focus on high-intent contexts (venues where “available right now” is urgent) and make the locator the default via QR/SMS. Keep it lightweight (layer-a discovery), where Liquid Death can move faster than large bundled incumbents (E15).",
+      "evidence_ids": [
+        "E11",
+        "E14",
+        "E15"
+      ]
+    },
+    {
+      "response_type": "recouple",
+      "description": "Incumbents re-bundle availability discovery back into their existing distribution-led model by tying discovery to their broader retail execution (planograms, promotions, and contracted placement), making the “best answer” to ‘what can I buy right now?’ default to whichever products are most widely stocked/promoted, thereby diminishing the incremental value of an independent Liquid Death locator.",
+      "severity": "high",
+      "defense": "Build a defensible, owned relationship around the decoupled activity rather than a one-off channel: capture opt-in (SMS/web) and repeated usage behavior so the locator learns the user’s context and becomes the habitual starting point for “right now hydration” (moat = relationship/data, not the surface). Pair with selective venue partnerships that guarantee truthful inventory signals (exclusive/verified feeds) in targeted geos to make the experience materially better than generic brand locators (E11, E14, E15).",
+      "evidence_ids": [
+        "E11",
+        "E14",
+        "E15"
+      ]
+    },
+    {
+      "response_type": "subsidize",
+      "description": "Incumbents use their scale and bundled economics to subsidize retail/venue placement and promotions (e.g., paying for endcaps, cooler doors, vending facings), increasing default availability so customers rely less on search/locator tools and simply buy what’s present. This attacks the disruptor by reducing the pain in the weak-link activity (availability uncertainty) without matching the digital product.",
+      "severity": "high",
+      "defense": "Target segments/venues where incumbents’ subsidy is less effective or slower to deploy (long-tail independents, specific venue categories) and where verified “in stock now” information is still scarce/valuable. Make the locator valuable even when incumbents flood shelves by ranking on proximity + recency confirmations (not just ‘stores that carry it’). Keep expansion sequenced: stay in discovery/matching first, then add light verification layers—avoid jumping into heavy logistics/payment commitments (E11, E14).",
+      "evidence_ids": [
+        "E11",
+        "E14"
+      ]
+    },
+    {
+      "response_type": "block",
+      "description": "Incumbents (directly or via retailer/venue influence) restrict access to availability signals: discourage venue participation, limit signage/QR placement, or create friction for user-generated confirmations (e.g., requiring retailer-controlled data feeds), reducing the disruptor’s ability to maintain accurate ‘available right now’ results.",
+      "severity": "medium",
+      "defense": "Design the product to be resilient to data denial: (1) rely on user-reported confirmations with strong recency weighting and anti-spam controls, (2) diversify supply of signals (venue self-verification + crowd + public store info), (3) provide clear value to venues (foot-traffic attribution) so they opt in even without retailer HQ support. Keep compliance clean and avoid scraping practices that create an easy justification to shut the product down (E11).",
+      "evidence_ids": [
+        "E11"
+      ]
+    }
+  ],
+  "recoupling_vulnerability": {
+    "vulnerability": "high",
+    "rationale": "The decoupled activity (“search for feasible hydration options available right now”) sits immediately adjacent to the purchase stage in the bottled-water CVC (E11), where incumbents’ bundled systems are already optimized around distribution and on-shelf availability (E14). Because the proposed wedge is a digital discovery layer (not a hard operational constraint like logistics assets), incumbents can attempt to re-bundle it into their existing retail execution and brand portfolios (E14), or simply reduce the underlying pain through placement/promotions. Teixeira’s decoupling logic highlights that even taking a single CVC stage can be dangerous to incumbents (books/unlocking-the-customer-value-chain-chapter-1.md Page 10), which increases their motivation to neutralize it; however, the evidence here does not directly document incumbents’ digital product capabilities, so capability assessments remain partially assumption-based (E15).",
+    "incumbent_capability_to_recouple": "medium",
+    "incumbent_incentive_to_recouple": "high",
+    "defenses": [
+      "Own the repeat relationship around “right now” discovery (opt-in SMS/web, personalization from usage history) so switching back to an incumbent bundle is behaviorally costly, even if features are copied (E15).",
+      "Differentiate on data freshness and trust: venue-verified + crowd-confirmed availability with recency weighting; this is harder to replicate quickly than a generic ‘store locator’ list (E11).",
+      "Exploit focus advantage: ship faster iteration cycles and win narrow contexts (venue categories/geos) before broadening—stay in layer (a) discovery/matching, then selectively add verification (layer (b)) rather than jumping into payments/logistics (E15).",
+      "Create selective venue partnerships that improve accuracy (and possibly exclusivity) of availability signals in targeted markets, making incumbent recoupling less effective in those pockets (E11)."
+    ],
+    "evidence_ids": [
+      "E11",
+      "E14",
+      "E15"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "likely_responses": [
+    {
+      "response_type": "copy",
+      "description": "Bundled productivity/knowledge-work incumbents are likely to ship a native “integration setup + monitoring assistant” that uses plain-language intent to configure integrations and troubleshoot common breakages, positioning it as an extension of their existing integration stage in the customer value chain (integration + ongoing usage/iteration) rather than a separate product. This directly targets Notion’s decoupled wedge around integration + continuous maintenance (E12,E13).",
+      "severity": "high",
+      "defense": "Win on depth and reliability in the specific weak-link workflow: make the Copilot handle the long tail of ongoing “keep it working” tasks (broken permissions, link rot, sync drift) and prove it with measurable uptime/health reporting inside Notion. Keep it additive (no forced workflow migration) so users can adopt it even if they stay on incumbent suites for other activities (E6,E12,E13).",
+      "evidence_ids": [
+        "E6",
+        "E12",
+        "E13",
+        "E15"
+      ]
+    },
+    {
+      "response_type": "recouple",
+      "description": "Incumbents may re-bundle the decoupled activity by embedding integration maintenance into the core admin/onboarding and daily-work surfaces—turning “integration setup + upkeep” into a default part of their workspace experience and packaging it into existing plans. This would reduce the need for a standalone integration/maintenance layer and neutralize Notion’s wedge (E12,E13).",
+      "severity": "high",
+      "defense": "Stay one step ahead by treating integration/maintenance as an always-on workflow (not a one-time setup feature): proactive detection, guided fixes, and safe incremental refactors that reduce the customer’s ongoing effort in the “usage/iteration” stage. Make the product’s value visible as continuous time saved rather than as a checklist feature incumbents can easily bundle away (E13,E15).",
+      "evidence_ids": [
+        "E12",
+        "E13",
+        "E15"
+      ]
+    },
+    {
+      "response_type": "block",
+      "description": "Adjacent tool providers that Notion integrates with (e.g., messaging/storage/project tools) could harden APIs, reduce functionality for third-party automation, or change permission models—making proactive diagnosis and auto-remediation harder for Notion’s Integration & Maintenance Copilot, especially in the “connect external apps” stage (E12).",
+      "severity": "medium",
+      "defense": "Design for graceful degradation: ensure the Copilot can still deliver value via user-guided repair flows, clear diagnostics, and best-practice recommendations even when auto-fix is limited. Prioritize robust support for the most common integration points and maintain a rapid update cadence so changes in external APIs don’t create long periods of broken experiences (E12,E13).",
+      "evidence_ids": [
+        "E12",
+        "E13"
+      ]
+    },
+    {
+      "response_type": "partner",
+      "description": "Incumbents may partner with (or promote) third-party integration/automation platforms to offer a “good enough” integration setup/monitoring layer that’s pre-approved and tightly surfaced in their bundles, reducing willingness to adopt Notion’s dedicated maintenance copilot (E12).",
+      "severity": "medium",
+      "defense": "Differentiate by being Notion-native and iteration-native: optimize for keeping Notion workspaces healthy over time (structure, permissions, links, database relationships) in addition to simply moving data between tools. Position the Copilot as the tool that maintains the workspace system continuously, not just the connector that moves payloads (E6,E13,E15).",
+      "evidence_ids": [
+        "E6",
+        "E12",
+        "E13",
+        "E15"
+      ]
+    }
+  ],
+  "recoupling_vulnerability": {
+    "vulnerability": "high",
+    "rationale": "The decoupled wedge sits directly in two already-native CVC stages for any bundled productivity incumbent—“integration” and ongoing “usage/iteration” (E12,E13). Because the new offering is framed as an assistive layer (AI-assisted setup, detection, guided fixes, and refactor recommendations) rather than requiring users to migrate artifacts, it is conceptually easy for an incumbent to re-bundle as a feature inside their existing workspace experience (E6,E12,E13). While specific incumbent identities/capabilities are not provided here (E1), the general recoupling risk is high because the wedge is adjacent to core product surfaces and can be packaged as a plan-tier feature rather than a standalone product.",
+    "incumbent_capability_to_recouple": "high",
+    "incumbent_incentive_to_recouple": "high",
+    "defenses": [
+      "Make the Copilot’s value cumulative and longitudinal (continuous maintenance + safe refactors over time), so it is harder to match with a one-time “integration setup assistant” feature (E13,E15).",
+      "Concentrate on the weakest-link pain in the CVC—ongoing integration breakage and workspace upkeep—so adoption does not require users to switch the rest of their workflow (E12,E13).",
+      "Ship in a layered way: start with discovery/diagnostics and guided fixes (light-touch), then selectively add higher-trust intermediation (e.g., verification/audit trails for changes) rather than jumping into heavy-responsibility layers that increase risk and slow iteration (E13,E15).",
+      "Create defensibility through speed of iteration on real-world failure modes in integrations and workspace evolution (permissions, links, database structure), keeping the experience demonstrably faster/clearer than bundled alternatives (E12,E13)."
+    ],
+    "evidence_ids": [
+      "E1",
+      "E6",
+      "E12",
+      "E13",
+      "E15"
+    ]
+  }
+}

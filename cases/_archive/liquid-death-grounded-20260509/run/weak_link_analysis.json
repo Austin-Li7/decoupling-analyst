@@ -1,0 +1,112 @@
+{
+  "ranked_weak_links": [
+    {
+      "activity_id": "A2",
+      "score": 320.0,
+      "pain_intensity": 4,
+      "frequency": 5,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 3,
+      "integration_dependency": 3,
+      "rationale": "In the bottled-water CVC, “search for feasible hydration options available right now” is a recurring friction point (time/effort) because consumers must navigate availability across nearby retail/vending/online and default to habit (E6-E11). This is a classic decoupling wedge: improve a single “weak link activity” without replacing the rest of the workflow—making it “cheaper faster easier” for customers to execute (talks/unlocking-the-customer-value-chain-at-decoupling-co.md) (E17). AI/digital can materially help via real-time availability discovery and personalized option-shortlisting, but depends on integrating retailer/venue inventory or location signals (integration dependency) (assumption; not directly evidenced).",
+      "evidence_ids": [
+        "E6",
+        "E9",
+        "E11",
+        "E15",
+        "E19",
+        "E17"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "score": 288.0,
+      "pain_intensity": 3,
+      "frequency": 4,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 4,
+      "integration_dependency": 2,
+      "rationale": "Incumbents in bottled water are described as having limited differentiation beyond source/packaging (E14), so consumers’ evaluation/comparison can be noisy and low-signal (E10). Liquid Death’s existing disruption lever is bold marketing/unique branding in an otherwise undifferentiated category (E3), which already decouples “evaluation” from the incumbent bundle (E15). AI/digital can extend this wedge with better product education, social proof, and personalized comparisons at the moment of choice, with relatively low integration requirements versus transaction/logistics layers (assumption on specific features; not directly evidenced).",
+      "evidence_ids": [
+        "E3",
+        "E10",
+        "E14",
+        "E15",
+        "E19",
+        "E17"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "score": 288.0,
+      "pain_intensity": 3,
+      "frequency": 3,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 4,
+      "integration_dependency": 2,
+      "rationale": "Post-purchase reflection (including environmental impact) shapes loyalty/repurchase (E13). Because incumbents are relatively undifferentiated (E14), there is room to decouple the “reflect/repurchase decision” activity with brand-led, data-driven retention loops that strengthen the customer relationship (E3). This fits Teixeira’s view that losing even one core stage in the CVC can “wreak havoc” on incumbents (books/unlocking-the-customer-value-chain-chapter-1.md) (E16). AI/digital leverage is high for lifecycle messaging, personalization, and subscription nudges (assumption on tactics; not directly evidenced).",
+      "evidence_ids": [
+        "E3",
+        "E13",
+        "E14",
+        "E19",
+        "E17"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "score": 108.0,
+      "pain_intensity": 3,
+      "frequency": 4,
+      "ai_or_digital_leverage": 3,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 5,
+      "integration_dependency": 5,
+      "rationale": "Purchase is where value is captured (E11) and offers strong monetization potential; however, decoupling here typically requires deep channel integration (retail relationships, fulfillment, and checkout) (E11). That high integration dependency makes it harder to offer a “one-step” improvement without dragging the entrant into a full-stack replication of incumbent capabilities (E15), increasing recoupling/retaliation risk via channel power and pricing (risk is an inference; not directly evidenced).",
+      "evidence_ids": [
+        "E11",
+        "E15",
+        "E19",
+        "E17"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "score": 40.0,
+      "pain_intensity": 2,
+      "frequency": 5,
+      "ai_or_digital_leverage": 2,
+      "willingness_to_switch": 2,
+      "value_capture_potential": 2,
+      "integration_dependency": 2,
+      "rationale": "Consumption and packaging disposal happen every time (E12) and can affect perceived environmental impact (E13), but digital/AI leverage is limited because much of the experience is physical and constrained by local waste/recycling systems (E12). Liquid Death can still reinforce differentiation through packaging/brand experience (E3), yet it is a weaker decoupling target than upstream discovery/evaluation where software can more directly remove time/effort erosion (E9-E10).",
+      "evidence_ids": [
+        "E3",
+        "E9",
+        "E12",
+        "E13",
+        "E17"
+      ]
+    },
+    {
+      "activity_id": "A1",
+      "score": 5.0,
+      "pain_intensity": 1,
+      "frequency": 5,
+      "ai_or_digital_leverage": 1,
+      "willingness_to_switch": 1,
+      "value_capture_potential": 1,
+      "integration_dependency": 1,
+      "rationale": "Need recognition (“I’m thirsty / need hydration”) is high-frequency but largely self-driven and not strongly “unhappy customer” territory to decouple (E8). It offers little direct value capture and limited AI/digital leverage without moving into broader health/wellness sensing, which would expand the scope beyond the beverage CVC described (scope expansion is an inference; not directly evidenced).",
+      "evidence_ids": [
+        "E6",
+        "E8",
+        "E15",
+        "E17"
+      ]
+    }
+  ]
+}

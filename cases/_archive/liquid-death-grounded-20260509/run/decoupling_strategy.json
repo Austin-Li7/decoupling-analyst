@@ -1,0 +1,57 @@
+{
+  "primary_decoupling": {
+    "activity_to_decouple": "Search for feasible hydration options available right now",
+    "from_incumbent_bundle": "Incumbent bottled-water/beverage companies bundled via retail/convenience/vending distribution (e.g., Nestlé, Coca-Cola, PepsiCo) and the retailers/venues that control on-shelf availability (E11, E14).",
+    "customer_pain": "In-the-moment hydration is constrained by what’s physically nearby, but customers must spend time/effort figuring out which stores/venues have a preferred option available right now, so they default to habit or whatever is visible (E9, E10, E11).",
+    "new_offering": "Launch a lightweight “Liquid Death Now” locator (mobile web + QR + SMS) that shows the nearest places to buy Liquid Death immediately, using venue-verified availability plus user-reported confirmations and recency signals to rank results.",
+    "why_customer_switches": "Customers don’t have to change where they shop or how they pay—they just run a faster search step and get a high-confidence answer on where Liquid Death is available right now, i.e., “peeling away a portion of the customer’s value chain” (books/unlocking-the-customer-value-chain-chapter-1.md) while leaving the rest intact (E6, E11, E15).",
+    "cheaper_faster_easier": [
+      "faster",
+      "easier"
+    ],
+    "evidence_ids": [
+      "E6",
+      "E9",
+      "E10",
+      "E11",
+      "E14",
+      "E15"
+    ]
+  },
+  "do_not_decouple": [
+    {
+      "activity": "Purchase the chosen product through an available channel",
+      "reason": "Do not jump into checkout/payments as the wedge: customers already buy through existing retail/convenience/vending channels, and re-owning the transaction would add heavy operational scope while breaking the ‘one-step’ decoupling logic (E11, E15).",
+      "evidence_ids": [
+        "E11",
+        "E15"
+      ]
+    },
+    {
+      "activity": "Consume the water and handle the packaging after use",
+      "reason": "Avoid unbundling disposal/recycling logistics as the next step; it is operationally complex and outside the core disruption lever described here, while incumbents are optimized around production/distribution scale rather than post-use services (E12, E14).",
+      "evidence_ids": [
+        "E12",
+        "E14"
+      ]
+    },
+    {
+      "activity": "Recognize a hydration need",
+      "reason": "Don’t attempt to ‘own thirst’ as a standalone activity; it’s a universal, low-differentiation trigger and not where incumbents are weak—Liquid Death’s advantage is better applied at the moment of choice/search and brand evaluation (E8, E10, E14).",
+      "evidence_ids": [
+        "E8",
+        "E10",
+        "E14"
+      ]
+    },
+    {
+      "activity": "Reflect on experience (including environmental impact) and decide whether to repurchase",
+      "reason": "Don’t lead with retention/repurchase tooling as the primary decoupling wedge until real-time availability search is solved; otherwise it risks building CRM without improving the immediate ‘can I get it right now?’ bottleneck that drives default-to-habit purchases (E9, E11, E13).",
+      "evidence_ids": [
+        "E9",
+        "E11",
+        "E13"
+      ]
+    }
+  ]
+}

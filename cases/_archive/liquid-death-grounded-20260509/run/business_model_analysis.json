@@ -1,0 +1,40 @@
+{
+  "value_creation": "“Liquid Death Now” creates customer value by decoupling and improving the weak-link CVC activity of real-time product search/availability (“where can I buy Liquid Death right now?”) without changing the customer’s downstream purchase/consumption workflow (E6, E9, E11, E15). It reduces time/effort and uncertainty at the moment of need (E8) by ranking nearby purchase points using venue-verified availability plus user-confirmed recency signals (assumption; conceptually consistent with decoupling a discrete CVC step (E15)). This aligns with Teixeira’s framing that disruptors win by “peeling away a portion of the customer’s value chain” while leaving the rest with incumbents (books/unlocking-the-customer-value-chain-chapter-1.md; see also the decoupling concept summarized in (E15)).",
+  "value_capture": "Primary value capture is indirect: the locator increases conversion and reduces drop-off between need recognition/search and purchase, driving incremental unit sales through existing retail and online channels (E8, E9, E11). For viability, incremental gross profit from those incremental units must exceed the all-in cost to acquire and serve users of the locator (CAC + variable operating cost). Secondary/optional capture paths (lower confidence, not evidenced) could include paid placement by retailers/venues or B2B “demand heatmap” insights sold to distribution partners; these should be treated as hypotheses to validate rather than core economics.",
+  "value_erosion_remaining": "Even with a locator, major erosion in the end-to-end hydration job remains in (a) actual physical availability/stock-outs at the point of sale (the locator can surface but not fix this), (b) price sensitivity and substitution to other beverages at purchase (E10, E11), and (c) post-purchase considerations like environmental impact perceptions and loyalty formation (E13). The locator also does not address consumption/disposal frictions (E12) and does not change incumbents’ core distribution advantages (E14).",
+  "payer": "End consumers pay indirectly by purchasing Liquid Death units through retail or online channels; the locator itself is best positioned as free to users and funded by Liquid Death as a conversion tool (E11).",
+  "pricing_model": "Free “availability search” product (mobile web/QR/SMS) with monetization via incremental product gross margin from increased purchase conversion and frequency; i.e., a demand-capture layer that improves the CVC search step (E9, E11, E15). Unit-economics requirement (assumption): (incremental units per acquired locator user) × (gross profit per unit) × (repeat purchases attributable to the locator) must be materially greater than CAC and ongoing per-user operating costs (E11).",
+  "cac_risks": [
+    "Paid acquisition may be uneconomic because the underlying product’s profit per unit is likely small (not evidenced) and search-intent keywords around “water near me” are broad; if CAC is not near-zero, CLV may not clear CAC (unit-economics doctrine (E4)).",
+    "Cold-start problem on the supply side: to be useful, the locator needs broad and accurate venue availability coverage; building/maintaining that dataset can raise CAC and operating costs before benefits accrue (assumption; tied to the proposed venue verification design).",
+    "If the primary traffic source is app installs, install friction can raise CAC; a lightweight web/QR/SMS approach mitigates this but must still be discovered at the moment of need (assumption consistent with “search” step (E9)).",
+    "Accuracy/reliability risk: incorrect availability results create negative word-of-mouth and reduce organic/referral acquisition, forcing more paid spend (assumption).",
+    "Channel dependence risk: if discovery relies on third-party platforms (maps/search/social), algorithm changes can spike CAC, violating the need for CAC < CLV (E4)."
+  ],
+  "ltv_drivers": [
+    "Repeat behavior: if the locator becomes the default way fans find Liquid Death, it can increase purchase frequency (more occasions captured) and reduce substitution at the point of purchase (E8, E10, E11).",
+    "Higher conversion at high-intent moments: users searching “right now” are closer to purchase, so attribution-adjusted conversion lift per visit can raise effective CLV per acquired user (E8, E9, E11).",
+    "Cross-channel reinforcement: the same user may buy across retail and online over time; if the locator strengthens brand loyalty and repurchase, CLV increases (E13).",
+    "Owned relationship flywheel (assumption): if the locator captures opt-in contact (SMS) or first-party behavior data, it can lower future CAC and raise CLV via re-engagement—this must be balanced with privacy/compliance costs (not evidenced; hypothesis)."
+  ],
+  "unit_economics_concerns": [
+    "Core constraint: beverages typically have low gross profit per unit (not evidenced), so the business only works if CAC is extremely low (near-zero via owned media like packaging/website/social) or if the locator drives multiple incremental units and repeat purchases per acquired user (E11). Required inequality (assumption): CAC + variable cost per active user << (incremental gross profit per user).",
+    "Attribution challenge: it may be hard to prove the locator caused incremental retail sales (vs. merely redirecting where someone buys), making it difficult to justify ongoing spend if the economics can’t be measured (assumption; purchase occurs at retail (E11)).",
+    "Operating cost load: venue verification, fraud/spam moderation for user reports, and data freshness create ongoing variable costs that can erase contribution margin if not automated (assumption).",
+    "Incentive alignment: venues may have weak incentives to keep availability updated unless they see direct benefit; without incentives, data quality drops and retention falls, reducing CLV (assumption).",
+    "Recoupling/commoditization risk: general-purpose discovery tools (maps/search) or large retailers can replicate “in-stock nearby” features, pushing the locator back into a marketing cost center rather than a defensible profit engine (assumption; incumbents remain bundled/undifferentiated (E14))."
+  ],
+  "evidence_ids": [
+    "E3",
+    "E4",
+    "E6",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E15"
+  ]
+}

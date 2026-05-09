@@ -1,0 +1,148 @@
+{
+  "run_id": "liquid-death-20260509-005918",
+  "created_at": "2026-05-09T00:59:18-07:00",
+  "input": {
+    "analysis_goal": "investment_judgment",
+    "company_name": "Liquid Death",
+    "ticker": "",
+    "website": "https://liquiddeath.com",
+    "files": [],
+    "urls": [
+      "https://liquiddeath.com"
+    ],
+    "user_question": "",
+    "output_style": "professional_obsidian_note",
+    "include_financial_verification": false
+  },
+  "artifacts": {
+    "research_brief": "research_brief.json",
+    "cost_summary": "cost_summary.json",
+    "evidence_store": "evidence_store.json",
+    "company_profile": "company_profile.json",
+    "lens_fit": "lens_fit.json",
+    "case_perspective": "case_perspective.json",
+    "cvc": "cvc.json",
+    "value_type_diagnosis": "value_type_diagnosis.json",
+    "weak_link_analysis": "weak_link_analysis.json",
+    "decoupling_strategy": "decoupling_strategy.json",
+    "business_model_analysis": "business_model_analysis.json",
+    "competitive_response": "competitive_response.json",
+    "final_judgment": "final_judgment.json",
+    "critic_review": "critic_review.json",
+    "final_report": "final_report.md"
+  },
+  "modules": [
+    {
+      "module": "research",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:b284731a1f21f2a0cdfcefab585e34bbbaccfd27b0513cc35fe422ad8f7cdce8",
+      "output_path": "research_brief.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "evidence_store",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:29bb082b00fc02dc68290f3fa1f617f6c73ef5c6cdea4dd25e8f417dbfdac9f5",
+      "output_path": "evidence_store.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "company_profile",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:fba6e661b27f13b95e8a43c09906f2327484567433ee4d98e006bc2a0b959996",
+      "output_path": "company_profile.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "lens_fit",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:bb6e21433c52577c5403af8f8d106076f045d04d53461103533f8b6b6568b9b2",
+      "output_path": "lens_fit.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "case_perspective",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:373225efb732c51c0528d4bfa7ff14f872eaaa5abe81f5c340f3b3b0a0d11481",
+      "output_path": "case_perspective.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "cvc",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:c11336d0f28686481c7274d4d229d743655dfc6a4b6beb2b9d5df1f90c419a35",
+      "output_path": "cvc.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "value_types",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:3ecd072c246c10c6eb2130194d4197ddba6d25cbe498ded141f40a18e1addba3",
+      "output_path": "value_type_diagnosis.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "weak_links",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:92a4e18d70523cd0bbbf08a84a6eeb0a6b1114e452d2f0da79f433485b12bbe2",
+      "output_path": "weak_link_analysis.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "decoupling",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:c7327b02adcc540546da0b472a33fc65a3ed935951a382221711a1c0609427ed",
+      "output_path": "decoupling_strategy.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "business_model",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:dd132ed970e8064739da420a989492749b4e8ebe2fc689c0458f0e74a01282fc",
+      "output_path": "business_model_analysis.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "competitive_response",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:dd132ed970e8064739da420a989492749b4e8ebe2fc689c0458f0e74a01282fc",
+      "output_path": "competitive_response.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "final_judgment",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:8a43f759ffee721f21f770d4e0556af56ed72ea6d525ea190732d6f070beac5f",
+      "output_path": "final_judgment.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "critic",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:ef29655f087e91d9f14ff5fc067e33c7ecb7274485fd364b4456a6d7087010dd",
+      "output_path": "critic_review.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "markdown_renderer",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:cde5c718eee4cce573158512cb62f7bb7909765b660c2d864fc7f53087042e26",
+      "output_path": "final_report.md",
+      "status": "ok",
+      "error": null
+    }
+  ]
+}

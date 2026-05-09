@@ -1,0 +1,63 @@
+{
+  "company": {
+    "name": "Liquid Death",
+    "website": "https://liquiddeath.com",
+    "ticker": "",
+    "public_or_private": "unknown",
+    "industry": "canned water / beverage (brand-driven bottled/canned water)",
+    "geography": [
+      "unknown"
+    ],
+    "stage": "unknown",
+    "description": "Liquid Death is a canned water brand founded in 2017 that has pursued bold, unconventional branding and marketing to differentiate itself within the bottled/canned water and beverage industry (E3)."
+  },
+  "customers": {
+    "primary_user": "end consumers seeking hydration who choose packaged beverages (E8, E9, E11)",
+    "buyer": "consumers purchasing at retail or online (grocery, convenience, direct-to-consumer) (E11)",
+    "payer": "end consumers (retail or online purchasers) (E11)",
+    "segments": [
+      "direct-to-consumer online buyers (E11)",
+      "retail shoppers buying packaged beverages (E11)",
+      "consumers concerned with environmental impact and brand loyalty (E13)",
+      "consumers attracted to distinctive/edgy branding and marketing (E3)"
+    ]
+  },
+  "business_model": {
+    "value_proposition": "Branded canned water positioned via unconventional, bold marketing and packaging to stand out from traditional bottled water incumbents (E3)",
+    "revenue_model": "Product sales through retail and online direct-to-consumer channels (E11)",
+    "pricing_model": "unknown",
+    "distribution_channels": [
+      "retail grocery and convenience stores (E11)",
+      "online direct-to-consumer (E11)",
+      "other retail/e-tail channels (E11)"
+    ],
+    "cost_drivers": [
+      "production and packaging of canned water (industry incumbents focus on production and distribution) (E14)",
+      "marketing and brand-building activities (E3)"
+    ]
+  },
+  "competition": {
+    "incumbents": [
+      "Nestlé (bottled water incumbent) (E14)",
+      "Coca-Cola (bottled water and beverage incumbent) (E14)",
+      "PepsiCo (bottled water and beverage incumbent) (E14)"
+    ],
+    "direct_competitors": [
+      "other bottled/canned water brands and premium water brands (E14)"
+    ],
+    "substitutes": [
+      "tap water (E9)",
+      "other beverages (E9)"
+    ]
+  },
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E8",
+    "E9",
+    "E11",
+    "E13",
+    "E14"
+  ]
+}

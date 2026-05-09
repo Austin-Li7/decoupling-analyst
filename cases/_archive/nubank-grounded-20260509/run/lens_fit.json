@@ -1,0 +1,27 @@
+{
+  "primary_type": "decoupling",
+  "secondary_types": [
+    "tech_substitution",
+    "business_model"
+  ],
+  "confidence": "high",
+  "reasoning": "Nubank’s growth strategy fits Thales Teixeira’s decoupling lens because the company explicitly targeted and unbundled high-friction activities in the traditional banking Customer Value Chain (CVC). Evidence shows Nubank focused on digital, branchless account opening and onboarding via mobile app (E8), real-time no-fee daily transactions (E9), AI-enabled 24/7 customer service (E10), and simplified transparent consumer credit (E11). These represent discrete CVC activities where incumbents were weak and switching frictions were relatively low, enabling Nubank to acquire customers without replicating the incumbents’ full branch and legacy infrastructure (E4, E6). The firm’s use of digital-first channels and AI indicates meaningful tech substitution and automation that amplify the decoupling advantage (E2, E10). The reporting explicitly frames Nubank’s rise as a decoupling-led disruption in the financial services value chain (E3, E4, E7). Given this alignment across multiple CVC activities and the documented strategy in the supplied evidence, decoupling is the primary strategic lens; complementary lenses are tech_substitution (AI, mobile-first delivery) and business_model (no-fee pricing, customer-centric product design) (E8–E11).",
+  "evidence_ids": [
+    "E2",
+    "E3",
+    "E4",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11"
+  ],
+  "decoupling_fit_score": 0.9,
+  "recommended_report_mode": "full_decoupling",
+  "caveats": [
+    "Some evidence items are medium-confidence summaries rather than primary-source metrics; customer counts and competitive dynamics cited in E3–E5 should be validated from primary filings or company reports before making hard strategic calls.",
+    "Public/private status is unknown per the brief (E1); if the user’s goal is investment analysis, switch to financial_first and obtain financials.",
+    "The supplied evidence emphasizes strategic narrative over unit-economics; recommendations should validate CAC, CLV, and margins before prescribing product layering consistent with the MGT470 decision discipline (unit-economics gap)."
+  ]
+}

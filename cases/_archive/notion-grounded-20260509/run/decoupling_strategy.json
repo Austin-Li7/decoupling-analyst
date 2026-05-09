@@ -1,0 +1,55 @@
+{
+  "primary_decoupling": {
+    "activity_to_decouple": "Integrate the workspace with external apps and continuously iterate/update the system over time",
+    "from_incumbent_bundle": "Today this activity is bundled across (1) Notion’s core all-in-one workspace product and its native integration touchpoints and (2) the customer’s own manual, ongoing maintenance work across connected external tools (e.g., Slack/Google Drive) (E6,E12,E13).",
+    "customer_pain": "Integrations and ongoing iteration are a recurring “eroding” stage: users must constantly connect tools, troubleshoot broken connections/permissions, and refactor their workspace as it evolves—creating continuous time/effort tax and brittleness (E12,E13).",
+    "new_offering": "Notion Integration & Maintenance Copilot: an AI-assisted “integration doctor” that (a) sets up/updates integrations from plain-English intent, (b) proactively detects and guides fixes for broken links/permissions/sync issues, and (c) recommends safe, incremental workspace refactors—without requiring users to move their artifacts out of Notion (E6,E12,E13,E15). (Framed as a decoupling wedge per Teixeira’s decoupling logic; primary source: books/unlocking-the-customer-value-chain-chapter-1.md.)",
+    "why_customer_switches": "Users can keep their existing tools and workflows but offload the most painful, repetitive maintenance work to Notion—getting a workspace that “stays working” with less manual setup and firefighting, while still using the same external apps (E12,E13).",
+    "cheaper_faster_easier": [
+      "faster",
+      "easier"
+    ],
+    "evidence_ids": [
+      "E6",
+      "E12",
+      "E13",
+      "E15"
+    ]
+  },
+  "do_not_decouple": [
+    {
+      "activity": "Create and store work artifacts (notes, databases, wikis, project boards)",
+      "reason": "Don’t unbundle the core artifact-creation/storage layer: it is the primary locus of customer value creation in an all-in-one workspace and the foundation for owning the user relationship and repeat behavior; decoupling here would weaken the core usage engine (E6,E9).",
+      "evidence_ids": [
+        "E6",
+        "E9"
+      ]
+    },
+    {
+      "activity": "Collaborate by sharing, commenting, and coordinating tasks on shared pages",
+      "reason": "Avoid decoupling collaboration because it is tightly coupled to the shared-page artifact layer and team coordination inside the workspace; unbundling it would dilute the product’s integrated value proposition and risk pushing teams to keep collaboration elsewhere (E6,E11).",
+      "evidence_ids": [
+        "E6",
+        "E11"
+      ]
+    },
+    {
+      "activity": "Discover and consider a workspace tool through word-of-mouth, online content, and/or by encountering it via other tools",
+      "reason": "Don’t attack discovery as the wedge: it’s largely a channel/awareness activity rather than a workflow “job step” Notion can uniquely own, and it doesn’t directly reduce the recurring integration/maintenance pain that drives ongoing retention (E7,E12,E13).",
+      "evidence_ids": [
+        "E7",
+        "E12",
+        "E13"
+      ]
+    },
+    {
+      "activity": "Sign up and complete initial onboarding to access the workspace",
+      "reason": "Avoid making onboarding the primary decoupling target because it is relatively infrequent (one-time per user) versus the recurring erosion in integration + iteration; focusing here risks optimizing a smaller pain point while missing the highest-leverage weak link (E8,E12,E13).",
+      "evidence_ids": [
+        "E8",
+        "E12",
+        "E13"
+      ]
+    }
+  ]
+}

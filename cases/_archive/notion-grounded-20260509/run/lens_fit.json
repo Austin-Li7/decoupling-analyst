@@ -1,0 +1,31 @@
+{
+  "primary_type": "tech_substitution",
+  "secondary_types": [
+    "decoupling",
+    "business_model"
+  ],
+  "confidence": "medium",
+  "reasoning": "Notion positions itself as an all-in-one productivity platform that replaces multiple legacy / single-purpose productivity tools (note-taking, knowledge management, project management, collaboration) with a unified digital product (E6). The evidence describes a coherent customer value chain spanning discovery, onboarding, content creation, organization, collaboration, integration, and ongoing usage (E7–E13), which supports the view that Notion's core strategic move is technology substitution: using a modern digital product to replace incumbent analog or siloed software workflows (E6, E9–E12). Decoupling is relevant but secondary: Notion effectively bundles many activities that incumbents historically provided in separate products, and the company can also enable third parties or new entrants to decouple particular activities (e.g., templates, integrations, search/knowledge retrieval) from larger suites — however the provided evidence emphasizes Notion's bundled value proposition rather than a pure one-activity disruptor (E6, E7–E13). Business-model nuances (freemium, workspace/team pricing) are implied by the all-in-one, collaborative nature and repeat usage pattern in the CVC, suggesting opportunities for layered evolution in monetization (E6, E13).",
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "decoupling_fit_score": 0.5,
+  "recommended_report_mode": "strategic_memo",
+  "caveats": [
+    "Evidence set focuses on product positioning and CVC mapping but lacks user metrics, revenue, unit economics, and competitive response data (E3–E5).",
+    "No direct evidence about Notion's pricing model, CAC, CLV, or margin profile was provided; financial and unit-economics assumptions would need validation before any layered monetization recommendation (E3–E5).",
+    "Because the supplied evidence emphasizes Notion's bundled offering, the extent to which decoupling (either as entrant or incumbent defense) is feasible or likely is unclear and lowers confidence in decoupling-specific prescriptions (E6, E7–E13)."
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "ranked_weak_links": [
+    {
+      "activity_id": "A6",
+      "score": 1250.0,
+      "pain_intensity": 4,
+      "frequency": 5,
+      "ai_or_digital_leverage": 5,
+      "willingness_to_switch": 5,
+      "value_capture_potential": 5,
+      "integration_dependency": 2,
+      "rationale": "Integration + ongoing iteration/maintenance is a recurring “erode” stage (time/effort-heavy) in the customer value chain for knowledge workers and teams (E6), especially as users connect Notion with external apps and continuously update/reorganize their system (E12,E13). This is a prime decoupling wedge because Notion can make this weak-link activity “cheaper faster easier” to execute (talks/unlocking-the-customer-value-chain-at-decoupling-co.md) by embedding AI-driven setup/repair of automations, proactive broken-link/permission detection, and guided “system refactors” that do not force users to migrate the rest of their workflow (E15). Value capture is strong because advanced integrations/maintenance features can be packaged into paid tiers and increase retention/seat expansion (assumption to validate in unit economics) (E6,E12,E13).",
+      "evidence_ids": [
+        "E6",
+        "E12",
+        "E13",
+        "E14",
+        "E15"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "score": 426.6666666667,
+      "pain_intensity": 4,
+      "frequency": 4,
+      "ai_or_digital_leverage": 5,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 4,
+      "integration_dependency": 3,
+      "rationale": "Workspace structure setup (pages/databases/tags/links) is an “erode” step with high time/effort and lower satisfaction versus core creation, making it a likely weak link for many users (E10,E6). AI has high leverage to reduce configuration burden via intent-based workspace generation, auto-normalizing databases/tags, and continuous “information architecture” suggestions that users can adopt incrementally without changing where they write or collaborate (E6,E10). This can be monetized indirectly through improved activation/retention and directly via paid template packs/admin tooling for teams (assumption) (E6,E10).",
+      "evidence_ids": [
+        "E6",
+        "E10",
+        "E15"
+      ]
+    },
+    {
+      "activity_id": "A2",
+      "score": 96.0,
+      "pain_intensity": 3,
+      "frequency": 2,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 3,
+      "integration_dependency": 3,
+      "rationale": "Initial onboarding is an “erode” step that can block activation (time/effort friction), even though it is not frequent per user (E8,E6). AI/digital leverage is meaningful through personalized guided tours, auto-imports/templates based on role, and fast “first success” workflows; users can adopt improvements with near-zero switching friction because onboarding is native to Notion (E8). Monetization is mainly via higher conversion and longer CLV (assumption) rather than direct pricing (E6,E8).",
+      "evidence_ids": [
+        "E6",
+        "E8",
+        "E15"
+      ]
+    },
+    {
+      "activity_id": "A1",
+      "score": 72.0,
+      "pain_intensity": 2,
+      "frequency": 2,
+      "ai_or_digital_leverage": 3,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 2,
+      "integration_dependency": 1,
+      "rationale": "Discovery is primarily value-creating and already supported by word-of-mouth/online content/integrations, so pain is comparatively lower than downstream setup/integration steps (E7). Digital leverage exists (SEO/community/in-product referrals), but direct value capture is limited and improvements here risk being incremental marketing optimization rather than a defensible decoupling wedge (E7,E6).",
+      "evidence_ids": [
+        "E6",
+        "E7"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "score": 57.6,
+      "pain_intensity": 2,
+      "frequency": 4,
+      "ai_or_digital_leverage": 3,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 4,
+      "integration_dependency": 5,
+      "rationale": "Collaboration (sharing, commenting, task coordination) is value-creating and important for teams, but it is deeply coupled to the core workspace and permissions model—raising integration dependency and making a clean “one-step” decoupling harder (E11,E6). AI can help with meeting/page summaries and task extraction, yet switching willingness is constrained because teams coordinate across multiple tools and behavior change is costly (E11). Value capture potential is strong in team plans, but this is more “core product deepening” than a low-friction decoupling play (E6,E11).",
+      "evidence_ids": [
+        "E6",
+        "E11"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "score": 4.8,
+      "pain_intensity": 1,
+      "frequency": 5,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 2,
+      "value_capture_potential": 3,
+      "integration_dependency": 5,
+      "rationale": "Creating/storing artifacts is the core value-creating activity with high satisfaction, so it is not the weak link despite high frequency (E9,E6). While AI can enhance drafting/rewriting, this area is tightly integrated with the editor, data model, and collaboration context, and users face high switching costs if the experience fragments (E6,E9). As a result, it is a weaker decoupling opportunity versus attacking the eroding setup/integration stages (E6,E9).",
+      "evidence_ids": [
+        "E6",
+        "E9"
+      ]
+    }
+  ]
+}

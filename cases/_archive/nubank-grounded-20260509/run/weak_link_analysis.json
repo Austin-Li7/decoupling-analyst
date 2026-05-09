@@ -1,0 +1,96 @@
+{
+  "ranked_weak_links": [
+    {
+      "activity_id": "A2",
+      "score": 1125.0,
+      "pain_intensity": 5,
+      "frequency": 3,
+      "ai_or_digital_leverage": 5,
+      "willingness_to_switch": 5,
+      "value_capture_potential": 3,
+      "integration_dependency": 1,
+      "rationale": "A decoupled “choose the right provider/product” layer (e.g., an AI financial coach/comparison-and-eligibility pre-check) can attack a likely weak-link moment created by traditional banks’ bundled, multi-touchpoint friction and inefficiency (E6) and the broader pattern that disruptors win by making a “weak link activity” “cheaper, faster, easier” (talks/unlocking-the-customer-value-chain-at-decoupling-co.md) (E7). This can be delivered without forcing customers to migrate their whole banking stack (low dependency), while monetizing via acquisition/lead-gen or improved conversion into Nubank products (E4).",
+      "evidence_ids": [
+        "E4",
+        "E6",
+        "E7"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "score": 400.0,
+      "pain_intensity": 4,
+      "frequency": 3,
+      "ai_or_digital_leverage": 5,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 5,
+      "integration_dependency": 3,
+      "rationale": "Credit is a high-value wedge because incumbents are characterized as opaque/bureaucratic, while Nubank’s differentiation has been “transparent, easily accessible credit products” addressing hidden fees and bureaucracy (E11). AI/digital underwriting and servicing can materially improve speed and accessibility (E4, E11), and value capture is strong in lending/credit economics (E11). Dependency is moderate because underwriting/repayment benefits from deep account data and ongoing servicing integration (E6).",
+      "evidence_ids": [
+        "E4",
+        "E6",
+        "E11"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "score": 192.0,
+      "pain_intensity": 4,
+      "frequency": 2,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 3,
+      "integration_dependency": 2,
+      "rationale": "Account opening/onboarding remains a historically high-friction step at incumbents (branch visits, paperwork, documentation) (E6), and Nubank already proved decoupling power here with fully digital, branchless onboarding in-app (E8). As a “next” decoupling move it is less incremental (already a core strength), but it remains defensible as an entry wedge and can still capture value indirectly through increased conversion into the broader product set (E4, E8).",
+      "evidence_ids": [
+        "E4",
+        "E6",
+        "E8"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "score": 67.5,
+      "pain_intensity": 3,
+      "frequency": 3,
+      "ai_or_digital_leverage": 5,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 2,
+      "integration_dependency": 4,
+      "rationale": "Support/issue resolution is attackable via digital and AI: Nubank already shifted from traditional call centers/in-branch support (E6) to 24/7 digital customer service using AI/chatbots (E10). However, it is hard to decouple as a standalone product because service is tightly coupled to the underlying account/provider systems (high integration), and direct monetization is typically limited (E6, E10).",
+      "evidence_ids": [
+        "E6",
+        "E10"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "score": 24.0,
+      "pain_intensity": 2,
+      "frequency": 5,
+      "ai_or_digital_leverage": 3,
+      "willingness_to_switch": 2,
+      "value_capture_potential": 2,
+      "integration_dependency": 5,
+      "rationale": "Daily transactions are extremely frequent, but Nubank already offers “no-fee, real-time digital transactions” (E9), reducing the weak-link pain available to exploit further. This activity is deeply core/integrated with the account (high dependency) and is harder to monetize without reintroducing fees that would undermine the digital-first value proposition (E9).",
+      "evidence_ids": [
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A1",
+      "score": 18.0,
+      "pain_intensity": 1,
+      "frequency": 2,
+      "ai_or_digital_leverage": 3,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 1,
+      "integration_dependency": 1,
+      "rationale": "Awareness is part of the traditional banking CVC (E6), and digital channels can improve targeting and reach (E4). But customer “pain” here is typically lower than in operational/bureaucratic steps (E6), and value capture is indirect (brand marketing rather than a monetizable decoupled service), making it a weaker decoupling target versus transactional or credit steps (E4).",
+      "evidence_ids": [
+        "E4",
+        "E6"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "company_name": "Liquid Death",
+  "run_id": "liquid-death-20260509-005918",
+  "searched_urls_count": 0,
+  "report_cited_urls_count": 7,
+  "union_pre_liveness_count": 14,
+  "report_urls_in_search_results": 0,
+  "report_urls_only_in_report": 7,
+  "report_only_url_ratio": 1.0,
+  "searched_urls": [],
+  "research_sources_urls": [
+    "https://www.instagram.com/p/DTwWnBAiAi8/",
+    "https://www.linkedin.com/posts/nileshmalani2009_brandstrategy-marketdisruption-scaleup-activity-7416168112552574977-cYRJ",
+    "https://www.adexchanger.com/?p=455910",
+    "https://fasterthannormal.co/businesses/liquid-death",
+    "https://www.instagram.com/p/DXKLaOEiEcI/",
+    "https://www.penguinrandomhouse.com/books/562858/unlocking-the-customer-value-chain-by-thales-s-teixeira-with-greg-piechota/",
+    "https://www.hks.harvard.edu/centers/mrcbg/programs/growthpolicy/unlocking-customer-value-chain-how-decoupling-drives-consumer",
+    "https://www.3pillarglobal.com/insights/podcast/unlocking-the-customer-value-chain-digital-disruption-thales-teixeira/",
+    "https://www.goodreads.com/book/show/42934086-unlocking-the-customer-value-chain",
+    "https://www.porchlightbooks.com/products/unlocking-the-customer-value-chain-thales-s-teixeira-9781524763084",
+    "https://www.inc.com/soren-kaplan/want-digital-disruption-decouple-customer-experience.html",
+    "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "https://www.youtube.com/watch?v=ea-XaLHfpS4",
+    "https://praxie.com/decouple-the-value-chain-to-drive-digital-disruption/"
+  ],
+  "visited_urls_from_retriever": [],
+  "prefetched_url_count": 14,
+  "report_cited_urls": [
+    {
+      "url": "https://adage.com/article/cmo-strategy/liquid-death-marketing-strategy/2540231",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.fastcompany.com/90976532/liquid-death-water-marketing-gen-z",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.businessinsider.com/liquid-death-water-marketing-strategy-2025-2",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.cnbc.com/2025/01/15/liquid-death-water-sales-growth.html",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.ft.com/content/liquid-death-international-expansion",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://adage.com/article/cmo-strategy/liquid-death-product-expansion/2545678",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.billboard.com/business/liquid-death-music-festival-partnerships-2025",
+      "provenance": "only_in_report"
+    }
+  ],
+  "post_liveness_kept_urls": [
+    "https://www.instagram.com/p/DTwWnBAiAi8/",
+    "https://www.linkedin.com/posts/nileshmalani2009_brandstrategy-marketdisruption-scaleup-activity-7416168112552574977-cYRJ",
+    "https://www.adexchanger.com/?p=455910",
+    "https://fasterthannormal.co/businesses/liquid-death",
+    "https://www.instagram.com/p/DXKLaOEiEcI/",
+    "https://www.penguinrandomhouse.com/books/562858/unlocking-the-customer-value-chain-by-thales-s-teixeira-with-greg-piechota/",
+    "https://www.hks.harvard.edu/centers/mrcbg/programs/growthpolicy/unlocking-customer-value-chain-how-decoupling-drives-consumer",
+    "https://www.3pillarglobal.com/insights/podcast/unlocking-the-customer-value-chain-digital-disruption-thales-teixeira/",
+    "https://www.goodreads.com/book/show/42934086-unlocking-the-customer-value-chain",
+    "https://www.porchlightbooks.com/products/unlocking-the-customer-value-chain-thales-s-teixeira-9781524763084",
+    "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "https://www.youtube.com/watch?v=ea-XaLHfpS4",
+    "https://praxie.com/decouple-the-value-chain-to-drive-digital-disruption/"
+  ],
+  "post_liveness_dropped_urls": [
+    {
+      "url": "https://www.inc.com/soren-kaplan/want-digital-disruption-decouple-customer-experience.html",
+      "status": "403",
+      "was_in_search_results": true
+    }
+  ]
+}

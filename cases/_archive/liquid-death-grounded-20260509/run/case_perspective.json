@@ -1,0 +1,13 @@
+{
+  "perspective": "disruptor",
+  "confidence": "high",
+  "reasoning": "Liquid Death is framed as a newer entrant (founded 2017) using unconventional branding/marketing to stand out and “disrupt” the traditional bottled water/beverage incumbents (E3). The evidence positions Nestlé, Coca-Cola, and PepsiCo as incumbents with relatively undifferentiated offerings (E14), while the analysis explicitly applies Teixeira’s disruption/decoupling lens to Liquid Death’s trajectory (E4, E15). This setup matches the MGT470 “disruptor” seat: a focused decoupler attacking an incumbent bundle rather than an incumbent defending or a company mid-pivot (E3-E5).",
+  "primary_question": "What should Liquid Death decouple next in the bottled water customer value chain to keep growing while incumbents remain bundled and undifferentiated?",
+  "evidence_ids": [
+    "E3",
+    "E4",
+    "E5",
+    "E14",
+    "E15"
+  ]
+}

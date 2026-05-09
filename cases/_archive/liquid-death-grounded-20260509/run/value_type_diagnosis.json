@@ -1,0 +1,80 @@
+{
+  "activities": [
+    {
+      "activity_id": "A1",
+      "value_type": "create",
+      "reasoning": "Recognizing a hydration need is the fundamental job-to-be-done (the source of value the customer seeks), i.e., feeling thirsty or seeking hydration (E8). This step itself does not impose meaningful monetary cost but initiates the chain toward value realization.",
+      "money_cost": 1,
+      "time_cost": 1,
+      "effort_cost": 1,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E8"
+      ]
+    },
+    {
+      "activity_id": "A2",
+      "value_type": "erode",
+      "reasoning": "Searching for feasible hydration options imposes friction (time/effort) as consumers must recall habits or check nearby availability across tap, retail, vending, or online channels (E9, E11), making this activity a source of customer cost rather than direct value creation.",
+      "money_cost": 2,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 2,
+      "evidence_ids": [
+        "E9",
+        "E11"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "value_type": "create",
+      "reasoning": "Evaluating and comparing options (brand, price, convenience, perceived health, packaging) creates decision value by helping the consumer select the best tradeoff for their preferences (E10, E14), and disruptor branding can materially alter perceived fit (E3).",
+      "money_cost": 2,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E10",
+        "E14",
+        "E3"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "value_type": "capture",
+      "reasoning": "The purchase step is where incumbents and retailers extract payment and capture monetary value from the consumer through transactions across grocery, convenience, vending, or online channels (E11). This is the primary point of value capture in the chain.",
+      "money_cost": 4,
+      "time_cost": 2,
+      "effort_cost": 2,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E11"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "value_type": "create",
+      "reasoning": "Consumption delivers the core functional value (hydration) and packaging format affects experience and downstream disposal burden; the activity therefore primarily creates customer value while disposal can introduce secondary friction (E12).",
+      "money_cost": 1,
+      "time_cost": 1,
+      "effort_cost": 2,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E12"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "value_type": "create",
+      "reasoning": "Reflection and repurchase choice aggregate experience, environmental concerns, and brand messaging to form loyalty or switching decisions, producing future value by guiding repeat behavior (E13) and is influenced by brand disruption dynamics (E3).",
+      "money_cost": 2,
+      "time_cost": 2,
+      "effort_cost": 2,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E13",
+        "E3"
+      ]
+    }
+  ]
+}

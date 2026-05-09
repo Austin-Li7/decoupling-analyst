@@ -24,6 +24,7 @@ def build_case(run_dir: Path, slug: str, cases_root: Path = Path("cases")) -> Pa
 
     (cases_root / "_archive").mkdir(parents=True, exist_ok=True)
     shutil.copytree(run_dir, case_dir / "run")
+    _copy_root_artifacts(run_dir, case_dir)
     _write_review(case_dir / "review.md", cases_root / "TEMPLATE_review.md", run, research)
     _write_json(
         case_dir / "baseline_metrics.json",
@@ -40,7 +41,7 @@ def _metrics(
     critic: dict[str, Any],
 ) -> dict[str, Any]:
     kept = len(research.get("sources", []))
-    total = _liveness_total(run_dir) or kept
+    total = _provenance_total(run_dir) or _liveness_total(run_dir) or kept
     severity_counts = {severity: 0 for severity in SEVERITIES}
     for issue in critic.get("citation_issues", []):
         severity = issue.get("severity")
@@ -63,6 +64,27 @@ def _metrics(
         "rag_enabled": True,
         "wall_clock_seconds": _wall_clock_seconds(run_dir),
     }
+
+
+def _copy_root_artifacts(run_dir: Path, case_dir: Path) -> None:
+    for filename in ("cost_summary.json", "research_provenance.json"):
+        source = run_dir / filename
+        if source.exists():
+            shutil.copy2(source, case_dir / filename)
+
+
+def _provenance_total(run_dir: Path) -> int | None:
+    provenance_path = run_dir / "research_provenance.json"
+    if not provenance_path.exists():
+        return None
+    provenance = _read_json(provenance_path)
+    source_urls = provenance.get("research_sources_urls")
+    if isinstance(source_urls, list):
+        return len(source_urls)
+    union_count = provenance.get("union_pre_liveness_count")
+    if isinstance(union_count, int):
+        return union_count
+    return None
 
 
 def _liveness_total(run_dir: Path) -> int | None:

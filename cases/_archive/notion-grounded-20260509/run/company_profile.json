@@ -1,0 +1,55 @@
+{
+  "company": {
+    "name": "Notion",
+    "website": "https://www.notion.so",
+    "ticker": "",
+    "public_or_private": "unknown",
+    "industry": "productivity / knowledge management software",
+    "geography": [
+      "unknown"
+    ],
+    "stage": "unknown",
+    "description": "Notion is an all-in-one productivity platform for note-taking, knowledge management, project management, and collaboration (E6). The profile is normalized from the supplied brief and research (E3, E4, E5)."
+  },
+  "customers": {
+    "primary_user": "individual users and teams using productivity and knowledge-management tools (E6)",
+    "buyer": "unknown",
+    "payer": "unknown",
+    "segments": [
+      "individual users (note-taking, personal knowledge) (E6)",
+      "teams/collaborative users (project management, wikis, commenting) (E11, E6)"
+    ]
+  },
+  "business_model": {
+    "value_proposition": "All-in-one workspace for creating, organizing, collaborating on, and integrating notes, databases, wikis, and project boards (E6, E9, E10, E11, E12)",
+    "revenue_model": "unknown",
+    "pricing_model": "unknown",
+    "distribution_channels": [
+      "website (direct sign-up) (E2)",
+      "word-of-mouth and online content (E7)"
+    ],
+    "cost_drivers": [
+      "unknown"
+    ]
+  },
+  "competition": {
+    "incumbents": [],
+    "direct_competitors": [],
+    "substitutes": []
+  },
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

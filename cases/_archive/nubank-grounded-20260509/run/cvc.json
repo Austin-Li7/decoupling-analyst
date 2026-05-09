@@ -1,0 +1,75 @@
+{
+  "customer_segment": "Retail consumers / individual account holders in Latin America seeking day-to-day banking plus occasional credit products via digital-first experiences (E6, E8, E9, E11).",
+  "end_activity": "Maintain an ongoing primary financial relationship for daily money movement and periodic borrowing, with issues resolved and account settings managed over time (E6).",
+  "activities": [
+    {
+      "id": "A1",
+      "step": 1,
+      "activity": "Recognize a need for a banking/credit product and become aware of available providers/options",
+      "current_provider": "Traditional banks’ marketing/branches, word-of-mouth, and digital channels; Nubank may also be part of the awareness set",
+      "customer_goal": "Know which institutions/products exist and might solve the immediate money management or credit need",
+      "evidence_ids": [
+        "E6"
+      ]
+    },
+    {
+      "id": "A2",
+      "step": 2,
+      "activity": "Evaluate and choose a provider/product (fees, friction, transparency, convenience)",
+      "current_provider": "Self (research and comparison) across incumbent banks and digital banks; decision influenced by how bundled banking steps are delivered",
+      "customer_goal": "Select a provider that minimizes bureaucracy/hidden costs while meeting functional needs",
+      "evidence_ids": [
+        "E6",
+        "E11"
+      ]
+    },
+    {
+      "id": "A3",
+      "step": 3,
+      "activity": "Open the account and complete onboarding (identity/documents, activation, card issuance, initial setup)",
+      "current_provider": "Incumbent banks via branch visits/paperwork; Nubank via fully digital, branchless onboarding in-app",
+      "customer_goal": "Get approved and activated quickly with minimal paperwork and no physical visits",
+      "evidence_ids": [
+        "E6",
+        "E8"
+      ]
+    },
+    {
+      "id": "A4",
+      "step": 4,
+      "activity": "Conduct daily transactions (payments, transfers, withdrawals, deposits) and monitor balances/statements",
+      "current_provider": "Traditional banks’ bundled channels (branch/ATM/digital) and Nubank’s no-fee, real-time digital transactions; ongoing monitoring via account management tools",
+      "customer_goal": "Move money reliably in real time at low/no fees and keep visibility/control over the account",
+      "evidence_ids": [
+        "E6",
+        "E9"
+      ]
+    },
+    {
+      "id": "A5",
+      "step": 5,
+      "activity": "Apply for, use, and repay credit products (credit card/loan) as needed",
+      "current_provider": "Traditional banks’ lending processes and Nubank’s transparent, accessible credit products",
+      "customer_goal": "Access credit without opaque pricing or excessive bureaucracy and manage repayment smoothly",
+      "evidence_ids": [
+        "E6",
+        "E11"
+      ]
+    },
+    {
+      "id": "A6",
+      "step": 6,
+      "activity": "Get help, resolve issues, and adjust account settings; escalate to physical touchpoints if needed",
+      "current_provider": "Traditional banks’ call centers and in-branch support; Nubank’s 24/7 digital customer service using AI/chatbots",
+      "customer_goal": "Resolve problems quickly without waiting, repeated handoffs, or needing a branch visit",
+      "evidence_ids": [
+        "E6",
+        "E10"
+      ]
+    }
+  ],
+  "profile_vs_cvc_conflicts": [
+    "The company profile emphasizes streamlined onboarding, real-time transactions, transparent credit, and AI-enabled customer service (E8, E9, E10, E11), but the customer value chain also includes upstream awareness and provider/product choice behaviors that are not explicitly addressed in the stated proposition (E6).",
+    "The customer value chain includes additional bundled bank activities like cross-selling into insurance/investments and reliance on physical touchpoints for certain complex/unresolved issues (E6), which are not covered in the stated Nubank value proposition and may represent unserved/externally served steps."
+  ]
+}

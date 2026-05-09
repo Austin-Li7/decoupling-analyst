@@ -1,0 +1,50 @@
+{
+  "primary_decoupling": {
+    "activity_to_decouple": "Evaluate and choose a provider/product (fees, friction, transparency, convenience)",
+    "from_incumbent_bundle": "Traditional incumbent banks that bundle product comparison/education with sales-led acquisition and onboarding across multiple touchpoints (including in-person), making it hard to evaluate options cleanly (E6).",
+    "customer_pain": "Customers struggle to compare true costs and frictions across banks because information is opaque, sales-biased, and spread across channels; they often must invest time/effort before even knowing whether a product is a fit (E6, E7).",
+    "new_offering": "Launch a Nubank “Financial Match + Pre-check” layer: an AI-guided comparison and eligibility pre-assessment that, in a few minutes, translates a customer’s goals into a transparent shortlist (Nubank + alternatives) and gives a clear next-best action, with one-tap handoff into Nubank onboarding if Nubank is the match (E4, E6).",
+    "why_customer_switches": "They can keep their current banking setup while instantly getting a clearer, faster decision on “what should I choose?”—reducing evaluation effort now, and only switching the rest of the workflow if/when Nubank is the obvious fit; this aligns with Teixeira’s decoupling idea of “peeling away a portion of the customer’s value chain” (books/unlocking-the-customer-value-chain-chapter-1.md) rather than replicating the full bank bundle (E7, E6).",
+    "cheaper_faster_easier": [
+      "faster",
+      "easier"
+    ],
+    "evidence_ids": [
+      "E4",
+      "E6",
+      "E7"
+    ]
+  },
+  "do_not_decouple": [
+    {
+      "activity": "Open the account and complete onboarding (identity/documents, activation, card issuance, initial setup)",
+      "reason": "Avoid making this the next wedge: Nubank already proved differentiation via fully digital, branchless onboarding; re-decoupling here is incremental and distracts from taking the next weak-link activity upstream in choice/evaluation (E8).",
+      "evidence_ids": [
+        "E8"
+      ]
+    },
+    {
+      "activity": "Conduct daily transactions (payments, transfers, withdrawals, deposits) and monitor balances/statements",
+      "reason": "Do not unbundle or rebuild this as a new “multi-bank transactions” play; it is already a core Nubank experience (e.g., no-fee, real-time digital transactions), and diverting focus risks degrading the operational quality of the engine customers use daily (E9).",
+      "evidence_ids": [
+        "E9"
+      ]
+    },
+    {
+      "activity": "Apply for, use, and repay credit products (credit card/loan) as needed",
+      "reason": "Do not choose this as the next decoupling move: Nubank already differentiates with transparent, accessible credit products; pushing further here increases complexity and diverts attention from the lower-dependency, upstream evaluation layer that can acquire new customers earlier in the journey (E11, E4).",
+      "evidence_ids": [
+        "E11",
+        "E4"
+      ]
+    },
+    {
+      "activity": "Get help, resolve issues, and adjust account settings; escalate to physical touchpoints if needed",
+      "reason": "Avoid building physical escalation/branch-like touchpoints as an “unbundled support” layer; Nubank’s advantage is 24/7 digital customer service, and moving into physical touchpoints adds cost and undermines the digital-first model (E10, E6).",
+      "evidence_ids": [
+        "E10",
+        "E6"
+      ]
+    }
+  ]
+}

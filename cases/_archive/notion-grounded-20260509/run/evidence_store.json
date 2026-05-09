@@ -1,0 +1,304 @@
+{
+  "E1": {
+    "id": "E1",
+    "claim": "Notion was provided as the target company by the user.",
+    "source_id": "S0",
+    "locator": "CLI input",
+    "claim_type": "assumption",
+    "confidence": "high",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "competitive_response",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E2": {
+    "id": "E2",
+    "claim": "Notion website was supplied as https://www.notion.so.",
+    "source_id": "S1",
+    "locator": "CLI input --url",
+    "claim_type": "assumption",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit"
+    ],
+    "conflicts_with": []
+  },
+  "E3": {
+    "id": "E3",
+    "claim": "# Teixeira-Style Digital Disruption Analysis of Notion ## Introduction This report provides a comprehensive, impartial analysis of Notion (https://www.notion.so) through the lens of Thales Teixeira’s digital disruption framework, as outlined in *Unlocking the Customer Value Chain* (Teixeira & Piechota, 2019).",
+    "source_id": "S1",
+    "locator": "article: https://www.linkedin.com/pulse/unlocking-customer-value-chain-thales-teixeira-wing-git-chan",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E4": {
+    "id": "E4",
+    "claim": "The analysis systematically examines Notion’s customer value chain, identifies opportunities for decoupling, pinpoints weak links, evaluates monetization strategies, maps the competitive landscape, highlights customer pain points, and summarizes recent strategic moves.",
+    "source_id": "S2",
+    "locator": "article: https://blog.gembaacademy.com/2019/04/01/breaking-the-weak-link-in-the-value-chain/",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective"
+    ],
+    "conflicts_with": []
+  },
+  "E5": {
+    "id": "E5",
+    "claim": "The report draws on the most relevant and recent sources available as of May 2026.",
+    "source_id": "S3",
+    "locator": "article: https://4thoption.substack.com/p/91thales-teixeira-decoupling-the-d08",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit"
+    ],
+    "conflicts_with": []
+  },
+  "E6": {
+    "id": "E6",
+    "claim": "## Customer Value Chain Analysis ### Overview of Notion’s Customer Value Chain Notion is an all-in-one productivity platform offering note-taking, knowledge management, project management, and collaboration tools.",
+    "source_id": "S4",
+    "locator": "article: https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E7": {
+    "id": "E7",
+    "claim": "Its customer value chain can be broken down as follows: | Stage | Description | |----------------------|----------------------------------------------------------------------------------------------| | Discovery | Users learn about Notion through word-of-mouth, online content, and integrations.",
+    "source_id": "S5",
+    "locator": "article: https://www.forbes.com/sites/chuckbrooks/2025/12/26/technological-disruption-strategic-inflection-points-from-20262036/",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E8": {
+    "id": "E8",
+    "claim": "| | Onboarding | Users sign up, explore templates, and set up their workspace.",
+    "source_id": "S6",
+    "locator": "article: https://buildin.ai/blog/notion-alternatives-2026",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E9": {
+    "id": "E9",
+    "claim": "| | Content Creation | Users create notes, databases, wikis, and project boards.",
+    "source_id": "S7",
+    "locator": "article: https://businessmodelcanvastemplate.com/blogs/growth-strategy/notion-growth-strategy",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E10": {
+    "id": "E10",
+    "claim": "| | Organization | Users structure information using pages, databases, tags, and links.",
+    "source_id": "S8",
+    "locator": "article: https://www.linkedin.com/pulse/website-monetization-tools-market-2026-growth-forecast-wrwbe/",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "business_model",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E11": {
+    "id": "E11",
+    "claim": "| | Collaboration | Users share pages, assign tasks, and comment in real-time.",
+    "source_id": "S9",
+    "locator": "article: https://www.scalabl.com/literature/unlocking-the-customer-value-chain",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E12": {
+    "id": "E12",
+    "claim": "| | Integration | Users connect Notion to external apps (Slack, Google Drive, etc.).",
+    "source_id": "S10",
+    "locator": "article: https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X/ref=sims_dp_d_dex_ai_rank_model_1_d_v1_d_sccl_1_3/146-2520158-8497444?pd_rd_w=8qHEv&content-id=amzn1.sym.bb4a0aac-c2b4-4b4b-a0c8-9aa89b28dce3&pf_rd_p=bb4a0aac-c2b4-4b4b-a0c8-9aa89b28dce3&pf_rd_r=CPN8M0JR7XQ3T7YY07W7&pd_rd_wg=Oxd3X&pd_rd_r=48fd2034-13da-4a9a-8672-1beb51568ad1&pd_rd_i=152476308X&psc=1",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E13": {
+    "id": "E13",
+    "claim": "| | Usage/Iteration | Users regularly update, reorganize, and expand their workspace.",
+    "source_id": "S11",
+    "locator": "article: https://www.penguinrandomhouse.com/books/562858/unlocking-the-customer-value-chain-by-thales-s-teixeira-with-greg-piechota/",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E14": {
+    "id": "E14",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "weak_links"
+    ],
+    "conflicts_with": []
+  },
+  "E15": {
+    "id": "E15",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "weak_links",
+      "decoupling",
+      "competitive_response"
+    ],
+    "conflicts_with": []
+  },
+  "E16": {
+    "id": "E16",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "weak_links"
+    ],
+    "conflicts_with": []
+  },
+  "E17": {
+    "id": "E17",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "weak_links"
+    ],
+    "conflicts_with": []
+  }
+}
