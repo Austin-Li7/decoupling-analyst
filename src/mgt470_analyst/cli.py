@@ -109,7 +109,64 @@ def reindex(
         f"{summary['stale_removed']} stale removed) "
         f"from {summary['notes_dir']}"
     )
+    typer.echo(
+        f"Indexed primary corpus: {summary['primary_files_indexed']} files "
+        f"({summary['primary_chunks_added']} chunks added, "
+        f"{summary['primary_stale_removed']} stale removed) "
+        f"from {summary['primary_dir']}"
+    )
     typer.echo(f"Persisted to: {summary['persist_dir']}")
+
+
+@app.command("harvest-primary")
+def harvest_primary(
+    source: Annotated[
+        str,
+        typer.Option(
+            "--source",
+            help="Which primary corpus sources to harvest: all, decoupling-io, or youtube.",
+        ),
+    ] = "all",
+    output_dir: Annotated[
+        Path,
+        typer.Option("--output-dir", help="Directory for harvested primary-source Markdown."),
+    ] = Path("data/teixeira_corpus"),
+) -> None:
+    """Harvest Teixeira primary-source material into local Markdown files."""
+    if source not in {"all", "decoupling-io", "youtube"}:
+        raise typer.BadParameter("source must be one of: all, decoupling-io, youtube")
+
+    written = 0
+    skipped: list[str] = []
+
+    if source in {"all", "decoupling-io"}:
+        from mgt470_analyst.rag.primary_corpus.fetch_decoupling_io import harvest_text_sources
+
+        source_filter = "decoupling-io" if source == "decoupling-io" else None
+        result = harvest_text_sources(output_dir=output_dir, source_filter=source_filter)
+        written += len(result.written)
+        skipped.extend(result.skipped)
+        typer.echo(f"Text sources written: {len(result.written)}")
+
+    if source in {"all", "youtube"}:
+        from mgt470_analyst.rag.primary_corpus.fetch_youtube_transcripts import (
+            harvest_youtube_transcripts,
+        )
+
+        result = harvest_youtube_transcripts(output_dir=output_dir)
+        written += len(result.written)
+        skipped.extend(result.skipped)
+        typer.echo(f"YouTube transcripts written: {len(result.written)}")
+        if result.estimated_transcription_minutes:
+            estimated_cost = result.estimated_transcription_minutes * 0.006
+            typer.echo(f"Whisper minutes: {result.estimated_transcription_minutes:.1f}")
+            typer.echo(f"Estimated transcription cost: ${estimated_cost:.2f}")
+
+    typer.echo(f"Harvested {written} primary corpus files into {output_dir}")
+    if skipped:
+        typer.echo("Skipped sources:")
+        for item in skipped:
+            typer.echo(f"- {item}")
 
 
 def _map_mode(mode: str) -> str:

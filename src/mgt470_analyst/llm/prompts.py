@@ -83,23 +83,54 @@ Output discipline:
 
 
 def render_methodology_context(chunks: list) -> str:
-    """Format retrieved MGT470 note chunks as a 'Course context' prompt block.
+    """Format retrieved methodology chunks as labeled prompt context.
 
     Returns ``""`` when ``chunks`` is empty so callers can prepend the result
     unconditionally — the offline / no-RAG path produces no extra block.
-    Each chunk is labeled with its source path + heading trail so the LLM
-    can cite Austin's notes by file and section in downstream prose.
+    Chunks are grouped by corpus so Teixeira primary sources are visually
+    distinct from Austin's course notes and appear first in downstream prompts.
     """
     if not chunks:
         return ""
-    lines: list[str] = ["=== COURSE CONTEXT (Austin's MGT470 notes) ==="]
-    for index, chunk in enumerate(chunks, start=1):
+
+    primary = [c for c in chunks if getattr(c, "corpus", "austin") == "primary"]
+    course = [c for c in chunks if getattr(c, "corpus", "austin") != "primary"]
+    lines: list[str] = []
+
+    if primary:
+        lines.extend(
+            _render_context_group(
+                primary,
+                "PRIMARY SOURCE (Teixeira's own writing/speaking)",
+                start_index=1,
+            )
+        )
+        lines.append(
+            "Instruction: when this context informs your recommendation, attribute at least "
+            "one Teixeira framework phrase to a PRIMARY SOURCE by source path."
+        )
+    if course:
+        if lines:
+            lines.append("")
+        lines.extend(
+            _render_context_group(
+                course,
+                "COURSE CONTEXT (Austin's MGT470 notes)",
+                start_index=len(primary) + 1,
+            )
+        )
+    return "\n".join(lines)
+
+
+def _render_context_group(chunks: list, heading: str, *, start_index: int) -> list[str]:
+    lines: list[str] = [f"=== {heading} ==="]
+    for offset, chunk in enumerate(chunks, start=start_index):
         trail = " > ".join(chunk.heading_trail) if chunk.heading_trail else "(no heading)"
-        lines.append(f"[{index}] source: {chunk.source_path} :: {trail}")
+        lines.append(f"[{offset}] source: {chunk.source_path} :: {trail}")
         lines.append(chunk.text.strip())
         lines.append("")
-    lines.append("=== END COURSE CONTEXT ===")
-    return "\n".join(lines)
+    lines.append(f"=== END {heading} ===")
+    return lines
 
 
 def render_evidence_for_prompt(evidence_items: list[dict], limit: int = 60) -> str:

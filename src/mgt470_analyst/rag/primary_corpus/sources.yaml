@@ -1,0 +1,62 @@
+articles:
+  - title: Decoupling homepage definition
+    url: https://www.decoupling.co/
+    source: decoupling-io
+  - title: Who is Decoupling
+    url: https://www.decoupling.co/whatis
+    source: decoupling-io
+  - title: Read Unlocking the Customer Value Chain
+    url: https://www.decoupling.co/read
+    source: decoupling-io
+  - title: Experience Decoupling workshop
+    url: https://www.decoupling.co/experience
+    source: decoupling-io
+  - title: About Thales Teixeira
+    url: https://www.decoupling.co/about
+    source: decoupling-io
+  - title: Disruption Starts with Unhappy Customers, Not Technology
+    url: https://hbr.org/2019/06/disruption-starts-with-unhappy-customers-not-technology
+    source: hbr
+  - title: The Right Way to Get Your First 1000 Customers
+    url: https://hbr.org/podcast/2019/04/the-right-way-to-get-your-first-1000-customers
+    source: hbr
+  - title: How to Improve Your Company's Net Promoter Score
+    url: https://hbr.org/2019/10/how-to-improve-your-companys-net-promoter-score
+    source: hbr
+  - title: How American Eagle Reinvented Its Fulfillment Strategy
+    url: https://hbr.org/2022/11/how-american-eagle-reinvented-its-fulfillment-strategy
+    source: hbr
+  - title: The Decoupling Effect of Digital Disruptors
+    url: https://www.hbs.edu/faculty/Pages/item.aspx?num=48207
+    source: hbs
+books:
+  - title: Unlocking the Customer Value Chain Chapter 1
+    url: https://www.decoupling.co/static/public/files/Chapter_1.pdf
+    source: decoupling-io
+  - title: Unlocking the Customer Value Chain Publisher Page
+    url: https://www.randomhousebooks.com/books/562858/
+    source: random-house
+  - title: Unlocking the Customer Value Chain Google Books
+    url: https://books.google.com/books/about/Unlocking_the_Customer_Value_Chain.html?id=xSdcDwAAQBAJ
+    source: google-books
+talks:
+  - title: Thales Teixeira Introduces Decoupling as the Customer-centric Approach to Digital Disruption
+    url: https://www.youtube.com/watch?v=wetBJoz2HbM
+    source: youtube
+    use_existing_captions: true
+  - title: Unlocking the Customer Value Chain at Decoupling.co
+    url: https://www.youtube.com/watch?v=8gPXa9Lwovw
+    source: youtube
+    use_existing_captions: true
+  - title: First Lesson Taught in Harvard MBA in 18 Minutes
+    url: https://youtu.be/UA_gYKaXHS0
+    source: youtube
+    use_existing_captions: true
+  - title: Contraminds Podcast with Thales Teixeira
+    url: https://youtu.be/6FR94GqdhJ0
+    source: youtube
+    use_existing_captions: true
+  - title: How Simple Ideas are Disrupting Markets and Crushing the Competition
+    url: https://youtu.be/aiEblCeUNzk
+    source: youtube
+    use_existing_captions: true

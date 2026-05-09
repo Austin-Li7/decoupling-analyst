@@ -6,7 +6,9 @@ from pathlib import Path
 
 from mgt470_analyst.rag.chunker import chunk_markdown
 
-COLLECTION_NAME = "austin_notes"
+AUSTIN_COLLECTION_NAME = "austin_notes"
+PRIMARY_COLLECTION_NAME = "primary_teixeira"
+COLLECTION_NAME = AUSTIN_COLLECTION_NAME
 EMBEDDING_MODEL = "text-embedding-3-small"
 
 
@@ -28,17 +30,24 @@ def default_notes_dir() -> Path:
     return Path.cwd() / "MGT470"
 
 
+def default_primary_corpus_dir() -> Path:
+    return Path.cwd() / "data" / "teixeira_corpus"
+
+
 def build_index(
     notes_dir: Path | str | None = None,
     *,
+    primary_dir: Path | str | None = None,
     persist_dir: Path | str | None = None,
 ) -> dict:
-    """Idempotent re-index of the MGT470 notes directory.
+    """Idempotent re-index of Austin notes and optional primary corpus.
 
-    Skips files whose mtime hasn't changed since the last run. Returns a
-    summary dict (files_indexed, chunks_added, persist_dir).
+    Skips files whose mtime hasn't changed since the last run. Primary
+    Teixeira markdown is indexed into a separate ChromaDB collection when
+    ``data/teixeira_corpus`` exists.
     """
     notes_path = Path(notes_dir) if notes_dir else default_notes_dir()
+    primary_path = Path(primary_dir) if primary_dir else default_primary_corpus_dir()
     persist_path = Path(persist_dir) if persist_dir else default_persist_dir()
     if not notes_path.is_dir():
         raise FileNotFoundError(
@@ -60,12 +69,59 @@ def build_index(
 
     client = chromadb.PersistentClient(path=str(persist_path))
     embed_fn = OpenAIEmbeddingFunction(api_key=api_key, model_name=EMBEDDING_MODEL)
+
+    austin_summary = _index_markdown_dir(
+        client=client,
+        embed_fn=embed_fn,
+        source_dir=notes_path,
+        collection_name=AUSTIN_COLLECTION_NAME,
+        corpus="austin",
+        state_path=persist_path / "index_state.json",
+    )
+    primary_summary = {
+        "files_indexed": 0,
+        "chunks_added": 0,
+        "stale_removed": 0,
+        "source_dir": str(primary_path),
+        "collection": PRIMARY_COLLECTION_NAME,
+    }
+    if primary_path.is_dir():
+        primary_summary = _index_markdown_dir(
+            client=client,
+            embed_fn=embed_fn,
+            source_dir=primary_path,
+            collection_name=PRIMARY_COLLECTION_NAME,
+            corpus="primary",
+            state_path=persist_path / "primary_index_state.json",
+        )
+
+    return {
+        "files_indexed": austin_summary["files_indexed"],
+        "chunks_added": austin_summary["chunks_added"],
+        "persist_dir": str(persist_path),
+        "notes_dir": str(notes_path),
+        "stale_removed": austin_summary["stale_removed"],
+        "primary_files_indexed": primary_summary["files_indexed"],
+        "primary_chunks_added": primary_summary["chunks_added"],
+        "primary_stale_removed": primary_summary["stale_removed"],
+        "primary_dir": str(primary_path),
+    }
+
+
+def _index_markdown_dir(
+    *,
+    client,
+    embed_fn,
+    source_dir: Path,
+    collection_name: str,
+    corpus: str,
+    state_path: Path,
+) -> dict:
     collection = client.get_or_create_collection(
-        name=COLLECTION_NAME,
+        name=collection_name,
         embedding_function=embed_fn,
     )
 
-    state_path = persist_path / "index_state.json"
     state: dict[str, float] = {}
     if state_path.exists():
         try:
@@ -77,8 +133,8 @@ def build_index(
     chunks_added = 0
     seen_files: set[str] = set()
 
-    for md_path in sorted(notes_path.rglob("*.md")):
-        rel = str(md_path.relative_to(notes_path))
+    for md_path in sorted(source_dir.rglob("*.md")):
+        rel = str(md_path.relative_to(source_dir))
         seen_files.add(rel)
         mtime = md_path.stat().st_mtime
         if state.get(rel) == mtime:
@@ -92,13 +148,14 @@ def build_index(
         text = md_path.read_text(encoding="utf-8")
         chunks = chunk_markdown(text, rel)
         if chunks:
-            ids = [f"{rel}::{c.chunk_index}" for c in chunks]
+            ids = [f"{corpus}::{rel}::{c.chunk_index}" for c in chunks]
             documents = [c.text for c in chunks]
             metadatas = [
                 {
                     "source_path": c.source_path,
                     "heading_trail": " > ".join(c.heading_trail),
                     "chunk_index": c.chunk_index,
+                    "corpus": corpus,
                 }
                 for c in chunks
             ]
@@ -108,7 +165,6 @@ def build_index(
         state[rel] = mtime
         files_indexed += 1
 
-    # Drop entries for files that no longer exist on disk.
     stale = [rel for rel in state if rel not in seen_files]
     for rel in stale:
         existing = collection.get(where={"source_path": rel})
@@ -122,7 +178,7 @@ def build_index(
     return {
         "files_indexed": files_indexed,
         "chunks_added": chunks_added,
-        "persist_dir": str(persist_path),
-        "notes_dir": str(notes_path),
         "stale_removed": len(stale),
+        "source_dir": str(source_dir),
+        "collection": collection_name,
     }
