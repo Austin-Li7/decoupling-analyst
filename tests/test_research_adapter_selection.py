@@ -41,13 +41,35 @@ def test_select_research_adapter_uses_gpt_researcher_when_key_is_set(monkeypatch
     assert isinstance(adapter, GPTResearcherAdapter)
 
 
-def test_gpt_researcher_query_asks_for_broad_public_sources() -> None:
-    from mgt470_analyst.schemas.raw_input import RawInput
-
+def test_gpt_researcher_query_under_tavily_limit() -> None:
     query = GPTResearcherAdapter()._build_query(RawInput(company_name="Notion"))
 
-    assert "Use broad public web sources" in query
-    assert "Do not add site: restrictions" in query
+    assert len(query) < 380
+    assert "Notion" in query
+    assert "digital disruption" in query or "decoupling" in query
+
+
+def test_gpt_researcher_query_includes_ticker_and_website_when_present() -> None:
+    query = GPTResearcherAdapter()._build_query(
+        RawInput(
+            company_name="Nubank",
+            ticker="NU",
+            website="https://nubank.com.br",
+        )
+    )
+
+    assert len(query) < 380
+    assert "NU" in query
+    assert "https://nubank.com.br" in query
+
+
+def test_gpt_researcher_query_handles_long_company_name() -> None:
+    company_name = "A" * 100
+
+    query = GPTResearcherAdapter()._build_query(RawInput(company_name=company_name))
+
+    assert len(query) < 380
+    assert company_name in query
 
 
 def test_gpt_researcher_normalize_prefers_report_reference_urls(monkeypatch) -> None:

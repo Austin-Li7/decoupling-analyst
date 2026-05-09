@@ -119,19 +119,17 @@ class GPTResearcherAdapter(ResearchAdapter):
         )
 
     def _build_query(self, raw_input: RawInput) -> str:
-        ticker = f" Ticker: {raw_input.ticker}." if raw_input.ticker else ""
-        website = f" Website: {raw_input.website}." if raw_input.website else ""
-        return (
-            f"Research {raw_input.company_name} for a Teixeira-style MGT470 digital "
-            f"disruption analysis.{ticker}{website} Use broad public web sources: "
-            "official company pages, pricing pages, docs or API pages, credible news, "
-            "reviews, customer discussions, and competitor comparisons. Do not add site: "
-            "restrictions or narrow boolean operators; the retriever should be able to find "
-            "ordinary public pages. Gather cited facts about the customer value chain "
-            "(customer, job-to-be-done, friction), monetization and unit economics if "
-            "disclosed, competitors and bundles, signs of decoupling, reported customer "
-            "pain points, and recent strategic moves. Return real URLs for every source."
+        ticker = f" ({raw_input.ticker})" if raw_input.ticker else ""
+        website = f" {raw_input.website}" if raw_input.website else ""
+        query = (
+            "Teixeira-style digital disruption analysis of "
+            f"{raw_input.company_name}{ticker}{website}: customer value chain, "
+            "decoupling, weak links, monetization, competitors, customer pain "
+            "points, recent strategic moves."
         )
+        if len(query) >= 380:
+            raise ValueError(f"Query exceeds Tavily limit: {len(query)} chars")
+        return query
 
     def _normalize(
         self,
