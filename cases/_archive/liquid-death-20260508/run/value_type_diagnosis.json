@@ -1,0 +1,87 @@
+{
+  "activities": [
+    {
+      "activity_id": "A1",
+      "value_type": "create",
+      "reasoning": "Noticing thirst is the core job trigger that creates the need for portable hydration; this step is intrinsic to the customer job-to-be-done and is supported by the JTBD framing for on-the-go hydration (E9).",
+      "money_cost": 1,
+      "time_cost": 1,
+      "effort_cost": 1,
+      "satisfaction": 2,
+      "evidence_ids": [
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A2",
+      "value_type": "create",
+      "reasoning": "Setting selection criteria (health, environment, identity fit) adds value by aligning choice to personal preferences and signalling, which is central to the Millennial/Gen Z segment targeted by the brand (E6, E8, E4, E9).",
+      "money_cost": 3,
+      "time_cost": 2,
+      "effort_cost": 2,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E6",
+        "E8",
+        "E4",
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "value_type": "erode",
+      "reasoning": "Discovering and evaluating packaged-water options introduces friction and uncertainty because the category is commoditized and customers must parse provocative/viral branding versus commodity cues, making evaluation effortful (E3, E4, E2, E8).",
+      "money_cost": 2,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E3",
+        "E4",
+        "E2",
+        "E8"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "value_type": "capture",
+      "reasoning": "The purchase step is where the seller captures payment and total cost (price + access time/effort) matters; incumbent sellers and selectable brands like Liquid Death monetize at this point (E4, E2, E9).",
+      "money_cost": 4,
+      "time_cost": 3,
+      "effort_cost": 2,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E4",
+        "E2",
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "value_type": "create",
+      "reasoning": "Consumption delivers the primary functional value (hydration) and, when the brand resonates, additional identity/entertainment value from affiliation and sharing—central to Liquid Death's pop-culture positioning (E9, E3, E4).",
+      "money_cost": 2,
+      "time_cost": 1,
+      "effort_cost": 1,
+      "satisfaction": 5,
+      "evidence_ids": [
+        "E9",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "value_type": "erode",
+      "reasoning": "Disposal and recycling can create guilt and friction in the purchase cycle; although brand sustainability narratives mitigate this, the customer still faces local waste system constraints and potential repurchase hesitation (E8, E4).",
+      "money_cost": 1,
+      "time_cost": 2,
+      "effort_cost": 3,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E8",
+        "E4"
+      ]
+    }
+  ]
+}

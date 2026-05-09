@@ -1,0 +1,27 @@
+{
+  "primary_type": "business_model",
+  "secondary_types": [
+    "new_market"
+  ],
+  "confidence": "medium",
+  "reasoning": "Liquid Death's strategic signal in the supplied evidence is primarily brand- and go-to-market driven rather than a classic MGT470-style decoupling of an incumbent bundle. The company differentiates via bold, viral branding and a sustainability positioning that reframes commodity bottled water into a pop-culture lifestyle product (E4, E3). Targeting Millennials/Gen Z, pop-culture enthusiasts, and eco-conscious buyers emphasizes owning the customer relationship and repeat behavior through brand affinity and community — hallmarks of a business-model / DTC play rather than a single-activity decoupling (E6, E7, E8). The supplied analysis explicitly frames Liquid Death as transforming a commoditized market into a cultural category (E3), which is consistent with creating a new-market or re-segmentation via business-model innovation rather than displacing an incumbent by serving one weak-link activity better. Given the evidence set, decoupling is possible but secondary: there is no clear customer value chain activity that Liquid Death has decoupled from incumbents (no evidence of serving a single weak-link activity or using AI/digital to undercut incumbent workflows) (E3, E4).",
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9"
+  ],
+  "decoupling_fit_score": 0.2,
+  "recommended_report_mode": "strategic_memo",
+  "caveats": [
+    "Evidence set focuses on branding, positioning, and target segments; there is little or no evidence about unit economics (CAC, CLV, gross margin), channels, or operational levers (E5).",
+    "No documentation in the provided evidence that Liquid Death is decoupling a specific customer value-chain activity from incumbents or using AI/digital automation as a disruptive enabler (E3, E4).",
+    "Corporate status (public/private), revenue, and detailed go-to-market metrics are not provided; conclusions are therefore medium confidence and should be validated with unit-economics and competitive-response data (E1, E5).",
+    "Recommended further analysis: examine customer retention metrics, CAC, channel mix (DTC vs retail), and any adjacent services (merch, subscriptions) to confirm business-model durability and recoupling risk (no supporting evidence present)."
+  ]
+}

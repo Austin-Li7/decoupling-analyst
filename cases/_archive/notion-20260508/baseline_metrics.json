@@ -1,0 +1,19 @@
+{
+  "company_name": "Notion",
+  "run_id": "notion-20260508-204750",
+  "run_date": "2026-05-08",
+  "sources_total": 11,
+  "sources_kept_after_liveness": 8,
+  "liveness_pass_rate": 0.727,
+  "evidence_store_entries": 10,
+  "modules_completed": 14,
+  "modules_with_conflicts_flagged": 0,
+  "critic_review_severity_counts": {
+    "high": 4,
+    "medium": 3,
+    "low": 0
+  },
+  "research_backend": "gpt_researcher",
+  "rag_enabled": true,
+  "wall_clock_seconds": 325
+}

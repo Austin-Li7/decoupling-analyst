@@ -1,0 +1,31 @@
+{
+  "value_creation": "Nubank “Payments Autopilot” creates customer value by decoupling the repetitive, failure-prone step of “paying bills / moving money” into a simpler, proactive workflow: detecting upcoming obligations, enabling one-tap/automatic scheduling, disclosing fees clearly, and flagging likely failures before they happen (E3, E4). This matches Teixeira’s framing that disruptors win by “peeling away a portion of the customer’s value chain” rather than replacing the entire incumbent bundle (books/unlocking-the-customer-value-chain-chapter-1.md) (E5).",
+  "value_capture": "Direct value capture is not specified for Nubank, so the most viable path is indirect monetization: increase frequency of “primary-account” usage so Nubank captures more of whatever economics it already earns on active accounts (e.g., transaction-linked revenue, balances, and/or cross-sell) while reducing churn (E3, E4). If Nubank chooses explicit monetization, a premium tier for advanced automation/alerts could work only if (assumption to validate) incremental CLV uplift from higher retention + engagement is meaningfully greater than incremental CAC + incremental variable costs of running Autopilot.",
+  "value_erosion_remaining": "Even if Autopilot removes friction in paying/moving money, major sources of customer value erosion can remain outside the wedge: (1) customers may still keep the incumbent bank as the system-of-record, so switching friction and split-finances complexity persist; (2) exceptions handling (reversed/failed payments, disputed charges, payee changes) can still require manual effort; and (3) broader banking needs (e.g., other products and any offline needs) are not solved by this single activity decoupling (E4, E5).",
+  "payer": "Retail banking customers (end users) are the natural payer if the feature is monetized directly; otherwise, the payer is effectively Nubank’s existing monetization engine benefiting from increased account primacy and retention (E3, E4).",
+  "pricing_model": "Most defensible starting model is “free-included” (engagement/retention lever) with an optional subscription add-on for power features (e.g., more automations, higher alerting sophistication), because direct per-transaction fees risk recreating the “fee-heavy” pain customers associate with incumbents (E4). Viability requires (assumption) gross margin on the add-on to stay high after support, fraud/ops, and compliance costs, and CLV(add-on) \u0000 CAC(add-on).",
+  "cac_risks": [
+    "If Autopilot is used as a new-customer acquisition hook, paid acquisition could be expensive because “bill pay automation” is not always a high-intent search category; CAC could rise without proportional CLV lift (assumption; validate channel performance) (E3).",
+    "Trust + perceived risk: asking customers to route critical bill payments through a new UI can increase hesitation and onboarding drop-off, raising effective CAC (E4).",
+    "Incumbent banks in a fee-rich oligopoly may respond by copying automation/alerts inside their apps, compressing differentiation and forcing higher marketing spend to sustain acquisition (E4, E5).",
+    "Multi-homing: customers may try Autopilot without making Nubank primary, limiting conversion and increasing payback time on acquisition spend (E5)."
+  ],
+  "ltv_drivers": [
+    "Higher account primacy: if Autopilot becomes the daily “money home screen,” it can increase repeat behavior and reduce churn, raising CLV (assumption; requires measured retention lift) (E3).",
+    "More transaction volume routed through Nubank can increase whatever per-active-user economics Nubank has versus dormant accounts (exact revenue streams not in evidence; validate) (E3).",
+    "Data/insights from recurring-payment patterns can improve personalization and future product attach (assumption; must respect regulatory/privacy constraints) (E3, E4).",
+    "In a “fee-heavy” incumbent environment, a clearly-lower-friction experience can sustain long-term preference and word-of-mouth/referrals, lowering blended CAC and raising LTV (E4)."
+  ],
+  "unit_economics_concerns": [
+    "CLV vs CAC requirement: the business is viable only if the incremental CLV created by Autopilot adoption (retention + higher activity) is materially greater than incremental CAC needed to drive adoption; otherwise growth can become value-destructive even with large top-line adoption (E3).",
+    "Gross margin risk from exception handling: failed payments, customer support tickets, and dispute resolution can create meaningful variable cost per active user; if these scale with payment volume, contribution margin could deteriorate (assumption; requires cost-to-serve measurement) (E4).",
+    "Recoupling risk compresses lifetime: if incumbents re-bundle comparable automation, Autopilot’s differentiation window may be short, reducing realized CLV and forcing ongoing spend to replace churned/indifferent users (E4, E5).",
+    "Regulatory/operational overhead (monitoring, fraud controls, reliability guarantees) can add fixed and variable costs; viability depends on spreading these over a very large active base—plausible given scale, but must be validated by active-user penetration, not just total customers (E3)."
+  ],
+  "evidence_ids": [
+    "E1",
+    "E3",
+    "E4",
+    "E5"
+  ]
+}

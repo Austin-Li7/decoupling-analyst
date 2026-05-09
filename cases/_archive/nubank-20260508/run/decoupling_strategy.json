@@ -1,0 +1,50 @@
+{
+  "primary_decoupling": {
+    "activity_to_decouple": "A4: Move money in and use the account for everyday banking (receive funds, pay bills, make transfers, transact)",
+    "from_incumbent_bundle": "Latin American incumbent banks that bundle everyday payments/transfers with the broader banking relationship (account + service + fees) in a traditionally oligopolistic, fee-heavy system (E4).",
+    "customer_pain": "Everyday banking is the highest-frequency point where customers repeatedly experience fees and friction (e.g., cumbersome bill pay/transfer flows and penalty/fee exposure), making routine transactions feel costly and annoying versus what a digital-first experience should be (E4).",
+    "new_offering": "Nubank “Payments Autopilot”: a single home screen that (1) detects upcoming bills and recurring payments, (2) schedules one-tap or automatic payments/transfers with clear fee disclosure, and (3) proactively flags likely failures (insufficient funds / wrong details) before the transaction is attempted—without requiring the customer to close their incumbent bank account (E3, E4).",
+    "why_customer_switches": "Customers can keep their incumbent bank as-is but route the most painful, repetitive activity—paying bills and moving money—through Nubank for a lower-friction daily experience, which aligns with Teixeira’s idea that disruptors win by “peeling away a portion of the customer’s value chain” instead of replacing the whole bundle (books/unlocking-the-customer-value-chain-chapter-1.md) (E5).",
+    "cheaper_faster_easier": [
+      "cheaper",
+      "faster",
+      "easier"
+    ],
+    "evidence_ids": [
+      "E3",
+      "E4",
+      "E5"
+    ]
+  },
+  "do_not_decouple": [
+    {
+      "activity": "A5: Add additional financial services when needed (e.g., credit or other financial products) without redoing the whole banking setup",
+      "reason": "Avoid jumping the wedge from daily-money movement into broad, balance-sheet-heavy product expansion as the *next* decoupling move; it risks distracting from the core adoption engine (large installed base attracted by a simpler, lower-fee alternative to incumbents) and can force higher-risk execution before the daily-use habit is fully cemented (E3, E4).",
+      "evidence_ids": [
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "activity": "A3: Open an account and complete onboarding/verification to start the relationship",
+      "reason": "Don’t unbundle onboarding/KYC into a third-party or separate app experience: onboarding is the gateway to owning the customer relationship, and weakening it would undermine Nubank’s ability to convert interest into an owned account relationship at scale (E3).",
+      "evidence_ids": [
+        "E3"
+      ]
+    },
+    {
+      "activity": "A2: Discover and evaluate banking options (digital vs incumbent), comparing trust, fees, and ease of use",
+      "reason": "Don’t over-invest in decoupling “discovery” via standalone comparison/lead-gen surfaces that could commoditize Nubank and shift control to paid channels; preserving the direct customer relationship is the moat, and Nubank already has scale to drive repeat adoption without becoming a generic aggregator (E3).",
+      "evidence_ids": [
+        "E3"
+      ]
+    },
+    {
+      "activity": "A6: Get support, manage settings, and periodically reassess the relationship (stay, expand usage, or revert to incumbents)",
+      "reason": "Don’t spin support into a separate, decoupled product: service is tightly tied to trust and retention in banking, and a fragmented support experience would damage relationship ownership—especially in a market where incumbents are already viewed as friction/fee heavy (E4).",
+      "evidence_ids": [
+        "E4"
+      ]
+    }
+  ]
+}

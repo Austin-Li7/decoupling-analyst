@@ -1,0 +1,100 @@
+{
+  "ranked_weak_links": [
+    {
+      "activity_id": "A3",
+      "score": 768.0,
+      "pain_intensity": 4,
+      "frequency": 4,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 3,
+      "integration_dependency": 1,
+      "rationale": "Brand discovery/evaluation is the most decouplable weak link because packaged water is otherwise commoditized (E3), so customers must spend time/effort differentiating among similar options—an erosion point that a focused entrant can win via distinctive content and community touchpoints (E4). This activity is naturally digital (ads/social/creator content), so AI can improve targeting/personalization and creative iteration to make discovery/choice feel faster/easier for Millennials/Gen Z (E6) while reinforcing the sustainability narrative that matters to the segment (E8). Following Teixeira’s idea of helping customers “execute a weak link activity” (talks/unlocking-the-customer-value-chain-at-decoupling-co.md) aligns with Liquid Death’s existing growth engine of provocative branding and viral marketing (E4).",
+      "evidence_ids": [
+        "E3",
+        "E4",
+        "E6",
+        "E8"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "score": 360.0,
+      "pain_intensity": 2,
+      "frequency": 5,
+      "ai_or_digital_leverage": 3,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 3,
+      "integration_dependency": 1,
+      "rationale": "Consumption plus identity-expression (sharing/talking) happens every time the product is used (E9) and is tightly coupled to Liquid Death’s differentiated brand persona and viral behavior loops (E4). The switching friction is relatively low because customers can share/affiliate without changing where they buy immediately, making it a clean decoupling wedge that does not require reworking the rest of the hydration workflow (E4). Digital/AI leverage is moderate: content prompts, UGC tooling, personalization, and community mechanics can increase repeat engagement among Millennials/Gen Z (E6), strengthening the customer relationship that drives re-buy and advocacy (E4).",
+      "evidence_ids": [
+        "E4",
+        "E6",
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "score": 168.75,
+      "pain_intensity": 3,
+      "frequency": 5,
+      "ai_or_digital_leverage": 3,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 5,
+      "integration_dependency": 4,
+      "rationale": "Buying/obtaining is where direct revenue is captured (high value capture potential), and the customer job explicitly requires convenience/portability (E9). However, this stage has high integration dependency because it relies on third-party sellers/channels and fulfillment/retail realities; improving it often requires deeper operational coupling than a pure brand-led wedge (E4). Digital leverage exists (e.g., smoother online purchase flows), but willingness to switch is constrained by channel availability and habitual purchasing locations, especially in a low-involvement category like water (E3).",
+      "evidence_ids": [
+        "E3",
+        "E4",
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A2",
+      "score": 96.0,
+      "pain_intensity": 2,
+      "frequency": 4,
+      "ai_or_digital_leverage": 2,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 2,
+      "integration_dependency": 1,
+      "rationale": "Setting selection criteria (health/environment/brand fit) matters to the target segment (E6, E8) and is influenced by Liquid Death’s differentiation (provocative branding + sustainability positioning) (E4). Still, this is largely an internal customer decision step with limited direct monetization, and AI/digital leverage is modest relative to discovery/evaluation because the customer isn’t yet choosing among specific brands (E4). It can be nudged through messaging, but it is less of a stand-alone decoupling wedge than making brand discovery/comparison dramatically easier and more compelling (E3, E4).",
+      "evidence_ids": [
+        "E3",
+        "E4",
+        "E6",
+        "E8"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "score": 90.0,
+      "pain_intensity": 3,
+      "frequency": 5,
+      "ai_or_digital_leverage": 3,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 2,
+      "integration_dependency": 3,
+      "rationale": "Disposal/recycling is a recurring friction point (effort/behavior) that influences repurchase and recommendation, especially for eco-conscious consumers seeking alternatives to plastic (E8). Digital/AI can help with education, reminders, and loyalty-style reinforcement, but integration dependency is meaningfully higher because outcomes depend on local waste/recycling infrastructure outside Liquid Death’s control (E8). Value capture is indirect (loyalty/retention rather than immediate revenue), so it is a weaker standalone decoupling opportunity than digital brand discovery and identity-driven sharing (E4).",
+      "evidence_ids": [
+        "E4",
+        "E8"
+      ]
+    },
+    {
+      "activity_id": "A1",
+      "score": 15.0,
+      "pain_intensity": 1,
+      "frequency": 5,
+      "ai_or_digital_leverage": 1,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 1,
+      "integration_dependency": 1,
+      "rationale": "Noticing the need for hydration is frequent (E9) but usually low-pain and primarily self-driven, leaving limited room for a decoupler to create a meaningfully better standalone solution. While Liquid Death’s brand can cue the moment (E4), AI/digital leverage is limited because the core trigger (thirst/need for portable hydration) is not primarily an information-processing or workflow problem. As a result, value capture is minimal and this is a weak candidate for focused decoupling compared with discovery/evaluation and post-consumption affiliation loops (E4).",
+      "evidence_ids": [
+        "E4",
+        "E9"
+      ]
+    }
+  ]
+}

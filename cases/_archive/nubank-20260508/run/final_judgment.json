@@ -1,0 +1,35 @@
+{
+  "judgment": "study_more",
+  "one_sentence_thesis": "Nubank’s next decoupling wedge should likely target “everyday money movement” (bill pay, recurring transfers, failure avoidance) because deepening primary-account behavior is the most plausible path to increased value capture without requiring customers to fully abandon incumbent banks, but the current evidence base is too thin to underwrite this as an investable move yet (E3, E4, E5).",
+  "why_now": "Nubank is already at massive scale across multiple LatAm markets, so incremental adoption of high-frequency behaviors (paying bills, recurring transfers) could compound engagement and retention—yet those same behaviors are also where incumbents can copy quickly, making it urgent to validate whether the pain is acute enough and switching friction low enough for a “decoupled” workflow to win (E3, E4, E5).",
+  "strongest_argument": "If Nubank can become the default surface for recurring payments and bill settlement, it can increase user frequency and relationship ownership (which is the most robust path to value capture in a digital banking relationship), while still letting customers keep other bank relationships—i.e., a decoupling move rather than a full migration (E3, E4, E5).",
+  "biggest_risk": "Recoupling risk is high: incumbent banks can bundle similar “smart bill pay/alerts” into their existing apps, and without clear unit-economics proof (incremental retention/ARPU vs added support, fraud, and reliability costs) the feature could become a cost center rather than a moat (E4, E5).",
+  "staged_actions": [
+    "Preserve the core growth engine by explicitly defining what is currently driving low-CAC customer acquisition and repeat usage (channels, products, and behaviors) and constrain the new wedge to amplify—rather than cannibalize—those behaviors (E3, E4).",
+    "Layer 1 (low-risk): launch a “Bills & Recurring” discovery layer that detects upcoming obligations, consolidates reminders, and explains fees/processing times clearly—optimized for trust and daily opens, not monetization (assumption: this targets a weak-link activity) (E5).",
+    "Layer 1.5 (low/medium): add one-tap scheduling and configurable autopay rules with pre-flight checks (insufficient funds, wrong payee details, missed due dates) while keeping execution on existing rails; measure incremental actives, bill-pay share-of-wallet, and complaint rates (E5).",
+    "Layer 2 (medium): introduce verification and dispute-handling primitives (payee directory quality scoring, receipts, cancellation flows, support tooling) to reduce failure anxiety and make the workflow defensible via reliability, not just UI (E5).",
+    "Only if metrics clear thresholds: expand to select “intermediation” where it improves success rate (e.g., guaranteed on-time posting for specific billers via partnerships), with strict loss caps and explicit unit-economics gates; avoid balance-sheet-heavy guarantees until proven (E5)."
+  ],
+  "do_not_do": [
+    "Do not jump directly into balance-sheet-backed payment guarantees/overdraft-style promises to make autopay ‘always succeed’ before failure modes and fraud vectors are quantified, because that converts a decoupling wedge into a risk business with potentially negative unit economics (E5).",
+    "Do not require customers to close or port their incumbent bank accounts as a prerequisite for the new workflow, because it raises switching friction and undermines the decoupling advantage of fitting into an existing multi-bank reality (E5).",
+    "Do not monetize the wedge early with aggressive fees on bill pay/automation features until retention and frequency lift are demonstrated, because pricing can suppress adoption exactly where network effects and habit formation are needed (E5).",
+    "Do not broaden into unrelated “super-app” verticals as part of this initiative, because it dilutes product focus and complicates attribution of whether the decoupled activity is actually strengthening relationship ownership (E5)."
+  ],
+  "next_research_steps": [
+    "Add primary evidence (internal or external) that documents Nubank’s current growth engine (primary acquisition channels, hero products, repeat behaviors) to satisfy the ‘preserve the core’ requirement (E3, E4).",
+    "Customer Value Chain validation: quantify the largest pain points in everyday payments (bill-pay failures, time/effort, fee confusion, due-date anxiety) and map current providers customers use today (incumbent bank app, wallets, spreadsheets, reminders) (E5).",
+    "Switching friction study: test whether users will run “bills and recurring payments” through Nubank without migrating salary deposit or closing other bank accounts; measure adoption drivers and blockers (E5).",
+    "Unit economics instrumentation plan: define the causal link between autopay adoption and incremental CLV (retention, balances, cross-sell) versus incremental costs (support, fraud/chargebacks, reliability engineering); set go/no-go thresholds before Layer 2 (E5).",
+    "Recoupling threat scan: benchmark incumbent bank apps’ current bill-pay automation features and their likely ability to replicate; identify what defensibility could come from (data, integrations, reliability, customer support tooling) rather than UI (E4, E5).",
+    "Evidence hygiene: incorporate Teixeira primary-source statements into the evidence list so any framework-phrase attributions can be properly supported with E-ids rather than uncited source paths (E5)."
+  ],
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5"
+  ]
+}

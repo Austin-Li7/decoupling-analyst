@@ -1,0 +1,33 @@
+{
+  "company_name": "Nubank",
+  "research_summary": "# Nubank: A Teixeira-Style MGT470 Digital Disruption Analysis (2026) ## Introduction Nubank, founded in 2013 in Brazil, has rapidly emerged as one of the world’s largest digital banking platforms, boasting over 130 million customers across Brazil, Mexico, and Colombia as of early 2026. The company’s meteoric rise is often cited as a case study in digital disruption, challenging entrenched incumbents in Latin America’s traditionally oligopolistic and fee-heavy banking sector. This report provides a comprehensive Teixeira-style MGT470 digital disruption analysis of Nubank, focusing on its customer value chain, monetization and unit economics, competitive landscape, decoupling strategies, customer pain points, and recent strategic moves. All findings are substantiated with current, reliable sources.",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "nubank.com.br",
+      "url_or_path": "https://nubank.com.br",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "# Nubank: A Teixeira-Style MGT470 Digital Disruption Analysis (2026) ## Introduction Nubank, founded in 2013 in Brazil, has rapidly emerged as one of the world’s largest digital banking platforms, boasting over 130 million customers across Brazil, Mexico, and Colombia as of early 2026."
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "nubank.com.br",
+      "url_or_path": "https://nubank.com.br/",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "The company’s meteoric rise is often cited as a case study in digital disruption, challenging entrenched incumbents in Latin America’s traditionally oligopolistic and fee-heavy banking sector."
+      ]
+    }
+  ],
+  "open_questions": [
+    "Validate the most strategically important claims against primary sources.",
+    "Check whether recent customer pain points reflect durable behavior change."
+  ],
+  "conflicts": []
+}

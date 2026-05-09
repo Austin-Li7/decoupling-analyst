@@ -1,0 +1,99 @@
+{
+  "company_name": "Notion",
+  "research_summary": "# Digital Disruption Analysis of Notion (2026): A Teixeira-Style MGT470 Report ## Introduction Notion, accessible at [https://www.notion.so](https://www.notion.so), has emerged as a leading all-in-one productivity platform, disrupting the digital workspace market through its modular approach to note-taking, knowledge management, project management, and collaboration. This report conducts a Teixeira-style MGT470 digital disruption analysis, focusing on Notion’s impact on the customer value chain, monetization and unit economics, competition, decoupling signals, customer pain points, and recent strategic moves. The analysis draws from official company sources, pricing and documentation pages, credible news, customer reviews, and competitor comparisons to provide an objective, comprehensive, and actionable assessment. ## Customer Value Chain Analysis ### Customer Segments Notion targets a broad spectrum of users, including: - **Individuals and freelancers:** Solo users seeking personal productivity tools.",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "www.notion.so",
+      "url_or_path": "https://www.notion.so",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "# Digital Disruption Analysis of Notion (2026): A Teixeira-Style MGT470 Report ## Introduction Notion, accessible at [https://www.notion.so](https://www.notion.so), has emerged as a leading all-in-one productivity platform, disrupting the digital workspace market through its modular approach to note-taking, knowledge management, project management, and collaboration."
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "www.notion.so / pricing",
+      "url_or_path": "https://www.notion.so/pricing",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "This report conducts a Teixeira-style MGT470 digital disruption analysis, focusing on Notion’s impact on the customer value chain, monetization and unit economics, competition, decoupling signals, customer pain points, and recent strategic moves."
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "www.notion.so / ai",
+      "url_or_path": "https://www.notion.so/product/ai",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "The analysis draws from official company sources, pricing and documentation pages, credible news, customer reviews, and competitor comparisons to provide an objective, comprehensive, and actionable assessment."
+      ]
+    },
+    {
+      "id": "S4",
+      "title": "www.reddit.com / notion_performance_with_large_databases",
+      "url_or_path": "https://www.reddit.com/r/Notion/comments/10q6b5k/notion_performance_with_large_databases/",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "## Customer Value Chain Analysis ### Customer Segments Notion targets a broad spectrum of users, including: - **Individuals and freelancers:** Solo users seeking personal productivity tools."
+      ]
+    },
+    {
+      "id": "S5",
+      "title": "developers.notion.com",
+      "url_or_path": "https://developers.notion.com/",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "**Small and medium-sized businesses (SMBs):** Teams requiring collaborative workspaces."
+      ]
+    },
+    {
+      "id": "S6",
+      "title": "vc.ru / 708934-narushenie-notion-labs",
+      "url_or_path": "https://vc.ru/u/1099651-vladimir-kuznetsov/708934-narushenie-notion-labs",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "**Enterprise clients:** Large organizations with complex knowledge management and workflow needs."
+      ]
+    },
+    {
+      "id": "S7",
+      "title": "www.notion.so / enterprise",
+      "url_or_path": "https://www.notion.so/enterprise",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "Notion’s pricing and feature set reflect this segmentation, with offerings ranging from a free personal tier to custom-priced enterprise solutions ([Notion Pricing](https://www.notion.so/pricing))."
+      ]
+    },
+    {
+      "id": "S8",
+      "title": "www.notion.so / templates",
+      "url_or_path": "https://www.notion.so/templates",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "### Job-to-be-Done Notion’s core value proposition is to serve as an all-in-one workspace where users can: - Take notes and organize knowledge."
+      ]
+    }
+  ],
+  "open_questions": [
+    "Validate the most strategically important claims against primary sources.",
+    "Check whether recent customer pain points reflect durable behavior change."
+  ],
+  "conflicts": []
+}

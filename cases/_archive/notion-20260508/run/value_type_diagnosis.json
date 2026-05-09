@@ -1,0 +1,90 @@
+{
+  "activities": [
+    {
+      "activity_id": "A1",
+      "value_type": "create",
+      "reasoning": "Recognizing the need to centralize notes and projects is the first step that unlocks the all‑in‑one workspace job-to-be-done and therefore creates customer value by clarifying scope and goals (E3, E6, E7, E8, E10).",
+      "money_cost": 1,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E3",
+        "E6",
+        "E7",
+        "E8",
+        "E10"
+      ]
+    },
+    {
+      "activity_id": "A2",
+      "value_type": "erode",
+      "reasoning": "Searching for and evaluating workspace options imposes time, cognitive effort, and potential subscription costs as customers weigh all-in-one versus multi-tool approaches, representing a pain point and value erosion in the CVC (E3, E10).",
+      "money_cost": 2,
+      "time_cost": 4,
+      "effort_cost": 4,
+      "satisfaction": 2,
+      "evidence_ids": [
+        "E3",
+        "E10"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "value_type": "create",
+      "reasoning": "Creating an account and setting up an initial workspace converts the evaluation into an actionable, usable system and therefore creates value by enabling day‑one productivity and collaboration (E3, E6, E7, E8, E10).",
+      "money_cost": 1,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E3",
+        "E6",
+        "E7",
+        "E8",
+        "E10"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "value_type": "create",
+      "reasoning": "Capturing and maintaining content is the core productive activity that turns the workspace into the default place for work artifacts, directly creating ongoing customer value (E3, E10).",
+      "money_cost": 1,
+      "time_cost": 4,
+      "effort_cost": 4,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E3",
+        "E10"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "value_type": "create",
+      "reasoning": "Organizing and connecting information into reusable structures substantially increases the utility and reuse of knowledge (high value creation), though it is often time‑ and effort‑intensive for customers (E3, E10).",
+      "money_cost": 1,
+      "time_cost": 5,
+      "effort_cost": 5,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E3",
+        "E10"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "value_type": "create",
+      "reasoning": "Continuous collaboration enables sustained team execution and preserves institutional knowledge, making it a high‑value activity for SMB and enterprise teams when the workspace supports it effectively (E3, E7, E8, E10).",
+      "money_cost": 2,
+      "time_cost": 4,
+      "effort_cost": 4,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E3",
+        "E7",
+        "E8",
+        "E10"
+      ]
+    }
+  ]
+}

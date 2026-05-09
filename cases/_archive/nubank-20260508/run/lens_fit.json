@@ -1,0 +1,22 @@
+{
+  "primary_type": "decoupling",
+  "secondary_types": [
+    "business_model",
+    "tech_substitution"
+  ],
+  "confidence": "medium",
+  "reasoning": "The available evidence identifies Nubank as a large digital challenger that has rapidly taken share from incumbents in Latin America and serves >130M customers (E3, E4). That pattern aligns closely with Thales Teixeira's decoupling lens: a narrow, digitally-native entrant breaking the incumbent banking bundle by offering superior experiences (low-fee accounts, card/product simplicity, mobile-first UX) and capturing a weak link in the customer value chain, then expanding (E3, E4). The public description and case-study framing (E3, E4) support decoupling as the dominant strategic dynamic. Secondary drivers likely include business-model innovation (subscription/fee simplification and new monetization) and tech substitution (mobile-first platform replacing legacy IT stacks), but the supplied evidence does not include granular CVC activity mapping, unit-economics, or product-level details, so those are judged as secondary.",
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+  ],
+  "decoupling_fit_score": 0.8,
+  "recommended_report_mode": "full_decoupling",
+  "caveats": [
+    "Evidence set is high-level: contains company description and disruption framing but lacks specific CVC mapping (individual customer activities, which activities create/erode/capture value) — lowers confidence in fine-grained decoupling diagnosis (E3, E4).",
+    "No direct evidence provided on which single weak-link activity Nubank initially decoupled (e.g., payments, checking, lending, cards) nor on CAC/CLV unit-economics; further analysis should collect product-level timelines and unit-economics.",
+    "Public/private status marked 'unknown' in input; regulatory/financial constraints and incumbents' recoupling moves are not evidenced here and should be assessed before strategic recommendations."
+  ]
+}

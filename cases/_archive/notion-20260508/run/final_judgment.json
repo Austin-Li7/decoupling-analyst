@@ -1,0 +1,36 @@
+{
+  "judgment": "study_more",
+  "one_sentence_thesis": "Notion’s next disruptive wedge should decouple the “evaluation/choice” stage of the workspace customer value chain via a lightweight “Notion Workspace Fit” AI advisor that produces an adoption blueprint without forcing migration, consistent with Teixeira’s idea of “stealing one or a few stages” from an incumbent bundle (books/unlocking-the-customer-value-chain-chapter-1.md) (E3).",
+  "why_now": "Notion already targets individuals, SMBs, and enterprises with tiered pricing up to custom enterprise contracts (E6,E7,E8,E9), so a pre-adoption decision/blueprint layer can (a) reduce evaluation friction and perceived migration risk before a user commits and (b) better qualify which workflows should move into Notion to improve conversion into paid tiers—without requiring an immediate, full-tool replacement (E3,E9).",
+  "strongest_argument": "The advisor is a classic decoupling move: it isolates the weak-link activity of “search/evaluate/decide” and delivers a concrete phased plan, letting customers keep the rest of their workflow intact until confidence is high—matching Teixeira’s framing that disruptors win by carving out a narrow slice of the CVC rather than replacing the whole incumbent system (books/unlocking-the-customer-value-chain-chapter-1.md) (E3).",
+  "biggest_risk": "High recoupling and low defensibility: large suite incumbents can replicate evaluation copilots and bundle them for free, and Notion could also accidentally add friction to its low-cost entry funnel if the advisor becomes a gated sales flow rather than a customer-centric planning tool (E3,E9).",
+  "staged_actions": [
+    "Layer (a) — Launch a free “Workspace Fit” AI assessment inside Notion’s top-of-funnel that interviews users about jobs-to-be-done (notes/knowledge/projects/collaboration) and outputs a tailored blueprint + phased adoption checklist; keep it usable without importing data so it doesn’t damage adoption into the free tier (E10,E9).",
+    "Layer (a) — Instrument outcomes: track blueprint-to-activation and activation-to-upgrade paths by segment (individual/SMB/enterprise) and iterate the advisor’s recommended templates, permissions model, and rollout sequence to shorten time-to-first-value (E6,E7,E8,E9).",
+    "Layer (b) — Add low-risk trust/verification features: optional read-only ingestion (exports/connectors) that maps existing artifacts into the blueprint (not full migration), plus an “admin-ready” recommendation pack (roles, spaces, governance) for teams evaluating paid tiers (E7,E8,E9).",
+    "Layer (b) — Introduce transaction intermediation without heavy ops: a paid “Implementation Pack” (or partner-delivered marketplace) that includes guided setup checklists, workspace health checks, and approval workflows—priced to ensure gross margin remains software-like (assumption to validate) while increasing enterprise conversion (E8,E9).",
+    "Only if steps 1–4 show conversion lift — Bundle the advisor into enterprise procurement flows as a standardized evaluation artifact (decision brief + rollout plan) to accelerate sales cycles for custom enterprise deals, without turning it into bespoke consulting (E8,E9)."
+  ],
+  "do_not_do": [
+    "Do not spin the advisor out as a separate standalone product that works equally well without Notion, because value capture is intended to be indirect via conversion into Notion’s paid tiers/enterprise plans and a standalone tool would weaken relationship ownership (E9).",
+    "Do not jump to heavy-responsibility services (custom migrations, full managed implementation) early, because it risks becoming services-led with unfavorable margins and distracts from product-led conversion across segments (needs unit-economics validation) (E6,E7,E8,E9).",
+    "Do not reposition the wedge as a generic “AI productivity chatbot,” because that blurs Notion’s all-in-one modular workspace differentiation and increases direct feature-parity competition with bundled suites, raising recoupling risk (E3,E10).",
+    "Do not require deep integrations/imports as the default onboarding path, because forcing migration contradicts the decoupling logic (customers should be able to adopt the decoupled evaluation stage without switching the rest) and could increase drop-off before users experience value (E3)."
+  ],
+  "next_research_steps": [
+    "Identify Notion’s actual core growth engine (e.g., free-tier virality, template-driven discovery, bottoms-up team expansion, community/creator loop) and the one thing the advisor must not degrade; current evidence confirms pricing tiers but not the adoption mechanism (E9).",
+    "Quantify unit-economics deltas to justify building: (1) advisor-driven CAC reduction (or improved conversion at same CAC), (2) upgrade lift from free→paid and SMB→enterprise, and (3) incremental AI inference/review costs to maintain gross margins; current evidence provides no numbers (E9).",
+    "Map the customer value chain at higher resolution (8–12 activities) for each segment (individual/SMB/enterprise) to confirm the true weak link is “evaluation/choice” rather than later stages like governance, migration, or compliance (E6,E7,E8).",
+    "Run a recoupling pre-mortem: list which incumbents can bundle equivalent evaluation copilots and what unique data/behavior loops Notion could own to remain differentiated (relationship + repeat behavior), then define a defensible data flywheel for the advisor (E3)."
+  ],
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10"
+  ]
+}

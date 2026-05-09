@@ -1,0 +1,35 @@
+{
+  "value_creation": "Decouple the “discover + evaluate brands/variants” step in packaged water by offering an AI-powered, social-native Liquid Death Finder (quiz + short-form creator feed + local/DTC purchase links) that gets consumers to a confident choice faster without requiring them to change where they normally shop (E3, E4, E6, E8). This follows Teixeira’s idea that disruptors “break the links between some of the stages of the CVC” and can separate choosing from purchasing (books/unlocking-the-customer-value-chain-chapter-1.md :: Page 9) (E3).",
+  "value_capture": "Primary value capture is indirect: convert more shoppers (and do so faster) from consideration to Liquid Death purchase by making a commodity-like category feel differentiated through provocative branding and viral content (E4) plus sustainability positioning (E8). Second-order value capture (assumption to validate): capture first-party preference/intent data (quiz answers, click-to-buy behavior) to lower future CAC via retargeting and to raise CLV via better variant matching and repeat purchase nudges (E6, E9). If the experience routes to DTC links, incremental contribution margin per converted customer is the monetization engine; if routing to retailers, value capture relies on attributable lift that can be traded for better retail placement/trade support (assumption; not evidenced).",
+  "value_erosion_remaining": "Major remaining erosion sits outside the decoupled discovery step: (1) physical availability/in-stock friction at nearby retailers, (2) price/value comparisons versus other water, (3) taste/fit uncertainty that only trial resolves, and (4) the ongoing habit/replenishment loop after initial purchase (E9). Because the Finder doesn’t control the purchase and consumption stages, a lot of leakage remains unless the “where to buy” experience is accurate and low-friction (assumption to validate).",
+  "payer": "End consumers pay indirectly by purchasing Liquid Death products; Liquid Death is the direct payer for building/running the Finder and for any creator/content spend used to drive usage (E4, E6, E8).",
+  "pricing_model": "Free-to-user discovery tool (freemium-like in the sense of free access driving monetization elsewhere), monetized via incremental gross profit from increased Liquid Death unit sales (and optionally affiliate/referral economics on click-to-buy links if used; assumption) (E3, E4).",
+  "cac_risks": [
+    "Paid-social CAC can inflate quickly because discovery content is competing in attention markets; if the Finder is promoted primarily via ads, CAC may exceed the incremental gross profit from a single converted water buyer unless repeat behavior is strong (assumption) (E4, E6, E9).",
+    "Channel dependence risk: if traffic is driven by short-form platforms, algorithm changes can spike CAC and reduce predictability of acquisition (assumption) (E4).",
+    "Attribution risk: because consumers can still buy “wherever they already shop,” measuring incremental lift (vs. organic brand demand from existing viral marketing) may be noisy, leading to overspending on acquisition without provable incremental revenue (E4).",
+    "Cold-start content risk: the Finder requires a steady stream of creator content to feel ‘social-native’; creator payments/production costs can become quasi-variable CAC (assumption) (E4).",
+    "Retail ‘where-to-buy’ accuracy risk: if store availability is wrong, the experience creates frustration and destroys trust, reducing conversion and wasting acquired traffic (assumption) (E6)."
+  ],
+  "ltv_drivers": [
+    "High potential repeat frequency: hydration is a recurring job-to-be-done, so if the Finder increases trial and the product satisfies, repeat purchase can drive CLV > CAC (E9).",
+    "Brand affinity compounding: Liquid Death’s bold branding and viral marketing can increase retention and referral, raising LTV through organic reactivation and word-of-mouth (E4, E6).",
+    "Better ‘fit’ matching: if the quiz reliably maps a consumer to the right Liquid Death variant, it can reduce post-purchase regret and increase repurchase probability (assumption to validate) (E6).",
+    "First-party data flywheel (assumption): capturing preferences/intent enables cheaper re-engagement (email/SMS/retargeting) and higher repeat conversion, improving CLV/CAC over time (E6)."
+  ],
+  "unit_economics_concerns": [
+    "The business is viable only if incremental CLV materially exceeds CAC: (incremental gross margin per repeat customer × expected repeat purchases driven by the Finder) must be >> (traffic acquisition cost + ongoing content cost + AI/infrastructure cost + support/maintenance). Exact values are not in evidence and must be validated (E4, E9).",
+    "Gross margin uncertainty by channel: if conversions are mostly retail, Liquid Death captures value only via wholesale margin and may not own the customer relationship; if mostly DTC, margin may be higher but fulfillment/returns costs (assumption) could reduce contribution—either way the margin base must support paid discovery (E4).",
+    "Low willingness-to-pay for the decoupled activity: consumers won’t pay for ‘brand discovery’ in water, so direct subscription/fees are unlikely; the model must work as a marketing + conversion engine, increasing pressure on measurement and lift (E3, E9).",
+    "Recoupling risk affecting unit economics: incumbents can copy ‘finder’ quizzes and creator-led discovery cheaply, compressing differentiation and forcing higher CAC for the same conversion lift (assumption) (E4).",
+    "Operational complexity creep: if the Finder expands into heavier-responsibility layers (payments/logistics/guarantees), costs and liabilities can overwhelm the lightweight discovery wedge; staying focused on discovery/matching is safer until unit economics are proven (E3)."
+  ],
+  "evidence_ids": [
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E8",
+    "E9"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "perspective": "disruptor",
+  "confidence": "medium",
+  "reasoning": "Nubank is described as a digital-first challenger that has grown rapidly by disrupting and taking share from traditional incumbent banks in Latin America’s fee-heavy banking sector (E3, E4). That framing aligns with the MGT470 “disruptor” seat—i.e., analyzing how a focused digital entrant decouples weak-link activities from the incumbent banking bundle and expands from its initial beachhead—rather than defending an incumbent or managing an explicit internal pivot between legacy and new models (E3, E4). Confidence is medium because the prompt does not include an explicit case question, only a disruption framing (E3, E4).",
+  "primary_question": "What should Nubank decouple next (and in what sequence) to deepen customer adoption and value capture against Latin American incumbent banks without undermining the growth engine that drove its rapid scale to 130M+ customers? (E3, E4)",
+  "evidence_ids": [
+    "E1",
+    "E3",
+    "E4"
+  ]
+}

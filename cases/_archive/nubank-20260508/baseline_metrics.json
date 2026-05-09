@@ -1,0 +1,19 @@
+{
+  "company_name": "Nubank",
+  "run_id": "nubank-20260508-210103",
+  "run_date": "2026-05-08",
+  "sources_total": 10,
+  "sources_kept_after_liveness": 2,
+  "liveness_pass_rate": 0.2,
+  "evidence_store_entries": 5,
+  "modules_completed": 14,
+  "modules_with_conflicts_flagged": 0,
+  "critic_review_severity_counts": {
+    "high": 5,
+    "medium": 2,
+    "low": 1
+  },
+  "research_backend": "gpt_researcher",
+  "rag_enabled": true,
+  "wall_clock_seconds": 339
+}

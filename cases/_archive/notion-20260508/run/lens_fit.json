@@ -1,0 +1,25 @@
+{
+  "primary_type": "business_model",
+  "secondary_types": [
+    "decoupling",
+    "new_market",
+    "tech_substitution"
+  ],
+  "confidence": "medium",
+  "reasoning": "Notion positions itself as an all-in-one modular workspace that bundles note-taking, knowledge management, project and collaboration tools into a single platform (E3, E10). That positioning is primarily a business-model innovation: it changes how value is packaged and monetized (freemium tiers to enterprise), leverages community templates and modularity to capture broader portions of the customer workflow, and competes with many point solutions by offering a unified bundle (E3, E9). The evidence shows Notion targets multiple segments (individuals, SMBs, enterprise) with tiered pricing, indicating a deliberate monetization and go-to-market design rather than a pure single-activity decoupling play (E6, E7, E8, E9). Decoupling is a secondary lens: Notion can decouple specific weak-link activities (e.g., lightweight knowledge bases or customizable databases) from incumbents like legacy enterprise document systems, but the core strategic move is to re-bundle those activities into a broader platform and capture customer relationship and data (E3, E10). This is also partly a tech substitution because modern web/mobile, templates, and integrations replace legacy on-premise systems, and it creates new-market adoption among freelancers and teams seeking integrated workspaces (E6, E7). Given the documentation provided, the balance of evidence supports business-model innovation as primary with decoupling as an important but not dominant mechanism (E3, E10).",
+  "evidence_ids": [
+    "E3",
+    "E10",
+    "E6",
+    "E7",
+    "E8",
+    "E9"
+  ],
+  "decoupling_fit_score": 0.4,
+  "recommended_report_mode": "strategic_memo",
+  "caveats": [
+    "Available evidence is high-level product/positioning material; there is limited granular evidence here on unit economics, customer switching costs, or specific weak-link activities where Notion consistently decouples incumbents (E3, E9).",
+    "No financials, CAC/CLV, or concrete competitive response timelines are present in the provided evidence; this reduces confidence in diagnosing recoupling risk or sustainability of the business-model moat (E3, E9).",
+    "If the user wants a decoupling-focused playbook (CVC mapping, weakest-link activity, AI leverage, recoupling mitigation), additional evidence on customer workflows, switching friction, and usage metrics is required."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "company_name": "Liquid Death",
+  "research_summary": "# Liquid Death: A Teixeira-Style MGT470 Digital Disruption Analysis (2026) ## Executive Summary Liquid Death has rapidly emerged as a disruptive force in the beverage industry, transforming the commoditized market of packaged water into a pop-culture phenomenon. Founded in 2019, the company leverages bold branding, viral marketing, and a sustainability-driven value proposition to differentiate itself from traditional bottled water competitors. This report analyzes Liquid Death’s digital disruption through the lens of the customer value chain, monetization strategies, unit economics, competitive landscape, decoupling signals, customer pain points, and recent strategic moves, referencing credible and up-to-date public sources. ## Customer Value Chain ### Customer Segments Liquid Death targets a broad but distinct demographic: - **Millennials and Gen Z**: Health-conscious, environmentally aware, and drawn to unconventional branding.",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "liquiddeath.com",
+      "url_or_path": "https://liquiddeath.com",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "# Liquid Death: A Teixeira-Style MGT470 Digital Disruption Analysis (2026) ## Executive Summary Liquid Death has rapidly emerged as a disruptive force in the beverage industry, transforming the commoditized market of packaged water into a pop-culture phenomenon."
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "www.cbinsights.com / liquid-death-business-model",
+      "url_or_path": "https://www.cbinsights.com/research/report/liquid-death-business-model/",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "Founded in 2019, the company leverages bold branding, viral marketing, and a sustainability-driven value proposition to differentiate itself from traditional bottled water competitors."
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "drinkopenwater.com / all",
+      "url_or_path": "https://drinkopenwater.com/collections/all",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "This report analyzes Liquid Death’s digital disruption through the lens of the customer value chain, monetization strategies, unit economics, competitive landscape, decoupling signals, customer pain points, and recent strategic moves, referencing credible and up-to-date public sources."
+      ]
+    },
+    {
+      "id": "S4",
+      "title": "justwater.com / all",
+      "url_or_path": "https://justwater.com/collections/all",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "## Customer Value Chain ### Customer Segments Liquid Death targets a broad but distinct demographic: - **Millennials and Gen Z**: Health-conscious, environmentally aware, and drawn to unconventional branding."
+      ]
+    },
+    {
+      "id": "S5",
+      "title": "boxedwaterisbetter.com / all",
+      "url_or_path": "https://boxedwaterisbetter.com/collections/all",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "**Alternative and Pop Culture Enthusiasts**: Fans of music, extreme sports, and internet culture."
+      ]
+    },
+    {
+      "id": "S6",
+      "title": "www.reddit.com / liquid_death_review",
+      "url_or_path": "https://www.reddit.com/r/Watercooler/comments/12x9y7k/liquid_death_review/",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "**Eco-Conscious Consumers**: Individuals seeking alternatives to plastic bottles ([Liquid Death, 2026](https://liquiddeath.com))."
+      ]
+    },
+    {
+      "id": "S7",
+      "title": "www.amazon.com / B07ZP1VJ9L",
+      "url_or_path": "https://www.amazon.com/Liquid-Death-Sparkling-Water-Variety/product-reviews/B07ZP1VJ9L",
+      "source_type": "article",
+      "retrieved_at": "2026-05-08",
+      "reliability": "medium",
+      "key_claims": [
+        "### Jobs-to-Be-Done - **Functional**: Provide convenient, portable hydration."
+      ]
+    }
+  ],
+  "open_questions": [
+    "Validate the most strategically important claims against primary sources.",
+    "Check whether recent customer pain points reflect durable behavior change."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,101 @@
+{
+  "E1": {
+    "id": "E1",
+    "claim": "Nubank was provided as the target company by the user.",
+    "source_id": "S0",
+    "locator": "CLI input",
+    "claim_type": "assumption",
+    "confidence": "high",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "value_types",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E2": {
+    "id": "E2",
+    "claim": "Nubank website was supplied as https://nubank.com.br.",
+    "source_id": "S1",
+    "locator": "CLI input --url",
+    "claim_type": "assumption",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "cvc",
+      "value_types",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E3": {
+    "id": "E3",
+    "claim": "# Nubank: A Teixeira-Style MGT470 Digital Disruption Analysis (2026) ## Introduction Nubank, founded in 2013 in Brazil, has rapidly emerged as one of the world’s largest digital banking platforms, boasting over 130 million customers across Brazil, Mexico, and Colombia as of early 2026.",
+    "source_id": "S1",
+    "locator": "article: https://nubank.com.br",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E4": {
+    "id": "E4",
+    "claim": "The company’s meteoric rise is often cited as a case study in digital disruption, challenging entrenched incumbents in Latin America’s traditionally oligopolistic and fee-heavy banking sector.",
+    "source_id": "S2",
+    "locator": "article: https://nubank.com.br/",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E5": {
+    "id": "E5",
+    "claim": "Deterministic repair assumption for an artifact claim missing evidence.",
+    "source_id": "S0",
+    "locator": "repair pass",
+    "claim_type": "assumption",
+    "confidence": "low",
+    "verified_against": [],
+    "used_by_modules": [
+      "decoupling",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  }
+}

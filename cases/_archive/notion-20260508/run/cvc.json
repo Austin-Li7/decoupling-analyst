@@ -1,0 +1,83 @@
+{
+  "customer_segment": "Individuals and teams (including SMBs and enterprise teams) seeking a digital workspace to manage notes, knowledge, and project/workflow collaboration (E3, E6, E7, E8, E10)",
+  "end_activity": "Operate day-to-day knowledge work and project execution from an organized, shared digital workspace (E3, E10)",
+  "activities": [
+    {
+      "id": "A1",
+      "step": 1,
+      "activity": "Recognize a need to centralize notes, knowledge, and project/work tracking in a more coherent system",
+      "current_provider": "self",
+      "customer_goal": "Clarify the job-to-be-done (personal productivity or team coordination) and what “one workspace” must cover (notes, knowledge, projects, collaboration)",
+      "evidence_ids": [
+        "E3",
+        "E6",
+        "E7",
+        "E8",
+        "E10"
+      ]
+    },
+    {
+      "id": "A2",
+      "step": 2,
+      "activity": "Search for and evaluate workspace options (all-in-one vs. multiple tools) and decide what to adopt",
+      "current_provider": "a mix of software options and internal/ad-hoc practices",
+      "customer_goal": "Select an approach that can handle note-taking, knowledge organization, project/workflow management, and collaboration with acceptable switching effort",
+      "evidence_ids": [
+        "E3",
+        "E10"
+      ]
+    },
+    {
+      "id": "A3",
+      "step": 3,
+      "activity": "Create an account and set up the workspace (initial structure for notes/knowledge/projects; invite collaborators if needed)",
+      "current_provider": "Notion or alternative workspace tools",
+      "customer_goal": "Get to a usable starting point quickly (a functional workspace that matches the user’s/team’s way of working)",
+      "evidence_ids": [
+        "E3",
+        "E6",
+        "E7",
+        "E8",
+        "E10"
+      ]
+    },
+    {
+      "id": "A4",
+      "step": 4,
+      "activity": "Capture and maintain content in the workspace (notes, documents, tasks, project updates, and reference knowledge)",
+      "current_provider": "Notion or a mix of other tools/manual documentation",
+      "customer_goal": "Make the workspace the default place where work artifacts and updates live, rather than scattered across systems",
+      "evidence_ids": [
+        "E3",
+        "E10"
+      ]
+    },
+    {
+      "id": "A5",
+      "step": 5,
+      "activity": "Organize and connect information into reusable structures (knowledge base organization and project/workflow systemization)",
+      "current_provider": "Notion or manual organization methods",
+      "customer_goal": "Turn raw notes and work items into an organized, navigable system that supports ongoing execution and knowledge reuse",
+      "evidence_ids": [
+        "E3",
+        "E10"
+      ]
+    },
+    {
+      "id": "A6",
+      "step": 6,
+      "activity": "Collaborate continuously (share, coordinate, and keep work/knowledge current as a team over time)",
+      "current_provider": "Notion and surrounding team practices",
+      "customer_goal": "Enable sustained team collaboration and execution in a shared workspace without losing alignment or institutional knowledge",
+      "evidence_ids": [
+        "E3",
+        "E7",
+        "E8",
+        "E10"
+      ]
+    }
+  ],
+  "profile_vs_cvc_conflicts": [
+    "The company profile lists the stated buyer as unknown, but the presence of an enterprise segment implies an additional customer activity around organizational purchasing/standardization that is not captured in the stated buyer view (E8)."
+  ]
+}

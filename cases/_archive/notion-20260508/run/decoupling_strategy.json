@@ -1,0 +1,56 @@
+{
+  "primary_decoupling": {
+    "activity_to_decouple": "Search for and evaluate workspace options (all-in-one vs. multiple tools) and decide what to adopt",
+    "from_incumbent_bundle": "A customer-assembled bundle of vendor marketing (each suite pitching its own stack), review/comparison content, and internal stakeholder opinions—none of which is accountable for a fast, decision-ready recommendation (E5).",
+    "customer_pain": "Evaluation is time/effort heavy and ambiguous: teams must compare many tools and integration paths without a clear, personalized answer on “all-in-one vs. best-of-breed,” creating decision paralysis and prolonged status quo (pain level is a hypothesis to validate) (E5).",
+    "new_offering": "A standalone “Notion Workspace Fit” AI advisor that interviews the user about their workflows, optionally ingests read-only signals (e.g., exported lists of tools/pages/projects), and outputs a decision brief plus a tailored Notion workspace blueprint and phased adoption plan—explicitly “peeling away a portion of the customer’s value chain” (books/unlocking-the-customer-value-chain-chapter-1.md) without requiring immediate migration (E3,E5).",
+    "why_customer_switches": "They can get to a confident tool decision and a concrete, low-risk adoption plan in minutes instead of weeks—without first committing to moving their notes/projects—making it rational to try Notion as the recommended path (E3,E5).",
+    "cheaper_faster_easier": [
+      "faster",
+      "easier"
+    ],
+    "evidence_ids": [
+      "E3",
+      "E5",
+      "E10"
+    ]
+  },
+  "do_not_decouple": [
+    {
+      "activity": "Capture and maintain content in the workspace (notes, documents, tasks, project updates, and reference knowledge)",
+      "reason": "This is a core part of Notion’s all-in-one workspace value proposition; unbundling capture would erode the habit loop and reduce the compounding value of having knowledge live natively in Notion (E3,E10).",
+      "evidence_ids": [
+        "E3",
+        "E10"
+      ]
+    },
+    {
+      "activity": "Organize and connect information into reusable structures (knowledge base organization and project/workflow systemization)",
+      "reason": "This is the differentiating “modular workspace” engine; if organization/systemization happens elsewhere, Notion becomes a thin viewer and loses the product-led wedge that supports upgrading across segments (E3,E6,E7,E8,E10).",
+      "evidence_ids": [
+        "E3",
+        "E6",
+        "E7",
+        "E8",
+        "E10"
+      ]
+    },
+    {
+      "activity": "Collaborate continuously (share, coordinate, and keep work/knowledge current as a team over time)",
+      "reason": "Collaboration is where team/enterprise relationship ownership is built; decoupling it would weaken Notion’s ability to retain teams and expand into SMB/enterprise usage (E7,E8,E9).",
+      "evidence_ids": [
+        "E7",
+        "E8",
+        "E9"
+      ]
+    },
+    {
+      "activity": "Create an account and set up the workspace (initial structure for notes/knowledge/projects; invite collaborators if needed)",
+      "reason": "Onboarding and workspace setup are tightly coupled to activation and eventual monetization via tiering; offloading setup to third parties risks breaking the end-to-end product experience that underpins conversion (E3,E9).",
+      "evidence_ids": [
+        "E3",
+        "E9"
+      ]
+    }
+  ]
+}

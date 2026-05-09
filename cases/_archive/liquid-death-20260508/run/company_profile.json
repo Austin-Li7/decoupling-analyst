@@ -1,0 +1,51 @@
+{
+  "company": {
+    "name": "Liquid Death",
+    "website": "https://liquiddeath.com",
+    "ticker": "",
+    "public_or_private": "unknown",
+    "industry": "beverage",
+    "geography": [
+      "unknown"
+    ],
+    "stage": "unknown",
+    "description": "Liquid Death is a packaged-water brand founded in 2019 that has positioned itself as a pop-culture disruptive challenger through bold branding, viral marketing, and a sustainability-driven value proposition (E4, E3). The company presents itself as an alternative to traditional bottled water and targets younger, eco-conscious and pop-culture–oriented consumers (E6, E7, E8)."
+  },
+  "customers": {
+    "primary_user": "Millennials and Gen Z (health-conscious, environmentally aware, attracted to unconventional branding) (E6)",
+    "buyer": "unknown",
+    "payer": "unknown",
+    "segments": [
+      "Millennials and Gen Z (E6)",
+      "Alternative and pop-culture enthusiasts (E7)",
+      "Eco-conscious consumers seeking alternatives to plastic bottles (E8)"
+    ]
+  },
+  "business_model": {
+    "value_proposition": "Packaged water differentiated through provocative, viral branding and a sustainability narrative positioning it as an alternative to incumbent bottled-water brands (E4, E3)",
+    "revenue_model": "unknown",
+    "pricing_model": "unknown",
+    "distribution_channels": [
+      "direct-to-consumer via company website (E2)"
+    ],
+    "cost_drivers": [
+      "unknown"
+    ]
+  },
+  "competition": {
+    "incumbents": [],
+    "direct_competitors": [],
+    "substitutes": []
+  },
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9"
+  ]
+}
