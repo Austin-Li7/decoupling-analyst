@@ -19,12 +19,17 @@ dependencies = [
   "httpx>=0.27",
   "PyYAML>=6.0",
   "yt-dlp>=2024",
+  "ddgs>=9.0",
+  "gpt-researcher @ git+https://github.com/Austin-Li7/gpt-researcher.git@92bfc0388c5f7a03b6cb34eaf6ae14298a4b458e",
 ]
 
 [project.optional-dependencies]
 dev = [
   "pytest>=8.0",
   "ruff>=0.5",
+]
+research-tavily = [
+  "tavily-python>=0.5",
 ]
 
 [project.scripts]
