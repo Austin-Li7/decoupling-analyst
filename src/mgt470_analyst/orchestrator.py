@@ -36,6 +36,7 @@ from mgt470_analyst.modules.value_types import diagnose_value_types
 from mgt470_analyst.modules.weak_links import score_weak_links
 from mgt470_analyst.paths import ensure_run_dir
 from mgt470_analyst.renderers.markdown import render_report
+from mgt470_analyst.renderers.markdown_zh import render_report_zh
 from mgt470_analyst.schemas.business_model import BusinessModelAnalysis
 from mgt470_analyst.schemas.case_perspective import CasePerspective
 from mgt470_analyst.schemas.company_profile import CompanyProfile
@@ -67,6 +68,7 @@ ARTIFACTS = {
     "final_judgment": "final_judgment.json",
     "critic_review": "critic_review.json",
     "final_report": "final_report.md",
+    "final_report_zh": "final_report_zh.md",
 }
 LOGGER = logging.getLogger(__name__)
 
@@ -413,25 +415,27 @@ def run_analysis(
     )
 
     # --- Phase 3: render ---
-    report = render_report(
-        {
-            "company_name": raw_input.company_name,
-            "lens_fit": lens_fit,
-            "case_perspective": case_perspective,
-            "final_judgment": final_judgment,
-            "critic_review": critic_review,
-            "evidence_store": store.to_artifact().model_dump(mode="json"),
-            "weak_link": _weak_link_summary(weak_links, cvc),
-            "decoupling": decoupling.primary_decoupling.new_offering,
-            "business_model": business_model.value_creation,
-            "competitive_response": competitive.likely_responses[0].description,
-            "competitive": competitive,
-            "recoupling": competitive.recoupling_vulnerability,
-            "cvc": [activity.model_dump(mode="json") for activity in cvc.activities],
-            "values": [v.model_dump(mode="json") for v in values.activities],
-            "research": research,
-        }
-    )
+    report_context = {
+        "company_name": raw_input.company_name,
+        "company_profile": company_profile,
+        "lens_fit": lens_fit,
+        "case_perspective": case_perspective,
+        "final_judgment": final_judgment,
+        "critic_review": critic_review,
+        "evidence_store": store.to_artifact().model_dump(mode="json"),
+        "weak_link": _weak_link_summary(weak_links, cvc),
+        "weak_links": weak_links,
+        "decoupling": decoupling.primary_decoupling.new_offering,
+        "decoupling_strategy": decoupling,
+        "business_model": business_model.value_creation,
+        "competitive_response": competitive.likely_responses[0].description,
+        "competitive": competitive,
+        "recoupling": competitive.recoupling_vulnerability,
+        "cvc": [activity.model_dump(mode="json") for activity in cvc.activities],
+        "values": [v.model_dump(mode="json") for v in values.activities],
+        "research": research,
+    }
+    report = render_report(report_context)
     report_path = run_dir / "final_report.md"
     report_path.write_text(report, encoding="utf-8")
     record(
@@ -439,6 +443,15 @@ def run_analysis(
         "final_report.md",
         {"final_judgment": final_judgment, "evidence_store": store.to_artifact()},
     )
+    if _generate_zh_digest():
+        with use_llm_module("final_report_zh"):
+            report_zh = render_report_zh(report_context, client=client)
+        (run_dir / "final_report_zh.md").write_text(report_zh, encoding="utf-8")
+        record(
+            "markdown_zh_renderer",
+            "final_report_zh.md",
+            {"final_judgment": final_judgment, "lens_fit": lens_fit},
+        )
     finish_llm_cost_tracking()
 
     return AnalysisResult(run_dir=run_dir, report_path=report_path, run_manifest=manifest)
@@ -465,6 +478,15 @@ def _build_retriever_or_none(*, use_rag: bool, client: LLMClient):
         return MethodologyRetriever()
     except Exception:
         return None
+
+
+def _generate_zh_digest() -> bool:
+    return os.getenv("MGT470_GENERATE_ZH_DIGEST", "1").strip().lower() not in {
+        "0",
+        "false",
+        "no",
+        "off",
+    }
 
 
 def _weak_link_summary(weak_links: WeakLinkAnalysis, cvc: CustomerValueChain) -> str:

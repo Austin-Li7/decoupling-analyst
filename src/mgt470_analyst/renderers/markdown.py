@@ -153,6 +153,149 @@ def _infer_url_for_synthetic_source(locator: str) -> str:
     return locator
 
 
+def _paragraphs(text: str, limit: int | None = None) -> str:
+    chunks = [chunk.strip() for chunk in str(text or "").split("\n\n") if chunk.strip()]
+    if limit is not None:
+        chunks = chunks[:limit]
+    return "\n\n".join(chunks) if chunks else "_No text produced._"
+
+
+def _first_paragraph(text: str) -> str:
+    return _paragraphs(text, limit=1)
+
+
+def _bullet_lines(items: list[Any], fallback: str = "- (none)") -> str:
+    if not items:
+        return fallback
+    return "\n".join(f"- {item}" for item in items)
+
+
+def _top_weak_link(context: dict[str, Any]) -> dict[str, Any]:
+    weak_links = _dump(context.get("weak_links") or {})
+    ranked = weak_links.get("ranked_weak_links") if isinstance(weak_links, dict) else None
+    if isinstance(ranked, list) and ranked:
+        return _dump(ranked[0])
+    for activity in context.get("cvc", []) or []:
+        if activity.get("id"):
+            return {"activity_id": activity.get("id"), "rationale": context.get("weak_link", "")}
+    return {}
+
+
+def _activity_for_id(cvc: list[dict[str, Any]], activity_id: str | None) -> dict[str, Any]:
+    if not activity_id:
+        return {}
+    return next((item for item in cvc if item.get("id") == activity_id), {})
+
+
+def _company_snapshot_lines(company_profile: dict[str, Any], company: str) -> str:
+    company_info = company_profile.get("company") or {}
+    business = company_profile.get("business_model") or {}
+    customers = company_profile.get("customers") or {}
+    rows = [
+        f"- **Company:** {company_info.get('name') or company}",
+        f"- **Sector:** {company_info.get('industry') or 'unknown'}",
+        f"- **Stage / geography:** {company_info.get('stage') or 'unknown'}; "
+        f"{', '.join(company_info.get('geography') or []) or 'unknown'}",
+        f"- **Website / ticker:** {company_info.get('website') or 'unknown'}; "
+        f"{company_info.get('ticker') or 'n/a'}",
+        f"- **Revenue / pricing:** {business.get('revenue_model') or 'unknown'}; "
+        f"{business.get('pricing_model') or 'unknown'}",
+        f"- **Primary user:** {customers.get('primary_user') or 'unknown'}",
+    ]
+    return "\n".join(rows)
+
+
+def _raw_research_details(research: dict[str, Any]) -> str:
+    summary = research.get("research_summary") or ""
+    if not summary.strip():
+        return "_No raw GPT Researcher narrative available._"
+    indented = "\n".join(f"    {line}" for line in summary.splitlines())
+    return (
+        "<details>\n"
+        "<summary>Raw GPT Researcher narrative (unparsed)</summary>\n\n"
+        f"{indented}\n\n"
+        "</details>"
+    )
+
+
+def _high_severity_issues(critic: dict[str, Any], limit: int = 3) -> list[str]:
+    issues = [
+        str(issue.get("issue", ""))
+        for issue in critic.get("citation_issues", [])
+        if issue.get("severity") == "high" and issue.get("issue")
+    ]
+    return issues[:limit]
+
+
+def _cvc_rows(cvc: list[dict[str, Any]]) -> str:
+    rows = ["| Step | Activity | Current Provider | Evidence |", "|---:|---|---|---|"]
+    for item in cvc:
+        rows.append(
+            f"| {item.get('step', '')} | {item.get('activity', '')} |"
+            f" {item.get('current_provider', '')} |"
+            f" {', '.join(item.get('evidence_ids', []))} |"
+        )
+    return "\n".join(rows)
+
+
+def _value_rows(values: list[dict[str, Any]]) -> str:
+    rows = [
+        "| Activity | Type | Money | Time | Effort | Satisfaction | Reasoning |",
+        "|---|---|---:|---:|---:|---:|---|",
+    ]
+    for v in values:
+        rows.append(
+            f"| {v.get('activity_id', '')} | {v.get('value_type', '')} |"
+            f" {v.get('money_cost', '')} | {v.get('time_cost', '')} |"
+            f" {v.get('effort_cost', '')} | {v.get('satisfaction', '')} |"
+            f" {v.get('reasoning', '')} |"
+        )
+    return "\n".join(rows)
+
+
+def _lens_block(lens_fit: dict[str, Any]) -> str:
+    return (
+        f"Primary lens: **{lens_fit.get('primary_type', '?')}** "
+        f"(confidence: {lens_fit.get('confidence', '?')}, "
+        f"fit score: {lens_fit.get('decoupling_fit_score', '?')}, "
+        f"mode: {lens_fit.get('recommended_report_mode', '?')})\n\n"
+        f"{lens_fit.get('reasoning', '')}"
+    )
+
+
+def _perspective_block(perspective: dict[str, Any]) -> str:
+    return (
+        f"Case perspective: **{perspective.get('perspective', '?')}** "
+        f"(confidence: {perspective.get('confidence', '?')})\n\n"
+        f"Primary question: {perspective.get('primary_question', '?')}\n\n"
+        f"{perspective.get('reasoning', '')}"
+    )
+
+
+def _recoupling_block(recoupling: dict[str, Any]) -> str:
+    return (
+        f"**Vulnerability**: {recoupling.get('vulnerability', '?')} | "
+        f"capability {recoupling.get('incumbent_capability_to_recouple', '?')}, "
+        f"incentive {recoupling.get('incumbent_incentive_to_recouple', '?')}\n\n"
+        f"{recoupling.get('rationale', '')}\n\n"
+        f"Defenses: {', '.join(recoupling.get('defenses', []))}"
+    )
+
+
+def _decoupling_for_context(context: dict[str, Any]) -> dict[str, Any]:
+    strategy = _dump(context.get("decoupling_strategy") or {})
+    if strategy:
+        return strategy
+    return {
+        "primary_decoupling": {
+            "new_offering": context.get("decoupling", ""),
+            "activity_to_decouple": "",
+            "customer_pain": "",
+            "why_customer_switches": "",
+        }
+    }
+
+
 def render_report(context: dict[str, Any]) -> str:
     final = _dump(context["final_judgment"])
     lens_fit = _dump(context.get("lens_fit") or {})
@@ -160,6 +303,9 @@ def render_report(context: dict[str, Any]) -> str:
     critic = _dump(context.get("critic_review") or {})
     recoupling = _dump(context.get("recoupling") or {})
     research = _dump(context.get("research") or {})
+    company_profile = _dump(context.get("company_profile") or {})
+    decoupling_strategy = _decoupling_for_context(context)
+    primary_decoupling = decoupling_strategy.get("primary_decoupling") or {}
     company = context.get("company_name", "Unknown Company")
     evidence_store = context.get("evidence_store", {})
     weak_link = context.get("weak_link", "Unknown weak link")
@@ -171,15 +317,11 @@ def render_report(context: dict[str, Any]) -> str:
     )
     cvc = context.get("cvc", [])
     values = context.get("values", [])
+    top_weak_link = _top_weak_link(context)
+    weak_link_activity = _activity_for_id(cvc, top_weak_link.get("activity_id"))
+    weak_link_id = top_weak_link.get("activity_id")
 
-    cvc_rows = ["| Step | Activity | Current Provider | Evidence |", "|---:|---|---|---|"]
-    for item in cvc:
-        cvc_rows.append(
-            f"| {item.get('step', '')} | {item.get('activity', '')} |"
-            f" {item.get('current_provider', '')} |"
-            f" {', '.join(item.get('evidence_ids', []))} |"
-        )
-    cvc_diagram = render_cvc_flowchart(cvc, values)
+    cvc_diagram = render_cvc_flowchart(cvc, values, highlight_activity_id=weak_link_id)
 
     likely_responses = []
     if isinstance(context.get("competitive"), dict):
@@ -195,37 +337,8 @@ def render_report(context: dict[str, Any]) -> str:
 
     critic_block = _critic_block(critic)
 
-    value_rows = [
-        "| Activity | Type | Money | Time | Effort | Satisfaction | Reasoning |",
-        "|---|---|---:|---:|---:|---:|---|",
-    ]
-    for v in values:
-        value_rows.append(
-            f"| {v.get('activity_id', '')} | {v.get('value_type', '')} |"
-            f" {v.get('money_cost', '')} | {v.get('time_cost', '')} |"
-            f" {v.get('effort_cost', '')} | {v.get('satisfaction', '')} |"
-            f" {v.get('reasoning', '')} |"
-        )
-
     open_questions = research.get("open_questions") or []
-    open_q_block = (
-        "\n".join(f"- {q}" for q in open_questions) if open_questions else "- (none)"
-    )
-
-    lens_block = (
-        f"Primary lens: **{lens_fit.get('primary_type', '?')}** "
-        f"(confidence: {lens_fit.get('confidence', '?')}, "
-        f"fit score: {lens_fit.get('decoupling_fit_score', '?')}, "
-        f"mode: {lens_fit.get('recommended_report_mode', '?')})\n\n"
-        f"{lens_fit.get('reasoning', '')}"
-    )
-
-    perspective_block = (
-        f"Case perspective: **{perspective.get('perspective', '?')}** "
-        f"(confidence: {perspective.get('confidence', '?')})\n\n"
-        f"Primary question: {perspective.get('primary_question', '?')}\n\n"
-        f"{perspective.get('reasoning', '')}"
-    )
+    open_q_block = _bullet_lines(open_questions)
 
     staged_actions = final.get("staged_actions") or []
     do_not_do = final.get("do_not_do") or []
@@ -239,14 +352,13 @@ def render_report(context: dict[str, Any]) -> str:
         if do_not_do
         else "_No don't-do items produced._"
     )
-
-    recoupling_block = (
-        f"**Vulnerability**: {recoupling.get('vulnerability', '?')} | "
-        f"capability {recoupling.get('incumbent_capability_to_recouple', '?')}, "
-        f"incentive {recoupling.get('incumbent_incentive_to_recouple', '?')}\n\n"
-        f"{recoupling.get('rationale', '')}\n\n"
-        f"Defenses: {', '.join(recoupling.get('defenses', []))}"
-    )
+    high_issues = _high_severity_issues(critic)
+    high_issue_block = _bullet_lines(high_issues, fallback="- No high-severity critic issues.")
+    weak_label = weak_link_activity.get("activity") or weak_link_id or "Unknown activity"
+    weak_step = weak_link_activity.get("step", "?")
+    wedge_rationale = primary_decoupling.get("why_customer_switches") or decoupling
+    next_steps = _bullet_lines(final.get("next_research_steps", []))
+    tldr = final.get("recommended_action") or final.get("one_sentence_thesis", "")
 
     return f"""---
 company: {company}
@@ -255,96 +367,120 @@ workflow: mgt470_analyst
 
 # {company} MGT470 Decoupling Memo
 
+## TL;DR
+
 > [!important] Final Judgment
-> {final["one_sentence_thesis"]}
+> **{final.get("judgment", "study_more")}**: {tldr}
 
-## Executive Summary
-
-{final["why_now"]}
-
-Strongest argument: {final["strongest_argument"]}
-
-Biggest risk: {final["biggest_risk"]}
-
-## Lens Fit
-
-{lens_block}
-
-## Case Perspective
-
-{perspective_block}
-
-## Company Snapshot
-
-Target company: **{company}**.
-
-{research.get("research_summary", "")}
-
-## Evidence Base
-
-{_evidence_table(evidence_store)}
-
-## Customer Value Chain
+## Key Diagram
 
 {cvc_diagram}
 
-{chr(10).join(cvc_rows)}
+_Weak link highlighted: Step {weak_step}, **{weak_label}**._
 
-## Value Creation, Erosion, And Capture
+## The Wedge
 
-{chr(10).join(value_rows)}
+{_company_snapshot_lines(company_profile, company)}
 
-## Weak Link
+**What to decouple:** {primary_decoupling.get("activity_to_decouple") or weak_label}
 
-{weak_link}
+**Why this wedge:** {_first_paragraph(wedge_rationale)}
 
-## Decoupling Strategy
+**Why now:** {_first_paragraph(final.get("why_now", ""))}
 
-{decoupling}
+**Biggest risk:** {_first_paragraph(final.get("biggest_risk", ""))}
 
-## Business Model
+## Confidence & Open Questions
 
-{business_model}
+Lens fit: **{lens_fit.get("primary_type", "?")}** with **{lens_fit.get("confidence", "?")}**
+confidence and fit score **{lens_fit.get("decoupling_fit_score", "?")}**.
 
-## Competitive Response
+Top high-severity critic findings:
 
-{competitive_response}
+{high_issue_block}
 
-## Recoupling Risk
-
-{recoupling_diagram}
-
-{recoupling_block}
-
-## Open Questions / Missing Data
+Open questions:
 
 {open_q_block}
 
-## Sources
+<details>
+<summary>📚 Appendix: full module outputs (click to expand)</summary>
 
-{_sources_block(research, evidence_store)}
+### Lens Fit
 
-## Critic Review (cross-pass audit)
+{_lens_block(lens_fit)}
 
-{critic_block}
+### Case Perspective
 
-## Final Recommendation
+{_perspective_block(perspective)}
 
-**{final["judgment"]}**: {final["one_sentence_thesis"]}
+### Company Snapshot
 
-Evidence: {", ".join(final["evidence_ids"])}.
+{_company_snapshot_lines(company_profile, company)}
 
-### Staged Execution Path
+{_raw_research_details(research)}
+
+### Customer Value Chain
+
+{cvc_diagram}
+
+{_cvc_rows(cvc)}
+
+### Value Creation, Erosion, And Capture
+
+{_value_rows(values)}
+
+### Weak Link
+
+{weak_link}
+
+### Decoupling Strategy
+
+{decoupling}
 
 {staged_diagram}
 
 {staged_block}
 
-### Do-Not-Do List
+### Business Model
+
+{business_model}
+
+### Competitive Response
+
+{competitive_response}
+
+### Recoupling Risk
+
+{recoupling_diagram}
+
+{_recoupling_block(recoupling)}
+
+### Critic Review
+
+{critic_block}
+
+### Sources
+
+{_sources_block(research, evidence_store)}
+
+### Evidence Base
+
+{_evidence_table(evidence_store)}
+
+### Final Recommendation
+
+**{final.get("judgment", "study_more")}**: {final.get("one_sentence_thesis", "")}
+
+Evidence: {", ".join(final.get("evidence_ids", []))}.
+
+#### Do-Not-Do List
 
 {dnd_block}
 
-### Next Research Steps
+#### Next Research Steps
 
-{chr(10).join(f"- {step}" for step in final.get("next_research_steps", []))}
+{next_steps}
+
+</details>
 """

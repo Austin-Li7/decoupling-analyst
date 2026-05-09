@@ -145,6 +145,11 @@ has `run/`, `review.md`, `baseline_metrics.json`, and grounded-era provenance
 and cost artifacts when available; `review.md` is human-written, not generated
 by the pipeline.
 
+To refresh archived Markdown after renderer changes, run
+`scripts/rerender_report.py <case>/run`. To copy grounded case reports into the
+local Obsidian vault, run `scripts/sync_to_obsidian.sh`; set
+`OBSIDIAN_MGT470_CASES_DIR` to override the default vault path.
+
 ## Testing
 
 Tests run in offline mode automatically (no API key required):
