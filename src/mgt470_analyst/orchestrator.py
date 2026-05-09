@@ -14,7 +14,13 @@ from mgt470_analyst.evidence.store import EvidenceStore
 from mgt470_analyst.evidence.validator import validate_and_repair_evidence
 from mgt470_analyst.hashing import stable_hash
 from mgt470_analyst.io.json_artifacts import write_json_artifact
-from mgt470_analyst.llm.client import LLMClient, get_default_client
+from mgt470_analyst.llm.client import (
+    LLMClient,
+    finish_llm_cost_tracking,
+    get_default_client,
+    start_llm_cost_tracking,
+    use_llm_module,
+)
 from mgt470_analyst.llm.prompts import render_methodology_context
 from mgt470_analyst.modules.business_model import analyze_business_model
 from mgt470_analyst.modules.case_perspective import classify_case_perspective
@@ -47,6 +53,7 @@ from mgt470_analyst.schemas.weak_links import WeakLinkAnalysis
 
 ARTIFACTS = {
     "research_brief": "research_brief.json",
+    "cost_summary": "cost_summary.json",
     "evidence_store": "evidence_store.json",
     "company_profile": "company_profile.json",
     "lens_fit": "lens_fit.json",
@@ -150,6 +157,11 @@ def run_analysis(
         input=raw_input,
         artifacts=ARTIFACTS.copy(),
     )
+    start_llm_cost_tracking(
+        run_id=run_id,
+        company_name=raw_input.company_name,
+        artifact_path=run_dir / "cost_summary.json",
+    )
 
     def write_manifest() -> None:
         write_json_artifact(run_dir / "run.json", manifest)
@@ -202,7 +214,8 @@ def run_analysis(
         schema: type[ModelT],
         input_for_hash: Any,
     ) -> ModelT:
-        artifact = producer()
+        with use_llm_module(module_name):
+            artifact = producer()
         validated = validate(artifact, schema, module_name, file_name)
         write_json_artifact(run_dir / file_name, validated)
         write_json_artifact(run_dir / "evidence_store.json", store.to_artifact())
@@ -221,12 +234,13 @@ def run_analysis(
         write_json_artifact(run_dir / path, deck_artifact)
         record("deck_extractor", path, raw_input.files)
 
-    research = _run_research_with_fallback(
-        raw_input,
-        client=client,
-        run_id=run_id,
-        run_dir=run_dir,
-    )
+    with use_llm_module("research_brief"):
+        research = _run_research_with_fallback(
+            raw_input,
+            client=client,
+            run_id=run_id,
+            run_dir=run_dir,
+        )
     write_json_artifact(run_dir / "research_brief.json", research)
     record("research", "research_brief.json", raw_input)
 
@@ -425,6 +439,7 @@ def run_analysis(
         "final_report.md",
         {"final_judgment": final_judgment, "evidence_store": store.to_artifact()},
     )
+    finish_llm_cost_tracking()
 
     return AnalysisResult(run_dir=run_dir, report_path=report_path, run_manifest=manifest)
 

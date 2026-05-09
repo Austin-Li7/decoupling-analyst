@@ -4,6 +4,7 @@ from mgt470_analyst import orchestrator
 from mgt470_analyst.adapters.research import gpt_researcher_adapter
 from mgt470_analyst.adapters.research.gpt_researcher_adapter import (
     GPTResearcherAdapter,
+    RetrievalAllDeadError,
     RetrievalEmptyError,
 )
 from mgt470_analyst.llm.client import LLMClient
@@ -81,6 +82,28 @@ def test_orchestrator_falls_back_on_retrieval_empty(monkeypatch, caplog) -> None
     assert "falling back to stub" in caplog.text
 
 
+def test_orchestrator_falls_back_on_retrieval_all_dead(monkeypatch, caplog) -> None:
+    class AllDeadGPTResearcherAdapter:
+        def research(self, raw_input: RawInput):
+            raise RetrievalAllDeadError("all retrieved URLs failed liveness")
+
+    monkeypatch.setenv("MGT470_OFFLINE", "0")
+    monkeypatch.setenv("OPENAI_API_KEY", "sk-test")
+    monkeypatch.setenv("MGT470_RESEARCH_BACKEND", "gpt_researcher")
+    monkeypatch.setattr(orchestrator, "GPTResearcherAdapter", AllDeadGPTResearcherAdapter)
+    caplog.set_level("WARNING", logger="mgt470_analyst.orchestrator")
+
+    brief = orchestrator._run_research_with_fallback(
+        RawInput(company_name="Notion"),
+        client=_fake_client(),
+    )
+
+    assert brief.company_name == "Notion"
+    assert brief.sources
+    assert "RetrievalAllDeadError" in caplog.text
+    assert "falling back to stub" in caplog.text
+
+
 def test_no_tavily_key_no_escape_hatch_raises_at_guardrail_time(monkeypatch) -> None:
     monkeypatch.delenv("TAVILY_API_KEY", raising=False)
     monkeypatch.delenv("MGT470_ALLOW_UNGROUNDED_RESEARCH", raising=False)
@@ -103,3 +126,12 @@ def test_no_tavily_key_with_escape_hatch_warns_and_uses_ddg(
     assert "DuckDuckGo retriever is known to return 0 results" in caplog.text
     assert "TAVILY_API_KEY" in caplog.text
     assert gpt_researcher_adapter.os.environ["RETRIEVER"] == "duckduckgo"
+
+
+def test_max_search_results_per_query_not_set(monkeypatch) -> None:
+    monkeypatch.setenv("TAVILY_API_KEY", "tvly-test")
+    monkeypatch.delenv("MAX_SEARCH_RESULTS_PER_QUERY", raising=False)
+
+    GPTResearcherAdapter()._apply_cost_guardrails()
+
+    assert "MAX_SEARCH_RESULTS_PER_QUERY" not in gpt_researcher_adapter.os.environ

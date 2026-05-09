@@ -61,4 +61,5 @@ Produce a BusinessModelAnalysis.
         user=user,
         schema=BusinessModelAnalysis,
         context={"evidence_ids": list(store.items.keys())},
+        max_tokens=4000,
     )

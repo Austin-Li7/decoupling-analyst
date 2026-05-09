@@ -2,8 +2,11 @@ import json
 import logging
 from pathlib import Path
 
+import pytest
+
 from mgt470_analyst.adapters.research.gpt_researcher_adapter import (
     GPTResearcherAdapter,
+    RetrievalAllDeadError,
     _build_research_provenance,
     _URLLivenessResult,
 )
@@ -102,13 +105,50 @@ def test_provenance_writes_artifact_schema(monkeypatch, tmp_path: Path, caplog) 
     assert artifact["searched_urls_count"] == 1
     assert artifact["visited_urls_from_retriever"] == ["https://example.com/a"]
     assert artifact["report_cited_urls_count"] == 2
-    assert artifact["union_pre_liveness_count"] == 2
+    assert artifact["union_pre_liveness_count"] == 1
     assert artifact["report_urls_in_search_results"] == 1
     assert artifact["report_urls_only_in_report"] == 1
     assert artifact["report_only_url_ratio"] == 0.5
-    assert artifact["post_liveness_kept_urls"] == [
-        "https://example.com/a",
-        "https://example.com/fabricated",
-    ]
+    assert artifact["post_liveness_kept_urls"] == ["https://example.com/a"]
     assert artifact["post_liveness_dropped_urls"] == []
     assert "Research provenance dump written:" in caplog.text
+
+
+def test_normalize_uses_retrieved_urls_only(monkeypatch) -> None:
+    retrieved = ["https://example.com/retrieved-1", "https://example.com/retrieved-2"]
+    report = (
+        "Report cites https://example.com/retrieved-1 and "
+        "https://example.com/fabricated"
+    )
+    monkeypatch.setattr(
+        "mgt470_analyst.adapters.research.gpt_researcher_adapter._filter_live_urls_with_results",
+        lambda urls: (urls, []),
+    )
+
+    brief = GPTResearcherAdapter()._normalize(
+        report=report,
+        sources=["https://example.com/ignored-source-url"],
+        raw_input=RawInput(company_name="Acme"),
+        visited_urls_from_retriever=retrieved,
+    )
+
+    assert [source.url_or_path for source in brief.sources] == retrieved
+    assert "https://example.com/fabricated" not in [
+        source.url_or_path for source in brief.sources
+    ]
+
+
+def test_retrieval_all_dead_raises(monkeypatch) -> None:
+    retrieved = ["https://example.com/dead-1", "https://example.com/dead-2"]
+    monkeypatch.setattr(
+        "mgt470_analyst.adapters.research.gpt_researcher_adapter._filter_live_urls_with_results",
+        lambda urls: ([], [_URLLivenessResult(url=url, live=False, status="404") for url in urls]),
+    )
+
+    with pytest.raises(RetrievalAllDeadError):
+        GPTResearcherAdapter()._normalize(
+            report="Report cites https://example.com/fabricated",
+            sources=[],
+            raw_input=RawInput(company_name="Acme"),
+            visited_urls_from_retriever=retrieved,
+        )

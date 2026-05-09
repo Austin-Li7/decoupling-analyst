@@ -72,7 +72,7 @@ def test_gpt_researcher_query_handles_long_company_name() -> None:
     assert company_name in query
 
 
-def test_gpt_researcher_normalize_prefers_report_reference_urls(monkeypatch) -> None:
+def test_gpt_researcher_normalize_uses_retrieved_urls(monkeypatch) -> None:
     from mgt470_analyst.schemas.raw_input import RawInput
 
     monkeypatch.setenv("MGT470_URL_LIVENESS", "0")
@@ -86,16 +86,15 @@ def test_gpt_researcher_normalize_prefers_report_reference_urls(monkeypatch) -> 
         report=report,
         sources=["https://translate.yandex.com/"],
         raw_input=RawInput(company_name="Notion"),
+        visited_urls_from_retriever=["https://www.notion.so/pricing"],
     )
 
-    assert [source.url_or_path for source in brief.sources[:3]] == [
-        "https://www.notion.so/pricing",
-        "https://developers.notion.com/",
-        "https://www.pcmag.com/reviews/notion",
+    assert [source.url_or_path for source in brief.sources] == [
+        "https://www.notion.so/pricing"
     ]
 
 
-def test_gpt_researcher_normalize_ignores_sparse_scrape_urls_when_report_has_enough(
+def test_gpt_researcher_normalize_ignores_report_urls_when_retrieved_url_present(
     monkeypatch,
 ) -> None:
     monkeypatch.setenv("MGT470_URL_LIVENESS", "0")
@@ -104,10 +103,11 @@ def test_gpt_researcher_normalize_ignores_sparse_scrape_urls_when_report_has_eno
         report=report,
         sources=["https://translate.yandex.com/"],
         raw_input=RawInput(company_name="Notion"),
+        visited_urls_from_retriever=["https://translate.yandex.com/"],
     )
 
-    assert len(brief.sources) == 10
-    assert "https://translate.yandex.com/" not in [source.url_or_path for source in brief.sources]
+    assert len(brief.sources) == 1
+    assert "https://translate.yandex.com/" in [source.url_or_path for source in brief.sources]
 
 
 def test_live_research_failure_falls_back_to_stub(monkeypatch, caplog) -> None:

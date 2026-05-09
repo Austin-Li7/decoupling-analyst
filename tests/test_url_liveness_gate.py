@@ -5,7 +5,10 @@ import httpx
 import pytest
 
 from mgt470_analyst.adapters.research import gpt_researcher_adapter
-from mgt470_analyst.adapters.research.gpt_researcher_adapter import GPTResearcherAdapter
+from mgt470_analyst.adapters.research.gpt_researcher_adapter import (
+    GPTResearcherAdapter,
+    RetrievalAllDeadError,
+)
 from mgt470_analyst.schemas.raw_input import RawInput
 
 
@@ -14,6 +17,7 @@ def _normalize_with_urls(urls: list[str]):
         report=" ".join(urls),
         sources=[],
         raw_input=RawInput(company_name="Notion"),
+        visited_urls_from_retriever=urls,
     )
 
 
@@ -145,7 +149,7 @@ def test_url_liveness_gate_can_be_disabled_with_env_var(
     assert "URL liveness gate disabled by MGT470_URL_LIVENESS=0" in caplog.text
 
 
-def test_url_liveness_gate_all_dead_returns_empty_sources_and_warns(
+def test_url_liveness_gate_all_retrieved_urls_dead_raises_and_warns(
     monkeypatch, caplog
 ) -> None:
     monkeypatch.delenv("MGT470_URL_LIVENESS", raising=False)
@@ -162,8 +166,8 @@ def test_url_liveness_gate_all_dead_returns_empty_sources_and_warns(
     )
     caplog.set_level(logging.INFO, logger=gpt_researcher_adapter.__name__)
 
-    brief = _normalize_with_urls(urls)
+    with pytest.raises(RetrievalAllDeadError):
+        _normalize_with_urls(urls)
 
-    assert brief.sources == []
     assert "URL liveness gate: kept 0/2" in caplog.text
     assert "fewer than 3 live source URLs survived" in caplog.text

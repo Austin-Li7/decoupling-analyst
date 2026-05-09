@@ -19,6 +19,7 @@ import httpx
 
 from mgt470_analyst.adapters.research.base import ResearchAdapter
 from mgt470_analyst.io.json_artifacts import write_json_artifact
+from mgt470_analyst.llm.client import record_external_llm_cost
 from mgt470_analyst.schemas.raw_input import RawInput
 from mgt470_analyst.schemas.research import ResearchBrief, ResearchSource
 
@@ -52,6 +53,10 @@ class _URLLivenessResult:
 
 class RetrievalEmptyError(RuntimeError):
     """Raised when GPT Researcher completes without retrieving any source URLs."""
+
+
+class RetrievalAllDeadError(RuntimeError):
+    """Raised when retrieved URLs all fail the URL liveness gate."""
 
 
 class GPTResearcherAdapter(ResearchAdapter):
@@ -107,6 +112,15 @@ class GPTResearcherAdapter(ResearchAdapter):
                 "refusing to write an ungrounded report."
             )
         report = await _maybe_await(researcher.write_report())
+        record_external_llm_cost(
+            "gpt_researcher_internal",
+            cost_usd=float(getattr(researcher, "research_costs", 0.0) or 0.0),
+            model="gpt-researcher",
+            note=(
+                "GPT Researcher's own LLM calls (sub-query gen, scrape "
+                "summarization, report writing)"
+            ),
+        )
         source_urls = await _maybe_await(researcher.get_source_urls())
         provenance_path = run_dir / "research_provenance.json" if run_dir else None
         return self._normalize(
@@ -144,8 +158,12 @@ class GPTResearcherAdapter(ResearchAdapter):
         visited_urls_from_retriever = visited_urls_from_retriever or []
         report_cited_urls = _extract_source_urls(report)
         searched_urls = _extract_source_urls(sources)
-        union_pre_liveness = _union_pre_liveness_urls(report_cited_urls, searched_urls)
+        union_pre_liveness = _dedupe_urls(visited_urls_from_retriever)
         urls, dropped = _filter_live_urls_with_results(union_pre_liveness)
+        if visited_urls_from_retriever and not urls:
+            raise RetrievalAllDeadError(
+                "GPT Researcher retrieved URLs, but every URL failed the liveness gate."
+            )
         _write_research_provenance_if_enabled(
             path=provenance_path,
             company_name=raw_input.company_name,
@@ -208,6 +226,9 @@ class GPTResearcherAdapter(ResearchAdapter):
             )
         os.environ.setdefault("MAX_ITERATIONS", str(self.max_iterations))
         os.environ.setdefault("MAX_SUBTOPICS", str(self.max_subtopics))
+        # Do not set MAX_SEARCH_RESULTS_PER_QUERY here. Tavily's defaults are
+        # tuned by tier; the old DDG-era clamp made grounded runs too shallow
+        # and contributed to one-URL retrieval.
 
 
 def _load_gpt_researcher() -> Any:
@@ -273,6 +294,16 @@ def _union_pre_liveness_urls(
             if source_url not in urls:
                 urls.append(source_url)
     return urls
+
+
+def _dedupe_urls(urls: list[str]) -> list[str]:
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for url in urls:
+        if url not in seen:
+            seen.add(url)
+            deduped.append(url)
+    return deduped
 
 
 def _write_research_provenance_if_enabled(

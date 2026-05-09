@@ -116,6 +116,7 @@ moat_is_relationship. Include scores for ALL FIVE.
             "evidence_ids": list(store.items.keys()),
         },
         reasoning_effort="high",
+        max_tokens=5000,
     )
 
 

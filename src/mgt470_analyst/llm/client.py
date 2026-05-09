@@ -2,6 +2,9 @@ from __future__ import annotations
 
 import json
 import os
+from contextlib import contextmanager
+from contextvars import ContextVar
+from pathlib import Path
 from typing import TYPE_CHECKING, Any, TypeVar
 
 from pydantic import BaseModel, ValidationError
@@ -14,9 +17,210 @@ if TYPE_CHECKING:
 
 T = TypeVar("T", bound=BaseModel)
 
+# Approximate USD prices per 1M tokens. These are for cost visibility, not
+# accounting; verify periodically because model pricing changes over time.
+MODEL_PRICES_USD_PER_M_TOKENS: dict[str, tuple[float, float]] = {
+    "gpt-5.2": (1.25, 10.00),
+    "gpt-5-mini": (0.25, 2.00),
+    "gpt-4.1": (2.00, 8.00),
+    "gpt-4o-mini": (0.15, 0.60),
+    "o4-mini": (1.10, 4.40),
+}
+DEFAULT_PRICE_USD_PER_M_TOKENS = (1.25, 10.00)
+GPT_RESEARCHER_COST_NOTE = (
+    "GPT Researcher's own LLM calls (sub-query gen, scrape summarization, "
+    "report writing)"
+)
+_CURRENT_COST_TRACKER: ContextVar[LLMCostTracker | None] = ContextVar(
+    "mgt470_cost_tracker",
+    default=None,
+)
+_CURRENT_MODULE: ContextVar[str | None] = ContextVar(
+    "mgt470_cost_module",
+    default=None,
+)
+
 
 class LLMError(RuntimeError):
     pass
+
+
+class LLMCostTracker:
+    def __init__(self, *, run_id: str, company_name: str, artifact_path: Path) -> None:
+        self.run_id = run_id
+        self.company_name = company_name
+        self.artifact_path = artifact_path
+        self.by_module: dict[str, dict[str, Any]] = {}
+        self.ensure_module("gpt_researcher_internal", note=GPT_RESEARCHER_COST_NOTE)
+        self.write()
+
+    def ensure_module(
+        self,
+        module_name: str,
+        *,
+        model: str = "",
+        note: str | None = None,
+    ) -> dict[str, Any]:
+        bucket = self.by_module.setdefault(
+            module_name,
+            {"input_tokens": 0, "output_tokens": 0, "cost_usd": 0.0},
+        )
+        if model and not bucket.get("model"):
+            bucket["model"] = model
+        if note is not None:
+            bucket["note"] = note
+        return bucket
+
+    def record(
+        self,
+        *,
+        module_name: str,
+        model: str,
+        input_tokens: int,
+        output_tokens: int,
+        cost_usd: float,
+        note: str | None = None,
+    ) -> None:
+        bucket = self.ensure_module(module_name, model=model, note=note)
+        bucket["input_tokens"] += input_tokens
+        bucket["output_tokens"] += output_tokens
+        bucket["cost_usd"] = round(bucket["cost_usd"] + cost_usd, 6)
+        self.write()
+
+    def to_json(self) -> dict[str, Any]:
+        total_input = sum(bucket["input_tokens"] for bucket in self.by_module.values())
+        total_output = sum(bucket["output_tokens"] for bucket in self.by_module.values())
+        total_cost = round(sum(bucket["cost_usd"] for bucket in self.by_module.values()), 6)
+        return {
+            "run_id": self.run_id,
+            "company_name": self.company_name,
+            "total_input_tokens": total_input,
+            "total_output_tokens": total_output,
+            "total_cost_usd": total_cost,
+            "by_module": {
+                module: {
+                    **bucket,
+                    "cost_usd": round(bucket["cost_usd"], 6),
+                }
+                for module, bucket in sorted(self.by_module.items())
+            },
+            "notes": [
+                "Costs computed from per-call usage objects. GPT Researcher "
+                "internal cost is read from researcher.research_costs after run.",
+                "Embedding/RAG costs outside LLMClient are not captured in this artifact.",
+            ],
+        }
+
+    def write(self) -> None:
+        self.artifact_path.parent.mkdir(parents=True, exist_ok=True)
+        self.artifact_path.write_text(
+            json.dumps(self.to_json(), indent=2) + "\n",
+            encoding="utf-8",
+        )
+
+
+def estimate_llm_cost_usd(
+    model: str,
+    *,
+    input_tokens: int,
+    output_tokens: int,
+) -> float:
+    input_price, output_price = MODEL_PRICES_USD_PER_M_TOKENS.get(
+        model,
+        DEFAULT_PRICE_USD_PER_M_TOKENS,
+    )
+    return round(
+        (input_tokens / 1_000_000 * input_price)
+        + (output_tokens / 1_000_000 * output_price),
+        6,
+    )
+
+
+def start_llm_cost_tracking(
+    *,
+    run_id: str,
+    company_name: str,
+    artifact_path: Path,
+) -> LLMCostTracker:
+    tracker = LLMCostTracker(
+        run_id=run_id,
+        company_name=company_name,
+        artifact_path=artifact_path,
+    )
+    _CURRENT_COST_TRACKER.set(tracker)
+    return tracker
+
+
+def finish_llm_cost_tracking() -> None:
+    tracker = _CURRENT_COST_TRACKER.get()
+    if tracker is not None:
+        tracker.write()
+    _CURRENT_COST_TRACKER.set(None)
+
+
+@contextmanager
+def use_llm_module(module_name: str):
+    tracker = _CURRENT_COST_TRACKER.get()
+    if tracker is not None:
+        tracker.ensure_module(module_name)
+    token = _CURRENT_MODULE.set(module_name)
+    try:
+        yield
+    finally:
+        _CURRENT_MODULE.reset(token)
+
+
+def record_external_llm_cost(
+    module_name: str,
+    *,
+    cost_usd: float,
+    model: str = "",
+    note: str | None = None,
+) -> None:
+    tracker = _CURRENT_COST_TRACKER.get()
+    if tracker is None:
+        return
+    tracker.record(
+        module_name=module_name,
+        model=model,
+        input_tokens=0,
+        output_tokens=0,
+        cost_usd=cost_usd,
+        note=note,
+    )
+
+
+def _usage_tokens(usage: Any) -> tuple[int, int]:
+    if usage is None:
+        return 0, 0
+    if isinstance(usage, dict):
+        return int(usage.get("prompt_tokens") or 0), int(
+            usage.get("completion_tokens") or 0
+        )
+    return int(getattr(usage, "prompt_tokens", 0) or 0), int(
+        getattr(usage, "completion_tokens", 0) or 0
+    )
+
+
+def _record_response_usage(*, model: str, response: Any) -> None:
+    tracker = _CURRENT_COST_TRACKER.get()
+    if tracker is None:
+        return
+    input_tokens, output_tokens = _usage_tokens(getattr(response, "usage", None))
+    if input_tokens == 0 and output_tokens == 0:
+        return
+    module_name = _CURRENT_MODULE.get() or "unattributed"
+    tracker.record(
+        module_name=module_name,
+        model=model,
+        input_tokens=input_tokens,
+        output_tokens=output_tokens,
+        cost_usd=estimate_llm_cost_usd(
+            model,
+            input_tokens=input_tokens,
+            output_tokens=output_tokens,
+        ),
+    )
 
 
 class LLMClient:
@@ -69,6 +273,7 @@ class LLMClient:
         context: dict[str, Any] | None = None,
         temperature: float | None = None,
         reasoning_effort: ReasoningEffort | None = None,
+        max_tokens: int | None = None,
         max_retries: int = 1,
     ) -> T:
         if self._effective_offline:
@@ -101,6 +306,8 @@ class LLMClient:
             kwargs["reasoning_effort"] = effort
         if temperature is not None:
             kwargs["temperature"] = temperature
+        if max_tokens is not None:
+            kwargs["max_completion_tokens"] = max_tokens
 
         last_error: Exception | None = None
         for attempt in range(max_retries + 1):
@@ -109,7 +316,9 @@ class LLMClient:
             except TypeError:
                 # Older OpenAI SDK or model rejecting reasoning_effort.
                 kwargs.pop("reasoning_effort", None)
+                kwargs.pop("max_completion_tokens", None)
                 response = client.chat.completions.create(**kwargs)
+            _record_response_usage(model=model, response=response)
             content = response.choices[0].message.content or "{}"
             try:
                 data = json.loads(content)

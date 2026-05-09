@@ -46,4 +46,5 @@ Produce a LensFit. decoupling_fit_score is in [0, 1].
             "company_name": profile.company.name,
             "evidence_ids": list(store.items.keys()),
         },
+        max_tokens=2000,
     )

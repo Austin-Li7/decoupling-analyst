@@ -64,4 +64,5 @@ Produce a CompetitiveResponse.
         user=user,
         schema=CompetitiveResponse,
         context={"evidence_ids": list(store.items.keys())},
+        max_tokens=4000,
     )

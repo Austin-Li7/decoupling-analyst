@@ -7,6 +7,7 @@ from mgt470_analyst.schemas.raw_input import RawInput
 
 EXPECTED_ARTIFACTS = {
     "run.json",
+    "cost_summary.json",
     "research_brief.json",
     "evidence_store.json",
     "company_profile.json",
@@ -58,7 +59,12 @@ def test_orchestrator_offline_happy_path_produces_all_artifacts(tmp_path: Path) 
     manifest = json.loads((result.run_dir / "run.json").read_text(encoding="utf-8"))
     evidence_ids = set(evidence_store)
     assert manifest["artifacts"]["research_brief"] == "research_brief.json"
-    json_artifacts = EXPECTED_ARTIFACTS - {"run.json", "evidence_store.json", "final_report.md"}
+    json_artifacts = EXPECTED_ARTIFACTS - {
+        "run.json",
+        "cost_summary.json",
+        "evidence_store.json",
+        "final_report.md",
+    }
     for artifact_name in json_artifacts:
         artifact = json.loads((result.run_dir / artifact_name).read_text(encoding="utf-8"))
         for evidence_id in collect_evidence_ids(artifact):

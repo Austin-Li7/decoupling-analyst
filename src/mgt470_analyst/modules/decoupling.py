@@ -69,4 +69,5 @@ Produce a DecouplingStrategy.
         user=user,
         schema=DecouplingStrategy,
         context={"evidence_ids": list(store.items.keys())},
+        max_tokens=4000,
     )

@@ -46,4 +46,5 @@ Produce a ValueTypeDiagnosis with one entry per activity, in the same order.
             "activity_ids": [a.id for a in cvc.activities],
             "evidence_ids": list(store.items.keys()),
         },
+        max_tokens=3000,
     )
