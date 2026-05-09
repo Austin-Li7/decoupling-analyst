@@ -14,7 +14,7 @@ from mgt470_analyst.schemas.raw_input import RawInput
 
 
 def test_provenance_classifies_report_only_urls() -> None:
-    visited_urls = [
+    research_sources_urls = [
         "https://example.com/a",
         "https://example.com/b",
         "https://example.com/c",
@@ -30,7 +30,8 @@ def test_provenance_classifies_report_only_urls() -> None:
         company_name="Acme",
         run_id="acme-20260509-120000",
         searched_urls=[],
-        visited_urls_from_retriever=visited_urls,
+        research_sources_urls=research_sources_urls,
+        visited_urls_from_retriever=research_sources_urls,
         report_cited_urls=report_urls,
         union_pre_liveness=report_urls,
         post_liveness_kept_urls=report_urls[:3],
@@ -61,7 +62,9 @@ def test_provenance_classifies_report_only_urls() -> None:
             "was_in_search_results": False,
         }
     ]
-    assert provenance["visited_urls_from_retriever"] == visited_urls
+    assert provenance["research_sources_urls"] == research_sources_urls
+    assert provenance["visited_urls_from_retriever"] == research_sources_urls
+    assert provenance["prefetched_url_count"] == 0
 
 
 def test_provenance_writes_by_default(monkeypatch, tmp_path: Path) -> None:
@@ -74,11 +77,14 @@ def test_provenance_writes_by_default(monkeypatch, tmp_path: Path) -> None:
         raw_input=RawInput(company_name="Acme"),
         run_id="acme-20260509-120000",
         provenance_path=artifact_path,
-        visited_urls_from_retriever=["https://example.com/a"],
+        research_sources_urls=["https://example.com/a"],
+        visited_urls_from_retriever=[],
     )
 
     artifact = json.loads(artifact_path.read_text(encoding="utf-8"))
-    assert artifact["visited_urls_from_retriever"] == ["https://example.com/a"]
+    assert artifact["research_sources_urls"] == ["https://example.com/a"]
+    assert artifact["visited_urls_from_retriever"] == []
+    assert artifact["prefetched_url_count"] == 1
     assert artifact["report_only_url_ratio"] == 0.0
 
 
@@ -96,6 +102,7 @@ def test_provenance_writes_artifact_schema(monkeypatch, tmp_path: Path, caplog) 
         raw_input=RawInput(company_name="Acme"),
         run_id="acme-20260509-120000",
         provenance_path=artifact_path,
+        research_sources_urls=["https://example.com/a"],
         visited_urls_from_retriever=["https://example.com/a"],
     )
 
@@ -103,7 +110,9 @@ def test_provenance_writes_artifact_schema(monkeypatch, tmp_path: Path, caplog) 
     assert artifact["company_name"] == "Acme"
     assert artifact["run_id"] == "acme-20260509-120000"
     assert artifact["searched_urls_count"] == 1
+    assert artifact["research_sources_urls"] == ["https://example.com/a"]
     assert artifact["visited_urls_from_retriever"] == ["https://example.com/a"]
+    assert artifact["prefetched_url_count"] == 0
     assert artifact["report_cited_urls_count"] == 2
     assert artifact["union_pre_liveness_count"] == 1
     assert artifact["report_urls_in_search_results"] == 1
@@ -114,8 +123,11 @@ def test_provenance_writes_artifact_schema(monkeypatch, tmp_path: Path, caplog) 
     assert "Research provenance dump written:" in caplog.text
 
 
-def test_normalize_uses_retrieved_urls_only(monkeypatch) -> None:
-    retrieved = ["https://example.com/retrieved-1", "https://example.com/retrieved-2"]
+def test_normalize_uses_research_sources_urls_only(monkeypatch) -> None:
+    research_sources_urls = [
+        "https://example.com/retrieved-1",
+        "https://example.com/retrieved-2",
+    ]
     report = (
         "Report cites https://example.com/retrieved-1 and "
         "https://example.com/fabricated"
@@ -129,10 +141,11 @@ def test_normalize_uses_retrieved_urls_only(monkeypatch) -> None:
         report=report,
         sources=["https://example.com/ignored-source-url"],
         raw_input=RawInput(company_name="Acme"),
-        visited_urls_from_retriever=retrieved,
+        research_sources_urls=research_sources_urls,
+        visited_urls_from_retriever=[],
     )
 
-    assert [source.url_or_path for source in brief.sources] == retrieved
+    assert [source.url_or_path for source in brief.sources] == research_sources_urls
     assert "https://example.com/fabricated" not in [
         source.url_or_path for source in brief.sources
     ]
@@ -150,5 +163,27 @@ def test_retrieval_all_dead_raises(monkeypatch) -> None:
             report="Report cites https://example.com/fabricated",
             sources=[],
             raw_input=RawInput(company_name="Acme"),
-            visited_urls_from_retriever=retrieved,
+            research_sources_urls=retrieved,
+            visited_urls_from_retriever=[],
         )
+
+
+def test_provenance_records_prefetch_discrepancy(monkeypatch, tmp_path: Path) -> None:
+    monkeypatch.setenv("MGT470_URL_LIVENESS", "0")
+    artifact_path = tmp_path / "research_provenance.json"
+    research_sources_urls = ["https://example.com/a", "https://example.com/b"]
+
+    GPTResearcherAdapter()._normalize(
+        report="Report cites https://example.com/a",
+        sources=["https://example.com/a"],
+        raw_input=RawInput(company_name="Acme"),
+        run_id="acme-20260509-120000",
+        provenance_path=artifact_path,
+        research_sources_urls=research_sources_urls,
+        visited_urls_from_retriever=[],
+    )
+
+    artifact = json.loads(artifact_path.read_text(encoding="utf-8"))
+    assert artifact["prefetched_url_count"] == 2
+    assert artifact["visited_urls_from_retriever"] == []
+    assert artifact["research_sources_urls"] == research_sources_urls

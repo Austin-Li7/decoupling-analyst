@@ -106,9 +106,16 @@ class GPTResearcherAdapter(ResearchAdapter):
 
         await _maybe_await(researcher.conduct_research())
         visited_urls = [str(url) for url in list(getattr(researcher, "visited_urls", []) or [])]
-        if not visited_urls:
+        # Grounding uses research_sources, not visited_urls. In Austin's fork,
+        # Tavily prefetched content is recorded in research_sources at
+        # gpt_researcher/skills/researcher.py:779-789 but does not update
+        # visited_urls, while scrape-path sources do. This fork-side bookkeeping
+        # discrepancy could be upstreamed as a small PR.
+        research_sources = await _get_research_sources(researcher)
+        research_sources_urls = _extract_research_source_urls(research_sources)
+        if not research_sources_urls:
             raise RetrievalEmptyError(
-                "GPT Researcher completed conduct_research() with 0 visited URLs; "
+                "GPT Researcher completed conduct_research() with 0 research_sources URLs; "
                 "refusing to write an ungrounded report."
             )
         report = await _maybe_await(researcher.write_report())
@@ -129,6 +136,7 @@ class GPTResearcherAdapter(ResearchAdapter):
             raw_input,
             run_id=run_id,
             provenance_path=provenance_path,
+            research_sources_urls=research_sources_urls,
             visited_urls_from_retriever=visited_urls,
         )
 
@@ -153,14 +161,16 @@ class GPTResearcherAdapter(ResearchAdapter):
         *,
         run_id: str = "",
         provenance_path: Path | None = None,
+        research_sources_urls: list[str] | None = None,
         visited_urls_from_retriever: list[str] | None = None,
     ) -> ResearchBrief:
+        research_sources_urls = research_sources_urls or []
         visited_urls_from_retriever = visited_urls_from_retriever or []
         report_cited_urls = _extract_source_urls(report)
         searched_urls = _extract_source_urls(sources)
-        union_pre_liveness = _dedupe_urls(visited_urls_from_retriever)
+        union_pre_liveness = _dedupe_urls(research_sources_urls)
         urls, dropped = _filter_live_urls_with_results(union_pre_liveness)
-        if visited_urls_from_retriever and not urls:
+        if research_sources_urls and not urls:
             raise RetrievalAllDeadError(
                 "GPT Researcher retrieved URLs, but every URL failed the liveness gate."
             )
@@ -169,6 +179,7 @@ class GPTResearcherAdapter(ResearchAdapter):
             company_name=raw_input.company_name,
             run_id=run_id,
             searched_urls=searched_urls,
+            research_sources_urls=research_sources_urls,
             visited_urls_from_retriever=visited_urls_from_retriever,
             report_cited_urls=report_cited_urls,
             union_pre_liveness=union_pre_liveness,
@@ -243,6 +254,21 @@ def _load_gpt_researcher() -> Any:
     return GPTResearcher
 
 
+async def _get_research_sources(researcher: Any) -> list[Any]:
+    get_research_sources = getattr(researcher, "get_research_sources", None)
+    if callable(get_research_sources):
+        return list(await _maybe_await(get_research_sources()) or [])
+    return list(getattr(researcher, "research_sources", []) or [])
+
+
+def _extract_research_source_urls(research_sources: list[Any]) -> list[str]:
+    urls: list[str] = []
+    for source in research_sources:
+        if isinstance(source, dict) and source.get("url"):
+            urls.append(str(source["url"]))
+    return _dedupe_urls(urls)
+
+
 def _filter_live_urls(urls: list[str]) -> list[str]:
     kept, _dropped = _filter_live_urls_with_results(urls)
     return kept
@@ -312,6 +338,7 @@ def _write_research_provenance_if_enabled(
     company_name: str,
     run_id: str,
     searched_urls: list[str],
+    research_sources_urls: list[str],
     visited_urls_from_retriever: list[str],
     report_cited_urls: list[str],
     union_pre_liveness: list[str],
@@ -324,6 +351,7 @@ def _write_research_provenance_if_enabled(
         company_name=company_name,
         run_id=run_id,
         searched_urls=searched_urls,
+        research_sources_urls=research_sources_urls,
         visited_urls_from_retriever=visited_urls_from_retriever,
         report_cited_urls=report_cited_urls,
         union_pre_liveness=union_pre_liveness,
@@ -343,18 +371,20 @@ def _build_research_provenance(
     company_name: str,
     run_id: str,
     searched_urls: list[str],
+    research_sources_urls: list[str],
     visited_urls_from_retriever: list[str],
     report_cited_urls: list[str],
     union_pre_liveness: list[str],
     post_liveness_kept_urls: list[str],
     post_liveness_dropped: list[_URLLivenessResult],
 ) -> dict[str, Any]:
-    retriever_set = set(visited_urls_from_retriever)
+    research_sources_set = set(research_sources_urls)
+    visited_set = set(visited_urls_from_retriever)
     report_urls = [
         {
             "url": url,
             "provenance": "in_search_results"
-            if url in retriever_set
+            if url in research_sources_set
             else "only_in_report",
         }
         for url in report_cited_urls
@@ -377,14 +407,18 @@ def _build_research_provenance(
         if report_urls
         else 0.0,
         "searched_urls": searched_urls,
+        "research_sources_urls": research_sources_urls,
         "visited_urls_from_retriever": visited_urls_from_retriever,
+        "prefetched_url_count": len(
+            [url for url in research_sources_urls if url not in visited_set]
+        ),
         "report_cited_urls": report_urls,
         "post_liveness_kept_urls": post_liveness_kept_urls,
         "post_liveness_dropped_urls": [
             {
                 "url": result.url,
                 "status": result.status,
-                "was_in_search_results": result.url in retriever_set,
+                "was_in_search_results": result.url in research_sources_set,
             }
             for result in post_liveness_dropped
         ],

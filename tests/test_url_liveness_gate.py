@@ -17,7 +17,8 @@ def _normalize_with_urls(urls: list[str]):
         report=" ".join(urls),
         sources=[],
         raw_input=RawInput(company_name="Notion"),
-        visited_urls_from_retriever=urls,
+        research_sources_urls=urls,
+        visited_urls_from_retriever=[],
     )
 
 

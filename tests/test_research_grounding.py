@@ -36,6 +36,9 @@ class _EmptyRetrievalResearcher:
     async def conduct_research(self) -> None:
         self.visited_urls = []
 
+    def get_research_sources(self) -> list[dict[str, str]]:
+        return []
+
     async def write_report(self) -> str:
         self.write_report_called = True
         return "This should not be written."
@@ -44,7 +47,30 @@ class _EmptyRetrievalResearcher:
         return []
 
 
-def test_empty_visited_urls_raises_retrieval_empty_error(monkeypatch) -> None:
+class _PrefetchedResearcher:
+    visited_urls: set[str] = set()
+    research_sources = [
+        {"url": "https://example.com/a"},
+        {"url": "https://example.com/b"},
+    ]
+
+    def __init__(self, *args, **kwargs) -> None:
+        pass
+
+    async def conduct_research(self) -> None:
+        self.visited_urls = set()
+
+    def get_research_sources(self) -> list[dict[str, str]]:
+        return self.research_sources
+
+    async def write_report(self) -> str:
+        return "Report cites https://example.com/a"
+
+    async def get_source_urls(self) -> list[str]:
+        return ["https://example.com/a"]
+
+
+def test_empty_research_sources_raises_retrieval_empty_error(monkeypatch) -> None:
     monkeypatch.setenv("TAVILY_API_KEY", "tvly-test")
     monkeypatch.setenv("MGT470_URL_LIVENESS", "0")
     monkeypatch.setattr(
@@ -55,6 +81,23 @@ def test_empty_visited_urls_raises_retrieval_empty_error(monkeypatch) -> None:
 
     with pytest.raises(RetrievalEmptyError):
         GPTResearcherAdapter().research(RawInput(company_name="Notion"))
+
+
+def test_grounding_uses_research_sources_when_visited_urls_empty(monkeypatch) -> None:
+    monkeypatch.setenv("TAVILY_API_KEY", "tvly-test")
+    monkeypatch.setenv("MGT470_URL_LIVENESS", "0")
+    monkeypatch.setattr(
+        gpt_researcher_adapter,
+        "_load_gpt_researcher",
+        lambda: _PrefetchedResearcher,
+    )
+
+    brief = GPTResearcherAdapter().research(RawInput(company_name="Notion"))
+
+    assert [source.url_or_path for source in brief.sources] == [
+        "https://example.com/a",
+        "https://example.com/b",
+    ]
 
 
 def test_orchestrator_falls_back_on_retrieval_empty(monkeypatch, caplog) -> None:

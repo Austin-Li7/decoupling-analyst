@@ -86,7 +86,7 @@ def test_gpt_researcher_normalize_uses_retrieved_urls(monkeypatch) -> None:
         report=report,
         sources=["https://translate.yandex.com/"],
         raw_input=RawInput(company_name="Notion"),
-        visited_urls_from_retriever=["https://www.notion.so/pricing"],
+        research_sources_urls=["https://www.notion.so/pricing"],
     )
 
     assert [source.url_or_path for source in brief.sources] == [
@@ -103,7 +103,7 @@ def test_gpt_researcher_normalize_ignores_report_urls_when_retrieved_url_present
         report=report,
         sources=["https://translate.yandex.com/"],
         raw_input=RawInput(company_name="Notion"),
-        visited_urls_from_retriever=["https://translate.yandex.com/"],
+        research_sources_urls=["https://translate.yandex.com/"],
     )
 
     assert len(brief.sources) == 1
