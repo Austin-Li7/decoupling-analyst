@@ -1,9 +1,9 @@
 {
   "run_id": "nubank-20260509-010625",
   "company_name": "Nubank",
-  "total_input_tokens": 48015,
-  "total_output_tokens": 21607,
-  "total_cost_usd": 0.3048,
+  "total_input_tokens": 57216,
+  "total_output_tokens": 31479,
+  "total_cost_usd": 0.415021,
   "by_module": {
     "business_model": {
       "input_tokens": 4525,
@@ -84,9 +84,9 @@
       "model": "gpt-5.2"
     },
     "final_report_zh": {
-      "input_tokens": 982,
-      "output_tokens": 955,
-      "cost_usd": 0.010777,
+      "input_tokens": 10183,
+      "output_tokens": 10827,
+      "cost_usd": 0.120998,
       "model": "gpt-5.2"
     }
   },

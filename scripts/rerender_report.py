@@ -48,7 +48,7 @@ def rerender(run_dir: Path) -> tuple[Path, Path | None]:
 
 def _render_zh_with_cost(context: dict[str, Any], client: Any) -> str:
     with use_llm_module("final_report_zh"):
-        return render_report_zh(context, client=client)
+        return render_report_zh(render_report(context), client=client)
 
 
 def _run_id(run_dir: Path, context: dict[str, Any]) -> str:

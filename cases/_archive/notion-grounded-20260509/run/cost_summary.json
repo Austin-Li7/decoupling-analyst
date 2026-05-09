@@ -1,9 +1,9 @@
 {
   "run_id": "notion-20260509-005121",
   "company_name": "Notion",
-  "total_input_tokens": 48970,
-  "total_output_tokens": 24550,
-  "total_cost_usd": 0.348305,
+  "total_input_tokens": 58415,
+  "total_output_tokens": 34473,
+  "total_cost_usd": 0.459342,
   "by_module": {
     "business_model": {
       "input_tokens": 4443,
@@ -84,9 +84,9 @@
       "model": "gpt-5.2"
     },
     "final_report_zh": {
-      "input_tokens": 965,
-      "output_tokens": 986,
-      "cost_usd": 0.011066,
+      "input_tokens": 10410,
+      "output_tokens": 10909,
+      "cost_usd": 0.122103,
       "model": "gpt-5.2"
     }
   },

@@ -331,6 +331,45 @@ class LLMClient:
             f"Model output failed validation after {max_retries + 1} attempts: {last_error}"
         )
 
+    def text(
+        self,
+        *,
+        role: ModelRole,
+        system: str,
+        user: str,
+        temperature: float | None = None,
+        reasoning_effort: ReasoningEffort | None = None,
+        max_tokens: int | None = None,
+    ) -> str:
+        if self._effective_offline:
+            return user.split("MARKDOWN:\n", maxsplit=1)[-1]
+
+        client = self._ensure_client()
+        model = self.config.model_for(role)
+        effort = reasoning_effort or self.config.effort_for(role)
+        kwargs: dict[str, Any] = {
+            "model": model,
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user", "content": user},
+            ],
+        }
+        if effort and effort != "none":
+            kwargs["reasoning_effort"] = effort
+        if temperature is not None:
+            kwargs["temperature"] = temperature
+        if max_tokens is not None:
+            kwargs["max_completion_tokens"] = max_tokens
+
+        try:
+            response = client.chat.completions.create(**kwargs)
+        except TypeError:
+            kwargs.pop("reasoning_effort", None)
+            kwargs.pop("max_completion_tokens", None)
+            response = client.chat.completions.create(**kwargs)
+        _record_response_usage(model=model, response=response)
+        return response.choices[0].message.content or ""
+
 
 _default_client: LLMClient | None = None
 

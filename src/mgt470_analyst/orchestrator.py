@@ -445,7 +445,7 @@ def run_analysis(
     )
     if _generate_zh_digest():
         with use_llm_module("final_report_zh"):
-            report_zh = render_report_zh(report_context, client=client)
+            report_zh = render_report_zh(report, client=client)
         (run_dir / "final_report_zh.md").write_text(report_zh, encoding="utf-8")
         record(
             "markdown_zh_renderer",

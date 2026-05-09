@@ -1,9 +1,9 @@
 {
   "run_id": "liquid-death-20260509-005918",
   "company_name": "Liquid Death",
-  "total_input_tokens": 44110,
-  "total_output_tokens": 19274,
-  "total_cost_usd": 0.273443,
+  "total_input_tokens": 53337,
+  "total_output_tokens": 28968,
+  "total_cost_usd": 0.381918,
   "by_module": {
     "business_model": {
       "input_tokens": 4475,
@@ -84,9 +84,9 @@
       "model": "gpt-5.2"
     },
     "final_report_zh": {
-      "input_tokens": 921,
-      "output_tokens": 908,
-      "cost_usd": 0.010231,
+      "input_tokens": 10148,
+      "output_tokens": 10602,
+      "cost_usd": 0.118706,
       "model": "gpt-5.2"
     }
   },
