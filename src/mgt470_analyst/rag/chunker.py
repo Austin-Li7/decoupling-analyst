@@ -21,6 +21,7 @@ class Chunk:
     source_path: str
     heading_trail: tuple[str, ...]
     chunk_index: int
+    corpus: str = "austin"
 
 
 def chunk_markdown(
@@ -90,7 +91,7 @@ def _split_oversize(body: str, max_chars: int) -> list[str]:
     pieces: list[str] = []
     buf: list[str] = []
     size = 0
-    for para in body.split("\n\n"):
+    for para in _split_paragraph_or_lines(body, max_chars):
         para_size = len(para) + 2
         if size + para_size > max_chars and buf:
             pieces.append("\n\n".join(buf).strip())
@@ -102,3 +103,25 @@ def _split_oversize(body: str, max_chars: int) -> list[str]:
     if buf:
         pieces.append("\n\n".join(buf).strip())
     return [p for p in pieces if p]
+
+
+def _split_paragraph_or_lines(body: str, max_chars: int) -> list[str]:
+    units: list[str] = []
+    for para in body.split("\n\n"):
+        if len(para) <= max_chars:
+            units.append(para)
+            continue
+        line_buf: list[str] = []
+        line_size = 0
+        for line in para.splitlines():
+            line_len = len(line) + 1
+            if line_size + line_len > max_chars and line_buf:
+                units.append("\n".join(line_buf))
+                line_buf = [line]
+                line_size = line_len
+            else:
+                line_buf.append(line)
+                line_size += line_len
+        if line_buf:
+            units.append("\n".join(line_buf))
+    return units

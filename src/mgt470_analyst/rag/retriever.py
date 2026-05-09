@@ -1,10 +1,16 @@
 from __future__ import annotations
 
 import os
+from dataclasses import dataclass
 from pathlib import Path
 
 from mgt470_analyst.rag.chunker import Chunk
-from mgt470_analyst.rag.indexer import COLLECTION_NAME, EMBEDDING_MODEL, default_persist_dir
+from mgt470_analyst.rag.indexer import (
+    AUSTIN_COLLECTION_NAME,
+    EMBEDDING_MODEL,
+    PRIMARY_COLLECTION_NAME,
+    default_persist_dir,
+)
 
 # Per-module query framing. The retriever combines this with the company
 # name and case perspective to surface chunks relevant to the LLM call we're
@@ -18,6 +24,14 @@ _MODULE_FRAMING: dict[str, str] = {
     "competitive_response": "incumbent recoupling response platform defense",
     "final_judgment": "investment judgment recommendation staged actions don't-do",
 }
+
+PRIMARY_DISTANCE_MULTIPLIER = 2 / 3
+
+
+@dataclass(frozen=True)
+class RankedChunk:
+    chunk: Chunk
+    distance: float
 
 
 class MethodologyRetriever:
@@ -40,19 +54,19 @@ class MethodologyRetriever:
     ) -> None:
         self._persist_dir = Path(persist_dir) if persist_dir else default_persist_dir()
         self._top_k = top_k
-        self._collection = None
+        self._collections: dict[str, object] = {}
         self._initialized = False
 
-    def _collection_or_none(self):
+    def _collections_or_none(self) -> dict[str, object]:
         if self._initialized:
-            return self._collection
+            return self._collections
         self._initialized = True
 
         if not self._persist_dir.exists():
-            return None
+            return {}
         api_key = os.environ.get("OPENAI_API_KEY")
         if not api_key:
-            return None
+            return {}
 
         try:
             import chromadb
@@ -60,12 +74,19 @@ class MethodologyRetriever:
 
             client = chromadb.PersistentClient(path=str(self._persist_dir))
             embed_fn = OpenAIEmbeddingFunction(api_key=api_key, model_name=EMBEDDING_MODEL)
-            self._collection = client.get_collection(
-                name=COLLECTION_NAME, embedding_function=embed_fn
-            )
+            for corpus, collection_name in (
+                ("austin", AUSTIN_COLLECTION_NAME),
+                ("primary", PRIMARY_COLLECTION_NAME),
+            ):
+                try:
+                    self._collections[corpus] = client.get_collection(
+                        name=collection_name, embedding_function=embed_fn
+                    )
+                except Exception:
+                    continue
         except Exception:
-            self._collection = None
-        return self._collection
+            self._collections = {}
+        return self._collections
 
     def retrieve_for_module(
         self,
@@ -74,54 +95,92 @@ class MethodologyRetriever:
         perspective: str | None = None,
         top_k: int | None = None,
     ) -> list[Chunk]:
-        collection = self._collection_or_none()
-        if collection is None:
+        collections = self._collections_or_none()
+        if not collections:
             return []
 
         k = top_k or self._top_k
-        query = self._build_query(module_name, company_name, perspective)
+        query = _build_query(module_name, company_name, perspective)
 
-        try:
-            result = collection.query(query_texts=[query], n_results=k * 2)
-        except Exception:
+        ranked: list[RankedChunk] = []
+        for corpus, collection in collections.items():
+            n_results = min(k, 3) if len(collections) > 1 else k * 2
+            try:
+                result = collection.query(query_texts=[query], n_results=n_results)
+            except Exception:
+                continue
+            ranked.extend(_ranked_chunks_from_result(result, corpus=corpus))
+
+        if not ranked:
             return []
 
-        ids = (result.get("ids") or [[]])[0]
-        docs = (result.get("documents") or [[]])[0]
-        metas = (result.get("metadatas") or [[]])[0]
+        return merge_ranked_chunks(ranked, top_k=k, company_name=company_name)
 
-        chunks: list[Chunk] = []
-        for cid, doc, meta in zip(ids, docs, metas, strict=False):
-            meta = meta or {}
-            trail_str = meta.get("heading_trail") or ""
-            heading_trail = tuple(h for h in trail_str.split(" > ") if h)
-            chunks.append(
-                Chunk(
+
+def _ranked_chunks_from_result(result: dict, *, corpus: str) -> list[RankedChunk]:
+    ids = (result.get("ids") or [[]])[0]
+    docs = (result.get("documents") or [[]])[0]
+    metas = (result.get("metadatas") or [[]])[0]
+    distances = (result.get("distances") or [[]])[0]
+
+    ranked: list[RankedChunk] = []
+    for index, (cid, doc, meta) in enumerate(zip(ids, docs, metas, strict=False)):
+        meta = meta or {}
+        trail_str = meta.get("heading_trail") or ""
+        heading_trail = tuple(h for h in trail_str.split(" > ") if h)
+        chunk_corpus = str(meta.get("corpus") or corpus)
+        try:
+            distance = float(distances[index])
+        except (IndexError, TypeError, ValueError):
+            distance = float(index + 1)
+        ranked.append(
+            RankedChunk(
+                chunk=Chunk(
                     text=doc or "",
                     source_path=str(meta.get("source_path") or cid),
                     heading_trail=heading_trail,
                     chunk_index=int(meta.get("chunk_index") or 0),
-                )
+                    corpus=chunk_corpus,
+                ),
+                distance=distance,
             )
+        )
+    return ranked
 
-        # Lexical re-rank: chunks whose source path or heading trail mentions
-        # the company surface first. Useful because the case-specific note
-        # for a company is the highest-signal context we have.
-        company_lc = (company_name or "").strip().lower()
+
+def merge_ranked_chunks(
+    ranked_chunks: list[RankedChunk],
+    *,
+    top_k: int,
+    company_name: str = "",
+) -> list[Chunk]:
+    """Merge Chroma results, boosting Teixeira primary-source chunks.
+
+    Chroma distances are lower-is-better, so a 1.5x primary weight is applied
+    by multiplying primary distances by 2/3.
+    """
+    company_lc = (company_name or "").strip().lower()
+
+    def sort_key(item: RankedChunk) -> tuple[int, float]:
+        company_miss = 0
         if company_lc:
-            chunks.sort(key=lambda c: 0 if _mentions(c, company_lc) else 1)
+            company_miss = 0 if _mentions(item.chunk, company_lc) else 1
+        distance = item.distance
+        if item.chunk.corpus == "primary":
+            distance *= PRIMARY_DISTANCE_MULTIPLIER
+        return (company_miss, distance)
 
-        return chunks[:k]
+    return [item.chunk for item in sorted(ranked_chunks, key=sort_key)[:top_k]]
 
-    @staticmethod
-    def _build_query(module_name: str, company_name: str, perspective: str | None) -> str:
-        framing = _MODULE_FRAMING.get(module_name, module_name.replace("_", " "))
-        bits = [framing]
-        if company_name:
-            bits.append(company_name)
-        if perspective:
-            bits.append(f"{perspective} perspective")
-        return " ".join(bits)
+
+def _build_query(module_name: str, company_name: str, perspective: str | None) -> str:
+    framing = _MODULE_FRAMING.get(module_name, module_name.replace("_", " "))
+    bits = [framing]
+    if company_name:
+        bits.append(company_name)
+    if perspective:
+        bits.append(f"{perspective} perspective")
+    return " ".join(bits)
 
 
 def _mentions(chunk: Chunk, needle_lc: str) -> bool:
