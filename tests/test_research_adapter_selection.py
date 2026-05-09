@@ -1,8 +1,10 @@
+from mgt470_analyst import orchestrator
 from mgt470_analyst.adapters.research.gpt_researcher_adapter import GPTResearcherAdapter
 from mgt470_analyst.adapters.research.openai_research import OpenAIResearchAdapter
 from mgt470_analyst.llm.client import LLMClient
 from mgt470_analyst.llm.config import LLMConfig
 from mgt470_analyst.orchestrator import _select_research_adapter
+from mgt470_analyst.schemas.raw_input import RawInput
 
 
 def _fake_client() -> LLMClient:
@@ -71,8 +73,6 @@ def test_gpt_researcher_normalize_prefers_report_reference_urls() -> None:
 
 
 def test_gpt_researcher_normalize_ignores_sparse_scrape_urls_when_report_has_enough() -> None:
-    from mgt470_analyst.schemas.raw_input import RawInput
-
     report = " ".join(f"https://example.com/source-{index}" for index in range(10))
     brief = GPTResearcherAdapter()._normalize(
         report=report,
@@ -82,3 +82,26 @@ def test_gpt_researcher_normalize_ignores_sparse_scrape_urls_when_report_has_eno
 
     assert len(brief.sources) == 10
     assert "https://translate.yandex.com/" not in [source.url_or_path for source in brief.sources]
+
+
+def test_live_research_failure_falls_back_to_stub(monkeypatch, caplog) -> None:
+    class FailingGPTResearcherAdapter:
+        def research(self, raw_input: RawInput):
+            raise RuntimeError("simulated live failure")
+
+    monkeypatch.setenv("MGT470_OFFLINE", "0")
+    monkeypatch.setenv("OPENAI_API_KEY", "sk-test")
+    monkeypatch.setenv("MGT470_RESEARCH_BACKEND", "gpt_researcher")
+    monkeypatch.setattr(orchestrator, "GPTResearcherAdapter", FailingGPTResearcherAdapter)
+    caplog.set_level("WARNING", logger="mgt470_analyst.orchestrator")
+
+    brief = orchestrator._run_research_with_fallback(
+        RawInput(company_name="Notion"),
+        client=_fake_client(),
+    )
+
+    assert brief.company_name == "Notion"
+    assert brief.sources
+    assert "gpt_researcher" in caplog.text
+    assert "falling back to stub" in caplog.text
+    assert "simulated live failure" in caplog.text

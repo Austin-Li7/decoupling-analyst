@@ -46,6 +46,22 @@ pip install "mgt470-analyst[research-tavily]"
 export TAVILY_API_KEY=tvly-...
 ```
 
+#### GPT Researcher pin policy
+
+The dependency is pinned to Austin's fork because that fork carries project
+fixes before they are upstreamed. To update it, edit this `pyproject.toml` line:
+`"gpt-researcher @ git+https://github.com/Austin-Li7/gpt-researcher.git@<sha>",`.
+Then reinstall the fork and package:
+
+```bash
+.venv/bin/pip install --force-reinstall \
+  "gpt-researcher @ git+https://github.com/Austin-Li7/gpt-researcher.git@<sha>"
+.venv/bin/pip install --force-reinstall --no-deps .
+```
+
+Before merging a pin bump, run `pytest -q`, `ruff check src tests`, and one live
+Notion run; confirm `research_brief.json` still has at least 10 sources.
+
 ### Configure your OpenAI API key
 
 Copy `.env.example` to `.env` and fill in `OPENAI_API_KEY`:

@@ -1,3 +1,4 @@
+import logging
 import os
 from dataclasses import dataclass
 from datetime import datetime
@@ -60,6 +61,7 @@ ARTIFACTS = {
     "critic_review": "critic_review.json",
     "final_report": "final_report.md",
 }
+LOGGER = logging.getLogger(__name__)
 
 ModelT = TypeVar("ModelT", bound=BaseModel)
 
@@ -94,6 +96,21 @@ def _select_research_adapter(client: LLMClient) -> ResearchAdapter:
         return GPTResearcherAdapter()
 
     return OpenAIResearchAdapter(client=client)
+
+
+def _run_research_with_fallback(raw_input: RawInput, client: LLMClient) -> Any:
+    adapter = _select_research_adapter(client=client)
+    try:
+        return adapter.research(raw_input)
+    except Exception as exc:
+        if isinstance(adapter, GPTResearcherAdapter):
+            LOGGER.warning(
+                "Research backend gpt_researcher failed (%s); falling back to stub "
+                "OpenAIResearchAdapter for this run.",
+                exc,
+            )
+            return OpenAIResearchAdapter(client=client).research(raw_input)
+        raise
 
 
 def run_analysis(
@@ -195,7 +212,7 @@ def run_analysis(
         write_json_artifact(run_dir / path, deck_artifact)
         record("deck_extractor", path, raw_input.files)
 
-    research = _select_research_adapter(client=client).research(raw_input)
+    research = _run_research_with_fallback(raw_input, client=client)
     write_json_artifact(run_dir / "research_brief.json", research)
     record("research", "research_brief.json", raw_input)
 
