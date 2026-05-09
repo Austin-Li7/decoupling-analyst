@@ -98,9 +98,17 @@ def _select_research_adapter(client: LLMClient) -> ResearchAdapter:
     return OpenAIResearchAdapter(client=client)
 
 
-def _run_research_with_fallback(raw_input: RawInput, client: LLMClient) -> Any:
+def _run_research_with_fallback(
+    raw_input: RawInput,
+    client: LLMClient,
+    *,
+    run_id: str = "",
+    run_dir: Path | None = None,
+) -> Any:
     adapter = _select_research_adapter(client=client)
     try:
+        if isinstance(adapter, GPTResearcherAdapter) and run_dir is not None:
+            return adapter.research_for_run(raw_input, run_id=run_id, run_dir=run_dir)
         return adapter.research(raw_input)
     except Exception as exc:
         if isinstance(adapter, GPTResearcherAdapter):
@@ -212,7 +220,12 @@ def run_analysis(
         write_json_artifact(run_dir / path, deck_artifact)
         record("deck_extractor", path, raw_input.files)
 
-    research = _run_research_with_fallback(raw_input, client=client)
+    research = _run_research_with_fallback(
+        raw_input,
+        client=client,
+        run_id=run_id,
+        run_dir=run_dir,
+    )
     write_json_artifact(run_dir / "research_brief.json", research)
     record("research", "research_brief.json", raw_input)
 
