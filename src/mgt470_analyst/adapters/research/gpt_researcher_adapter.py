@@ -50,6 +50,10 @@ class _URLLivenessResult:
     status: str
 
 
+class RetrievalEmptyError(RuntimeError):
+    """Raised when GPT Researcher completes without retrieving any source URLs."""
+
+
 class GPTResearcherAdapter(ResearchAdapter):
     """Wrap Austin's gpt-researcher fork behind the sync ResearchAdapter API."""
 
@@ -96,6 +100,12 @@ class GPTResearcherAdapter(ResearchAdapter):
         )
 
         await _maybe_await(researcher.conduct_research())
+        visited_urls = [str(url) for url in list(getattr(researcher, "visited_urls", []) or [])]
+        if not visited_urls:
+            raise RetrievalEmptyError(
+                "GPT Researcher completed conduct_research() with 0 visited URLs; "
+                "refusing to write an ungrounded report."
+            )
         report = await _maybe_await(researcher.write_report())
         source_urls = await _maybe_await(researcher.get_source_urls())
         provenance_path = run_dir / "research_provenance.json" if run_dir else None
@@ -105,6 +115,7 @@ class GPTResearcherAdapter(ResearchAdapter):
             raw_input,
             run_id=run_id,
             provenance_path=provenance_path,
+            visited_urls_from_retriever=visited_urls,
         )
 
     def _build_query(self, raw_input: RawInput) -> str:
@@ -115,7 +126,7 @@ class GPTResearcherAdapter(ResearchAdapter):
             f"disruption analysis.{ticker}{website} Use broad public web sources: "
             "official company pages, pricing pages, docs or API pages, credible news, "
             "reviews, customer discussions, and competitor comparisons. Do not add site: "
-            "restrictions or narrow boolean operators; DuckDuckGo should be able to find "
+            "restrictions or narrow boolean operators; the retriever should be able to find "
             "ordinary public pages. Gather cited facts about the customer value chain "
             "(customer, job-to-be-done, friction), monetization and unit economics if "
             "disclosed, competitors and bundles, signs of decoupling, reported customer "
@@ -130,7 +141,9 @@ class GPTResearcherAdapter(ResearchAdapter):
         *,
         run_id: str = "",
         provenance_path: Path | None = None,
+        visited_urls_from_retriever: list[str] | None = None,
     ) -> ResearchBrief:
+        visited_urls_from_retriever = visited_urls_from_retriever or []
         report_cited_urls = _extract_source_urls(report)
         searched_urls = _extract_source_urls(sources)
         union_pre_liveness = _union_pre_liveness_urls(report_cited_urls, searched_urls)
@@ -140,6 +153,7 @@ class GPTResearcherAdapter(ResearchAdapter):
             company_name=raw_input.company_name,
             run_id=run_id,
             searched_urls=searched_urls,
+            visited_urls_from_retriever=visited_urls_from_retriever,
             report_cited_urls=report_cited_urls,
             union_pre_liveness=union_pre_liveness,
             post_liveness_kept_urls=urls,
@@ -180,11 +194,22 @@ class GPTResearcherAdapter(ResearchAdapter):
     def _apply_cost_guardrails(self) -> None:
         # Keep live research bounded near Austin's Phase 2 target of <= $1 per
         # research phase. GPT Researcher reads these env vars in current forks.
-        if not os.getenv("TAVILY_API_KEY"):
-            os.environ.setdefault("RETRIEVER", "duckduckgo")
+        if os.getenv("TAVILY_API_KEY"):
+            os.environ["RETRIEVER"] = "tavily"
+        elif os.getenv("MGT470_ALLOW_UNGROUNDED_RESEARCH") == "1":
+            os.environ["RETRIEVER"] = "duckduckgo"
+            LOGGER.warning(
+                "DuckDuckGo retriever is known to return 0 results in many "
+                "environments; runs may produce ungrounded briefs. Set TAVILY_API_KEY "
+                "for grounded research."
+            )
+        else:
+            raise RuntimeError(
+                "No TAVILY_API_KEY set; live research will not be grounded. Set "
+                "TAVILY_API_KEY or MGT470_ALLOW_UNGROUNDED_RESEARCH=1 to override."
+            )
         os.environ.setdefault("MAX_ITERATIONS", str(self.max_iterations))
         os.environ.setdefault("MAX_SUBTOPICS", str(self.max_subtopics))
-        os.environ.setdefault("MAX_SEARCH_RESULTS_PER_QUERY", "5")
 
 
 def _load_gpt_researcher() -> Any:
@@ -258,17 +283,19 @@ def _write_research_provenance_if_enabled(
     company_name: str,
     run_id: str,
     searched_urls: list[str],
+    visited_urls_from_retriever: list[str],
     report_cited_urls: list[str],
     union_pre_liveness: list[str],
     post_liveness_kept_urls: list[str],
     post_liveness_dropped: list[_URLLivenessResult],
 ) -> None:
-    if os.getenv("MGT470_RESEARCH_PROVENANCE", "0") != "1" or path is None:
+    if path is None:
         return
     artifact = _build_research_provenance(
         company_name=company_name,
         run_id=run_id,
         searched_urls=searched_urls,
+        visited_urls_from_retriever=visited_urls_from_retriever,
         report_cited_urls=report_cited_urls,
         union_pre_liveness=union_pre_liveness,
         post_liveness_kept_urls=post_liveness_kept_urls,
@@ -287,17 +314,18 @@ def _build_research_provenance(
     company_name: str,
     run_id: str,
     searched_urls: list[str],
+    visited_urls_from_retriever: list[str],
     report_cited_urls: list[str],
     union_pre_liveness: list[str],
     post_liveness_kept_urls: list[str],
     post_liveness_dropped: list[_URLLivenessResult],
 ) -> dict[str, Any]:
-    searched_set = set(searched_urls)
+    retriever_set = set(visited_urls_from_retriever)
     report_urls = [
         {
             "url": url,
             "provenance": "in_search_results"
-            if url in searched_set
+            if url in retriever_set
             else "only_in_report",
         }
         for url in report_cited_urls
@@ -320,13 +348,14 @@ def _build_research_provenance(
         if report_urls
         else 0.0,
         "searched_urls": searched_urls,
+        "visited_urls_from_retriever": visited_urls_from_retriever,
         "report_cited_urls": report_urls,
         "post_liveness_kept_urls": post_liveness_kept_urls,
         "post_liveness_dropped_urls": [
             {
                 "url": result.url,
                 "status": result.status,
-                "was_in_search_results": result.url in searched_set,
+                "was_in_search_results": result.url in retriever_set,
             }
             for result in post_liveness_dropped
         ],

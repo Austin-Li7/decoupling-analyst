@@ -1,3 +1,10 @@
+> **⚠️ INVALID — DO NOT TREAT AS GROUNDED CASE STUDY**  
+> This run was produced before the retriever bug was found. GPT Researcher's
+> DuckDuckGo retriever returned 0 URLs across every sub-query. All "sources"
+> in `research_brief.json` are LLM-generated citation strings, not retrieved
+> evidence. See `cases/README.md` for the post-mortem note. This case must be
+> re-run with Tavily before being counted toward the path-C 10-case target.
+
 # Case Review: Liquid Death
 
 **Run ID:** liquid-death-20260508-205408

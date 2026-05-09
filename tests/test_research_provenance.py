@@ -11,7 +11,7 @@ from mgt470_analyst.schemas.raw_input import RawInput
 
 
 def test_provenance_classifies_report_only_urls() -> None:
-    searched_urls = [
+    visited_urls = [
         "https://example.com/a",
         "https://example.com/b",
         "https://example.com/c",
@@ -26,7 +26,8 @@ def test_provenance_classifies_report_only_urls() -> None:
     provenance = _build_research_provenance(
         company_name="Acme",
         run_id="acme-20260509-120000",
-        searched_urls=searched_urls,
+        searched_urls=[],
+        visited_urls_from_retriever=visited_urls,
         report_cited_urls=report_urls,
         union_pre_liveness=report_urls,
         post_liveness_kept_urls=report_urls[:3],
@@ -57,10 +58,10 @@ def test_provenance_classifies_report_only_urls() -> None:
             "was_in_search_results": False,
         }
     ]
+    assert provenance["visited_urls_from_retriever"] == visited_urls
 
 
-def test_provenance_disabled_by_default(monkeypatch, tmp_path: Path) -> None:
-    monkeypatch.delenv("MGT470_RESEARCH_PROVENANCE", raising=False)
+def test_provenance_writes_by_default(monkeypatch, tmp_path: Path) -> None:
     monkeypatch.setenv("MGT470_URL_LIVENESS", "0")
     artifact_path = tmp_path / "research_provenance.json"
 
@@ -70,13 +71,15 @@ def test_provenance_disabled_by_default(monkeypatch, tmp_path: Path) -> None:
         raw_input=RawInput(company_name="Acme"),
         run_id="acme-20260509-120000",
         provenance_path=artifact_path,
+        visited_urls_from_retriever=["https://example.com/a"],
     )
 
-    assert not artifact_path.exists()
+    artifact = json.loads(artifact_path.read_text(encoding="utf-8"))
+    assert artifact["visited_urls_from_retriever"] == ["https://example.com/a"]
+    assert artifact["report_only_url_ratio"] == 0.0
 
 
-def test_provenance_enabled_writes_artifact(monkeypatch, tmp_path: Path, caplog) -> None:
-    monkeypatch.setenv("MGT470_RESEARCH_PROVENANCE", "1")
+def test_provenance_writes_artifact_schema(monkeypatch, tmp_path: Path, caplog) -> None:
     monkeypatch.setenv("MGT470_URL_LIVENESS", "0")
     artifact_path = tmp_path / "research_provenance.json"
     caplog.set_level(logging.INFO, logger="mgt470_analyst.adapters.research.gpt_researcher_adapter")
@@ -90,12 +93,14 @@ def test_provenance_enabled_writes_artifact(monkeypatch, tmp_path: Path, caplog)
         raw_input=RawInput(company_name="Acme"),
         run_id="acme-20260509-120000",
         provenance_path=artifact_path,
+        visited_urls_from_retriever=["https://example.com/a"],
     )
 
     artifact = json.loads(artifact_path.read_text(encoding="utf-8"))
     assert artifact["company_name"] == "Acme"
     assert artifact["run_id"] == "acme-20260509-120000"
     assert artifact["searched_urls_count"] == 1
+    assert artifact["visited_urls_from_retriever"] == ["https://example.com/a"]
     assert artifact["report_cited_urls_count"] == 2
     assert artifact["union_pre_liveness_count"] == 2
     assert artifact["report_urls_in_search_results"] == 1

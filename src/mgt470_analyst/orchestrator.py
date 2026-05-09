@@ -113,8 +113,9 @@ def _run_research_with_fallback(
     except Exception as exc:
         if isinstance(adapter, GPTResearcherAdapter):
             LOGGER.warning(
-                "Research backend gpt_researcher failed (%s); falling back to stub "
-                "OpenAIResearchAdapter for this run.",
+                "Research backend gpt_researcher failed (%s: %s); falling back to "
+                "stub OpenAIResearchAdapter for this run.",
+                exc.__class__.__name__,
                 exc,
             )
             return OpenAIResearchAdapter(client=client).research(raw_input)
