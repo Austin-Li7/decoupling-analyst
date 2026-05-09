@@ -150,6 +150,18 @@ To refresh archived Markdown after renderer changes, run
 local Obsidian vault, run `scripts/sync_to_obsidian.sh`; set
 `OBSIDIAN_MGT470_CASES_DIR` to override the default vault path.
 
+## Calibration
+
+Calibration means comparing system output against Teixeira's own published
+course/book analysis, field by field, rather than judging plausibility alone.
+The current calibration set covers Birchbox, Trov, and OLX Brazil.
+
+See [cases/calibration/README.md](cases/calibration/README.md) for the
+aggregate table and per-case reports. Of 7 fields per case across 3
+Teixeira-taught cases, 12/21 fields match exactly (57%), with another 5/21
+semantically adjacent (81% exact-or-partial). The largest surfaced gap is that
+the pipeline needs a first-class coupling lens, not only decoupling.
+
 ## Testing
 
 Tests run in offline mode automatically (no API key required):

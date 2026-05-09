@@ -1,0 +1,35 @@
+{
+  "value_creation": "“OLX Deal Protection” decouples and improves the weakest-link activity in OLX’s CVC—arranging payment and managing trust/safety risk—by adding optional identity verification + automated risk flags + a protected payment hold/release step at the moment of agreement in chat, without forcing users to change discovery/negotiation behavior (E7)(E9)(E12). This directly targets known value-eroding pain in trust/payment security (E9) while leveraging OLX’s existing scale/traffic (60M MAUs; 7M new listings/month) to distribute the feature in-product at low incremental acquisition cost (E6). This aligns with Teixeira’s business-model framing of “how do you create value… and then how do you capture some of this value… in the form of profits, and from whom do you capture this value” (talks/contraminds-podcast-with-thales-teixeira.md) (E14).",
+  "value_capture": "Capture via transaction-stage monetization: charge an optional fee when users choose protected payment/verification at checkout—i.e., shifting some monetization from listing/premium placement into the transaction moment where incremental value is clearest (E8)(E9). The viability hinges on (assumption) take-rate × transaction volume driven by existing OLX matching activity (E7) being sufficient to cover variable costs (payment processing, fraud/chargebacks, support, verification) and still produce positive contribution margin; otherwise it becomes a high-cost feature that users expect for free (low confidence; cost structure not in evidence).",
+  "value_erosion_remaining": "Even with deal protection, major value erosion remains in logistics/hand-off coordination and post-transaction disputes because OLX’s model still includes user-coordinated pickup/delivery and limited after-sales support (E7)(E9). Fraud risk can also shift to off-platform behavior if users bypass the protected flow after negotiating in chat (E12) (assumption; bypass rate not in evidence).",
+  "payer": "Primarily the transacting user(s) opting into protection at checkout (buyer fee, seller fee, or split), with OLX’s legacy payer base still primarily sellers for listing/premium placement (E8). To preserve the core classifieds growth engine, the protection feature should remain optional and not gate free posting/messaging (assumption; core-engine constraints not quantified in evidence).",
+  "pricing_model": "Add-on per-transaction fee (e.g., fixed fee or percentage) triggered only when “Deal Protection” is selected, layered on top of the existing freemium classifieds monetization (free listing + paid premium placements/features) (E8). Optionally (later), tiered bundles for professional sellers could include a monthly allowance of protected transactions (assumption; seller segmentation not in evidence).",
+  "cac_risks": [
+    "Paid marketing CAC can become uneconomic if OLX tries to acquire net-new users specifically for “protected payments” rather than cross-selling to existing OLX traffic (E6)(E7) (assumption; channel mix not in evidence).",
+    "Two-sided activation cost: if protection requires both parties to adopt (or verify identity), adoption friction can reduce conversion, raising effective CAC per protected transaction even if top-of-funnel is “free” (E12) (assumption; flow requirements not in evidence).",
+    "Trust product paradox: if incidents occur early (fraud/chargeback or dispute mishandling), reputational damage can raise future CAC across core classifieds, not just the add-on (E9) (assumption; brand sensitivity not quantified).",
+    "Incumbent/competitor recoupling pressure: full-stack players can bundle payments/logistics into their marketplaces, pushing OLX to spend more to educate users or subsidize fees (E4)(E8) (assumption; competitor tactics not detailed in evidence list)."
+  ],
+  "ltv_drivers": [
+    "Higher repeat rate: reducing fear/friction at the “most stressful” step (trust/payment) can increase repeat transacting and retention, raising CLV from existing MAUs (E6)(E9) (assumption; elasticity not in evidence).",
+    "Higher monetization per active user: transaction fees add a new value-capture point beyond paid listings/premium placement (E8).",
+    "Data flywheel: verification + risk signals can improve matching quality and platform trust over time, potentially lifting overall engagement and willingness to pay for premium features (E7)(E9) (assumption; model performance not in evidence).",
+    "Seller conversion lift: sellers may accept paying more for premium placement/listing features if protected checkout increases close rates, indirectly increasing existing revenue streams (E8)(E9) (assumption; cross-effect not measured)."
+  ],
+  "unit_economics_concerns": [
+    "Gross margin volatility: payment processing fees + chargebacks + fraud losses + customer support/dispute handling can make per-transaction contribution margin thin or negative unless pricing/take-rate is high enough (E8)(E9) (low confidence; no cost data in evidence).",
+    "Adverse selection: highest-risk transactions may be the ones that opt into protection, concentrating fraud/claims costs and lowering gross margin unless risk-pricing or rules-based limits exist (E9) (assumption; selection effects not in evidence).",
+    "Operational burden creep (layering discipline risk): moving from matching into escrow/verification increases compliance, support, and dispute resolution responsibilities, which can erode the core model’s profitability if scaled too quickly (E8)(E9) (assumption; org capability not in evidence).",
+    "Cannibalization risk: if users come to expect protection as default, willingness to pay for existing premium placements/features could decline, hurting the current monetization base (E8) (assumption; price sensitivity not in evidence).",
+    "CLV must exceed CAC on the add-on: the strategy is viable only if incremental CLV from protected-flow users (transaction fee gross profit + increased retention/ARPU) is meaningfully greater than incremental CAC (primarily product adoption/education + any paid reactivation) and the payback period is short enough to fund growth without external subsidy (E6)(E8) (assumption; profitability constraints not quantified)."
+  ],
+  "evidence_ids": [
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E12",
+    "E13"
+  ]
+}

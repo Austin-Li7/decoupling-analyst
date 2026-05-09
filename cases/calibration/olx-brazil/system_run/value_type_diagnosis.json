@@ -1,0 +1,83 @@
+{
+  "activities": [
+    {
+      "activity_id": "A1",
+      "value_type": "create",
+      "reasoning": "Deciding to sell and setting expectations is a customer value-creating activity because it enables the seller to convert unused items into cash and frames the rest of the workflow; OLX’s positioning as a marketplace supports this seller-led decision process (E7, E12). This step imposes low direct monetary cost but moderate time/effort to set realistic expectations, with middling satisfaction tied to outcome uncertainty (E7).",
+      "money_cost": 1,
+      "time_cost": 2,
+      "effort_cost": 3,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E7",
+        "E12"
+      ]
+    },
+    {
+      "activity_id": "A2",
+      "value_type": "create",
+      "reasoning": "Creating and publishing a listing is value-creating because OLX’s listing flow and large audience make it the primary mechanism to reach buyers quickly, as reflected in OLX’s high listing and user volumes (E6, E7, E8). The money cost is minimal but the activity requires moderate time and effort (photos, description), producing moderate satisfaction when visibility is achieved (E6, E7).",
+      "money_cost": 1,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E6",
+        "E7",
+        "E8"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "value_type": "create",
+      "reasoning": "Discovery is value-creating because OLX’s search, filters, and recommendation systems efficiently generate buyer attention, a core disrupted activity highlighted in the analysis (E7, E11). Monetary cost to the seller is low while time and effort to benefit are moderate; satisfaction is relatively high when visibility and leads occur (E7, E11).",
+      "money_cost": 1,
+      "time_cost": 2,
+      "effort_cost": 2,
+      "satisfaction": 4,
+      "evidence_ids": [
+        "E7",
+        "E11"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "value_type": "create",
+      "reasoning": "Communication and negotiation via OLX in-app messaging creates value by enabling direct matching and deal closure without intermediaries, an explicit decoupling achieved by OLX (E7, E12). This reduces monetary friction but requires moderate time and effort from sellers; satisfaction depends on negotiation outcomes and can be mixed (E7, E12).",
+      "money_cost": 1,
+      "time_cost": 3,
+      "effort_cost": 3,
+      "satisfaction": 3,
+      "evidence_ids": [
+        "E7",
+        "E12"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "value_type": "erode",
+      "reasoning": "Payment arrangement and trust/safety are value-eroding pain points because transactions are mostly handled off-platform and OLX faces known issues around fraud and payment security in the CVC (E7, E9). This activity imposes higher money risk, time, and effort for sellers and lowers satisfaction due to scam/fraud exposure (E7, E9).",
+      "money_cost": 3,
+      "time_cost": 3,
+      "effort_cost": 4,
+      "satisfaction": 2,
+      "evidence_ids": [
+        "E7",
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "value_type": "erode",
+      "reasoning": "Coordinating delivery or local pickup is value-eroding because logistics and safe handoff remain user-coordinated pain points in OLX’s CVC, reducing convenience and increasing risk (E7, E9). Sellers face moderate-to-high time and effort burdens and lower satisfaction due to safety and logistical friction (E7, E9).",
+      "money_cost": 3,
+      "time_cost": 4,
+      "effort_cost": 4,
+      "satisfaction": 2,
+      "evidence_ids": [
+        "E7",
+        "E9"
+      ]
+    }
+  ]
+}

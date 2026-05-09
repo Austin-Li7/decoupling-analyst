@@ -1,0 +1,75 @@
+{
+  "company_name": "OLX Brazil",
+  "run_id": "olx-brazil-20260509-034428",
+  "searched_urls_count": 0,
+  "report_cited_urls_count": 5,
+  "union_pre_liveness_count": 13,
+  "report_urls_in_search_results": 0,
+  "report_urls_only_in_report": 5,
+  "report_only_url_ratio": 1.0,
+  "searched_urls": [],
+  "research_sources_urls": [
+    "https://summaries.com/blog/unlocking-the-customer-value-chain",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/B07MWBS4WS",
+    "https://www.youtube.com/watch?v=m6uGXFN3E18",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X",
+    "https://davidtoyamat.medium.com/unlocking-the-customer-value-chain-how-decoupling-drives-consumer-disruption-329e7dca24d3",
+    "https://4thoption.substack.com/p/91thales-teixeira-decoupling-the-d08",
+    "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "https://www.hks.harvard.edu/centers/mrcbg/programs/growthpolicy/unlocking-customer-value-chain-how-decoupling-drives-consumer",
+    "https://www.eoschool.io/thales-teixeira-decoupling",
+    "https://www.inc.com/soren-kaplan/want-digital-disruption-decouple-customer-experience.html",
+    "https://www.youtube.com/watch?v=ea-XaLHfpS4",
+    "https://www.sorenkaplan.com/decouple-the-value-chain-to-drive-digital-disruption/",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling-ebook/dp/B07D6BD87K"
+  ],
+  "visited_urls_from_retriever": [],
+  "prefetched_url_count": 13,
+  "report_cited_urls": [
+    {
+      "url": "https://www.prosus.com/investors/reports/annual-reports/",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://tecnologia.uol.com.br/noticias/",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://valor.globo.com/empresas/",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://www.reuters.com/business/",
+      "provenance": "only_in_report"
+    },
+    {
+      "url": "https://g.co/booksYT/AQAAAEAM_we_GM",
+      "provenance": "only_in_report"
+    }
+  ],
+  "post_liveness_kept_urls": [
+    "https://summaries.com/blog/unlocking-the-customer-value-chain",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/B07MWBS4WS",
+    "https://www.youtube.com/watch?v=m6uGXFN3E18",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X",
+    "https://4thoption.substack.com/p/91thales-teixeira-decoupling-the-d08",
+    "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "https://www.hks.harvard.edu/centers/mrcbg/programs/growthpolicy/unlocking-customer-value-chain-how-decoupling-drives-consumer",
+    "https://www.eoschool.io/thales-teixeira-decoupling",
+    "https://www.youtube.com/watch?v=ea-XaLHfpS4",
+    "https://www.sorenkaplan.com/decouple-the-value-chain-to-drive-digital-disruption/",
+    "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling-ebook/dp/B07D6BD87K"
+  ],
+  "post_liveness_dropped_urls": [
+    {
+      "url": "https://davidtoyamat.medium.com/unlocking-the-customer-value-chain-how-decoupling-drives-consumer-disruption-329e7dca24d3",
+      "status": "403",
+      "was_in_search_results": true
+    },
+    {
+      "url": "https://www.inc.com/soren-kaplan/want-digital-disruption-decouple-customer-experience.html",
+      "status": "403",
+      "was_in_search_results": true
+    }
+  ]
+}

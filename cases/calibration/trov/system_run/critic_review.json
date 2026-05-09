@@ -1,0 +1,132 @@
+{
+  "overall_score": 2.6,
+  "discipline_scores": [
+    {
+      "discipline": "preserve_core_engine",
+      "score": 3,
+      "rationale": "The analyst correctly flags that Trov has pivoted toward embedded/partner integrations (E6, E7, E9) and recommends not reverting to a standalone B2C app, which is directionally consistent with the evidence. However, they never actually identify a proven “core growth engine” (e.g., a working distribution loop, repeatable partner acquisition channel, or demonstrated integration-led retention); the evidence only says Trov pivoted, not that it is working or growing (E6, E7, E9)."
+    },
+    {
+      "discipline": "layered_evolution",
+      "score": 4,
+      "rationale": "The sequencing is mostly aligned with Teixeira’s doctrine: start with a low-risk software wedge, then add intermediation/claims modules later, and explicitly warns against jumping to risk-bearing/full-stack insurance (E10, E11). The weakness is that the proposed layer-(a) wedge (Coverage Explainer/Comparator SDK) is not evidenced as the right weak-link activity for Trov specifically, so the “layering” is well-structured but perched on an unproven starting point (E8, E10, E11)."
+    },
+    {
+      "discipline": "unit_economics",
+      "score": 1,
+      "rationale": "Unit economics are largely handwaved. The analyst asserts enterprise CAC will be high and proposes a CLV≥3×CAC hurdle, but provides no evidence for sales-cycle length, implementation cost, margins, pricing power, or attach-rate impact (E6, E7). This is framed as an assumption, but the recommendation still leans on it without proposing concrete validation metrics (e.g., integration hours, conversion lift thresholds, churn/renewal dynamics)."
+    },
+    {
+      "discipline": "explicit_dont_do",
+      "score": 4,
+      "rationale": "The analysis includes a clear do-not-do list (don’t revert to broad B2C, don’t jump to full-stack underwriting, don’t build a generalized comparison marketplace) and ties these to focus and risk concerns. The main issue is evidentiary: balance-sheet/underwriting risk and “split focus” are reasonable, but not specifically supported by the provided evidence about Trov’s current constraints or finances (E6, E7, E8)."
+    },
+    {
+      "discipline": "moat_is_relationship",
+      "score": 2,
+      "rationale": "The analyst gestures at owning telemetry/data and embedding inside partner flows, but does not show (from evidence) that Trov can own the end-customer relationship in a B2B2C context, nor how data ownership would be contractually or technically secured (E6, E7). The recommendation risks conflating “being embedded” with “owning the customer relationship,” which are different in partner-distributed insurance."
+    }
+  ],
+  "weakest_aspect": "unit_economics",
+  "citation_issues": [
+    {
+      "location": "Final thesis / Why now: “the highest-friction step in that embedded funnel is often helping end-users understand and compare coverage…”",
+      "cited_evidence_ids": [
+        "E8",
+        "E10",
+        "E11"
+      ],
+      "issue": "None of these sources establish that research/compare is the highest-friction step in embedded insurance, nor that it is a dominant pain point. E8 merely lists value-chain stages; E10–E11 define decoupling generally without insurance-specific funnel friction evidence.",
+      "severity": "high"
+    },
+    {
+      "location": "Upstream artifacts / Top weak link: “Research/compare… structurally easy to decouple… switching friction is low…”",
+      "cited_evidence_ids": [
+        "E8",
+        "E10",
+        "E11"
+      ],
+      "issue": "E8 provides a generic stage list and mentions where Trov initially played; it does not justify low switching friction or “easy to decouple.” E10–E11 provide general decoupling theory but no factual support for this activity being low-friction in insurance.",
+      "severity": "high"
+    },
+    {
+      "location": "Staged actions / Layer (a): “plain-language summaries, side-by-side terms… instrument every interaction as first-party product telemetry owned by Trov”",
+      "cited_evidence_ids": [
+        "E8",
+        "E10",
+        "E11"
+      ],
+      "issue": "No evidence supports Trov’s ability to legally/contractually own “first-party telemetry” in partner surfaces, nor that partners would allow it. This is a major, ungrounded assumption disguised as an execution detail.",
+      "severity": "high"
+    },
+    {
+      "location": "Thesis: “Coverage Explainer + Comparator SDK… (E6, E7, E8, E10, E11)”",
+      "cited_evidence_ids": [
+        "E6",
+        "E7",
+        "E8",
+        "E10",
+        "E11"
+      ],
+      "issue": "E6–E7 support that Trov pivoted to embedded insurance and has integration tech; they do not support that a comparator/explainer SDK is the best wedge product. E8 does not describe a comparator opportunity; E10–E11 are generic framework definitions.",
+      "severity": "medium"
+    },
+    {
+      "location": "Biggest risk: “carriers/platforms… can copy coverage explanation/comparison UX… unless it develops defensible data/insights and deep partner integration switching costs”",
+      "cited_evidence_ids": [
+        "E10",
+        "E11"
+      ],
+      "issue": "E10–E11 do not discuss recoupling dynamics, copying risk, or switching costs in this specific market; they only describe decoupling in general terms. The risk is plausible, but it is not evidenced here.",
+      "severity": "medium"
+    },
+    {
+      "location": "Do-not-do: “Do not jump to Layer (c) full-stack insurance (underwriting/risk-bearing)… creates balance-sheet exposure… not supported by the current evidence base”",
+      "cited_evidence_ids": [
+        "E6",
+        "E7",
+        "E8"
+      ],
+      "issue": "The conclusion may be strategically sensible, but the evidence provided does not mention Trov’s balance sheet, regulatory posture, capital constraints, or prior underwriting role. The analyst is importing a generic insurtech risk argument without evidence in the record.",
+      "severity": "medium"
+    },
+    {
+      "location": "Unit economics claim: “sales cycles and integrations are likely expensive in embedded insurance (E6, E7)”",
+      "cited_evidence_ids": [
+        "E6",
+        "E7"
+      ],
+      "issue": "E6–E7 state Trov pivoted to embedded insurance and enables partner integration; they do not provide any factual basis about sales cycle duration, integration cost, or margin structure. This is asserted as ‘likely’ but still drives the economics logic.",
+      "severity": "medium"
+    },
+    {
+      "location": "AI/digital leverage: “AI/digital leverage is very high here (personalized comparison, plain-language explanation…)”",
+      "cited_evidence_ids": [
+        "E11"
+      ],
+      "issue": "E11 says decouplers leverage technology to reduce friction; it does not mention AI, personalization, or explainability capabilities, nor that these are feasible/allowed in regulated insurance disclosures. The AI claim is speculative relative to evidence.",
+      "severity": "low"
+    }
+  ],
+  "revision_suggestions": [
+    "Separate “Trov has pivoted to embedded” from “embedded is the core growth engine.” Add evidence-backed indicators of what is actually working (partner renewal/expansion, integration velocity, repeatable carrier connectivity) or explicitly label the engine as unknown and make the first step an evidence-gathering sprint (E6, E7, E9).",
+    "Re-validate the weak link with partner/user evidence. E8 provides only a generic CVC list; you need proof that Research/Compare is the biggest pain in embedded flows versus onboarding, disclosures, quote/bind latency, or claims handling (E8).",
+    "Tighten the decoupling wedge to something the evidence more directly implies Trov already does well: partner integration into awareness/purchase stages (E7, E9). If proposing a UX comparator, specify why partners cannot solve it themselves and what proprietary input Trov uniquely has.",
+    "Replace handwavy unit economics with a minimal model to be validated: required conversion lift or premium volume to justify a per-partner platform fee; implementation hours per partner; support load; renewal probability. Keep all numbers as variables if none are evidenced (E6, E7).",
+    "Clarify the relationship/moat story in B2B2C: what data is owned by Trov vs the platform partner vs the carrier, and what contractual hooks create switching costs. Remove “first-party telemetry owned by Trov” unless it is an explicit, negotiated requirement.",
+    "Add a recoupling analysis grounded in insurance realities: who exactly would copy (carriers, MGAs, embedded orchestration platforms), and what prevents it (carrier connectivity breadth, compliance tooling, configuration complexity). Right now the recoupling narrative is generic to Teixeira but not evidenced for this case (E10, E11)."
+  ],
+  "would_disagree_with_thesis": true,
+  "disagreement_summary": "Given the same evidence, I would not anchor the pivot on a “Coverage Explainer + Comparator” wedge, because there is no evidence that Research/Compare is the dominant pain point or that Trov has a unique advantage there (E8, E10, E11). A more evidence-consistent thesis is: preserve and productize Trov’s embedded integration capability by standardizing partner/carrier connectivity for the Awareness→Purchase stages (quote/bind workflow tooling, configuration, disclosure/compliance rails) that partners must integrate and are less easily recoupled than UI explanations (E7, E9). Then, after proving partner unit economics, selectively expand into post-purchase modules (use/management or claims routing) where Trov historically played (E8, E12).",
+  "evidence_ids": [
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12",
+    "E13"
+  ]
+}

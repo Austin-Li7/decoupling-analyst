@@ -1,0 +1,97 @@
+{
+  "run_id": "olx-brazil-20260509-034428",
+  "company_name": "OLX Brazil",
+  "total_input_tokens": 63673,
+  "total_output_tokens": 29269,
+  "total_cost_usd": 0.396101,
+  "by_module": {
+    "business_model": {
+      "input_tokens": 6905,
+      "output_tokens": 2278,
+      "cost_usd": 0.031411,
+      "model": "gpt-5.2"
+    },
+    "case_perspective": {
+      "input_tokens": 2430,
+      "output_tokens": 489,
+      "cost_usd": 0.007927,
+      "model": "gpt-5.2"
+    },
+    "company_profile": {
+      "input_tokens": 2664,
+      "output_tokens": 1130,
+      "cost_usd": 0.002926,
+      "model": "gpt-5-mini"
+    },
+    "competitive_response": {
+      "input_tokens": 6046,
+      "output_tokens": 2250,
+      "cost_usd": 0.030058,
+      "model": "gpt-5.2"
+    },
+    "critic": {
+      "input_tokens": 4348,
+      "output_tokens": 2406,
+      "cost_usd": 0.029495,
+      "model": "gpt-5.2"
+    },
+    "cvc": {
+      "input_tokens": 4768,
+      "output_tokens": 1169,
+      "cost_usd": 0.01765,
+      "model": "gpt-5.2"
+    },
+    "decoupling": {
+      "input_tokens": 6082,
+      "output_tokens": 1971,
+      "cost_usd": 0.027313,
+      "model": "gpt-5.2"
+    },
+    "final_judgment": {
+      "input_tokens": 7520,
+      "output_tokens": 2156,
+      "cost_usd": 0.03096,
+      "model": "gpt-5.2"
+    },
+    "final_report_zh": {
+      "input_tokens": 9848,
+      "output_tokens": 10616,
+      "cost_usd": 0.118469,
+      "model": "gpt-5.2"
+    },
+    "gpt_researcher_internal": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.05563,
+      "note": "GPT Researcher's own LLM calls (sub-query gen, scrape summarization, report writing)",
+      "model": "gpt-researcher"
+    },
+    "lens_fit": {
+      "input_tokens": 2178,
+      "output_tokens": 726,
+      "cost_usd": 0.001997,
+      "model": "gpt-5-mini"
+    },
+    "research_brief": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "cost_usd": 0.0
+    },
+    "value_types": {
+      "input_tokens": 2520,
+      "output_tokens": 1200,
+      "cost_usd": 0.00303,
+      "model": "gpt-5-mini"
+    },
+    "weak_links": {
+      "input_tokens": 8364,
+      "output_tokens": 2878,
+      "cost_usd": 0.039235,
+      "model": "gpt-5.2"
+    }
+  },
+  "notes": [
+    "Costs computed from per-call usage objects. GPT Researcher internal cost is read from researcher.research_costs after run.",
+    "Embedding/RAG costs outside LLMClient are not captured in this artifact."
+  ]
+}

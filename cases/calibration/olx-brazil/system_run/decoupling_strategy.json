@@ -1,0 +1,52 @@
+{
+  "primary_decoupling": {
+    "activity_to_decouple": "Arrange payment method and manage trust/safety risk (fraud concerns, identity confidence, payment security)",
+    "from_incumbent_bundle": "Today this stage is effectively bundled into OLX’s classifieds matching flow but executed mostly off-platform by the buyer and seller via ad-hoc payment/trust arrangements, with OLX primarily supporting earlier matching steps (E7) while trust/payment remains a key pain point (E9).",
+    "customer_pain": "Buyers and sellers must improvise how to pay and stay safe (identity uncertainty, fraud/scam risk, and insecure payment methods), adding time/effort and increasing perceived risk at the moment of closing the deal (E9), especially because the transaction/payment step is not consistently handled in-product (E7).",
+    "new_offering": "Launch an optional “OLX Deal Protection” button inside chat that adds identity verification and automated risk flags plus a simple protected payment flow (e.g., funds held until confirmed handoff or a short acceptance window), monetized with a small transaction fee. This follows Teixeira’s decoupling logic of “separating value creating activities” to focus on one customer activity much better than incumbents (talks/first-lesson-taught-in-harvard-mba-in-18-minutes.md) while layering into the transaction stage where OLX can charge for value (E8).",
+    "why_customer_switches": "Customers don’t have to change how they find items or negotiate—only add protection at checkout—so switching friction is low; they pay a modest fee in exchange for meaningfully reduced fraud risk and less coordination overhead at the most stressful step of the CVC (E7) (E8) (E9).",
+    "cheaper_faster_easier": [
+      "faster",
+      "easier"
+    ],
+    "evidence_ids": [
+      "E7",
+      "E8",
+      "E9",
+      "E10"
+    ]
+  },
+  "do_not_decouple": [
+    {
+      "activity": "Create and publish a listing (photos, description, price) to reach potential buyers",
+      "reason": "This is part of OLX’s core digital value-creation loop (matching supply to demand) and should remain tightly integrated to preserve supply density and repeat posting behavior; pushing listing creation to an external/unbundled experience risks reducing listing volume/quality on OLX (E7).",
+      "evidence_ids": [
+        "E7"
+      ]
+    },
+    {
+      "activity": "Get discovered by relevant buyers through search, browsing, and filtering",
+      "reason": "Search & discovery is a primary value-creating activity that OLX already uses to deliver its core classifieds advantage (E7) and is explicitly a historical decoupling win from traditional classifieds (E11); unbundling it would weaken the marketplace’s central habit loop and traffic concentration.",
+      "evidence_ids": [
+        "E7",
+        "E11"
+      ]
+    },
+    {
+      "activity": "Communicate with interested buyers, answer questions, and negotiate terms",
+      "reason": "In-app messaging/negotiation is a core value-creating step in OLX’s CVC solution (E7) and a key historical decoupling wedge (E12); unbundling it would fragment conversations, reduce successful matches, and erode the customer relationship.",
+      "evidence_ids": [
+        "E7",
+        "E12"
+      ]
+    },
+    {
+      "activity": "Coordinate delivery or local pickup/meet-up and finalize handoff",
+      "reason": "This step is currently user-coordinated in the OLX model (E7) and is also a known pain point (E9); fully unbundling into first-party logistics would force OLX into heavy operational responsibility beyond the current classifieds scope, distracting from strengthening the trust/payment wedge first.",
+      "evidence_ids": [
+        "E7",
+        "E9"
+      ]
+    }
+  ]
+}

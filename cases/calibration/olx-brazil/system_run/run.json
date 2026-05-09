@@ -1,0 +1,155 @@
+{
+  "run_id": "olx-brazil-20260509-034428",
+  "created_at": "2026-05-09T03:44:28-07:00",
+  "input": {
+    "analysis_goal": "investment_judgment",
+    "company_name": "OLX Brazil",
+    "ticker": "",
+    "website": "",
+    "files": [],
+    "urls": [],
+    "user_question": "",
+    "output_style": "professional_obsidian_note",
+    "include_financial_verification": false
+  },
+  "artifacts": {
+    "research_brief": "research_brief.json",
+    "cost_summary": "cost_summary.json",
+    "evidence_store": "evidence_store.json",
+    "company_profile": "company_profile.json",
+    "lens_fit": "lens_fit.json",
+    "case_perspective": "case_perspective.json",
+    "cvc": "cvc.json",
+    "value_type_diagnosis": "value_type_diagnosis.json",
+    "weak_link_analysis": "weak_link_analysis.json",
+    "decoupling_strategy": "decoupling_strategy.json",
+    "business_model_analysis": "business_model_analysis.json",
+    "competitive_response": "competitive_response.json",
+    "final_judgment": "final_judgment.json",
+    "critic_review": "critic_review.json",
+    "final_report": "final_report.md",
+    "final_report_zh": "final_report_zh.md"
+  },
+  "modules": [
+    {
+      "module": "research",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:dabb341618d0e479518d9b87086717003ac7624b4f73b4ba494f13ceb89b2139",
+      "output_path": "research_brief.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "evidence_store",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:3ba7a96f5d2fbce9aff75aa931ffacd03c0d9b74fd92eb0ca425088cfe854146",
+      "output_path": "evidence_store.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "company_profile",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:4f0739681ce814adad7bb358178edac6d8e7bb1b9cb20b003b957f7866a73744",
+      "output_path": "company_profile.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "lens_fit",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:5f564fb673956264a7b6405785aff35863340cdac64ac89f47d4515150e56a8e",
+      "output_path": "lens_fit.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "case_perspective",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:78badba4a3d195d193024271688d7de19c50bc094119288eb0741eef869082b0",
+      "output_path": "case_perspective.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "cvc",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:b1e0ab3ae881897c6304d63c5a476cfbf3a859d082e428888bb738696d963f99",
+      "output_path": "cvc.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "value_types",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:1adeceb92214e48b2dbe883b40f26902e2598cb3234f67b95223c8789ef80fae",
+      "output_path": "value_type_diagnosis.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "weak_links",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:838896941037adfbae16cdcc60b197e24756c0a8d29b3b6c2bc406d395216f79",
+      "output_path": "weak_link_analysis.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "decoupling",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:ff3ed2c9583f7ebe3ddd01d3ec985a8606e85bfb6fe8787ff1fa052847892d1b",
+      "output_path": "decoupling_strategy.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "business_model",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:fd188cfbf070e1dbe14ec0be3417de4715160e5fc403617c98335cdafad7e6d2",
+      "output_path": "business_model_analysis.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "competitive_response",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:fd188cfbf070e1dbe14ec0be3417de4715160e5fc403617c98335cdafad7e6d2",
+      "output_path": "competitive_response.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "final_judgment",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:e33ff5bc25dcdac303935a56ad7a845aff05ffcd722f66396489b0e15158c912",
+      "output_path": "final_judgment.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "critic",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:f4633a4de85e45b1f24c6af37fb4ac09bf66a9e77256675d05b3e76a6a042e73",
+      "output_path": "critic_review.json",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "markdown_renderer",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:4c14d878c546861e5275927adb0b5686346087414c750a66ccc3210bf9da1bdd",
+      "output_path": "final_report.md",
+      "status": "ok",
+      "error": null
+    },
+    {
+      "module": "markdown_zh_renderer",
+      "module_version": "0.1.0",
+      "input_hash": "sha256:6d598af77c80dd3a5a84bfa0751f76b36443af1540be20bcd892eb685515f18e",
+      "output_path": "final_report_zh.md",
+      "status": "ok",
+      "error": null
+    }
+  ]
+}

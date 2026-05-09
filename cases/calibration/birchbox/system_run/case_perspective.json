@@ -1,0 +1,13 @@
+{
+  "perspective": "disruptor",
+  "confidence": "high",
+  "reasoning": "Birchbox is presented as a pioneering entrant that disrupted traditional beauty retail by decoupling the discovery and evaluation stages from brick-and-mortar incumbents (E12) via a curated at-home sampling subscription model (E2). The brief explicitly frames Birchbox as a “textbook example” of Teixeira-style digital disruption through decoupling, implying the analysis seat is that of the disruptor extending/defending its decoupled wedge rather than an incumbent defending or a firm mid-pivot (E3, E4).",
+  "primary_question": "How should Birchbox extend and monetize its decoupled discovery/evaluation wedge in beauty retail while maintaining the subscription-led model and staying ahead of incumbent recoupling?",
+  "evidence_ids": [
+    "E2",
+    "E3",
+    "E4",
+    "E11",
+    "E12"
+  ]
+}

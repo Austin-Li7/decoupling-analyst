@@ -1,0 +1,102 @@
+{
+  "ranked_weak_links": [
+    {
+      "activity_id": "A2",
+      "score": 900.0,
+      "pain_intensity": 4,
+      "frequency": 3,
+      "ai_or_digital_leverage": 5,
+      "willingness_to_switch": 5,
+      "value_capture_potential": 3,
+      "integration_dependency": 1,
+      "rationale": "Research/compare is a distinct step in the insurance customer value chain (E8) and is structurally easy to decouple because it can be delivered as a standalone digital layer without changing the underlying carrier/policy at first (low integration dependency). This matches Teixeira’s decoupling logic of improving a “weak link activity” so customers can “pass through…execute a weak link activity” cheaper/faster/easier (talks/unlocking-the-customer-value-chain-at-decoupling-co.md) (E10, E11). AI/digital leverage is very high here (personalized comparison, plain-language explanation of terms, contextual recommendations inside partner flows), and switching friction is low because users can adopt a better decision layer while keeping the rest of the workflow with incumbents/partners (E11). Evidence does not quantify pain for this step specifically; scoring is directional based on the CVC structure and Teixeira decoupling mechanics (E8, E10, E11).",
+      "evidence_ids": [
+        "E8",
+        "E10",
+        "E11"
+      ]
+    },
+    {
+      "activity_id": "A5",
+      "score": 192.0,
+      "pain_intensity": 3,
+      "frequency": 4,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 3,
+      "integration_dependency": 3,
+      "rationale": "Trov’s original position emphasized digital “Use & Management” (manage coverage over time) as part of its on-demand item-level model (E8, E12), suggesting this is part of what it already does well and can translate into embedded contexts (E6, E7). This link can be decoupled/re-bundled as a partner-facing capability (coverage toggling, in-app policy controls, proactive notifications) that improves ongoing customer experience with meaningful AI/digital leverage (automation, anomaly/risk nudges), while still not requiring immediate full-stack ownership of underwriting/claims (E6, E7, E12). Integration needs are moderate because management surfaces must align with partner UX and carrier policy states (E7). Evidence does not quantify switching, but embedded distribution implies partners can adopt better management tooling if it reduces friction and supports retention (E6, E7).",
+      "evidence_ids": [
+        "E6",
+        "E7",
+        "E8",
+        "E12"
+      ]
+    },
+    {
+      "activity_id": "A4",
+      "score": 180.0,
+      "pain_intensity": 4,
+      "frequency": 3,
+      "ai_or_digital_leverage": 5,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 3,
+      "integration_dependency": 4,
+      "rationale": "Onboarding/policy setup is a standard CVC stage (issuance, documentation) (E8) and is a classic “eroding” friction point that digital can compress via autofill, verification workflows, and instant document delivery (high AI/digital leverage). In Trov’s pivot to embedded insurance, partner integration capability is core (E6, E7), making streamlined onboarding a likely bottleneck to partner conversion and end-user completion. However, onboarding is more integration-dependent than discovery because it touches the underlying insurer issuance workflow (E8) and partner embedding (E7). The monetization path is plausible via B2B2C enablement fees tied to conversion lift or reduced drop-off, but evidence does not specify economics; scoring is directional (E6, E7, E8).",
+      "evidence_ids": [
+        "E6",
+        "E7",
+        "E8"
+      ]
+    },
+    {
+      "activity_id": "A3",
+      "score": 101.25,
+      "pain_intensity": 3,
+      "frequency": 3,
+      "ai_or_digital_leverage": 3,
+      "willingness_to_switch": 3,
+      "value_capture_potential": 5,
+      "integration_dependency": 4,
+      "rationale": "Purchase/activation is a key place Trov already decoupled successfully in its initial model—enabling on-demand item-level insurance via mobile and unbundling from annual bundled policies (E12, E13). The embedded pivot also targets purchase within partner ecosystems (E6, E9), which can increase conversion at the moment of need. Value capture potential is high because this is where premium/revenue is captured, but it is also highly integration-dependent (partner checkout/flow + insurer pricing/issuance constraints) (E7, E8). AI leverage is meaningful but not as extreme as pure comparison/onboarding because underwriting/pricing constraints limit how much can be “AI-only” without deeper carrier integration (E7, E8).",
+      "evidence_ids": [
+        "E6",
+        "E7",
+        "E8",
+        "E9",
+        "E12",
+        "E13"
+      ]
+    },
+    {
+      "activity_id": "A1",
+      "score": 85.3333333333,
+      "pain_intensity": 2,
+      "frequency": 4,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 4,
+      "value_capture_potential": 2,
+      "integration_dependency": 3,
+      "rationale": "Awareness/need recognition is explicitly part of the insurance customer value chain (E8), and Trov’s embedded direction pushes earlier into “Awareness” within partner ecosystems (E9). Digital/AI can materially improve contextual surfacing (timing, personalization, risk moment triggers) inside partner apps (E7, E9), and partners can often test/iterate prompts with relatively low end-user switching friction. However, direct value capture is weaker at awareness than at purchase, and effectiveness depends on partner context/data access (moderate integration dependency) (E7, E9). Evidence does not quantify consumer pain at recognition; scoring is directional based on the CVC mapping and embedded strategy position (E8, E9).",
+      "evidence_ids": [
+        "E7",
+        "E8",
+        "E9"
+      ]
+    },
+    {
+      "activity_id": "A6",
+      "score": 64.0,
+      "pain_intensity": 5,
+      "frequency": 2,
+      "ai_or_digital_leverage": 4,
+      "willingness_to_switch": 2,
+      "value_capture_potential": 4,
+      "integration_dependency": 5,
+      "rationale": "Claims is a major stage in the CVC (E8) and was part of Trov’s initial targeted stages (E8). It is often highly painful when it occurs, and AI can help with triage, automation, and status transparency; but claims is typically tightly coupled to carrier processes and regulatory/compliance constraints, creating very high integration dependency (E8). In embedded models, willingness to switch claim handling providers is usually lower because the insurer/TPA often controls the workflow, and frequency is lower than ongoing management since claims are episodic (E8). While value capture potential can be high if Trov can sell operational savings to partners/carriers, evidence does not provide unit economics or feasibility; scoring reflects high pain offset by heavy coupling risk (E8).",
+      "evidence_ids": [
+        "E8"
+      ]
+    }
+  ]
+}

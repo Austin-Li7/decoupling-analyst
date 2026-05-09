@@ -1,0 +1,82 @@
+{
+  "likely_responses": [
+    {
+      "response_type": "recouple",
+      "description": "Incumbents re-bundle (“recouple”) the research/compare step back into their own digital purchase flows by launching native, plain-language coverage explainers and guided questionnaires on their own websites/apps (and inside their existing distributor/broker journeys) so customers don’t need a third-party explainer/comparator during purchase. This is the classic move Teixeira describes: after a startup attacks a weak link in the customer value chain, incumbents try to “recouple” the activity back into the bundle (talks/unlocking-the-customer-value-chain-at-decoupling-co.md) (E3, E4, E8, E10, E11, E13).",
+      "severity": "high",
+      "defense": "Win on distribution and integration depth rather than features alone: embed the explainer/comparator where incumbents are not (partner ecosystems), and make switching costly via tighter SDK integration, analytics dashboards, and configurable coverage logic that is expensive for each incumbent to replicate across many partner contexts (E6, E7, E9).",
+      "evidence_ids": [
+        "E3",
+        "E4",
+        "E6",
+        "E7",
+        "E8",
+        "E9",
+        "E10",
+        "E11",
+        "E13"
+      ]
+    },
+    {
+      "response_type": "copy",
+      "description": "Incumbents copy the narrow product capability (coverage summaries, comparisons, and recommendation UX) and market it as a “simplified insurance” experience, reducing differentiation of Trov’s decoupled research/compare wedge (E8, E10, E11, E13).",
+      "severity": "high",
+      "defense": "Differentiate on multi-context implementation and learning loops: prioritize rapid iteration across multiple embedded partner journeys (mobility/gig/digital platforms) to improve UX and decision support faster than a single carrier optimizing only for its own products; keep the product modular so partners can deploy without a full insurer-led rebuild (E6, E7, E9, E11).",
+      "evidence_ids": [
+        "E6",
+        "E7",
+        "E8",
+        "E9",
+        "E10",
+        "E11",
+        "E13"
+      ]
+    },
+    {
+      "response_type": "subsidize",
+      "description": "Incumbents use pricing and commercial pressure to defend distribution: they offer partners higher commissions/revenue-share, lower premiums for end users, or marketing funds tied to using the incumbent’s own in-flow education/comparison tools—making it economically unattractive to keep Trov’s comparator in the journey (E8, E9, E13).",
+      "severity": "medium",
+      "defense": "Design Trov’s value capture around measurable conversion lift and reduced customer effort in the research stage so partners can justify Trov even against subsidized carrier offers; pursue multi-carrier optionality for partners so no single incumbent can price-pressure the whole partner base (evidence on multi-carrier contracting is not provided; treat as an assumption to validate) (E8, E9, E11).",
+      "evidence_ids": [
+        "E8",
+        "E9",
+        "E11",
+        "E13"
+      ]
+    },
+    {
+      "response_type": "partner",
+      "description": "Incumbents partner directly with the same digital platforms Trov targets for embedded insurance, offering a tighter end-to-end bundle (education → purchase → policy servicing) to reduce the need for a neutral explainer/comparator layer (E6, E7, E9, E13).",
+      "severity": "medium",
+      "defense": "Position Trov as the integration layer that reduces partner complexity across insurers: standardize partner onboarding and implementation so platforms can add/replace carriers without re-building the research/compare experience; emphasize partner-controlled UX and analytics rather than insurer-controlled flows (E6, E7, E9).",
+      "evidence_ids": [
+        "E6",
+        "E7",
+        "E9",
+        "E13"
+      ]
+    }
+  ],
+  "recoupling_vulnerability": {
+    "vulnerability": "high",
+    "rationale": "The attacked activity (customer research and comparison) is explicitly part of the traditional insurer value chain (E8) and tightly adjacent to the purchase/activation step that incumbents already control in their bundled annual-policy model (E13). Because Teixeira’s decoupling logic is that startups win by targeting poorly served activities (“weak links”) (E10, E11) but incumbents can respond by re-bundling the activity back into the core experience (“recoupling”) (talks/unlocking-the-customer-value-chain-at-decoupling-co.md) (E3, E4), the strategic risk is that insurers simply fold simplified explainers/comparisons into their own funnels and neutralize feature-level differentiation. Evidence does not describe specific incumbent digital/AI execution strength, so this assessment is based on structural position in the value chain rather than proven capability (E8, E13).",
+    "incumbent_capability_to_recouple": "medium",
+    "incumbent_incentive_to_recouple": "high",
+    "defenses": [
+      "Defend with distribution asymmetry: prioritize embedded placements inside partner ecosystems where Trov already positions as an integration provider (E6, E7, E9), rather than competing head-on in insurers’ owned channels.",
+      "Make recoupling costly for partners to accept: build a standardized SDK and analytics layer that improves over many partner contexts, increasing partner switching friction versus one-off insurer-built tools (E7, E11).",
+      "Reduce single-incumbent leverage: structure partner value around optionality across insurers so carrier-specific recoupling does not eliminate the partner’s need for a consistent research/compare UX (assumption to validate; not directly evidenced) (E9, E11)."
+    ],
+    "evidence_ids": [
+      "E3",
+      "E4",
+      "E6",
+      "E7",
+      "E8",
+      "E9",
+      "E10",
+      "E11",
+      "E13"
+    ]
+  }
+}

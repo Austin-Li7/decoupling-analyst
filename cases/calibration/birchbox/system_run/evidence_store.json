@@ -1,0 +1,239 @@
+{
+  "E1": {
+    "id": "E1",
+    "claim": "Birchbox was provided as the target company by the user.",
+    "source_id": "S0",
+    "locator": "CLI input",
+    "claim_type": "assumption",
+    "confidence": "high",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "business_model",
+      "final_judgment"
+    ],
+    "conflicts_with": []
+  },
+  "E2": {
+    "id": "E2",
+    "claim": "# Teixeira-Style Digital Disruption Analysis of Birchbox ## Introduction Birchbox, founded in 2010, is a pioneer in the beauty subscription box industry, offering consumers curated samples of beauty products delivered to their homes.",
+    "source_id": "S1",
+    "locator": "article: https://praxie.com/decouple-the-value-chain-to-drive-digital-disruption/",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E3": {
+    "id": "E3",
+    "claim": "The company’s model has been widely cited as a textbook example of digital disruption, particularly through the lens of Thales Teixeira’s “decoupling” framework, as outlined in his book *Unlocking the Customer Value Chain* (Teixeira & Piechota, 2019).",
+    "source_id": "S2",
+    "locator": "article: https://www.customerbliss.com/podcasts/understand-your-customers-needs-unlock-the-value-chain/",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E4": {
+    "id": "E4",
+    "claim": "This report provides a comprehensive analysis of Birchbox’s disruption of the beauty retail value chain, focusing on customer value chain mapping, decoupling opportunities, weak links, monetization strategies, competitive landscape, customer pain points, and recent strategic moves.",
+    "source_id": "S3",
+    "locator": "article: https://books.google.com/books/about/Unlocking_the_Customer_Value_Chain.html?id=xSdcDwAAQBAJ",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "case_perspective",
+      "business_model",
+      "competitive_response",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E5": {
+    "id": "E5",
+    "claim": "The analysis draws on Teixeira’s frameworks and integrates insights from trusted sources.",
+    "source_id": "S4",
+    "locator": "article: https://www.youtube.com/watch?v=IwlJ8sl94fg",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile"
+    ],
+    "conflicts_with": []
+  },
+  "E6": {
+    "id": "E6",
+    "claim": "## Customer Value Chain in Beauty Retail ### Traditional Beauty Retail Value Chain The traditional beauty retail customer value chain encompasses several stages: | Stage | Description | |-------------------|-----------------------------------------------------------------------------| | Discovery | Customers learn about new products via in-store displays, advertising, or word-of-mouth.",
+    "source_id": "S5",
+    "locator": "article: https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/B07MWBS4WS",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E7": {
+    "id": "E7",
+    "claim": "| | Evaluation | Customers test products in-store (e.g., Sephora, department stores).",
+    "source_id": "S6",
+    "locator": "article: https://4thoption.substack.com/p/91thales-teixeira-decoupling-the-d08",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E8": {
+    "id": "E8",
+    "claim": "| | Purchase | Customers buy full-sized products in-store or online.",
+    "source_id": "S7",
+    "locator": "article: https://www.youtube.com/watch?v=FQAmKKsQ0ZE",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E9": {
+    "id": "E9",
+    "claim": "| | Usage | Customers use products at home.",
+    "source_id": "S8",
+    "locator": "article: https://podcasts.apple.com/in/podcast/034-thales-teixeira-on-digital-disruption-through-decoupling/id1485202972?i=1000580174920",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "cvc",
+      "value_types",
+      "weak_links"
+    ],
+    "conflicts_with": []
+  },
+  "E10": {
+    "id": "E10",
+    "claim": "| | Repurchase | Customers return to stores or online to repurchase favorite products.",
+    "source_id": "S9",
+    "locator": "article: https://www.porchlightbooks.com/products/unlocking-the-customer-value-chain-thales-s-teixeira-9781524763084",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E11": {
+    "id": "E11",
+    "claim": "| This chain was historically controlled by brick-and-mortar retailers and major beauty brands, who “owned” the customer experience from discovery to repurchase.",
+    "source_id": "S10",
+    "locator": "article: https://www.amazon.de/-/en/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  },
+  "E12": {
+    "id": "E12",
+    "claim": "### Birchbox’s Disruptive Value Chain Birchbox fundamentally altered this value chain by decoupling the discovery and evaluation stages from the traditional retail environment: | Stage | Birchbox’s Approach | |-------------------|-----------------------------------------------------------------------------| | Discovery | Curated selection of new and trending products delivered monthly.",
+    "source_id": "S11",
+    "locator": "article: https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X",
+    "claim_type": "qualitative",
+    "confidence": "medium",
+    "verified_against": [],
+    "used_by_modules": [
+      "company_profile",
+      "lens_fit",
+      "case_perspective",
+      "cvc",
+      "value_types",
+      "weak_links",
+      "decoupling",
+      "business_model",
+      "competitive_response",
+      "final_judgment",
+      "critic"
+    ],
+    "conflicts_with": []
+  }
+}

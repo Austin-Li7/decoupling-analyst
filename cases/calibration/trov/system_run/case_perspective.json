@@ -1,0 +1,14 @@
+{
+  "perspective": "transitioning",
+  "confidence": "medium",
+  "reasoning": "Trov began as a classic decoupling disruptor by unbundling traditional annual insurance into on-demand, item-level coverage focused on the purchase and management stages (E5, E12, E13). However, the evidence indicates the company later pivoted its business model toward embedded insurance for mobility, gig, and digital platforms—shifting from primarily B2C to a partner-led B2B2C approach with integrations inside other ecosystems (E6, E7, E9). That combination of an established initial model and an explicit pivot to a different go-to-market and revenue approach signals a company in transition rather than a pure new entrant attack or an incumbent defense (E6, E7).",
+  "primary_question": "How should Trov sequence and execute its pivot from on-demand, item-level consumer insurance to embedded insurance partnerships—preserving what worked in the original model while evolving into a scalable B2B2C integration business?",
+  "evidence_ids": [
+    "E5",
+    "E6",
+    "E7",
+    "E9",
+    "E12",
+    "E13"
+  ]
+}

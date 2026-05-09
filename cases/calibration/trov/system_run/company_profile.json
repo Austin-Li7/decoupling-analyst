@@ -1,0 +1,58 @@
+{
+  "company": {
+    "name": "Trov",
+    "website": "",
+    "ticker": "",
+    "public_or_private": "unknown",
+    "industry": "insurtech (insurance technology) (E5)",
+    "geography": [],
+    "stage": "unknown",
+    "description": "Technology-driven insurance platform founded in 2012, originally focused on on-demand, item-level insurance and later pivoted to embedded insurance solutions for mobility, gig economy, and digital platforms (E5, E6, E7)."
+  },
+  "customers": {
+    "primary_user": "End consumers purchasing on-demand, item-level insurance via mobile app and users of partner platforms embedding insurance (E5, E12, E7)",
+    "buyer": "Partner platforms embedding insurance (B2B2C) and individual consumers depending on distribution channel (E6, E7)",
+    "payer": "End consumers paying premiums and/or partner platforms where insurance is embedded in digital experiences (E7, E6)",
+    "segments": [
+      "Consumers seeking on-demand, item-level insurance (E5, E12)",
+      "Mobility platforms and gig-economy marketplaces integrating embedded insurance (E6, E7)",
+      "Digital platforms seeking to offer insurance as an integrated feature to users (E7)"
+    ]
+  },
+  "business_model": {
+    "value_proposition": "On-demand, item-level insurance for consumers and embeddable insurance technology for partners to integrate insurance into digital experiences (E5, E12, E7)",
+    "revenue_model": "Insurance premiums and revenue via partner integrations/embedded insurance arrangements (evidence indicates shift to embedded insurance partnerships) (E6, E7)",
+    "pricing_model": "On-demand, item-level pricing for consumer policies and partner-negotiated pricing for embedded products (E12, E13, E6)",
+    "distribution_channels": [
+      "Mobile app for direct on-demand insurance (E12)",
+      "Embedded integrations within partner platforms (mobility, gig apps, digital platforms) (E6, E7)"
+    ],
+    "cost_drivers": [
+      "Claims payouts and claims management (customer value chain includes claims stage) (E8)",
+      "Technology platform and partner integration costs (E7)",
+      "Underwriting and risk management (implicit in operating insurance products; evidence references insurance stages including purchase, onboarding, and claims) (E8)"
+    ]
+  },
+  "competition": {
+    "incumbents": [
+      "Traditional insurers offering annual, bundled policies (E13, E8)"
+    ],
+    "direct_competitors": [],
+    "substitutes": [
+      "Annual bundled insurance policies (traditional coverage models) (E13)"
+    ]
+  },
+  "evidence_ids": [
+    "E1",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E12",
+    "E13",
+    "E2",
+    "E3",
+    "E4"
+  ]
+}

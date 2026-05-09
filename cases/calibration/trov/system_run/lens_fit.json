@@ -1,0 +1,27 @@
+{
+  "primary_type": "decoupling",
+  "secondary_types": [
+    "business_model",
+    "tech_substitution"
+  ],
+  "confidence": "medium",
+  "reasoning": "Evidence indicates Trov unbundled insurance by serving discrete activities in the insurance customer value chain rather than the incumbent bundled annual policy. Trov originally targeted on-demand, item-level insurance for purchase, use & management, and claims via a mobile-first product (E5, E8, E12, E13). Its later pivot to embedded insurance for mobility and gig platforms shows a continued strategy of integrating into partners' awareness and purchase stages to replace or augment incumbents' offerings (E6, E7, E9). Teixeira's decoupling framework—targeting weak-link activities with superior digital experiences—maps directly to Trov's moves (E11). Given this evidence, the dominant pattern is decoupling (unbundling purchase/management functions) enabled by technology, with clear business-model innovation (embedded insurance) and technology substitution (mobile/app-driven policy management) as important secondary lenses (E5, E6, E7, E12, E13).",
+  "evidence_ids": [
+    "E1",
+    "E5",
+    "E6",
+    "E7",
+    "E8",
+    "E9",
+    "E11",
+    "E12",
+    "E13"
+  ],
+  "decoupling_fit_score": 0.9,
+  "recommended_report_mode": "full_decoupling",
+  "caveats": [
+    "Evidence set is medium-grade summary material and lacks primary-data on unit economics, customer adoption metrics, and competitive responses; conclusions are drawn from descriptive sources (E2–E4) rather than hard financials.",
+    "Public/private status and financials are unknown, so risks around unit economics, CAC/CLV, and recoupling by incumbents cannot be fully assessed from the provided evidence (E1, E2).",
+    "While decoupling is well-supported, the strength of AI/digital leverage and the magnitude of weak-link friction reduction are not quantified in the evidence; therefore tactical recommendations would require validation of unit economics and partner integration metrics."
+  ]
+}

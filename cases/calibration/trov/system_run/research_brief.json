@@ -1,0 +1,143 @@
+{
+  "company_name": "Trov",
+  "research_summary": "# Teixeira-Style Digital Disruption Analysis of Trov ## Introduction This report presents a comprehensive analysis of Trov, an insurtech company, through the lens of Thales Teixeira’s digital disruption framework. The analysis systematically examines Trov’s position in the customer value chain, identifies decoupling opportunities, highlights weak links, explores monetization strategies, assesses the competitive landscape, investigates customer pain points, and reviews recent strategic moves. The report leverages Teixeira’s methodology as outlined in his book *Unlocking the Customer Value Chain* and related academic and industry sources to provide a detailed, objective, and actionable assessment. ## Company Overview: Trov Trov was founded in 2012 as a technology-driven insurance platform, initially focused on on-demand, item-level insurance for personal belongings.",
+  "sources": [
+    {
+      "id": "S1",
+      "title": "praxie.com / decouple-the-value-chain-to-drive-digital-disruption",
+      "url_or_path": "https://praxie.com/decouple-the-value-chain-to-drive-digital-disruption/",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "# Teixeira-Style Digital Disruption Analysis of Trov ## Introduction This report presents a comprehensive analysis of Trov, an insurtech company, through the lens of Thales Teixeira’s digital disruption framework."
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "www.youtube.com / watch",
+      "url_or_path": "https://www.youtube.com/watch?v=IwlJ8sl94fg",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "The analysis systematically examines Trov’s position in the customer value chain, identifies decoupling opportunities, highlights weak links, explores monetization strategies, assesses the competitive landscape, investigates customer pain points, and reviews recent strategic moves."
+      ]
+    },
+    {
+      "id": "S3",
+      "title": "www.amazon.com / 152476308X",
+      "url_or_path": "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/152476308X",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "The report leverages Teixeira’s methodology as outlined in his book *Unlocking the Customer Value Chain* and related academic and industry sources to provide a detailed, objective, and actionable assessment."
+      ]
+    },
+    {
+      "id": "S4",
+      "title": "books.google.com / Unlocking_the_Customer_Value_Chain.html",
+      "url_or_path": "https://books.google.com/books/about/Unlocking_the_Customer_Value_Chain.html?id=xSdcDwAAQBAJ",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "## Company Overview: Trov Trov was founded in 2012 as a technology-driven insurance platform, initially focused on on-demand, item-level insurance for personal belongings."
+      ]
+    },
+    {
+      "id": "S5",
+      "title": "content.martechday.com / state-of-martech-2026.pdf",
+      "url_or_path": "https://content.martechday.com/state-of-martech-2026.pdf",
+      "source_type": "deck",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "Over time, Trov evolved its business model, pivoting towards providing embedded insurance solutions for mobility, gig economy, and digital platforms."
+      ]
+    },
+    {
+      "id": "S6",
+      "title": "som.yale.edu / SCOTT-MORTON_Digital_Platform_Regulation_pages.pdf",
+      "url_or_path": "https://som.yale.edu/sites/default/files/2025-05/SCOTT-MORTON_Digital_Platform_Regulation_pages.pdf",
+      "source_type": "deck",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "Trov’s technology enables partners to integrate insurance offerings directly into their digital experiences, targeting both B2C and B2B2C markets."
+      ]
+    },
+    {
+      "id": "S7",
+      "title": "www.samenacouncil.org / SAMENA_Trends_July_2018.pdf",
+      "url_or_path": "https://www.samenacouncil.org/samena_trends/files/SAMENA_Trends_July_2018.pdf",
+      "source_type": "deck",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "## Customer Value Chain Analysis ### Mapping the Insurance Customer Value Chain The traditional insurance customer value chain consists of the following stages: | Stage | Description | |----------------------|------------------------------------------------------------------| | Awareness | Customer becomes aware of insurance needs and options | | Research | Customer compares policies, prices, and providers | | Purchase | Customer buys a policy | | Onboarding | Policy is issued, customer is onboarded | | Use & Management | Customer manages policy, updates coverage, pays premiums | | Claims | Customer files and manages claims | | Renewal/Exit | Customer renews or exits policy | ### Trov’s Position in the Value Chain Trov initially targeted the “Purchase,” “Use & Management,” and “Claims” stages by offering digital, on-demand insurance for individual items."
+      ]
+    },
+    {
+      "id": "S8",
+      "title": "intuitionlabs.ai / chatgpt-atlas-openai-browser",
+      "url_or_path": "https://intuitionlabs.ai/articles/chatgpt-atlas-openai-browser",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "Its later pivot to embedded insurance solutions allowed Trov to integrate more deeply into the “Awareness” and “Purchase” stages, especially within partner ecosystems (e.g., mobility platforms, gig work apps)."
+      ]
+    },
+    {
+      "id": "S9",
+      "title": "www.omniaretail.com / blog",
+      "url_or_path": "https://www.omniaretail.com/blog",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "## Decoupling Opportunities ### Teixeira’s Decoupling Framework Teixeira defines “decoupling” as the process by which digital disruptors break off one or more activities from the customer value chain, often targeting those that are poorly served by incumbents ([Teixeira, 2019](https://www.hbs.edu/faculty/Pages/item.aspx?num=55549))."
+      ]
+    },
+    {
+      "id": "S10",
+      "title": "www.amazon.com / B07MWBS4WS",
+      "url_or_path": "https://www.amazon.com/Unlocking-Customer-Value-Chain-Decoupling/dp/B07MWBS4WS",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "Decouplers focus on delivering superior value in these activities, often leveraging technology to reduce friction and improve customer experience."
+      ]
+    },
+    {
+      "id": "S11",
+      "title": "www.youtube.com / watch",
+      "url_or_path": "https://www.youtube.com/watch?v=ea-XaLHfpS4",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "### Trov’s Decoupling Strategy Trov’s initial decoupling occurred at the “Purchase” and “Use & Management” stages, allowing customers to insure individual items on demand via a mobile app."
+      ]
+    },
+    {
+      "id": "S12",
+      "title": "www.hks.harvard.edu / unlocking-customer-value-chain-how-decoupling-drives-consumer",
+      "url_or_path": "https://www.hks.harvard.edu/centers/mrcbg/programs/growthpolicy/unlocking-customer-value-chain-how-decoupling-drives-consumer",
+      "source_type": "article",
+      "retrieved_at": "2026-05-09",
+      "reliability": "medium",
+      "key_claims": [
+        "This unbundled insurance from the traditional, annual, bundled policy model, addressing consumer frustration with inflexible products."
+      ]
+    }
+  ],
+  "open_questions": [
+    "Validate the most strategically important claims against primary sources.",
+    "Check whether recent customer pain points reflect durable behavior change."
+  ],
+  "conflicts": []
+}

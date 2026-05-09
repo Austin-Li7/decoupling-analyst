@@ -1,0 +1,35 @@
+{
+  "value_creation": "Birchbox creates customer value by decoupling the beauty-retail customer value chain specifically at the “evaluation/testing” step—letting customers try curated samples at home via a recurring subscription box—so customers can adopt Birchbox for this single activity without changing where they purchase full-size products (E12, E7, E8). This is the archetypal decoupling move of “peel[ing] away a portion of the customer’s value chain” (books/unlocking-the-customer-value-chain-chapter-1.md > Page 10; E3) and reduces the need for in-store testing that traditionally happened at beauty retailers (E6, E7, E11).",
+  "value_capture": "Primary value capture is direct subscription revenue from consumers paying a monthly fee for curated sample boxes (E12). A viable extension path (without abandoning the decoupled wedge) is to increase capture by monetizing downstream purchase behavior that follows evaluation—e.g., referrals/commissions or retailing full-size products—because the evaluation step naturally precedes purchase in the CVC (E7, E8, E12); however, the evidence provided only supports that “downstream sales and related strategies” are contemplated, not the specific mechanics or take rates (E4).",
+  "value_erosion_remaining": "Even after Birchbox improves discovery/evaluation, major customer costs (time/effort/uncertainty) can remain in adjacent CVC steps that Birchbox does not fully control: (1) converting trial into a convenient full-size purchase flow, (2) ensuring the right product match/personal fit beyond a generic curated box, and (3) repurchase continuity for products that become favorites—steps that still sit in the broader retail value chain (E8, E10, E11, E12). Because decoupling leaves incumbents providing the “expensive-to-replicate” parts of the chain, customers may still face friction outside the decoupled activity unless Birchbox carefully layers into the next step(s) (books/unlocking-the-customer-value-chain-chapter-1.md > Page 10; E3).",
+  "payer": "Individual consumers paying for the subscription box (E12).",
+  "pricing_model": "Monthly subscription fee in exchange for a curated sample box delivered to the home (E12).",
+  "cac_risks": [
+    "Recoupling risk driving CAC up: if incumbents or brands re-bundle/replicate the evaluation experience (or otherwise neutralize the “stolen” CVC stage), Birchbox may need higher marketing spend to acquire each incremental subscriber (books/unlocking-the-customer-value-chain-chapter-1.md > Page 10; E3).",
+    "Low switching friction cuts both ways: because customers can adopt Birchbox just for evaluation without changing purchase behavior, they can also churn easily if the perceived novelty/fit of monthly curation declines—raising payback period requirements and effective CAC (E12, E7, E8).",
+    "If Birchbox expands beyond the decoupled wedge too quickly (e.g., trying to replace the full retailer experience), it risks losing the cost advantage of focusing on one CVC activity—forcing broader, more expensive acquisition to compete head-to-head with full-service incumbents (books/unlocking-the-customer-value-chain-chapter-1.md > Page 9-10; E3)."
+  ],
+  "ltv_drivers": [
+    "Recurring subscription structure: CLV rises materially if churn is low and customers remain subscribed for multiple cycles, because the model is explicitly monthly and repeat by design (E12).",
+    "Higher conversion into downstream purchases after evaluation: if Birchbox can capture some value at/after the purchase step that follows evaluation (without breaking the subscription engine), it can increase ARPU and CLV (E7, E8, E4).",
+    "Improved discovery relevance over time: the core promise is curated discovery/evaluation; if curation quality increases perceived value of each box, retention and word-of-mouth should strengthen—though the evidence provided does not quantify this, so it is an assumption to validate (E12, E4)."
+  ],
+  "unit_economics_concerns": [
+    "No CAC, churn, or cohort retention data is provided in the evidence, so viability depends on an unproven relationship: subscription CLV must be “significantly greater” than CAC, and ideally CLV/CAC should remain strong even as the easy early adopters saturate (assumption; E4, E12).",
+    "Gross margin sensitivity: because the core product is a physical box of samples delivered monthly, the economics will be highly sensitive to fulfillment/shipping and sample procurement terms; none of these cost drivers are in evidence, so gross margin must be validated before scaling (assumption; E12).",
+    "If Birchbox attempts to capture more value by moving into full-size retail, it could introduce inventory/working-capital, returns, and customer service costs that change the margin structure versus a pure subscription-evaluation wedge; the evidence notes downstream monetization but does not specify the operational burden (E4, E8, E12).",
+    "Adverse selection risk in subscriptions: if heavy “samplers” value the box more than eventual buyers, downstream monetization may underperform, forcing the subscription fee alone to cover CAC and variable costs; the evidence establishes evaluation-first behavior but not conversion rates (E7, E8, E12)."
+  ],
+  "evidence_ids": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E6",
+    "E7",
+    "E8",
+    "E10",
+    "E11",
+    "E12"
+  ]
+}

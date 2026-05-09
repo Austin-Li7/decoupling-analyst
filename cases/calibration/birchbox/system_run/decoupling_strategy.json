@@ -1,0 +1,56 @@
+{
+  "primary_decoupling": {
+    "activity_to_decouple": "Evaluate products by trying them before buying full-size",
+    "from_incumbent_bundle": "Brick-and-mortar beauty retailers and major beauty brands (e.g., Sephora/department stores) that bundle evaluation with in-store testing as part of an end-to-end retail journey",
+    "customer_pain": "Product evaluation is tightly tied to in-store testing, which requires a store visit and makes it harder for customers to evaluate products in their own at-home context over time (E7).",
+    "new_offering": "A subscription-based, at-home trial service that delivers curated beauty samples monthly so customers can evaluate products at home before buying full-size (E2, E12).",
+    "why_customer_switches": "They can adopt Birchbox just for the trial/evaluation step without changing where they buy full-size products—an archetypal decoupling move that “peel[s] away a portion of the customer’s value chain” while the disruptor and incumbent can still ‘share’ the customer (books/unlocking-the-customer-value-chain-chapter-1.md > Page 6) (E3).",
+    "cheaper_faster_easier": [
+      "easier"
+    ],
+    "evidence_ids": [
+      "E2",
+      "E3",
+      "E7",
+      "E12"
+    ]
+  },
+  "do_not_decouple": [
+    {
+      "activity": "Purchase full-size product(s)",
+      "reason": "Jumping from the evaluation wedge into being the primary full-size purchase destination increases operational and channel conflict complexity and risks undermining the subscription-led at-home trial engine; it also drags Birchbox into the incumbent-controlled purchase stage (E8, E11) rather than strengthening the already-working discovery/evaluation decoupling (E2, E12).",
+      "evidence_ids": [
+        "E2",
+        "E8",
+        "E11",
+        "E12"
+      ]
+    },
+    {
+      "activity": "Repurchase favorites (and restart discovery/evaluation when needs change)",
+      "reason": "Repurchase is historically part of the retailer/brand-controlled end-to-end journey (E10, E11) and would pressure Birchbox to build heavy commerce reliability across many SKUs; that over-extends beyond the current decoupled discovery/evaluation model anchored in monthly sample delivery (E2, E12).",
+      "evidence_ids": [
+        "E2",
+        "E10",
+        "E11",
+        "E12"
+      ]
+    },
+    {
+      "activity": "Use the product at home and assess satisfaction over time",
+      "reason": "Owning long-term usage/satisfaction support would require deep product-performance guarantees and service obligations that are not core to the existing curated-sample disruption; Birchbox’s proven wedge is enabling at-home trial via samples, not managing the full at-home lifecycle (E2, E12).",
+      "evidence_ids": [
+        "E2",
+        "E12"
+      ]
+    },
+    {
+      "activity": "Recognize a need or desire to try a new beauty product (e.g., skincare, makeup, haircare)",
+      "reason": "Need recognition is broad and diffuse; trying to ‘own’ it would dilute focus and reduce the sharpness of the decoupled wedge, whereas Birchbox already wins by intercepting customers specifically at discovery/evaluation through curated monthly samples (E12) rather than attempting to replace the entire incumbent-controlled journey (E11).",
+      "evidence_ids": [
+        "E11",
+        "E12"
+      ]
+    }
+  ]
+}

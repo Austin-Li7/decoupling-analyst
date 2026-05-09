@@ -1,0 +1,77 @@
+{
+  "customer_segment": "Brazilian individuals and small businesses selling used goods locally (C2C/B2C sellers using OLX to find a buyer and complete a sale)",
+  "end_activity": "Complete the exchange (receive payment and hand over the item) with minimal risk and hassle",
+  "activities": [
+    {
+      "id": "A1",
+      "step": 1,
+      "activity": "Decide to sell an item and set basic expectations (target price, acceptable condition, preferred local meet-up vs. delivery)",
+      "current_provider": "self (seller)",
+      "customer_goal": "Convert an unused item into cash with acceptable effort and safety",
+      "evidence_ids": [
+        "E7",
+        "E12"
+      ]
+    },
+    {
+      "id": "A2",
+      "step": 2,
+      "activity": "Create and publish a listing (photos, description, price) to reach potential buyers",
+      "current_provider": "OLX Brazil classifieds listing flow; seller provides content",
+      "customer_goal": "Get the item visible quickly to a large audience and attract inquiries",
+      "evidence_ids": [
+        "E6",
+        "E7",
+        "E8"
+      ]
+    },
+    {
+      "id": "A3",
+      "step": 3,
+      "activity": "Get discovered by relevant buyers through search, browsing, and filtering",
+      "current_provider": "OLX Brazil search & discovery features (digital classifieds)",
+      "customer_goal": "Generate buyer attention efficiently (views/leads) without needing an intermediary",
+      "evidence_ids": [
+        "E7",
+        "E11"
+      ]
+    },
+    {
+      "id": "A4",
+      "step": 4,
+      "activity": "Communicate with interested buyers, answer questions, and negotiate terms",
+      "current_provider": "OLX Brazil direct messaging / in-app chat; seller and buyer coordinate details",
+      "customer_goal": "Convert interest into a firm agreement on price, timing, and conditions",
+      "evidence_ids": [
+        "E7",
+        "E12"
+      ]
+    },
+    {
+      "id": "A5",
+      "step": 5,
+      "activity": "Arrange payment method and manage trust/safety risk (fraud concerns, identity confidence, payment security)",
+      "current_provider": "mostly self/off-platform arrangements; limited platform support implied; external payment methods if used",
+      "customer_goal": "Get paid securely and avoid scams or disputes",
+      "evidence_ids": [
+        "E7",
+        "E9"
+      ]
+    },
+    {
+      "id": "A6",
+      "step": 6,
+      "activity": "Coordinate delivery or local pickup/meet-up and finalize handoff",
+      "current_provider": "user-coordinated logistics (self) with offline coordination",
+      "customer_goal": "Complete the exchange conveniently and safely with minimal time/effort",
+      "evidence_ids": [
+        "E7",
+        "E9"
+      ]
+    }
+  ],
+  "profile_vs_cvc_conflicts": [
+    "Company profile emphasizes OLX’s value in search/discovery and matching/negotiation, but the CVC shows major value-eroding steps remain in payment security/trust and logistics/hand-off, which are largely user-coordinated today (E7, E9).",
+    "Company profile frames the ‘stated buyer’ primarily as sellers who post listings and buy premium placement, but the customer workflow depends critically on buyer-side discovery and engagement to complete the seller’s job-to-be-done (E7, E8, E11)."
+  ]
+}
