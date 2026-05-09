@@ -62,4 +62,5 @@ Build the CustomerValueChain.
             "company_name": profile.company.name,
             "evidence_ids": list(store.items.keys()),
         },
+        max_tokens=4000,
     )

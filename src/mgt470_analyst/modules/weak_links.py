@@ -70,4 +70,5 @@ Produce a WeakLinkAnalysis with one ranked entry per CVC activity.
             "activity_ids": [a.id for a in cvc.activities],
             "evidence_ids": list(store.items.keys()),
         },
+        max_tokens=4000,
     )
