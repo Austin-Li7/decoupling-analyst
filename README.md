@@ -1,5 +1,7 @@
 # Decoupling Analyst
 
+> 🔗 Live showcase: https://<user>.github.io/<repo>/ — enable GitHub Pages from `main` / `docs`, then replace this placeholder with the published URL.
+
 *A local-first workflow for Teixeira-style customer value chain analysis, grounded research, and decoupling strategy.*
 
 Decoupling Analyst turns a company name, URL, ticker, PDF, or notes into a
