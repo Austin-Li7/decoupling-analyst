@@ -1,3 +1,4 @@
+import re
 from typing import Any
 
 from pydantic import BaseModel
@@ -7,6 +8,9 @@ from mgt470_analyst.renderers.mermaid import (
     render_recoupling_quadrant,
     render_staged_path_flowchart,
 )
+
+EVIDENCE_ID_RE = re.compile(r"\bE\d+\b")
+URL_RE = re.compile(r"https?://[^\s<>\]\)\"']+")
 
 
 def _dump(value: Any) -> Any:
@@ -40,10 +44,70 @@ def _evidence_table(evidence_store: dict[str, Any], limit: int = 30) -> str:
 
 
 def _extract_url(text: str) -> str | None:
-    import re
-
     m = re.search(r"https?://\S+", text)
     return m.group(0).rstrip(".,;)") if m else None
+
+
+def _extract_urls(text: str) -> set[str]:
+    return {_normalize_url(match.group(0)) for match in URL_RE.finditer(str(text or ""))}
+
+
+def _normalize_url(url: str) -> str:
+    return url.rstrip(".,;:)>]\"'")
+
+
+def _valid_reference_sets(
+    research: dict[str, Any],
+    evidence_store: dict[str, Any],
+) -> tuple[set[str], set[str]]:
+    valid_evidence_ids = set(evidence_store)
+    used_source_ids = {
+        item.get("source_id") for item in evidence_store.values() if item.get("source_id")
+    }
+    valid_urls: set[str] = set()
+    for item in evidence_store.values():
+        valid_urls.update(_extract_urls(item.get("claim", "")))
+        valid_urls.update(_extract_urls(item.get("locator", "")))
+    for source in research.get("sources", []):
+        if source.get("id") not in used_source_ids:
+            continue
+        url_or_path = source.get("url_or_path") or ""
+        if str(url_or_path).startswith("http"):
+            valid_urls.add(_normalize_url(str(url_or_path)))
+    return valid_evidence_ids, valid_urls
+
+
+def _append_unverified_references(
+    markdown: str,
+    research: dict[str, Any],
+    evidence_store: dict[str, Any],
+) -> str:
+    valid_evidence_ids, valid_urls = _valid_reference_sets(research, evidence_store)
+    cited_evidence_ids = set(EVIDENCE_ID_RE.findall(markdown))
+    cited_urls = {_normalize_url(url) for url in URL_RE.findall(markdown)}
+    unverified_ids = sorted(cited_evidence_ids - valid_evidence_ids, key=_evidence_sort_key)
+    unverified_urls = sorted(cited_urls - valid_urls)
+    if not unverified_ids and not unverified_urls:
+        return markdown
+    lines = [
+        "",
+        "## Unverified References",
+        "",
+        "These references appeared in report prose but were not present in the run's "
+        "evidence store or retrieved source set.",
+    ]
+    if unverified_ids:
+        lines.append("")
+        lines.append("- Evidence IDs: " + ", ".join(unverified_ids))
+    if unverified_urls:
+        lines.append("")
+        lines.append("- URLs: " + ", ".join(unverified_urls))
+    return markdown.rstrip() + "\n" + "\n".join(lines) + "\n"
+
+
+def _evidence_sort_key(evidence_id: str) -> tuple[int, str]:
+    match = re.search(r"\d+", evidence_id)
+    return (int(match.group(0)) if match else 0, evidence_id)
 
 
 def _sources_block(research: dict[str, Any], evidence_store: dict[str, Any]) -> str:
@@ -360,7 +424,7 @@ def render_report(context: dict[str, Any]) -> str:
     next_steps = _bullet_lines(final.get("next_research_steps", []))
     tldr = final.get("recommended_action") or final.get("one_sentence_thesis", "")
 
-    return f"""---
+    markdown = f"""---
 company: {company}
 workflow: mgt470_analyst
 ---
@@ -484,3 +548,4 @@ Evidence: {", ".join(final.get("evidence_ids", []))}.
 
 </details>
 """
+    return _append_unverified_references(markdown, research, evidence_store)

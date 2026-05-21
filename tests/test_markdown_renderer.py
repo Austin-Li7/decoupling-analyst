@@ -172,3 +172,73 @@ def test_renderer_strips_inline_md_headings() -> None:
     assert "\n## Introduction" not in report
     assert "Raw GPT Researcher narrative (unparsed)" in report
     assert "    ## Introduction" in report
+
+
+def test_renderer_isolates_report_only_references() -> None:
+    context = _minimal_context()
+    context["company_profile"]["company"]["website"] = "https://retrieved.example.com"
+    context["final_judgment"]["one_sentence_thesis"] = (
+        "Use validated evidence E1 and https://retrieved.example.com, but inspect "
+        "unsupported claim E99 from https://unretrieved.example.com."
+    )
+    context["evidence_store"] = {
+        "E1": {
+            "claim": "Retrieved source supports the claim.",
+            "source_id": "S1",
+            "locator": "website: https://retrieved.example.com",
+            "confidence": "high",
+            "used_by_modules": ["final_judgment"],
+        }
+    }
+    context["research"]["sources"] = [
+        {
+            "id": "S1",
+            "title": "Retrieved source",
+            "url_or_path": "https://retrieved.example.com",
+            "source_type": "website",
+            "retrieved_at": "2026-05-21",
+            "reliability": "high",
+            "key_claims": ["Retrieved source supports the claim."],
+        }
+    ]
+
+    report = render_report(context)
+
+    assert "## Unverified References" in report
+    unverified = report.split("## Unverified References", maxsplit=1)[1]
+    assert "E99" in unverified
+    assert "https://unretrieved.example.com" in unverified
+    assert "E1" not in unverified
+    assert "https://retrieved.example.com" not in unverified
+
+
+def test_renderer_omits_unverified_section_when_references_are_grounded() -> None:
+    context = _minimal_context()
+    context["company_profile"]["company"]["website"] = "https://retrieved.example.com"
+    context["final_judgment"]["one_sentence_thesis"] = (
+        "Use validated evidence E1 from https://retrieved.example.com."
+    )
+    context["evidence_store"] = {
+        "E1": {
+            "claim": "Retrieved source supports the claim.",
+            "source_id": "S1",
+            "locator": "website: https://retrieved.example.com",
+            "confidence": "high",
+            "used_by_modules": ["final_judgment"],
+        }
+    }
+    context["research"]["sources"] = [
+        {
+            "id": "S1",
+            "title": "Retrieved source",
+            "url_or_path": "https://retrieved.example.com",
+            "source_type": "website",
+            "retrieved_at": "2026-05-21",
+            "reliability": "high",
+            "key_claims": ["Retrieved source supports the claim."],
+        }
+    ]
+
+    report = render_report(context)
+
+    assert "## Unverified References" not in report

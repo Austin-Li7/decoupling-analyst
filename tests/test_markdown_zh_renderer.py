@@ -189,3 +189,13 @@ def test_zh_renderer_uses_text_translation_method() -> None:
 
     assert client.called
     assert "# 中文标题" in chinese
+
+
+def test_zh_report_preserves_unverified_references_section() -> None:
+    english = render_report(_minimal_context()).rstrip()
+    english += "\n\n## Unverified References\n\n- Evidence IDs: E99\n"
+
+    chinese = render_report_zh(english, client=FakeTranslationClient())
+
+    assert "## Unverified References" in chinese
+    assert "E99" in chinese
