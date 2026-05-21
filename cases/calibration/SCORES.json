@@ -1,0 +1,215 @@
+{
+  "source": "human-reviewed calibration_report.md files",
+  "aggregate": {
+    "exact": 12,
+    "partial": 5,
+    "miss": 4,
+    "fabrications": 2,
+    "total_fields": 21,
+    "exact_pct": 57,
+    "exact_or_partial_pct": 81
+  },
+  "cases": [
+    {
+      "case_slug": "birchbox",
+      "company": "Birchbox",
+      "exact": 5,
+      "partial": 2,
+      "miss": 0,
+      "fabrications": 0,
+      "cvc_step_count_observed": 6,
+      "fields": [
+        {
+          "field": "CVC step count",
+          "status": "exact",
+          "ground_truth": "6",
+          "system_output": "6",
+          "rationale": "System uses need/discovery/evaluation/purchase/usage/repurchase; Teixeira's book names the beauty retail chain as store visit/evaluate/choose/buy/consume/repurchase. Count and sequence logic match.",
+          "observed_value": "6"
+        },
+        {
+          "field": "Weak link identified",
+          "status": "exact",
+          "ground_truth": "Testing/evaluation of beauty products",
+          "system_output": "Evaluate products by trying them before buying full-size",
+          "rationale": "This is the core Teixeira point.",
+          "observed_value": ""
+        },
+        {
+          "field": "Decoupling pattern",
+          "status": "partial",
+          "ground_truth": "Value-creating decoupling around testing/sampling",
+          "system_output": "Decoupling of at-home trial/evaluation from brick-and-mortar retail",
+          "rationale": "Semantically right, but the system did not explicitly classify the pattern as value-creating decoupling.",
+          "observed_value": ""
+        },
+        {
+          "field": "Decoupled activity",
+          "status": "exact",
+          "ground_truth": "Testing/evaluating beauty products",
+          "system_output": "Evaluate products by trying them before buying full-size",
+          "rationale": "Direct match.",
+          "observed_value": ""
+        },
+        {
+          "field": "Strategic takeaway",
+          "status": "partial",
+          "ground_truth": "Birchbox illustrates focused decoupling, but later scaled too fast and focused on competitors too soon",
+          "system_output": "Deepen the at-home evaluation wedge, monetize post-trial purchase intermediation, avoid full commerce/logistics too early",
+          "rationale": "The system gives a plausible extension strategy, but underweights Teixeira's retrospective warning from Session 3.",
+          "observed_value": ""
+        },
+        {
+          "field": "Final case perspective (disruptor/incumbent/pivot)",
+          "status": "exact",
+          "ground_truth": "Disruptor challenging Sephora/retailers through a narrow CVC wedge",
+          "system_output": "disruptor",
+          "rationale": "Direct match.",
+          "observed_value": ""
+        },
+        {
+          "field": "Lens fit",
+          "status": "exact",
+          "ground_truth": "Decoupling",
+          "system_output": "decoupling, fit score 0.95, high confidence",
+          "rationale": "Direct match.",
+          "observed_value": ""
+        }
+      ]
+    },
+    {
+      "case_slug": "olx-brazil",
+      "company": "OLX Brazil",
+      "exact": 4,
+      "partial": 2,
+      "miss": 1,
+      "fabrications": 1,
+      "cvc_step_count_observed": 6,
+      "fields": [
+        {
+          "field": "CVC step count",
+          "status": "exact",
+          "ground_truth": "6 supported marketplace steps",
+          "system_output": "6",
+          "rationale": "Session 9 does not expose a labeled OLX CVC, but the system count matches the case-supported marketplace chain.",
+          "observed_value": "6"
+        },
+        {
+          "field": "Weak link identified",
+          "status": "exact",
+          "ground_truth": "The uncaptured adjacent transaction layer: financing, trust, escrow, payments, insurance, and related services",
+          "system_output": "Arrange payment method and manage trust/safety risk",
+          "rationale": "Strong match to the adjacent-services opportunity.",
+          "observed_value": ""
+        },
+        {
+          "field": "Decoupling pattern",
+          "status": "partial",
+          "ground_truth": "Growth by coupling after a decoupled classifieds beachhead",
+          "system_output": "Further decoupling of trust/payment via \"OLX Deal Protection\"",
+          "rationale": "The activity is relevant, but the theory label is off. Session 9 is explicitly about coupling adjacent links.",
+          "observed_value": ""
+        },
+        {
+          "field": "Decoupled activity",
+          "status": "partial",
+          "ground_truth": "Historically: classifieds matchmaking from offline classifieds; next move: couple adjacent transaction services",
+          "system_output": "Trust/payment arrangement",
+          "rationale": "The system identifies a valid adjacent link but treats it as a fresh decoupling target rather than coupling.",
+          "observed_value": ""
+        },
+        {
+          "field": "Strategic takeaway",
+          "status": "exact",
+          "ground_truth": "Prioritize, leverage strengths, protect the core, and use coupling to create customer-side synergies",
+          "system_output": "Preserve classifieds matching engine and add trust/payment protection in sequence",
+          "rationale": "Good practical match, though less explicit about \"not too many fronts.\"",
+          "observed_value": ""
+        },
+        {
+          "field": "Final case perspective (disruptor/incumbent/pivot)",
+          "status": "exact",
+          "ground_truth": "Growth/transition after a beachhead; defend core while expanding",
+          "system_output": "transitioning",
+          "rationale": "Direct match.",
+          "observed_value": ""
+        },
+        {
+          "field": "Lens fit",
+          "status": "miss",
+          "ground_truth": "Coupling/growth-after-decoupling is the explicit Session 9 lens",
+          "system_output": "decoupling, fit score 0.85, medium confidence",
+          "rationale": "The system lacks a coupling lens, so it overuses decoupling.",
+          "observed_value": ""
+        }
+      ]
+    },
+    {
+      "case_slug": "trov",
+      "company": "Trov",
+      "exact": 3,
+      "partial": 1,
+      "miss": 3,
+      "fabrications": 1,
+      "cvc_step_count_observed": 6,
+      "fields": [
+        {
+          "field": "CVC step count",
+          "status": "exact",
+          "ground_truth": "6",
+          "system_output": "6",
+          "rationale": "System count matches Exhibit 2, though labels are more modern/embedded-insurance oriented.",
+          "observed_value": "6"
+        },
+        {
+          "field": "Weak link identified",
+          "status": "miss",
+          "ground_truth": "Continuous/inflexible insurance coverage and payment, plus bureaucracy and lack of flexibility",
+          "system_output": "Research and compare insurance options",
+          "rationale": "The system moved upstream to comparison instead of Trov's original on-demand coverage/payment wedge.",
+          "observed_value": ""
+        },
+        {
+          "field": "Decoupling pattern",
+          "status": "miss",
+          "ground_truth": "Value-charging decoupling: pay only for the protection used; with some value-eroding friction reduction",
+          "system_output": "Embedded \"Coverage Explainer + Comparator\" decoupling",
+          "rationale": "Wrong primary pattern and wrong activity.",
+          "observed_value": ""
+        },
+        {
+          "field": "Decoupled activity",
+          "status": "miss",
+          "ground_truth": "Activate/pay for single-item coverage only when needed",
+          "system_output": "Research and compare insurance options",
+          "rationale": "The system missed the single-item coverage activity that anchors the HBS case.",
+          "observed_value": ""
+        },
+        {
+          "field": "Strategic takeaway",
+          "status": "partial",
+          "ground_truth": "Decoupling can create customer value but not guarantee a profitable business model; decide what to do with SIC",
+          "system_output": "Preserve embedded-insurance capability and add a comparator SDK; later add transaction/claims tooling",
+          "rationale": "The system recognizes the pivot/partner logic but does not center the CAC/contribution-margin problem or SIC decision.",
+          "observed_value": ""
+        },
+        {
+          "field": "Final case perspective (disruptor/incumbent/pivot)",
+          "status": "exact",
+          "ground_truth": "Transition/pivot case from DTC SIC toward partnerships/B2B products",
+          "system_output": "transitioning",
+          "rationale": "Good high-level framing.",
+          "observed_value": ""
+        },
+        {
+          "field": "Lens fit",
+          "status": "exact",
+          "ground_truth": "Decoupling, with business-model sustainability as the test",
+          "system_output": "decoupling, fit score 0.90, medium confidence",
+          "rationale": "The lens is right, but the weak-link implementation is wrong.",
+          "observed_value": ""
+        }
+      ]
+    }
+  ]
+}

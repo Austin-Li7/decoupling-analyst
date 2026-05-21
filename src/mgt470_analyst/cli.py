@@ -169,6 +169,37 @@ def harvest_primary(
             typer.echo(f"- {item}")
 
 
+@app.command()
+def calibrate(
+    calibration_dir: Annotated[
+        Path,
+        typer.Option("--calibration-dir", help="Directory containing calibration cases."),
+    ] = Path("cases/calibration"),
+    json_output: Annotated[
+        Path | None,
+        typer.Option("--json-output", help="Path for structured calibration scores."),
+    ] = None,
+    markdown_output: Annotated[
+        Path | None,
+        typer.Option("--markdown-output", help="Path for Markdown calibration summary."),
+    ] = None,
+) -> None:
+    """Score calibration cases from existing human-reviewed reports."""
+    from mgt470_analyst.eval.cases import discover_eval_cases
+    from mgt470_analyst.eval.report import write_json_report, write_markdown_summary
+    from mgt470_analyst.eval.scorer import score_case
+
+    cases = discover_eval_cases(calibration_dir)
+    scores = [score_case(case) for case in cases]
+    json_path = json_output or calibration_dir / "SCORES.json"
+    markdown_path = markdown_output or calibration_dir / "SUMMARY.md"
+    write_json_report(scores, json_path)
+    write_markdown_summary(scores, markdown_path)
+    typer.echo(f"Calibration complete: {len(scores)} cases")
+    typer.echo(f"JSON: {json_path}")
+    typer.echo(f"Markdown: {markdown_path}")
+
+
 def _map_mode(mode: str) -> str:
     if mode == "investment":
         return "investment_judgment"
