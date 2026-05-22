@@ -1,20 +1,34 @@
 # Decoupling Analyst
 
-> 🔗 Streamlit showcase: https://<your-app>.streamlit.app/ — deploy `streamlit_app.py` on Streamlit Community Cloud and replace this placeholder with the published URL.
+**Evidence-grounded customer value chain analysis, encoded as a local-first LLM workflow.**
 
-> 🔗 Live showcase: https://<user>.github.io/<repo>/ — enable GitHub Pages from `main` / `docs`, then replace this placeholder with the published URL.
+Turn a company name, URL, ticker, PDF, or notes into a structured decoupling
+strategy built on Thales Teixeira's customer value chain framework — grounded in
+real web sources, calibrated against cases Teixeira taught, and auditable down to
+the evidence ID.
 
-*A local-first workflow for Teixeira-style customer value chain analysis, grounded research, and decoupling strategy.*
+**▶ Live demo:** **[decoupling-analyst.streamlit.app](https://decoupling-analyst.streamlit.app/)** — an interactive showcase that reads committed artifacts (no API key, no model cost).
 
-Decoupling Analyst turns a company name, URL, ticker, PDF, or notes into a
-structured strategic analysis using Thales Teixeira's customer value chain
-framework.
-It combines Tavily-grounded web retrieval, a pinned GPT Researcher fork, and
-local RAG over the Teixeira course corpus, then runs the evidence through 14
-typed modules before writing English and Chinese reports.
-Its credibility comes from a grounding gate that refuses empty retrieval,
-run-level provenance files, and calibration against three Teixeira-taught cases.
-The practical headline: $0.30/run for a 14-module strategic analysis.
+The headline: **$0.30/run** for a 14-module strategic analysis, with **81% exact-or-partial** calibration and **0 hidden fabrications**.
+
+---
+
+### What makes it credible
+
+- **Grounded, not hallucinated.** A grounding gate refuses to write a report when retrieval returns zero visited URLs.
+- **Calibrated.** Scored field-by-field against Teixeira's own classroom analyses for three MGT470 cases.
+- **Auditable.** Every run writes evidence, provenance, and cost files; every report claim cites a numbered source.
+
+### Contents
+
+- [60-second example](#60-second-example)
+- [Calibration](#calibration)
+- [Showcase app](#showcase-app)
+- [How it works](#how-it-works)
+- [Quick start](#quick-start)
+- [Limitations (honest)](#limitations-honest)
+- [Repository layout](#repository-layout)
+- [Testing](#testing)
 
 ## 60-second example
 
@@ -62,6 +76,25 @@ It produced 2 fabrications across the 3 calibration cases, both visible in the r
 It handles Birchbox best because Birchbox is canonical decoupling; it diverges on Trov by missing Teixeira's value-charging wedge and on OLX by missing the coupling-after-beachhead lens.
 
 Full per-case reports live in [cases/calibration/](cases/calibration/).
+
+## Showcase app
+
+[decoupling-analyst.streamlit.app](https://decoupling-analyst.streamlit.app/) is a
+read-only walkthrough of the system, built from [streamlit_app.py](streamlit_app.py).
+It loads the committed JSON and Markdown artifacts, so reviewers can inspect the
+full reasoning without an API key or any model cost. It surfaces:
+
+- the **verdict** and one-line thesis up front, then the customer value chain with the weak link highlighted;
+- the **staged strategy** distilled to one-line directives, plus what *not* to do;
+- the **calibration scores** and per-field exact/partial/miss breakdown;
+- the **audit layer** (evidence, provenance, run cost) and the full bilingual memo, rendered as Markdown.
+
+Run it locally:
+
+```bash
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
 
 ## How it works
 
@@ -190,16 +223,15 @@ output, and calibration.
 
 ## Repository layout
 
-[src/mgt470_analyst/](src/mgt470_analyst/) contains the pipeline modules,
-adapters, orchestrator, typed artifacts, and Markdown renderers.
-
-[cases/_archive/](cases/_archive/) contains grounded baseline case studies for
-the Path C deliverable, including run artifacts, reviews, provenance, and cost
-files where available.
-
-[cases/calibration/](cases/calibration/) contains Teixeira-calibrated comparison
-reports; [data/teixeira_corpus/](data/teixeira_corpus/) contains the methodology
-RAG source.
+| Path | Contents |
+|---|---|
+| [src/mgt470_analyst/](src/mgt470_analyst/) | Pipeline modules, adapters, orchestrator, typed artifacts, and Markdown renderers. |
+| [streamlit_app.py](streamlit_app.py) | The read-only showcase app deployed to Streamlit Community Cloud. |
+| [cases/calibration/](cases/calibration/) | Teixeira-calibrated comparison reports and per-case scores. |
+| [cases/_archive/](cases/_archive/) | Grounded baseline case studies (run artifacts, reviews, provenance, cost). |
+| [data/teixeira_corpus/](data/teixeira_corpus/) | Methodology RAG source (gitignored; copyrighted). |
+| [tests/](tests/) | Offline test suite (`pytest -q`). |
+| [SYSTEM_DESIGN.md](SYSTEM_DESIGN.md) | Full architecture write-up. |
 
 ## Testing
 
