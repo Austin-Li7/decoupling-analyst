@@ -1,5 +1,7 @@
 # Decoupling Analyst
 
+> 🔗 Streamlit showcase: https://<your-app>.streamlit.app/ — deploy `streamlit_app.py` on Streamlit Community Cloud and replace this placeholder with the published URL.
+
 > 🔗 Live showcase: https://<user>.github.io/<repo>/ — enable GitHub Pages from `main` / `docs`, then replace this placeholder with the published URL.
 
 *A local-first workflow for Teixeira-style customer value chain analysis, grounded research, and decoupling strategy.*
